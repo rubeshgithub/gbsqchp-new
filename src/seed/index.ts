@@ -1,18 +1,39 @@
 /**
  * Idempotent seed. Run with:  npm run seed
- * Creates or updates countries, professions, circulars, vendors, fees, the author, site settings and the first
- * two published pages. Safe to re-run: records are matched on their natural keys (slug, number, package+tier).
+ * Creates or updates countries, professions, circulars, vendors, fees, the author, site settings and the published
+ * guide pages. Safe to re-run: records are matched on their natural keys (slug, number, package+tier).
  */
 import { convertMarkdownToLexical, editorConfigFactory } from '@payloadcms/richtext-lexical'
 import type { CollectionSlug, Payload } from 'payload'
 import { getPayload } from 'payload'
 
 import config from '../payload.config'
+import { avsGuide } from './content/avs'
+import { dataflowGuide } from './content/dataflow'
 import { legacyGbs } from './content/legacy-gbs'
 import { psvPillar } from './content/psv-pillar'
-import { author, circulars, countries, fees, professions, vendors } from './data'
+import { quadrabayGuide } from './content/quadrabay'
+import { RENAMED_CIRCULARS, author, circulars, countries, fees, professions, vendors } from './data'
 
 type AnyData = Record<string, unknown>
+
+/** Shape shared by the files in ./content. Markdown becomes the Lexical body; everything else maps onto the Pages fields. */
+type SeedPage = {
+  title: string
+  path: string
+  section: 'psv' | 'licensing' | 'exam' | 'circulars' | 'documents' | 'careers' | 'tools' | 'legacy' | 'general'
+  summary: string
+  meta: { title: string; description: string }
+  showVendorTable?: boolean
+  showCalculator?: boolean
+  showCirculars?: boolean
+  featuredVendorSlug?: string
+  verifiedOn?: string
+  verifiedAgainst: { label: string; url?: string; circularNumber?: string }[]
+  changeLog?: { date: string; note: string }[]
+  faqs?: { question: string; answer: string }[]
+  markdown: string
+}
 
 async function upsert(payload: Payload, collection: CollectionSlug, where: Record<string, { equals: unknown }>, data: AnyData) {
   const existing = await payload.find({ collection, where, limit: 1, depth: 0, pagination: false })
@@ -45,6 +66,14 @@ async function run() {
   log(`professions: ${Object.keys(professionIds).length}`)
 
   // ---------- circulars ----------
+  // Rename records whose number was corrected after an earlier seed, so re-running never leaves duplicates.
+  for (const [oldNumber, newNumber] of Object.entries(RENAMED_CIRCULARS)) {
+    const stale = await payload.find({ collection: 'circulars', where: { number: { equals: oldNumber } }, limit: 1, depth: 0 })
+    if (stale.docs[0]) {
+      await payload.update({ collection: 'circulars', id: stale.docs[0].id, data: { number: newNumber } })
+      log(`circular renamed: ${oldNumber} → ${newNumber}`)
+    }
+  }
   const circularIds: Record<string, string> = {}
   for (const c of circulars) {
     const doc = await upsert(
@@ -133,8 +162,9 @@ async function run() {
   const editorConfig = await editorConfigFactory.default({ config: payload.config })
 
   const pageIds: Record<string, string> = {}
-  for (const page of [psvPillar, legacyGbs]) {
-    const { markdown, verifiedAgainst, meta, ...rest } = page
+  const pages: SeedPage[] = [psvPillar, legacyGbs, dataflowGuide, quadrabayGuide, avsGuide]
+  for (const page of pages) {
+    const { markdown, verifiedAgainst, meta, featuredVendorSlug, ...rest } = page
     const content = convertMarkdownToLexical({ editorConfig, markdown: markdown.trim() })
     const doc = await upsert(
       payload,
@@ -145,10 +175,11 @@ async function run() {
         content,
         country: countryIds.QA,
         author: authorDoc.id,
+        featuredVendor: featuredVendorSlug ? vendorIds[featuredVendorSlug] : null,
         verifiedAgainst: verifiedAgainst.map((s) => ({
           label: s.label,
           url: s.url,
-          circular: 'circularNumber' in s && s.circularNumber ? circularIds[s.circularNumber] : undefined,
+          circular: s.circularNumber ? circularIds[s.circularNumber] : undefined,
         })),
         meta: { title: meta.title, description: meta.description },
         _status: 'published',
@@ -157,12 +188,34 @@ async function run() {
     pageIds[page.path] = doc.id
   }
 
-  // cross-link the two pages and attach guide pages to vendors / circulars
-  await payload.update({ collection: 'pages', id: pageIds[psvPillar.path], data: { relatedPages: [pageIds[legacyGbs.path]] } })
-  await payload.update({ collection: 'pages', id: pageIds[legacyGbs.path], data: { relatedPages: [pageIds[psvPillar.path]] } })
-  await payload.update({ collection: 'vendors', id: vendorIds.gbs, data: { page: pageIds[legacyGbs.path] } })
-  for (const n of ['15/2018', 'DHP/09/2024']) {
-    await payload.update({ collection: 'circulars', id: circularIds[n], data: { explainer: pageIds[legacyGbs.path] } })
+  // cross-link the pages and attach guide pages to vendors / circulars
+  const related: Record<string, string[]> = {
+    [psvPillar.path]: [dataflowGuide.path, quadrabayGuide.path, avsGuide.path, legacyGbs.path],
+    [dataflowGuide.path]: [psvPillar.path, quadrabayGuide.path, avsGuide.path],
+    [quadrabayGuide.path]: [psvPillar.path, dataflowGuide.path, avsGuide.path],
+    [avsGuide.path]: [psvPillar.path, dataflowGuide.path, quadrabayGuide.path],
+    [legacyGbs.path]: [psvPillar.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
+  }
+  for (const [path, targets] of Object.entries(related)) {
+    await payload.update({ collection: 'pages', id: pageIds[path], data: { relatedPages: targets.map((t) => pageIds[t]) } })
+  }
+  const vendorPages: Record<string, string> = {
+    gbs: legacyGbs.path,
+    dataflow: dataflowGuide.path,
+    quadrabay: quadrabayGuide.path,
+    avs: avsGuide.path,
+  }
+  for (const [slug, path] of Object.entries(vendorPages)) {
+    await payload.update({ collection: 'vendors', id: vendorIds[slug], data: { page: pageIds[path] } })
+  }
+  const circularExplainers: Record<string, string> = {
+    '15/2018': legacyGbs.path,
+    'DHP/2024/09': legacyGbs.path,
+    'DHP/2025/20': quadrabayGuide.path,
+    'DHP/2026/36': avsGuide.path,
+  }
+  for (const [n, path] of Object.entries(circularExplainers)) {
+    await payload.update({ collection: 'circulars', id: circularIds[n], data: { explainer: pageIds[path] } })
   }
   log(`pages: ${Object.keys(pageIds).join(', ')}`)
 

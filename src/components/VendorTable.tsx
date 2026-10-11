@@ -117,9 +117,12 @@ export function VendorTable({ vendors, fees, title = 'Approved PSV providers com
       </div>
       <p className="form-note">
         Package A = up to two educational qualifications, one professional licence and the last five years of employment;
-        Package E = one qualification, one licence and the last three years. Figures come from each provider&apos;s published
-        price list or the approving DHP circular{latestVerified ? `, last checked ${formatDate(latestVerified)}` : ''}. Confirm
-        the current price on the provider&apos;s portal before paying.
+        Package E = one qualification, one licence and the last three years at DataFlow and QuadraBay (AVS verifies up to two
+        qualifications and five years in every clinical package). Report transfer = the fee to re-issue an existing report to
+        DHP: DataFlow for a report it issued to another authority, QuadraBay for its own reports, AVS for a report from another
+        vendor (which DHP has not confirmed it accepts). Figures come from each provider&apos;s published price list or the
+        approving DHP circular{latestVerified ? `, last checked ${formatDate(latestVerified)}` : ''}. Confirm the current price
+        on the provider&apos;s portal before paying.
       </p>
     </section>
   )

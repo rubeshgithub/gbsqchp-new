@@ -22,8 +22,9 @@ Payload skill for this repo: `.claude/skills/payload/SKILL.md` (read it before t
 
 1. **Structured data over prose.** Fees → `fees`; providers → `vendors`; rule changes → `circulars`; profession
    categories → `professions`. Pages reference them through the toggles `showVendorTable`, `showCalculator`,
-   `showCirculars`. Never hard-code a fee, a date or a circular number in a component or in page prose when a
-   record exists for it.
+   `showCirculars` and the `featuredVendor` relationship (renders that provider's full fee schedule + contact card
+   via `VendorPackages`; the comparison table then moves below the body). Never hard-code a fee, a date or a
+   circular number in a component or in page prose when a record exists for it.
 2. **Pages are routed by `path`.** `src/app/(frontend)/[...segments]/page.tsx` resolves any published page.
    Dedicated routes exist only for `/`, `/qatar`, `/qatar/circulars`, `/tools/psv-fee-calculator`. A static route
    always wins over a CMS page at the same path.
@@ -52,12 +53,14 @@ Payload skill for this repo: `.claude/skills/payload/SKILL.md` (read it before t
 ## Content plan
 
 The 25 Phase-1 page briefs (slug, title tag, meta, outline, facts with sources, FAQs, internal links) are in the
-project doc `GBSQCHP-phase1-content-plan-and-briefs.md`. Published so far: `/qatar/psv` (pillar) and
-`/gbs-psv-portal` (legacy). Next in order: `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs`,
+project doc `GBSQCHP-phase1-content-plan-and-briefs.md`. Published so far: `/qatar/psv` (pillar), `/gbs-psv-portal`
+(legacy), `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs` (provider guides). Next in order:
 `/qatar/psv/fees`, `/qatar/psv/documents`, `/qatar/psv/timeline`, `/qatar/psv/status`, `/qatar/psv/report-transfer`,
 then the problem pages under `/qatar/psv/problems/…`, the circular explainers under `/qatar/circulars/…`, and the
 licensing hub `/qatar/licensing`. Add nav/footer links (`src/components/Header.tsx`, `Footer.tsx`) only when the
-target page is published.
+target page is published. The provider guides refer to the documents, status, report-transfer and
+university-not-responding guides but currently link them to `/qatar/psv` (no dead links); retarget those links in
+`src/seed/content/*.ts` when each page is published.
 
 To add a page from a brief: write the Markdown in `src/seed/content/<slug>.ts` following `psv-pillar.ts`, register
 it in `src/seed/index.ts`, run `npm run seed`, then review in `/admin`. Editors can also create pages directly in
@@ -65,8 +68,15 @@ the admin panel.
 
 ## Known gaps / to verify
 
-- AVS fees and the exact date/content of Circular DHP/2026/36, DHP/2025/24 thresholds, DHP/2025/19 exemption list,
-  DHP/2024/22 and DHP/2024/10 details: open the official PDFs and set `verified: true` on the circular records.
+- Read and verified on 11 Oct 2026: DHP/2026/36 (AVS, 3 Sep 2026) and DHP/2025/24. **DHP/2025/24 does not mention
+  PSV** – it sets experience/exam rules for Qataris, residents' families and Qatar graduates. The widely reported
+  "PSV mandatory for all from 1 Jan 2026" and the break-in-practice thresholds in briefs 16 and 18 are NOT in that
+  circular; re-source them (DHP guidelines PDFs or another circular) before writing those pages. PSV is mandatory
+  for everyone under DHP's standing PSV page wording – cite that, not a circular.
+- Still to open: DHP/2025/19 exemption list, DHP/2025/08 (good-standing procedure), DHP/2024/22, DHP/2024/16
+  (processing times), DHP/2024/10 (exam fees), DHP/2024/09. Set `verified: true` on each record after reading.
+- Official circular numbers use the form DHP/YYYY/NN (the GBS-end circular is DHP/2024/09, not DHP/09/2024; the seed
+  renames old records via `RENAMED_CIRCULARS`).
 - DataFlow prices are from the Sept 2024 DHP price list; re-check quarterly.
 - No email adapter configured (Payload warns at start); add one before enabling password resets or newsletters.
 - Media uploads are local-disk; move to S3-compatible storage before production scale.

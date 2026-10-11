@@ -701,3 +701,55 @@ select:focus {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+/* ---------- featured provider block ---------- */
+.vendor-packages h3 {
+  margin: 28px 0 10px;
+  font-size: 1.15rem;
+}
+
+.vendor-contact {
+  gap: 16px;
+}
+
+.vendor-contact h2 {
+  margin: 6px 0 4px;
+  font-size: 1.4rem;
+}
+
+.vendor-contact p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.vendor-facts {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: grid;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+
+.vendor-facts strong {
+  color: var(--navy);
+}
+
+.vendor-contact .card-links {
+  align-items: center;
+}
+
+ul.compact {
+  margin: 0;
+  padding-left: 1.1em;
+  font-size: 0.9rem;
+}
+
+ul.compact li {
+  margin: 0 0 2px;
+}
+
+.vendor-packages td:first-child,
+.vendor-packages td.fee {
+  white-space: nowrap;
+}

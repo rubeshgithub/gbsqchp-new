@@ -1,10 +1,18 @@
 /**
  * Reference data for the seed. Every figure carries its source; "verified: false" on a circular means the
  * official PDF has not yet been opened to confirm the number/date — do that before advancing verifiedOn.
- * Last reviewed: 9 Oct 2026.
+ * Last reviewed: 11 Oct 2026 (DataFlow reference kit, AVS fee schedule, DHP circulars list, DHP/2026/36 PDF).
  */
 
-const VERIFIED_ON = '2026-10-09'
+const VERIFIED_ON = '2026-10-11'
+
+/**
+ * Circular numbers that were corrected after the first seed. The seed renames existing records in place so a
+ * re-run does not leave duplicates behind. Key = old number, value = current number.
+ */
+export const RENAMED_CIRCULARS: Record<string, string> = {
+  'DHP/09/2024': 'DHP/2024/09',
+}
 
 export const countries = [
   {
@@ -86,7 +94,7 @@ export const author = {
 }
 
 export const professions = [
-  { name: 'General practitioner (physician)', slug: 'general-practitioner', group: 'physician' as const, psvPackageCode: 'A', examCategory: 'General Practitioner', examPassMark: 60, examAttempts: 5, examQuestions: 150, experienceYearsVerified: 5, sortOrder: 1, notes: 'Pass mark and attempt limit reported from DHP guidelines and Circular DHP/2024/10 – verify.' },
+  { name: 'General practitioner (physician)', slug: 'general-practitioner', group: 'physician' as const, psvPackageCode: 'A', examCategory: 'General Practitioner', examPassMark: 60, examAttempts: 5, examQuestions: 150, experienceYearsVerified: 5, sortOrder: 1, notes: 'Pass mark and attempt limit as reported by consultancy guides – verify against the DHP qualifying-exam page and guidelines.' },
   { name: 'Specialist / consultant physician', slug: 'specialist-physician', group: 'physician' as const, psvPackageCode: 'A', examCategory: 'Specialty exam (by specialty)', examPassMark: 65, examAttempts: 3, examQuestions: 150, experienceYearsVerified: 5, sortOrder: 2, notes: 'Category 1 and 2 qualifications are exempt from the qualifying exam per DHP Guidelines for Physicians – verify per case.' },
   { name: 'Dentist', slug: 'dentist', group: 'dentist' as const, psvPackageCode: 'A', examCategory: 'General Dentist', examPassMark: 60, examAttempts: 5, examQuestions: 150, experienceYearsVerified: 5, sortOrder: 3 },
   { name: 'Registered nurse', slug: 'registered-nurse', group: 'nurse' as const, psvPackageCode: 'E', examCategory: 'Registered Nurse', examPassMark: 50, examAttempts: 5, examQuestions: 150, experienceYearsVerified: 3, sortOrder: 4 },
@@ -114,54 +122,76 @@ export const circulars = [
     verified: true,
   },
   {
-    number: 'DHP/09/2024',
+    number: 'DHP/2024/09',
     authority: 'DHP' as const,
     status: 'historical' as const,
-    title: 'End of the contract with Gulf Bridge Services (GBS)',
+    title: 'End of the contract with Gulf Bridge Services (GBS) as one of the approved companies for Primary Source Verification (PSV)',
     issuedOn: '2024-02-07',
     topics: ['vendors', 'psv'],
     summary: 'DHP announced the end of the contractual agreement with GBS, one of the two companies approved to verify practitioners’ certificates from the primary source. DataFlow remained the sole provider until December 2025.',
-    officialUrl: 'https://dhp.moph.gov.qa/en/Pages/AllCirculars.aspx',
+    officialUrl: 'https://dhp.moph.gov.qa/en/QCHPCirculars/DHP-2024-09-E.pdf',
     verified: false,
   },
   {
     number: 'DHP/2024/10',
     authority: 'DHP' as const,
     status: 'in-force' as const,
-    title: 'Qualifying examination attempt limits',
+    title: 'Modification on the qualifying examination fees',
     issuedOn: null,
-    topics: ['exam'],
-    summary: 'Sets the number of attempts allowed at the qualifying examination: five for general practitioners, three for specialty and assistant-specialty applicants (as reported by consultancies; confirm against the PDF).',
-    officialUrl: 'https://dhp.moph.gov.qa/en/Pages/AllCirculars.aspx',
+    topics: ['exam', 'fees'],
+    summary: 'Changes the fees for the DHP qualifying examination (title from the official circulars list; the fee figures have not yet been transcribed from the PDF).',
+    officialUrl: 'https://dhp.moph.gov.qa/en/QCHPCirculars/DHP-2024-10%20E.pdf',
+    verified: false,
+  },
+  {
+    number: 'DHP/2024/16',
+    authority: 'DHP' as const,
+    status: 'in-force' as const,
+    title: 'Updates to the processing time of registration/licensing requests',
+    issuedOn: null,
+    topics: ['evaluation'],
+    summary: 'Sets the published processing times for DHP registration and licensing requests (title from the official circulars list; the service times have not yet been transcribed from the PDF).',
+    officialUrl: 'https://dhp.moph.gov.qa/en/QCHPCirculars/DHP-16-2024-E.pdf',
     verified: false,
   },
   {
     number: 'DHP/2024/22',
     authority: 'DHP' as const,
     status: 'in-force' as const,
-    title: 'Preliminary evaluation without an employer',
+    title: 'Updates on the Electronic Registration System',
     issuedOn: null,
     topics: ['evaluation'],
-    summary: 'Allows applicants outside Qatar to obtain a preliminary evaluation and an eligibility letter, reported as valid for six months, before securing a sponsoring employer (as reported; confirm against the PDF).',
-    officialUrl: 'https://dhp.moph.gov.qa/en/Pages/AllCirculars.aspx',
+    summary: 'Updates to the DHP electronic registration system. Consultancies report this is the circular that lets applicants outside Qatar obtain a preliminary evaluation and an eligibility letter (reported as valid for six months) before securing a sponsoring employer – confirm against the PDF.',
+    officialUrl: 'https://dhp.moph.gov.qa/en/QCHPCirculars/DHP-2024-22-Eng.pdf',
+    verified: false,
+  },
+  {
+    number: 'DHP/2025/08',
+    authority: 'DHP' as const,
+    status: 'in-force' as const,
+    title: 'Updated procedure for submitting Certificates of Good Standing',
+    issuedOn: null,
+    topics: ['psv', 'evaluation'],
+    summary: 'Updates how certificates of good standing are submitted to DHP (title from the official circulars list; the procedure has not yet been transcribed from the PDF).',
+    officialUrl: 'https://dhp.moph.gov.qa/en/QCHPCirculars/Circular%20(DHP-08-2025)En.pdf',
     verified: false,
   },
   {
     number: 'DHP/2025/19',
     authority: 'DHP' as const,
     status: 'in-force' as const,
-    title: 'Qualifying examination exemptions',
+    title: 'List of qualifying exams that exempt from the qualifying exam (Prometric) required for licensing purposes',
     issuedOn: null,
     topics: ['exam'],
     summary: 'Lists the international qualifications that exempt an applicant from the DHP qualifying exam (reported: USMLE, PLAB, MRCGP AKT, AMC MCQ, MCCQE Part 1, PRES Part 2, Arab Board, NCLEX-RN for nurses). Exemption from the exam never exempts from PSV.',
-    officialUrl: 'https://dhp.moph.gov.qa/en/Pages/AllCirculars.aspx',
+    officialUrl: 'https://dhp.moph.gov.qa/en/QCHPCirculars/DHP%2019%202025%20E.pdf',
     verified: false,
   },
   {
     number: 'DHP/2025/20',
     authority: 'DHP' as const,
     status: 'in-force' as const,
-    title: 'QuadraBay approved as a second primary source verification provider',
+    title: 'Endorsement of a Second Provider for Primary Source Verification Services (Quadrabay)',
     issuedOn: '2025-12-02',
     topics: ['vendors', 'psv', 'fees'],
     summary: 'Endorses QuadraBay as a second PSV provider alongside DataFlow for all licensing categories, new applications, renewals, upgrades, re-registration and facility submissions, and publishes its package fees and processing targets.',
@@ -172,23 +202,23 @@ export const circulars = [
     number: 'DHP/2025/24',
     authority: 'DHP' as const,
     status: 'in-force' as const,
-    title: 'Updated work experience, qualifying exam and verification rules',
+    title: 'Update on Circular No. (13/2023) on the Registration and Licensing Policy of Healthcare Practitioners',
     issuedOn: '2025-12-30',
-    topics: ['psv', 'experience', 'exam', 'evaluation'],
-    summary: 'From 1 January 2026 primary source verification is mandatory for every applicant with no exceptions; the circular also updates work-experience, internship and break-in-practice thresholds and qualifying-exam requirements for graduates inside and outside Qatar (summary reported by MOPH coverage; confirm the thresholds against the PDF).',
-    officialUrl: 'https://dhp.moph.gov.qa/en/Pages/AllCirculars.aspx',
-    verified: false,
+    topics: ['experience', 'exam', 'evaluation'],
+    summary: 'Sets the work-experience and qualifying-exam rules for Qatari nationals, offspring of Qatari women, residents’ offspring and spouses, and graduates of Qatar institutions. GPs from Qatar universities need a one-year internship; Qatar-graduate dentists, pharmacists, nurses and AHPs are exempt from experience. For foreign graduates: GPs and dentists need an internship year (plus one year of practice for spouses of residents); pharmacy, nursing and AHP need one year (Qataris and offspring of Qatari women exempt). Exam exemptions: Qataris, offspring of Qatari women, graduates of Qatar institutions. Annuls circulars 01/2016, 11/2018, 19/2020, 24/2020, 15/2022 and 13/2023. Despite press coverage, the circular says nothing about primary source verification.',
+    officialUrl: 'https://dhp.moph.gov.qa/en/QCHPCirculars/DHP%2024%202025%20E.pdf',
+    verified: true,
   },
   {
     number: 'DHP/2026/36',
     authority: 'DHP' as const,
     status: 'in-force' as const,
-    title: 'Approved Verification Services (AVS) approved as a third primary source verification provider',
-    issuedOn: null,
+    title: 'Approval of a Third Provider of Primary Source Verification (PSV) Services: Approved Verification Services (AVS)',
+    issuedOn: '2026-09-03',
     topics: ['vendors', 'psv'],
-    summary: 'Adds Approved Verification Services (avsqatar.com) as a third DHP-approved PSV provider, listed on the DHP Primary Source Verification page with its application guide and reference-programme guide (number from the DHP circulars list; confirm date and content against the PDF).',
-    officialUrl: 'https://dhp.moph.gov.qa/en/Pages/AllCirculars.aspx',
-    verified: false,
+    summary: 'Announces a partnership agreement with Approved Verification Services (AVS), which becomes the third approved PSV provider. Practitioners may submit verification requests through AVS from the date of the circular, as well as through the other approved companies. The circular points to the AVS electronic application guide for the service fee schedule (portal: avsqatar.com).',
+    officialUrl: 'https://dhp.moph.gov.qa/en/QCHPCirculars/DHP%2036%202026%20E.pdf',
+    verified: true,
   },
 ]
 
@@ -206,7 +236,7 @@ export const vendors = [
     tagline: 'DHP verification partner since 2009',
     website: 'https://dataflowgroup.com/organization/dhp-moph-qatar/',
     applyUrl: 'https://dhp.dataflowgroup.com/en/onboarding/signin',
-    trackUrl: 'https://www.dataflowstatus.com/applicationstatus',
+    trackUrl: 'https://app.dataflowgroup.com/en/onboarding/signin',
     supportUrl: 'https://support.dataflowgroup.com/',
     supportEmail: null,
     phone: null,
@@ -230,10 +260,10 @@ export const vendors = [
     trackUrl: 'https://track.quadrabay.com/',
     supportUrl: null,
     supportEmail: 'dhp.support@quadrabay.com',
-    phone: null,
+    phone: '+971 600 566 777',
     whatsapp: null,
     officeAddress: null,
-    officeHours: 'Live chat 9 am – 9 pm daily (per QuadraBay)',
+    officeHours: null,
   },
   {
     name: 'Approved Verification Services (AVS)',
@@ -242,10 +272,10 @@ export const vendors = [
     status: 'approved' as const,
     sortOrder: 3,
     countryCodes: ['QA'],
-    approvedOn: null,
+    approvedOn: '2026-09-03',
     endedOn: null,
     approvedUnderNumbers: ['DHP/2026/36'],
-    tagline: 'Approved in 2026 as DHP’s third provider',
+    tagline: 'Approved 3 Sept 2026 as DHP’s third provider',
     website: 'https://avsqatar.com/',
     applyUrl: 'https://www.avsqatar.com/avs/apply',
     trackUrl: 'https://www.avsqatar.com/avs/dashboard',
@@ -265,7 +295,7 @@ export const vendors = [
     countryCodes: ['QA'],
     approvedOn: '2018-07-21',
     endedOn: '2024-02-07',
-    approvedUnderNumbers: ['15/2018', 'DHP/09/2024'],
+    approvedUnderNumbers: ['15/2018', 'DHP/2024/09'],
     tagline: 'QCHP’s second approved provider, July 2018 – February 2024',
     website: 'https://gulfbridgeservices.com/',
     applyUrl: null,
@@ -299,7 +329,7 @@ type SeedFee = {
 }
 
 const DF_SRC = {
-  sourceLabel: 'DataFlow – DHP price list (Sept 2024)',
+  sourceLabel: 'DataFlow – DHP price list (Sept 2024) and Customer Reference Kit for DHP',
   sourceUrl: 'https://dataflowgroup.com/wp-content/uploads/2024/09/DHP-Price-List-Google-Docs.pdf',
   verifiedOn: VERIFIED_ON,
 }
@@ -308,21 +338,29 @@ const QB_SRC = {
   sourceUrl: 'https://dhp.moph.gov.qa/en/Documents/DHP%2020%202025%20E.pdf',
   verifiedOn: VERIFIED_ON,
 }
+const AVS_SRC = {
+  sourceLabel: 'AVS – DHP Reference Program Guide (fee schedule, Aug 2026)',
+  sourceUrl: 'https://avsqatar.com/files/DHP%20Reference%20Program%20Guide.pdf',
+  verifiedOn: VERIFIED_ON,
+}
 
-const DF_STANDARD_NOTE = 'DataFlow quotes 25–35 working days in practice and allows up to three months in its FAQ; Express (+QAR 529) targets 14 working days.'
+const DF_STANDARD_NOTE = 'DataFlow’s reference kit quotes an average of 20 working days from the day all documents are submitted; its FAQ allows up to three months. Express (+QAR 529) targets 14 working days.'
+const AVS_STANDARD_NOTE = 'The AVS portal shows a 20-day turnaround on the package card; AVS does not say whether these are working days. Every AVS clinical package covers up to two qualifications and five years of employment.'
 
 export const fees: SeedFee[] = [
   // ---------- DataFlow – standard packages ----------
-  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'A', packageName: 'Physicians & Dentists', professionSlugs: ['general-practitioner', 'specialist-physician', 'dentist'], amount: 1210, targetDays: 25, daysUnit: 'working', includes: ['2 educational qualifications', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: DF_STANDARD_NOTE, ...DF_SRC },
-  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'B', packageName: 'Allied Health Practitioners / Complementary Medicine', professionSlugs: ['physiotherapist', 'medical-laboratory-technologist', 'radiographer', 'dietitian', 'paramedic', 'allied-health-other'], amount: 990, targetDays: 25, daysUnit: 'working', includes: ['1 educational qualification', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: DF_STANDARD_NOTE, ...DF_SRC },
-  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'E', packageName: 'Nurses & Pharmacists', professionSlugs: ['registered-nurse', 'midwife', 'pharmacist'], amount: 990, targetDays: 25, daysUnit: 'working', includes: ['1 educational qualification', '1 professional licence', 'Last 3 years of experience (up to 3 employers)', 'Cross check'], notes: DF_STANDARD_NOTE, ...DF_SRC },
-  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'F', packageName: 'Trainee (no experience)', amount: 600, targetDays: 25, daysUnit: 'working', includes: ['1 educational qualification', 'Cross check'], ...DF_SRC },
-  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'G', packageName: 'Clinical Nurse Specialist / Nurse Practitioner / Nurse Educator', professionSlugs: ['advanced-practice-nurse'], amount: 1210, targetDays: 25, daysUnit: 'working', includes: ['2 educational qualifications', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: DF_STANDARD_NOTE, ...DF_SRC },
-  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'H', packageName: 'Visiting Physicians & AHP', amount: 300, targetDays: 25, daysUnit: 'working', includes: ['1 professional licence', 'Cross check'], ...DF_SRC },
-  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'I', packageName: 'Good Standing Certificates (2–3)', amount: 550, targetDays: 25, daysUnit: 'working', includes: ['2–3 good standing certificates', 'Cross check'], ...DF_SRC },
-  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'J', packageName: 'Good Standing + Employment Certificate', amount: 550, targetDays: 25, daysUnit: 'working', includes: ['1 good standing certificate', '1 employment certificate (most recent)', 'Cross check'], ...DF_SRC },
-  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'K', packageName: 'AHP education only', amount: 400, targetDays: 25, daysUnit: 'working', includes: ['1 educational qualification', 'Cross check'], ...DF_SRC },
-  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'L', packageName: 'Non-medical staff', amount: 400, targetDays: 25, daysUnit: 'working', includes: ['1 educational qualification', 'Cross check'], ...DF_SRC },
+  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'A', packageName: 'Physicians & Dentists', professionSlugs: ['general-practitioner', 'specialist-physician', 'dentist'], amount: 1210, targetDays: 20, daysUnit: 'working', includes: ['2 educational qualifications', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: DF_STANDARD_NOTE, ...DF_SRC },
+  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'B', packageName: 'Allied Health Practitioners & Complementary Medicine', professionSlugs: ['physiotherapist', 'medical-laboratory-technologist', 'radiographer', 'dietitian', 'paramedic', 'allied-health-other'], amount: 990, targetDays: 20, daysUnit: 'working', includes: ['1 educational qualification', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: DF_STANDARD_NOTE, ...DF_SRC },
+  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'C', packageName: 'Retrospective – physicians & dentists working in Qatar for more than 5 years', amount: 800, targetDays: 20, daysUnit: 'working', includes: ['Up to 2 educational qualifications', '1 professional licence', 'Cross check'], notes: 'Retrospective packages are for practitioners already licensed in Qatar who are asked to complete PSV; no employment verification is included.', ...DF_SRC },
+  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'D', packageName: 'Retrospective – physicians & dentists working in Qatar for more than 5 years (reduced scope)', amount: 700, targetDays: 20, daysUnit: 'working', includes: ['Up to 2 educational qualifications', '1 professional licence', 'Cross check'], notes: 'Listed by DataFlow with the same components as Package C at a lower fee; ask DataFlow which applies to you.', ...DF_SRC },
+  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'E', packageName: 'Nurses & Pharmacists', professionSlugs: ['registered-nurse', 'midwife', 'pharmacist'], amount: 990, targetDays: 20, daysUnit: 'working', includes: ['1 educational qualification', '1 professional licence', 'Last 3 years of experience (up to 3 employers)', 'Cross check'], notes: DF_STANDARD_NOTE, ...DF_SRC },
+  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'F', packageName: 'Trainee (no experience)', amount: 600, targetDays: 20, daysUnit: 'working', includes: ['1 educational qualification', 'Cross check'], ...DF_SRC },
+  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'G', packageName: 'Clinical Nurse Specialist / Nurse Practitioner / Nurse Educator', professionSlugs: ['advanced-practice-nurse'], amount: 1210, targetDays: 20, daysUnit: 'working', includes: ['2 educational qualifications', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: DF_STANDARD_NOTE, ...DF_SRC },
+  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'H', packageName: 'Visiting Physicians & AHP', amount: 300, targetDays: 20, daysUnit: 'working', includes: ['1 professional licence', 'Cross check'], ...DF_SRC },
+  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'I', packageName: 'Good Standing Certificates (2–3)', amount: 550, targetDays: 20, daysUnit: 'working', includes: ['2–3 good standing certificates', 'Cross check'], ...DF_SRC },
+  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'J', packageName: 'Good Standing + Employment Certificate', amount: 550, targetDays: 20, daysUnit: 'working', includes: ['1 good standing certificate', '1 employment certificate (most recent)', 'Cross check'], ...DF_SRC },
+  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'K', packageName: 'AHP education only', amount: 400, targetDays: 20, daysUnit: 'working', includes: ['1 educational qualification', 'Cross check'], ...DF_SRC },
+  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'L', packageName: 'Non-medical staff', amount: 400, targetDays: 20, daysUnit: 'working', includes: ['1 educational qualification', 'Cross check'], ...DF_SRC },
   // ---------- DataFlow – add-ons and optional services ----------
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'addon', addonKey: 'express-upgrade', packageName: 'Express service (14 working days)', amount: 529, targetDays: 14, daysUnit: 'working', notes: 'Applies to packages A, B, C, D, E and G. Packages F and H–L: QAR 215 / 323 / 430 / 529 for 1 / 2 / 3 / 4+ documents.', ...DF_SRC },
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'addon', addonKey: 'extra-education', packageName: 'Additional educational qualification', amount: 400, ...DF_SRC },
@@ -330,8 +368,8 @@ export const fees: SeedFee[] = [
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'addon', addonKey: 'logbook', packageName: 'Surgical logbook', amount: 300, ...DF_SRC },
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'addon', addonKey: 'extra-licence', packageName: 'Additional professional licence', amount: 300, ...DF_SRC },
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'addon', addonKey: 'extra-employer', packageName: 'Additional employment check (beyond 3 employers)', amount: 300, ...DF_SRC },
-  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'addon', addonKey: 'report-transfer', packageName: 'Report transfer to DHP', amount: 215, targetDays: 5, daysUnit: 'calendar', notes: 'New DHP report within 5 days if no additional documents are needed (DataFlow DHP page).', ...DF_SRC },
-  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'addon', addonKey: 'report-reissue', packageName: 'Report re-issuance to another authority', amount: 323, ...DF_SRC },
+  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'addon', addonKey: 'report-transfer', packageName: 'Report transfer to DHP (report previously issued to another authority)', amount: 323, targetDays: 5, daysUnit: 'calendar', notes: 'Re-issuance fee for a DataFlow report previously issued to DHA, DOH, MOHAP, SCFHS, NHRA or another authority. DataFlow quotes a new DHP report within 5 days if no additional documents are needed.', ...DF_SRC },
+  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'addon', addonKey: 'report-reissue', packageName: 'Report re-issuance (report previously issued to DHP)', amount: 215, notes: 'For a DataFlow report that was already issued to DHP, e.g. re-registration or a new employer.', ...DF_SRC },
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'optional', addonKey: 'applicant-assist', packageName: 'Applicant Assist (DataFlow fills the application)', amount: 157, ...DF_SRC },
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'optional', addonKey: 'vip', packageName: 'VIP Virtual Assistance (dedicated relationship manager)', amount: 788, ...DF_SRC },
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'optional', addonKey: 'sms', packageName: 'SMS notifications', amount: 10, notes: 'Listed as QAR 10.18.', ...DF_SRC },
@@ -344,7 +382,7 @@ export const fees: SeedFee[] = [
   { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'express', packageCode: 'E', packageName: 'Nurses & Pharmacists – Prestige', professionSlugs: ['registered-nurse', 'midwife', 'pharmacist'], amount: 1200, targetDays: 14, daysUnit: 'business', ...QB_SRC },
   { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'standard', packageCode: 'G', packageName: 'Clinical Nurse Specialist / Nurse Practitioner / Nurse Educator', professionSlugs: ['advanced-practice-nurse'], amount: 1100, targetDays: 20, daysUnit: 'business', includes: ['Up to 2 educational certificates', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'GlobeX check'], ...QB_SRC },
   { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'express', packageCode: 'G', packageName: 'CNS / NP / Nurse Educator – Prestige', professionSlugs: ['advanced-practice-nurse'], amount: 1400, targetDays: 14, daysUnit: 'business', ...QB_SRC },
-  { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'standard', packageCode: 'I', packageName: 'Good Standing Certificates (2–3)', amount: 550, targetDays: 20, daysUnit: 'business', ...QB_SRC },
+  { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'standard', packageCode: 'I', packageName: 'Good Standing Certificates (2–3)', amount: 550, targetDays: 20, daysUnit: 'business', includes: ['2–3 good standing certificates', 'GlobeX check'], ...QB_SRC },
   // ---------- QuadraBay – add-ons ----------
   { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'addon', addonKey: 'report-transfer', packageName: 'Report transfer', amount: 150, ...QB_SRC },
   { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'addon', addonKey: 'extra-education', packageName: 'Additional document (educational)', amount: 150, notes: 'QuadraBay prices additional documents as a bundle: 1 = QAR 150, 2 = 200, 3 = 250, 4 = 300. The calculator uses the single-document price.', ...QB_SRC },
@@ -355,4 +393,25 @@ export const fees: SeedFee[] = [
   { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'optional', addonKey: 'concierge', packageName: 'Concierge service', amount: 150, ...QB_SRC },
   { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'optional', addonKey: 'vip', packageName: 'VIP virtual assistance', amount: 500, ...QB_SRC },
   { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'optional', addonKey: 'sms', packageName: 'SMS notifications', amount: 10, ...QB_SRC },
+  // ---------- AVS – packages (AVS names them by profession; mapped to the DHP package letters used site-wide) ----------
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'A', packageName: 'Physicians / Dentists', professionSlugs: ['general-practitioner', 'specialist-physician', 'dentist'], amount: 1050, targetDays: 20, daysUnit: 'calendar', includes: ['Up to 2 educational qualifications', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: AVS_STANDARD_NOTE, ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'B', packageName: 'Allied Health Practitioners / Complementary Medicine', professionSlugs: ['physiotherapist', 'medical-laboratory-technologist', 'radiographer', 'dietitian', 'paramedic', 'allied-health-other'], amount: 900, targetDays: 20, daysUnit: 'calendar', includes: ['Up to 2 educational qualifications', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: AVS_STANDARD_NOTE, ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'E', packageName: 'Nurses / Pharmacists', professionSlugs: ['registered-nurse', 'midwife', 'pharmacist'], amount: 900, targetDays: 20, daysUnit: 'calendar', includes: ['Up to 2 educational qualifications', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: AVS_STANDARD_NOTE, ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'F', packageName: 'Trainee with no experience (any profession)', amount: 525, targetDays: 20, daysUnit: 'calendar', includes: ['1 educational qualification', 'Cross check'], ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'G', packageName: 'Clinical Nurse Specialist / Nurse Practitioner / Nurse Educator', professionSlugs: ['advanced-practice-nurse'], amount: 1050, targetDays: 20, daysUnit: 'calendar', includes: ['Up to 2 educational qualifications', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: AVS_STANDARD_NOTE, ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'H', packageName: 'Visiting Physicians & AHP (health licence only)', amount: 300, includes: ['1 health licence', 'Cross check'], ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'I', packageName: 'Good Standing Certificates (2–3)', amount: 500, includes: ['2–3 good standing certificates'], ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'J', packageName: 'Good Standing + Employment Certificate', amount: 500, includes: ['1 good standing certificate', '1 employment certificate (most recent)'], ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'L', packageName: 'Non-medical staff', amount: 400, includes: ['1 educational qualification'], ...AVS_SRC },
+  // ---------- AVS – add-ons and optional services ----------
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'addon', addonKey: 'express-upgrade', packageName: 'Express / priority verification', amount: 400, notes: 'AVS: “final turnaround time and service conditions are subject to AVS confirmation” – no published day target.', ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'addon', addonKey: 'extra-education', packageName: 'Additional educational qualification', amount: 300, ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'addon', addonKey: 'extra-licence', packageName: 'Additional health licence', amount: 250, ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'addon', addonKey: 'good-standing', packageName: 'Additional good standing certificate', amount: 250, ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'addon', addonKey: 'extra-employer', packageName: 'Additional employment check', amount: 250, ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'addon', addonKey: 'logbook', packageName: 'Additional logbook', amount: 250, ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'addon', addonKey: 'report-transfer', packageName: 'Report transfer from another vendor', amount: 250, notes: 'AVS also lists “report transfer within the same client” at QAR 150 and “report transfer / re-issuance” at QAR 250. Whether DHP accepts a report transferred between providers is not stated in any circular – ask DHP first.', ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'addon', addonKey: 'report-reissue', packageName: 'Report transfer / re-issuance', amount: 250, ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'optional', addonKey: 'applicant-assist', packageName: 'VIP application assistance (help completing and following up the application)', amount: 100, ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'optional', addonKey: 'other', packageName: 'Express + applicant assist bundle', amount: 480, ...AVS_SRC },
 ]

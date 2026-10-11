@@ -2,7 +2,7 @@ import React from 'react'
 
 import { getCirculars, getFeesForCountry, getVendorsForCountry, rel } from '@/lib/data'
 import { articleJsonLd, breadcrumbJsonLd, breadcrumbsFromPath, faqJsonLd } from '@/lib/seo'
-import type { Author, Country, Page, SiteSetting } from '@/payload-types'
+import type { Author, Country, Page, SiteSetting, Vendor } from '@/payload-types'
 
 import { AuthorBox } from './AuthorBox'
 import { Breadcrumbs } from './Breadcrumbs'
@@ -14,6 +14,7 @@ import { JsonLd } from './JsonLd'
 import { NewsletterForm } from './NewsletterForm'
 import { RelatedPages } from './RelatedPages'
 import { RichTextBlock } from './RichTextBlock'
+import { VendorPackages } from './VendorPackages'
 import { VendorTable } from './VendorTable'
 import { VerifiedStamp } from './VerifiedStamp'
 
@@ -32,13 +33,24 @@ const SEGMENT_LABELS: Record<string, string> = {
 export async function PageTemplate({ page, settings }: { page: Page; settings: SiteSetting }) {
   const country = rel<Country>(page.country)
   const author = rel<Author>(page.author)
+  const featuredVendor = rel<Vendor>(page.featuredVendor)
   const crumbs = breadcrumbsFromPath(page.path, page.title, SEGMENT_LABELS)
+  const needsFees = Boolean((page.showVendorTable || featuredVendor) && country)
 
   const [vendors, fees, circulars] = await Promise.all([
     page.showVendorTable && country ? getVendorsForCountry(country.id) : Promise.resolve([]),
-    page.showVendorTable && country ? getFeesForCountry(country.id) : Promise.resolve([]),
+    needsFees && country ? getFeesForCountry(country.id) : Promise.resolve([]),
     page.showCirculars ? getCirculars(country?.id) : Promise.resolve([]),
   ])
+
+  const comparison =
+    page.showVendorTable && vendors.length > 0 ? (
+      <VendorTable
+        vendors={vendors}
+        fees={fees}
+        title={featuredVendor ? `${featuredVendor.shortName || featuredVendor.name} compared with the other approved providers` : undefined}
+      />
+    ) : null
 
   return (
     <article className="page container">
@@ -54,9 +66,11 @@ export async function PageTemplate({ page, settings }: { page: Page; settings: S
         <VerifiedStamp page={page} />
       </header>
 
-      {page.showVendorTable && vendors.length > 0 && <VendorTable vendors={vendors} fees={fees} />}
+      {featuredVendor ? <VendorPackages vendor={featuredVendor} fees={fees} /> : comparison}
 
       <RichTextBlock content={page.content} />
+
+      {featuredVendor && comparison}
 
       {page.showCalculator && country && <FeeCalculatorBlock country={country} />}
 

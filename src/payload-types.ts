@@ -190,6 +190,10 @@ export interface Page {
    */
   showCirculars?: boolean | null;
   /**
+   * Provider guide pages: render this provider's full package, add-on and optional-service tables plus its contact card (reads Vendors + Fees). The comparison table, if enabled, then moves below the body.
+   */
+  featuredVendor?: (string | null) | Vendor;
+  /**
    * 3–5 real questions. Rendered on the page and as FAQPage schema.
    */
   faqs?:
@@ -269,130 +273,6 @@ export interface Country {
   createdAt: string;
 }
 /**
- * Regulator circulars. The circular tracker page and the "verified against" stamps read from here.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "circulars".
- */
-export interface Circular {
-  id: string;
-  /**
-   * e.g. DHP/2025/24
-   */
-  number: string;
-  authority: 'DHP' | 'MOPH' | 'QCHP' | 'OTHER';
-  status?: ('in-force' | 'superseded' | 'historical') | null;
-  title: string;
-  issuedOn?: string | null;
-  country?: (string | null) | Country;
-  topics?: ('psv' | 'exam' | 'experience' | 'evaluation' | 'fees' | 'vendors' | 'renewal' | 'other')[] | null;
-  /**
-   * Plain-English summary, two to four sentences. What changed and for whom.
-   */
-  summary?: string | null;
-  /**
-   * Link to the PDF on dhp.moph.gov.qa
-   */
-  officialUrl?: string | null;
-  /**
-   * Our explainer page for this circular, if written.
-   */
-  explainer?: (string | null) | Page;
-  /**
-   * Tick once someone has read the official PDF and confirmed number, date and summary.
-   */
-  verified?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * Real people with real credentials. Author boxes and Person schema come from here.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "authors".
- */
-export interface Author {
-  id: string;
-  name: string;
-  slug: string;
-  /**
-   * e.g. "Managing Director, Instead Global"
-   */
-  jobTitle?: string | null;
-  /**
-   * Three to five sentences. Lead with the licensing / verification experience.
-   */
-  bio?: string | null;
-  credentials?:
-    | {
-        item: string;
-        id?: string | null;
-      }[]
-    | null;
-  photo?: (string | null) | Media;
-  linkedin?: string | null;
-  /**
-   * Other profile URLs for Person schema.
-   */
-  sameAs?:
-    | {
-        url: string;
-        id?: string | null;
-      }[]
-    | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "media".
- */
-export interface Media {
-  id: string;
-  /**
-   * Describe the image for screen readers and search engines (max ~125 characters).
-   */
-  alt: string;
-  caption?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
-  sizes?: {
-    thumbnail?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-    card?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-    og?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-  };
-}
-/**
  * Primary Source Verification providers (DataFlow, QuadraBay, AVS, former providers). Fees live in the Fees collection.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -457,6 +337,130 @@ export interface Vendor {
    * Our guide page for this provider (used for internal links).
    */
   page?: (string | null) | Page;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Regulator circulars. The circular tracker page and the "verified against" stamps read from here.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "circulars".
+ */
+export interface Circular {
+  id: string;
+  /**
+   * e.g. DHP/2025/24
+   */
+  number: string;
+  authority: 'DHP' | 'MOPH' | 'QCHP' | 'OTHER';
+  status?: ('in-force' | 'superseded' | 'historical') | null;
+  title: string;
+  issuedOn?: string | null;
+  country?: (string | null) | Country;
+  topics?: ('psv' | 'exam' | 'experience' | 'evaluation' | 'fees' | 'vendors' | 'renewal' | 'other')[] | null;
+  /**
+   * Plain-English summary, two to four sentences. What changed and for whom.
+   */
+  summary?: string | null;
+  /**
+   * Link to the PDF on dhp.moph.gov.qa
+   */
+  officialUrl?: string | null;
+  /**
+   * Our explainer page for this circular, if written.
+   */
+  explainer?: (string | null) | Page;
+  /**
+   * Tick once someone has read the official PDF and confirmed number, date and summary.
+   */
+  verified?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media".
+ */
+export interface Media {
+  id: string;
+  /**
+   * Describe the image for screen readers and search engines (max ~125 characters).
+   */
+  alt: string;
+  caption?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+  sizes?: {
+    thumbnail?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    card?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    og?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+  };
+}
+/**
+ * Real people with real credentials. Author boxes and Person schema come from here.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "authors".
+ */
+export interface Author {
+  id: string;
+  name: string;
+  slug: string;
+  /**
+   * e.g. "Managing Director, Instead Global"
+   */
+  jobTitle?: string | null;
+  /**
+   * Three to five sentences. Lead with the licensing / verification experience.
+   */
+  bio?: string | null;
+  credentials?:
+    | {
+        item: string;
+        id?: string | null;
+      }[]
+    | null;
+  photo?: (string | null) | Media;
+  linkedin?: string | null;
+  /**
+   * Other profile URLs for Person schema.
+   */
+  sameAs?:
+    | {
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -735,6 +739,7 @@ export interface PagesSelect<T extends boolean = true> {
   showVendorTable?: T;
   showCalculator?: T;
   showCirculars?: T;
+  featuredVendor?: T;
   faqs?:
     | T
     | {

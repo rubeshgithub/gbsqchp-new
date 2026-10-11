@@ -106,6 +106,15 @@ export const Pages: CollectionConfig = {
           defaultValue: false,
           admin: { description: 'Render the circular tracker table for this page\'s country.' },
         },
+        {
+          name: 'featuredVendor',
+          type: 'relationship',
+          relationTo: 'vendors',
+          admin: {
+            description:
+              'Provider guide pages: render this provider\'s full package, add-on and optional-service tables plus its contact card (reads Vendors + Fees). The comparison table, if enabled, then moves below the body.',
+          },
+        },
       ],
     },
     {

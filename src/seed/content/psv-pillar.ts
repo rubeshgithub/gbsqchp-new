@@ -1,7 +1,8 @@
 /**
  * Seed content: PSV pillar page for Qatar.
- * Facts verified 9 Oct 2026 against the DHP PSV page, the DHP price list published by DataFlow (Sept 2024),
- * Circular DHP/2025/20 (QuadraBay) and reporting on Circular DHP/2025/24. Items marked "reported" come from
+ * Facts verified 9–11 Oct 2026 against the DHP PSV page, the DHP price list and reference kit published by DataFlow,
+ * Circular DHP/2025/20 (QuadraBay), Circular DHP/2026/36 (AVS) and the AVS fee schedule. Circular DHP/2025/24 was read on
+ * 11 Oct 2026: it covers experience and exam rules for Qataris, residents' families and Qatar graduates, not PSV. Items marked "reported" come from
  * consultancy guides and must be confirmed against the official PDF before the verified date is advanced.
  */
 
@@ -10,7 +11,7 @@ export const psvPillar = {
   path: '/qatar/psv',
   section: 'psv' as const,
   summary:
-    "Before Qatar's Department of Healthcare Professions (DHP) will evaluate you, one of its three approved providers – DataFlow, QuadraBay or AVS – must verify your degree, licence, employment and good-standing certificates at the source. Since 1 January 2026 that applies to every applicant, with no exceptions (Circular DHP/2025/24). This guide explains what gets verified, what each provider charges, how long it really takes and how to choose.",
+    "Before Qatar's Department of Healthcare Professions (DHP) will evaluate you, one of its three approved providers – DataFlow, QuadraBay or AVS – must verify your degree, licence, employment and good-standing certificates at the source. DHP lists verification among the mandatory requirements for registration and licensing for every practitioner and will not evaluate an application without the report attached. This guide explains what gets verified, what each provider charges, how long it really takes and how to choose.",
   meta: {
     title: 'PSV for Qatar DHP 2026: DataFlow vs QuadraBay vs AVS',
     description:
@@ -18,7 +19,7 @@ export const psvPillar = {
   },
   showVendorTable: true,
   showCalculator: true,
-  verifiedOn: '2026-10-09',
+  verifiedOn: '2026-10-11',
   verifiedAgainst: [
     {
       label: 'DHP – Primary Source Verification page (approved providers)',
@@ -34,21 +35,29 @@ export const psvPillar = {
       circularNumber: 'DHP/2025/20',
     },
     {
-      label: 'Circular DHP/2025/24 – PSV mandatory for all applicants',
-      circularNumber: 'DHP/2025/24',
+      label: 'Circular DHP/2026/36 – AVS approved as third provider',
+      url: 'https://dhp.moph.gov.qa/en/QCHPCirculars/DHP%2036%202026%20E.pdf',
+      circularNumber: 'DHP/2026/36',
+    },
+    {
+      label: 'AVS – DHP Reference Program Guide (fee schedule)',
+      url: 'https://avsqatar.com/files/DHP%20Reference%20Program%20Guide.pdf',
     },
   ],
-  changeLog: [{ date: '2026-10-09', note: 'First published. Three-provider comparison, fees and timelines as of this date.' }],
+  changeLog: [
+    { date: '2026-10-09', note: 'First published. Three-provider comparison, fees and timelines as of this date.' },
+    { date: '2026-10-11', note: 'Added AVS fees and approval date (Circular DHP/2026/36, 3 Sep 2026); corrected DataFlow transfer fee (QAR 323 for reports issued to another authority) and the 20-working-day average from DataFlow’s reference kit. Removed the claim that Circular DHP/2025/24 made PSV mandatory from 1 January 2026: the circular, read in full, covers experience and exam rules, not PSV. PSV is mandatory for all applicants under DHP’s standing requirements.' },
+  ],
   faqs: [
     {
       question: 'Is DataFlow still mandatory for Qatar?',
       answer:
-        'No single provider is mandatory. Verification itself is mandatory for every applicant from 1 January 2026 under Circular DHP/2025/24, and DHP accepts reports from any of its three approved providers: DataFlow, QuadraBay and Approved Verification Services (AVS).',
+        'No single provider is mandatory. Verification itself is: DHP’s Primary Source Verification page calls it “one of the mandatory requirements for registration and licensing” and requires the report before it will evaluate you. DHP accepts reports from any of its three approved providers: DataFlow, QuadraBay and Approved Verification Services (AVS).',
     },
     {
       question: 'Can I use my UAE or Saudi DataFlow report for Qatar?',
       answer:
-        'You can transfer it instead of starting again. DataFlow issues a new DHP report for QAR 215 and quotes five days if no additional documents are needed; QuadraBay charges QAR 150 for a transfer. Any employer or good-standing certificate added since the old report is verified fresh.',
+        'You can transfer it instead of starting again. DataFlow re-issues a report previously issued to another authority as a DHP report for QAR 323 and quotes five days if no additional documents are needed (QAR 215 if the report was already issued to DHP); QuadraBay charges QAR 150 to transfer one of its own reports. Any employer or good-standing certificate added since the old report is verified fresh.',
     },
     {
       question: 'Do I need PSV if I am exempt from the Prometric exam?',
@@ -71,42 +80,42 @@ export const psvPillar = {
 
 Primary Source Verification means the provider writes to the university that issued your degree, the council that licensed you and the employers named in your file, and asks each of them to confirm the document is genuine. DHP's own wording is that PSV "ensures that all healthcare practitioners' credentials are verified as genuine" and lets the department "warn other registration authorities of fraudulent applicants" ([DHP, Primary Source Verification](https://dhp.moph.gov.qa/en/Pages/PrimarysourceVerification.aspx)).
 
-The order matters. You apply for PSV **first**, then attach the completed report to your online evaluation application on the DHP portal. DHP will not open an evaluation without it, and since 1 January 2026 there are no exempt categories (Circular DHP/2025/24).
+The order matters. You apply for PSV **first**, then attach the completed report to your online evaluation application on the DHP portal. DHP will not open an evaluation without it, and its PSV page makes no exception for any category of practitioner.
 
 ## Who are the three approved providers?
 
 - **DataFlow Group** – DHP's verification partner since 2009. Applications go through [dhp.dataflowgroup.com](https://dhp.dataflowgroup.com/en/onboarding/signin); there is a Doha office at Barwa Tower 1 (Office 49, 6th floor), Sunday to Thursday, 8 am to 4 pm, and WhatsApp support on +974 4419 6582.
 - **QuadraBay** – approved on 2 December 2025 under Circular DHP/2025/20 as a second provider. Applications go through [dhp.quadrabay.com](https://dhp.quadrabay.com/); support is dhp.support@quadrabay.com. QuadraBay already verifies for Bahrain's NHRA (since December 2021) and for Kuwait's Ministry of Health private sector.
-- **Approved Verification Services (AVS)** – approved in 2026 under Circular DHP/2026/36 as a third provider. Applications go through [avsqatar.com](https://www.avsqatar.com/avs/apply); the Doha office is at Abdul Jaleel Business Center, Airport Street, and the helpdesk is dhp.helpdesk@avsqatar.com or +974 4464 4490. AVS has not yet published a public fee list; the table above updates the moment it does.
+- **Approved Verification Services (AVS)** – approved on 3 September 2026 under Circular DHP/2026/36 as a third provider, and the only one based in Qatar. Applications go through [avsqatar.com](https://www.avsqatar.com/avs/apply); the Doha office is at Abdul Jaleel Business Center, Airport Street, and the helpdesk is dhp.helpdesk@avsqatar.com or +974 4464 4490. Its fee schedule lists QAR 1,050 for physicians and dentists and QAR 900 for nurses, pharmacists and allied health, each covering up to two qualifications and five years of employment.
 
-Gulf Bridge Services (GBS) was the second approved provider from July 2018 until DHP ended the contract on 7 February 2024 (Circular DHP/09/2024). If you arrived here looking for the GBS portal, read [what to do now](/gbs-psv-portal).
+Gulf Bridge Services (GBS) was the second approved provider from July 2018 until DHP ended the contract on 7 February 2024 (Circular DHP/2024/09). If you arrived here looking for the GBS portal, read [what to do now](/gbs-psv-portal).
 
 ## Which provider should you choose?
 
 Nothing in DHP's rules favours one provider: all three reports are accepted for new applications, renewals, upgrades and re-registration. Choose on your own situation:
 
-1. **You already hold a DataFlow or QuadraBay report for another GCC regulator.** Transfer it rather than restart. DataFlow charges QAR 215 and quotes a new DHP report within five days when nothing new is needed; QuadraBay charges QAR 150.
-2. **Price matters and the standard target is fine.** Compare the package for your profession in the table above. For nurses and pharmacists (Package E) QuadraBay lists QAR 900 against DataFlow's QAR 990; for physicians and dentists (Package A) it is QAR 1,100 against QAR 1,210.
-3. **You need a published fast target.** QuadraBay's Prestige tier targets 14 business days (QAR 1,200 for Package E, QAR 1,400 for Package A); DataFlow's Express service adds QAR 529 for a 14-working-day target.
+1. **You already hold a DataFlow or QuadraBay report for another GCC regulator.** Transfer it rather than restart. DataFlow charges QAR 323 to re-issue a report that was issued to another authority (QAR 215 if it was already issued to DHP) and quotes a new DHP report within five days when nothing new is needed; QuadraBay charges QAR 150 for its own reports.
+2. **Price matters and the standard target is fine.** Compare the package for your profession in the table above. For nurses and pharmacists (Package E) QuadraBay and AVS list QAR 900 against DataFlow's QAR 990; for physicians and dentists (Package A) AVS lists QAR 1,050, QuadraBay QAR 1,100 and DataFlow QAR 1,210. AVS also verifies two qualifications and five years of employment in every package, where the others' Package E covers one and three.
+3. **You need a published fast target.** QuadraBay's Prestige tier targets 14 business days (QAR 1,200 for Package E, QAR 1,400 for Package A); DataFlow's Express service adds QAR 529 for a 14-working-day target. AVS sells Express for QAR 400 but publishes no target.
 4. **Your employer has a preference.** Ask HR which provider their corporate account uses. Hospitals that submit in bulk often want every file with the same provider.
-5. **Your file is complicated** – a closed university, an institution in Sudan or Syria, a name change, a long break in practice. The provider matters less than your preparation. Fix the file first; the problem guides linked below show how.
+5. **Your file is complicated** – a closed university, an institution in Sudan or Syria, a name change, a long break in practice. The provider matters less than your preparation. Fix the file first; the six checks at the end of this page show where to start, and the provider guides linked below explain each portal's rules.
 
 ## What documents does the provider verify?
 
 Every provider works from the same DHP package structure, so the document set is the same whichever you choose:
 
 - **Passport** and a signed **Letter of Authorization** (the provider's own form) allowing it to contact your institutions.
-- **Educational certificates** – two for physicians, dentists and advanced-practice nurses (Packages A and G), one for nurses, pharmacists and allied health (Packages B and E). Degrees issued in India, Pakistan, Egypt and Afghanistan are requested front and back (reported by applicants; confirm on the provider's checklist).
+- **Educational certificates** – two for physicians, dentists and advanced-practice nurses (Packages A and G), one for nurses, pharmacists and allied health (Packages B and E) at DataFlow and QuadraBay; AVS includes two in every package. Degrees issued in India, Pakistan, Egypt and Afghanistan are requested front and back (reported by applicants; confirm on the provider's checklist).
 - **Professional licence or registration** from the country where you currently practise.
-- **Employment certificates** for the last five years (Packages A, B, G) or three years (Package E), up to three employers, each on letterhead with exact start and end dates, job title, full-time status and a signatory the provider can contact.
-- **Certificates of good standing**, less than six months old at submission. Both DataFlow and QuadraBay price them as Package I: two to three certificates for QAR 550.
+- **Employment certificates** for the last five years (Packages A, B, G) or three years (Package E; five at AVS), up to three employers, each on letterhead with exact start and end dates, job title, full-time status and a signatory the provider can contact.
+- **Certificates of good standing**, less than six months old at submission. DataFlow and QuadraBay price them as Package I: two to three certificates for QAR 550; AVS charges QAR 500.
 - **Surgical logbook** for surgical specialties (last two years).
 
 Anything not in English or Arabic needs a certified translation. On the QuadraBay portal every file name must start with a letter, not a number, or the upload is rejected.
 
 ## How long does PSV take?
 
-DataFlow's FAQ allows up to three months; applicants and consultancies consistently report 25 to 35 working days when the file is complete and 45 to 60 when a university or former employer is slow to reply. QuadraBay publishes 20 business days for its Standard tier and 14 for Prestige. The faster tiers shorten the provider's own handling, not your university's response time, and every provider stops the clock while it waits for information from you.
+DataFlow's reference kit quotes an average of 20 working days from the day every document is in, and its FAQ allows up to three months; applicants and consultancies consistently report 25 to 35 working days when the file is complete and 45 to 60 when a university or former employer is slow to reply. QuadraBay publishes 20 business days for its Standard tier and 14 for Prestige; the AVS portal shows a 20-day turnaround. The faster tiers shorten the provider's own handling, not your university's response time, and every provider stops the clock while it waits for information from you.
 
 The single biggest delay is an institution that ignores the request. Tell the registrar or HR office that a verification request is coming, give the provider a named contact and a direct email, and follow up yourself if the case has not moved in 15 working days.
 

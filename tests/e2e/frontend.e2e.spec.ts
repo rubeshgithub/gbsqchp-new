@@ -30,3 +30,17 @@ test.describe('Frontend', () => {
     await expect(page.locator('.result').first()).toContainText('QAR')
   })
 })
+
+test.describe('Provider guide pages', () => {
+  for (const slug of ['dataflow', 'quadrabay', 'avs']) {
+    test(`${slug} guide renders the fee schedule block, body and comparison table`, async ({ page }) => {
+      await page.goto(`http://localhost:3000/qatar/psv/${slug}`)
+      await expect(page.locator('#vendor-packages-title')).toBeVisible()
+      await expect(page.locator('.vendor-packages table').first()).toContainText('Package A')
+      await expect(page.locator('.article-body h2').first()).toBeVisible()
+      await expect(page.locator('#vendor-table-title')).toContainText('compared with the other approved providers')
+      const schema = (await page.locator('script[type="application/ld+json"]').allTextContents()).join(' ')
+      expect(schema).toContain('FAQPage')
+    })
+  }
+})
