@@ -1,67 +1,79 @@
-# Payload Blank Template
+# gbsqchp.com — GCC healthcare licensing & PSV portal
 
-This template comes configured with the bare minimum to get started on anything you need.
+Independent information portal for internationally trained healthcare professionals applying to Qatar's
+Department of Healthcare Professions (DHP), expanding to the rest of the GCC. Built with **Next.js 16 (App Router)**
+and **Payload CMS 3** on **MongoDB**.
 
-## Quick start
+- Market assessment and 6-month plan: see the project docs (`GBSQCHP-market-assessment-and-6-month-plan.md`).
+- The 25 Phase-1 page briefs: `GBSQCHP-phase1-content-plan-and-briefs.md`.
+- Working notes for the coding assistant: [`CLAUDE.md`](./CLAUDE.md).
 
-This template can be deployed directly from our Cloud hosting and it will setup MongoDB and cloud S3 object storage for media.
+## Quick start (Windows, macOS or Linux)
 
-## Quick Start - local setup
+Requirements: Node.js ≥ 20.18 (22 recommended), npm ≥ 10, a MongoDB you can reach (local install, Docker, or the
+server's instance).
 
-To spin up this template locally, follow these steps:
+```bash
+npm install                 # installs dependencies (first run takes a minute)
+cp .env.example .env        # then edit DATABASE_URL, PAYLOAD_SECRET, NEXT_PUBLIC_SERVER_URL
+npm run seed                # idempotent: countries, professions, circulars, vendors, fees, author, settings, 2 pages
+npm run dev                 # http://localhost:3000  — admin at http://localhost:3000/admin
+```
 
-### Clone
+On first visit to `/admin` Payload asks you to create the first admin user. Alternatively set
+`SEED_ADMIN_EMAIL` and `SEED_ADMIN_PASSWORD` in `.env` before running `npm run seed`.
 
-After you click the `Deploy` button above, you'll want to have standalone copy of this repo on your machine. If you've already cloned this repo, skip to [Development](#development).
+A quick local MongoDB with Docker: `docker compose up -d` (see `docker-compose.yml`, service `mongo`).
 
-### Development
+## Scripts
 
-1. First [clone the repo](#clone) if you have not done so already
-2. `cd my-project && cp .env.example .env` to copy the example environment variables. You'll need to add the `MONGODB_URL` from your Cloud project to your `.env` if you want to use S3 storage and the MongoDB database that was created for you.
+| Script | What it does |
+|---|---|
+| `npm run dev` | Next.js dev server with Payload admin |
+| `npm run build` / `npm start` | Production build / serve |
+| `npm run seed` | Create-or-update reference data and the first pages (safe to re-run) |
+| `npm run generate:types` | Regenerate `src/payload-types.ts` after changing collections |
+| `npm run generate:importmap` | Regenerate the admin import map after adding custom admin components |
+| `npm run typecheck` / `npm run lint` | TypeScript / ESLint |
+| `npm run payload` | Payload CLI (`npm run payload -- migrate:status` etc.) |
 
-3. `pnpm install && pnpm dev` to install dependencies and start the dev server
-4. open `http://localhost:3000` to open the app in your browser
+## How the site is organised
 
-That's it! Changes made in `./src` will be reflected in your app. Follow the on-screen instructions to login and create your first admin user. Then check out [Production](#production) once you're ready to build and serve your app, and [Deployment](#deployment) when you're ready to go live.
+```
+src/
+  payload.config.ts          collections, globals, plugins (SEO), MongoDB adapter
+  collections/               Pages, Authors, Vendors, Fees, Circulars, Professions, Countries, Subscribers, Media, Users
+  globals/SiteSettings.ts    site name, disclaimer, newsletter copy, analytics
+  app/(frontend)/            public site: layout, home, /qatar, /qatar/circulars, /tools/psv-fee-calculator,
+                             [...segments] (renders any published Page by its path), sitemap, robots
+  app/(payload)/             Payload admin + REST/GraphQL (generated, do not edit)
+  components/                Header/Footer, PageTemplate, VendorTable, FeeCalculator, CircularTable, NewsletterForm…
+  lib/                       data access (Payload Local API), SEO/JSON-LD helpers
+  seed/                      seed runner, reference data, page content (Markdown → Lexical)
+```
 
-#### Docker (Optional)
+### Content model in one paragraph
 
-If you prefer to use Docker for local development instead of a local MongoDB instance, the provided docker-compose.yml file can be used.
+A **Page** is any public article; its URL is the `path` field (e.g. `/qatar/psv/dataflow`). Pages carry an
+answer-first `summary`, a Lexical rich-text body, FAQs (rendered + FAQPage schema), a *verified on* date with the
+official sources it was checked against, a change log and an author. Fees, providers and circulars are **never typed
+into prose**: they live in the **Fees**, **Vendors** and **Circulars** collections and the page toggles
+(`showVendorTable`, `showCalculator`, `showCirculars`) render them live, so a price change is one edit.
 
-To do so, follow these steps:
+### Legacy URLs
 
-- Modify the `MONGODB_URL` in your `.env` file to `mongodb://127.0.0.1/<dbname>`
-- Modify the `docker-compose.yml` file's `MONGODB_URL` to match the above `<dbname>`
-- Run `docker-compose up` to start the database, optionally pass `-d` to run in the background.
+The domain was the Gulf Bridge Services PSV portal (2018–2024). `/Home/*`, `/AppPDFFiles/*`, `/Account/*`,
+`/Applicant/*` and `/Employer/*` are 301-redirected to `/gbs-psv-portal` in `next.config.ts`.
 
-## How it works
+## Deployment notes
 
-The Payload config is tailored specifically to the needs of most websites. It is pre-configured in the following ways:
+- Set `NEXT_PUBLIC_SERVER_URL=https://gbsqchp.com` and a strong `PAYLOAD_SECRET` in production.
+- Frontend routes are server-rendered per request (`dynamic = 'force-dynamic'` in the frontend layout). Once the
+  production MongoDB is reachable during `next build`, switch to ISR (`export const revalidate = 600`) for speed.
+- `DB_TRANSACTIONS=false` disables MongoDB transactions; only needed against a standalone/test server.
+- Uploads are stored on disk in `/media` by default; switch to an S3-compatible adapter before scaling.
 
-### Collections
+## Editorial rules (enforced by the templates)
 
-See the [Collections](https://payloadcms.com/docs/configuration/collections) docs for details on how to extend this functionality.
-
-- #### Users (Authentication)
-
-  Users are auth-enabled collections that have access to the admin panel.
-
-  For additional help, see the official [Auth Example](https://github.com/payloadcms/payload/tree/3.x/examples/auth) or the [Authentication](https://payloadcms.com/docs/authentication/overview#authentication-overview) docs.
-
-- #### Media
-
-  This is the uploads enabled collection. It features pre-configured sizes, focal point and manual resizing to help you manage your pictures.
-
-### Docker
-
-Alternatively, you can use [Docker](https://www.docker.com) to spin up this template locally. To do so, follow these steps:
-
-1. Follow [steps 1 and 2 from above](#development), the docker-compose file will automatically use the `.env` file in your project root
-1. Next run `docker-compose up`
-1. Follow [steps 4 and 5 from above](#development) to login and create your first admin user
-
-That's it! The Docker instance will help you get up and running quickly while also standardizing the development environment across your teams.
-
-## Questions
-
-If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
+Every page shows the independence disclaimer, a verified-on stamp, and links only to official sources. The site never
+takes PSV applications or payments. See `CLAUDE.md` for the writing rules and the content plan.

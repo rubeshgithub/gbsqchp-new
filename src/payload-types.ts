@@ -67,8 +67,16 @@ export interface Config {
   };
   blocks: {};
   collections: {
-    users: User;
+    pages: Page;
+    authors: Author;
+    vendors: Vendor;
+    fees: Fee;
+    circulars: Circular;
+    professions: Profession;
+    countries: Country;
+    subscribers: Subscriber;
     media: Media;
+    users: User;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -76,8 +84,16 @@ export interface Config {
   };
   collectionsJoins: {};
   collectionsSelect: {
-    users: UsersSelect<false> | UsersSelect<true>;
+    pages: PagesSelect<false> | PagesSelect<true>;
+    authors: AuthorsSelect<false> | AuthorsSelect<true>;
+    vendors: VendorsSelect<false> | VendorsSelect<true>;
+    fees: FeesSelect<false> | FeesSelect<true>;
+    circulars: CircularsSelect<false> | CircularsSelect<true>;
+    professions: ProfessionsSelect<false> | ProfessionsSelect<true>;
+    countries: CountriesSelect<false> | CountriesSelect<true>;
+    subscribers: SubscribersSelect<false> | SubscribersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    users: UsersSelect<false> | UsersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -87,8 +103,12 @@ export interface Config {
     defaultIDType: string;
   };
   fallbackLocale: null;
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    'site-settings': SiteSetting;
+  };
+  globalsSelect: {
+    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
+  };
   locale: null;
   widgets: {
     collections: CollectionsWidget;
@@ -118,29 +138,210 @@ export interface UserAuthOperations {
   };
 }
 /**
+ * Every public article/guide. The URL is the "path" field. Fees, circulars and vendors are NOT typed here — reference them and the components render live data.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "users".
+ * via the `definition` "pages".
  */
-export interface User {
+export interface Page {
   id: string;
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
-  sessions?:
+  /**
+   * H1. Keep the target keyword in it.
+   */
+  title: string;
+  /**
+   * Full URL path, lowercase, e.g. /qatar/psv/dataflow
+   */
+  path: string;
+  section: 'psv' | 'licensing' | 'exam' | 'circulars' | 'documents' | 'careers' | 'tools' | 'legacy' | 'general';
+  country?: (string | null) | Country;
+  /**
+   * Answer-first intro (2–4 sentences). Answers the query in the first two sentences. Also the meta-description fallback.
+   */
+  summary: string;
+  /**
+   * Body. Use H2 questions people actually search. Tables come from the blocks below, not from here.
+   */
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Render the PSV provider comparison table (reads Vendors + Fees for this page's country).
+   */
+  showVendorTable?: boolean | null;
+  /**
+   * Embed the fee & timeline calculator.
+   */
+  showCalculator?: boolean | null;
+  /**
+   * Render the circular tracker table for this page's country.
+   */
+  showCirculars?: boolean | null;
+  /**
+   * 3–5 real questions. Rendered on the page and as FAQPage schema.
+   */
+  faqs?:
     | {
-        id: string;
-        createdAt?: string | null;
-        expiresAt: string;
+        question: string;
+        answer: string;
+        id?: string | null;
       }[]
     | null;
-  password?: string | null;
-  collection: 'users';
+  /**
+   * Date the facts were last checked against the official sources.
+   */
+  verifiedOn?: string | null;
+  verifiedAgainst?:
+    | {
+        label: string;
+        url?: string | null;
+        circular?: (string | null) | Circular;
+        id?: string | null;
+      }[]
+    | null;
+  changeLog?:
+    | {
+        date: string;
+        note: string;
+        id?: string | null;
+      }[]
+    | null;
+  author?: (string | null) | Author;
+  /**
+   * Internal links shown at the end of the page.
+   */
+  relatedPages?: (string | Page)[] | null;
+  publishedAt?: string | null;
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (string | null) | Media;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * One record per GCC country: who regulates, which phase of the roll-out it belongs to.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "countries".
+ */
+export interface Country {
+  id: string;
+  name: string;
+  code: 'QA' | 'AE' | 'SA' | 'KW' | 'OM' | 'BH';
+  /**
+   * URL segment, e.g. "qatar" → /qatar/...
+   */
+  slug: string;
+  regulator?: string | null;
+  /**
+   * e.g. DHP
+   */
+  regulatorShort?: string | null;
+  regulatorUrl?: string | null;
+  /**
+   * 1 = Qatar launch, 2 = UAE/KSA, 3 = Kuwait/Oman/Bahrain
+   */
+  phase?: number | null;
+  active?: boolean | null;
+  /**
+   * Two or three sentences shown on the country hub.
+   */
+  summary?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Regulator circulars. The circular tracker page and the "verified against" stamps read from here.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "circulars".
+ */
+export interface Circular {
+  id: string;
+  /**
+   * e.g. DHP/2025/24
+   */
+  number: string;
+  authority: 'DHP' | 'MOPH' | 'QCHP' | 'OTHER';
+  status?: ('in-force' | 'superseded' | 'historical') | null;
+  title: string;
+  issuedOn?: string | null;
+  country?: (string | null) | Country;
+  topics?: ('psv' | 'exam' | 'experience' | 'evaluation' | 'fees' | 'vendors' | 'renewal' | 'other')[] | null;
+  /**
+   * Plain-English summary, two to four sentences. What changed and for whom.
+   */
+  summary?: string | null;
+  /**
+   * Link to the PDF on dhp.moph.gov.qa
+   */
+  officialUrl?: string | null;
+  /**
+   * Our explainer page for this circular, if written.
+   */
+  explainer?: (string | null) | Page;
+  /**
+   * Tick once someone has read the official PDF and confirmed number, date and summary.
+   */
+  verified?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Real people with real credentials. Author boxes and Person schema come from here.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "authors".
+ */
+export interface Author {
+  id: string;
+  name: string;
+  slug: string;
+  /**
+   * e.g. "Managing Director, Instead Global"
+   */
+  jobTitle?: string | null;
+  /**
+   * Three to five sentences. Lead with the licensing / verification experience.
+   */
+  bio?: string | null;
+  credentials?:
+    | {
+        item: string;
+        id?: string | null;
+      }[]
+    | null;
+  photo?: (string | null) | Media;
+  linkedin?: string | null;
+  /**
+   * Other profile URLs for Person schema.
+   */
+  sameAs?:
+    | {
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -148,7 +349,11 @@ export interface User {
  */
 export interface Media {
   id: string;
+  /**
+   * Describe the image for screen readers and search engines (max ~125 characters).
+   */
   alt: string;
+  caption?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -160,6 +365,255 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+  sizes?: {
+    thumbnail?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    card?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    og?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+  };
+}
+/**
+ * Primary Source Verification providers (DataFlow, QuadraBay, AVS, former providers). Fees live in the Fees collection.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "vendors".
+ */
+export interface Vendor {
+  id: string;
+  name: string;
+  /**
+   * Used in tables, e.g. "DataFlow"
+   */
+  shortName?: string | null;
+  slug: string;
+  status: 'approved' | 'former' | 'other';
+  sortOrder?: number | null;
+  /**
+   * Regulators / countries that accept this provider.
+   */
+  countries?: (string | Country)[] | null;
+  approvedOn?: string | null;
+  endedOn?: string | null;
+  /**
+   * Circular(s) that approved or ended this provider.
+   */
+  approvedUnder?: (string | Circular)[] | null;
+  /**
+   * One line for cards, e.g. "DHP partner since 2009".
+   */
+  tagline?: string | null;
+  description?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  website?: string | null;
+  /**
+   * Applicant portal / start verification URL
+   */
+  applyUrl?: string | null;
+  /**
+   * Status tracking URL
+   */
+  trackUrl?: string | null;
+  supportUrl?: string | null;
+  supportEmail?: string | null;
+  phone?: string | null;
+  whatsapp?: string | null;
+  officeAddress?: string | null;
+  officeHours?: string | null;
+  logo?: (string | null) | Media;
+  /**
+   * Our guide page for this provider (used for internal links).
+   */
+  page?: (string | null) | Page;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Every published price point. The comparison table and the calculator read from here, so one edit updates every page.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "fees".
+ */
+export interface Fee {
+  id: string;
+  /**
+   * e.g. "DataFlow – Package A (Physicians & Dentists) – Standard"
+   */
+  label: string;
+  vendor: string | Vendor;
+  country: string | Country;
+  tier: 'standard' | 'express' | 'addon' | 'optional';
+  /**
+   * A, B, E, G, I … (leave empty for vendor-wide add-ons)
+   */
+  packageCode?: string | null;
+  addonKey?:
+    | (
+        | 'extra-education'
+        | 'good-standing'
+        | 'logbook'
+        | 'extra-licence'
+        | 'extra-employer'
+        | 'report-transfer'
+        | 'report-reissue'
+        | 'express-upgrade'
+        | 'vip'
+        | 'concierge'
+        | 'applicant-assist'
+        | 'sms'
+        | 'other'
+      )
+    | null;
+  /**
+   * e.g. "Physicians & Dentists"
+   */
+  packageName?: string | null;
+  /**
+   * Professions this package applies to (used by the calculator).
+   */
+  professions?: (string | Profession)[] | null;
+  amount: number;
+  currency?: ('QAR' | 'USD' | 'AED' | 'SAR' | 'KWD' | 'OMR' | 'BHD') | null;
+  /**
+   * Published turnaround target
+   */
+  targetDays?: number | null;
+  daysUnit?: ('working' | 'business' | 'calendar') | null;
+  includes?:
+    | {
+        item: string;
+        id?: string | null;
+      }[]
+    | null;
+  notes?: string | null;
+  /**
+   * e.g. "DHP price list PDF (Sept 2024)"
+   */
+  sourceLabel?: string | null;
+  sourceUrl?: string | null;
+  verifiedOn?: string | null;
+  active?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Profession categories as the regulator classifies them. Drives the fee calculator and checklists.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "professions".
+ */
+export interface Profession {
+  id: string;
+  name: string;
+  slug: string;
+  group: 'physician' | 'dentist' | 'nurse' | 'pharmacist' | 'allied-health' | 'other';
+  sortOrder?: number | null;
+  /**
+   * Package letter the PSV providers use for this profession (A physicians/dentists, B allied health, E nurses/pharmacists, G CNS/NP/educators).
+   */
+  psvPackageCode?: string | null;
+  /**
+   * Prometric category name
+   */
+  examCategory?: string | null;
+  /**
+   * % to pass
+   */
+  examPassMark?: number | null;
+  examAttempts?: number | null;
+  examQuestions?: number | null;
+  /**
+   * Years of employment the PSV package verifies (3 for nurses/pharmacists, 5 for physicians/AHP).
+   */
+  experienceYearsVerified?: number | null;
+  notes?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Newsletter / DHP circular alerts sign-ups. Created by the public form; only admins can read.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "subscribers".
+ */
+export interface Subscriber {
+  id: string;
+  email: string;
+  profession?: ('physician' | 'dentist' | 'nurse' | 'pharmacist' | 'allied-health' | 'employer' | 'other') | null;
+  /**
+   * Country the subscriber is applying to.
+   */
+  country?: ('QA' | 'AE' | 'SA' | 'KW' | 'OM' | 'BH') | null;
+  /**
+   * Page path the form was submitted from.
+   */
+  source?: string | null;
+  consent?: boolean | null;
+  /**
+   * Honeypot – must stay empty.
+   */
+  website?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users".
+ */
+export interface User {
+  id: string;
+  name?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  email: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpiration?: string | null;
+  salt?: string | null;
+  hash?: string | null;
+  resetPasswordRequestedAt?: string | null;
+  loginAttempts?: number | null;
+  lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
+  password?: string | null;
+  collection: 'users';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -186,12 +640,44 @@ export interface PayloadLockedDocument {
   id: string;
   document?:
     | ({
-        relationTo: 'users';
-        value: string | User;
+        relationTo: 'pages';
+        value: string | Page;
+      } | null)
+    | ({
+        relationTo: 'authors';
+        value: string | Author;
+      } | null)
+    | ({
+        relationTo: 'vendors';
+        value: string | Vendor;
+      } | null)
+    | ({
+        relationTo: 'fees';
+        value: string | Fee;
+      } | null)
+    | ({
+        relationTo: 'circulars';
+        value: string | Circular;
+      } | null)
+    | ({
+        relationTo: 'professions';
+        value: string | Profession;
+      } | null)
+    | ({
+        relationTo: 'countries';
+        value: string | Country;
+      } | null)
+    | ({
+        relationTo: 'subscribers';
+        value: string | Subscriber;
       } | null)
     | ({
         relationTo: 'media';
         value: string | Media;
+      } | null)
+    | ({
+        relationTo: 'users';
+        value: string | User;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -237,25 +723,210 @@ export interface PayloadMigration {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "users_select".
+ * via the `definition` "pages_select".
  */
-export interface UsersSelect<T extends boolean = true> {
-  updatedAt?: T;
-  createdAt?: T;
-  email?: T;
-  resetPasswordToken?: T;
-  resetPasswordExpiration?: T;
-  salt?: T;
-  hash?: T;
-  loginAttempts?: T;
-  lockUntil?: T;
-  sessions?:
+export interface PagesSelect<T extends boolean = true> {
+  title?: T;
+  path?: T;
+  section?: T;
+  country?: T;
+  summary?: T;
+  content?: T;
+  showVendorTable?: T;
+  showCalculator?: T;
+  showCirculars?: T;
+  faqs?:
     | T
     | {
+        question?: T;
+        answer?: T;
         id?: T;
-        createdAt?: T;
-        expiresAt?: T;
       };
+  verifiedOn?: T;
+  verifiedAgainst?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        circular?: T;
+        id?: T;
+      };
+  changeLog?:
+    | T
+    | {
+        date?: T;
+        note?: T;
+        id?: T;
+      };
+  author?: T;
+  relatedPages?: T;
+  publishedAt?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "authors_select".
+ */
+export interface AuthorsSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  jobTitle?: T;
+  bio?: T;
+  credentials?:
+    | T
+    | {
+        item?: T;
+        id?: T;
+      };
+  photo?: T;
+  linkedin?: T;
+  sameAs?:
+    | T
+    | {
+        url?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "vendors_select".
+ */
+export interface VendorsSelect<T extends boolean = true> {
+  name?: T;
+  shortName?: T;
+  slug?: T;
+  status?: T;
+  sortOrder?: T;
+  countries?: T;
+  approvedOn?: T;
+  endedOn?: T;
+  approvedUnder?: T;
+  tagline?: T;
+  description?: T;
+  website?: T;
+  applyUrl?: T;
+  trackUrl?: T;
+  supportUrl?: T;
+  supportEmail?: T;
+  phone?: T;
+  whatsapp?: T;
+  officeAddress?: T;
+  officeHours?: T;
+  logo?: T;
+  page?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "fees_select".
+ */
+export interface FeesSelect<T extends boolean = true> {
+  label?: T;
+  vendor?: T;
+  country?: T;
+  tier?: T;
+  packageCode?: T;
+  addonKey?: T;
+  packageName?: T;
+  professions?: T;
+  amount?: T;
+  currency?: T;
+  targetDays?: T;
+  daysUnit?: T;
+  includes?:
+    | T
+    | {
+        item?: T;
+        id?: T;
+      };
+  notes?: T;
+  sourceLabel?: T;
+  sourceUrl?: T;
+  verifiedOn?: T;
+  active?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "circulars_select".
+ */
+export interface CircularsSelect<T extends boolean = true> {
+  number?: T;
+  authority?: T;
+  status?: T;
+  title?: T;
+  issuedOn?: T;
+  country?: T;
+  topics?: T;
+  summary?: T;
+  officialUrl?: T;
+  explainer?: T;
+  verified?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "professions_select".
+ */
+export interface ProfessionsSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  group?: T;
+  sortOrder?: T;
+  psvPackageCode?: T;
+  examCategory?: T;
+  examPassMark?: T;
+  examAttempts?: T;
+  examQuestions?: T;
+  experienceYearsVerified?: T;
+  notes?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "countries_select".
+ */
+export interface CountriesSelect<T extends boolean = true> {
+  name?: T;
+  code?: T;
+  slug?: T;
+  regulator?: T;
+  regulatorShort?: T;
+  regulatorUrl?: T;
+  phase?: T;
+  active?: T;
+  summary?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "subscribers_select".
+ */
+export interface SubscribersSelect<T extends boolean = true> {
+  email?: T;
+  profession?: T;
+  country?: T;
+  source?: T;
+  consent?: T;
+  website?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -263,6 +934,7 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  caption?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -274,6 +946,64 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+  sizes?:
+    | T
+    | {
+        thumbnail?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        card?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        og?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+      };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users_select".
+ */
+export interface UsersSelect<T extends boolean = true> {
+  name?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  email?: T;
+  resetPasswordToken?: T;
+  resetPasswordExpiration?: T;
+  salt?: T;
+  hash?: T;
+  resetPasswordRequestedAt?: T;
+  loginAttempts?: T;
+  lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -314,6 +1044,69 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings".
+ */
+export interface SiteSetting {
+  id: string;
+  siteName: string;
+  tagline?: string | null;
+  siteUrl?: string | null;
+  legalName?: string | null;
+  parentBrand?: string | null;
+  parentUrl?: string | null;
+  contactEmail?: string | null;
+  logo?: (string | null) | Media;
+  defaultOgImage?: (string | null) | Media;
+  disclaimerShort: string;
+  disclaimerLong?: string | null;
+  newsletterTitle?: string | null;
+  newsletterBlurb?: string | null;
+  /**
+   * G-XXXXXXXXXX (leave empty to disable)
+   */
+  ga4Id?: string | null;
+  social?:
+    | {
+        label: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings_select".
+ */
+export interface SiteSettingsSelect<T extends boolean = true> {
+  siteName?: T;
+  tagline?: T;
+  siteUrl?: T;
+  legalName?: T;
+  parentBrand?: T;
+  parentUrl?: T;
+  contactEmail?: T;
+  logo?: T;
+  defaultOgImage?: T;
+  disclaimerShort?: T;
+  disclaimerLong?: T;
+  newsletterTitle?: T;
+  newsletterBlurb?: T;
+  ga4Id?: T;
+  social?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
