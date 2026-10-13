@@ -6,7 +6,7 @@ export function Breadcrumbs({ items }: { items: { name: string; path: string }[]
     <nav className="breadcrumbs" aria-label="Breadcrumb">
       <ol>
         {items.map((item, i) => (
-          <li key={item.path}>
+          <li key={`${i}-${item.path}`}>
             {i < items.length - 1 ? <Link href={item.path}>{item.name}</Link> : <span aria-current="page">{item.name}</span>}
           </li>
         ))}

@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 export default async function CalculatorPage() {
   const qatar = await getCountryBySlug('qatar')
   const crumbs = [
+    // No /tools index page exists yet, so the trail is Home → calculator (a "Tools" crumb would duplicate this URL).
     { name: 'Home', path: '/' },
-    { name: 'Tools', path: '/tools/psv-fee-calculator' },
     { name: 'PSV fee calculator', path: '/tools/psv-fee-calculator' },
   ]
 
