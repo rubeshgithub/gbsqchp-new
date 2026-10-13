@@ -87,9 +87,9 @@ export const countries = [
 export const author = {
   name: 'Rubesh Krishnan',
   slug: 'rubesh-krishnan',
-  jobTitle: 'Managing Director, Instead Global',
-  bio: 'Twenty years in visa operations, healthcare recruitment and credential verification across the GCC, including Gulf Bridge Services, which ran the second QCHP-approved PSV channel in Qatar from 2018 to 2024. Writes the licensing guides on this site and checks every fee and date against the official circulars.',
-  credentials: ['Former operator of the GBS primary source verification channel for QCHP (2018–2024)', 'VFS Global visa operations (Chennai, Dubai)', 'Physician and nurse recruitment for GCC employers'],
+  jobTitle: 'MRP Business Consulting',
+  bio: 'Twenty years in visa operations, healthcare recruitment and credential verification across the GCC. Writes the licensing guides on this site and checks every fee and date against the official circulars.',
+  credentials: ['Credential verification and healthcare licensing in the GCC', 'VFS Global visa operations (Chennai, Dubai)', 'Physician and nurse recruitment for GCC employers'],
   linkedin: 'https://www.linkedin.com/in/rubeshkrishnan-662723133',
 }
 
@@ -297,7 +297,7 @@ export const vendors = [
     endedOn: '2024-02-07',
     approvedUnderNumbers: ['15/2018', 'DHP/2024/09'],
     tagline: 'QCHP’s second approved provider, July 2018 – February 2024',
-    website: 'https://gulfbridgeservices.com/',
+    website: null,
     applyUrl: null,
     trackUrl: null,
     supportUrl: null,

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import React from 'react'
 
+import { CrispChat } from '@/components/CrispChat'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { JsonLd } from '@/components/JsonLd'
@@ -38,6 +39,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Header settings={settings} />
         <main id="main">{children}</main>
         <Footer settings={settings} />
+        <CrispChat websiteId={settings.crispWebsiteId} />
         {settings.ga4Id && (
           <>
             <script async src={`https://www.googletagmanager.com/gtag/js?id=${settings.ga4Id}`} />

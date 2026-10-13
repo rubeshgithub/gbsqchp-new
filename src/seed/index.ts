@@ -148,12 +148,10 @@ async function run() {
   await payload.updateGlobal({
     slug: 'site-settings',
     data: {
-      siteName: 'Gulf Bridge Licensing Guide',
+      siteName: 'Primary Source Verification Guide',
       tagline: 'The independent pre-submission guide to GCC healthcare licensing. Qatar first.',
       siteUrl: process.env.NEXT_PUBLIC_SERVER_URL || 'https://gbsqchp.com',
-      legalName: 'Instead Global (2682736 Alberta Inc.)',
-      parentBrand: 'Gulf Bridge Services',
-      parentUrl: 'https://gulfbridgeservices.com',
+      publisherName: 'MRP Business Consulting',
     },
   })
   log('site settings updated')

@@ -17,17 +17,25 @@ export const SiteSettings: GlobalConfig = {
       type: 'collapsible',
       label: 'Identity',
       fields: [
-        { name: 'siteName', type: 'text', required: true, defaultValue: 'Gulf Bridge Licensing Guide' },
+        { name: 'siteName', type: 'text', required: true, defaultValue: 'Primary Source Verification Guide' },
         {
           name: 'tagline',
           type: 'text',
           defaultValue: 'The independent pre-submission guide to GCC healthcare licensing. Qatar first.',
         },
         { name: 'siteUrl', type: 'text', defaultValue: 'https://gbsqchp.com' },
-        { name: 'legalName', type: 'text', defaultValue: 'Instead Global (2682736 Alberta Inc.)' },
-        { name: 'parentBrand', type: 'text', defaultValue: 'Gulf Bridge Services' },
-        { name: 'parentUrl', type: 'text', defaultValue: 'https://gulfbridgeservices.com' },
-        { name: 'contactEmail', type: 'email' },
+        {
+          name: 'publisherName',
+          type: 'text',
+          defaultValue: 'MRP Business Consulting',
+          admin: { description: 'Shown in the footer and as the publisher in structured data.' },
+        },
+        {
+          name: 'onlineOnlyNote',
+          type: 'text',
+          defaultValue: 'A 100% online service – no office visits. Ask us through the chat or the contact form.',
+          admin: { description: 'One line in the footer and on the contact page.' },
+        },
         { name: 'logo', type: 'upload', relationTo: 'media' },
         { name: 'defaultOgImage', type: 'upload', relationTo: 'media' },
       ],
@@ -61,6 +69,26 @@ export const SiteSettings: GlobalConfig = {
           type: 'textarea',
           defaultValue:
             'One short email when the DHP, DataFlow, QuadraBay or AVS change a rule, a fee or a timeline. No marketing, no spam.',
+        },
+      ],
+    },
+    {
+      type: 'collapsible',
+      label: 'Chat & enquiries',
+      fields: [
+        {
+          name: 'crispWebsiteId',
+          type: 'text',
+          admin: {
+            description:
+              'Crisp → Settings → Website Settings → Setup instructions → the CRISP_WEBSITE_ID value (a UUID). Leave empty to hide the chat bubble.',
+          },
+        },
+        {
+          name: 'contactIntro',
+          type: 'textarea',
+          defaultValue:
+            'Questions about Primary Source Verification, DHP licensing or your documents? Send them here and we reply by email. For a quick question, use the chat bubble at the bottom right.',
         },
       ],
     },

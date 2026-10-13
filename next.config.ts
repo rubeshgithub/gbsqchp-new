@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(__filename)
 
 /**
- * Legacy URLs from the Gulf Bridge Services PSV portal (2018–2024) still receive traffic and are still
+ * Legacy URLs from the former PSV portal on this domain (2018–2024) still receive traffic and are still
  * linked from PDFs on dhp.moph.gov.qa. Send all of them to the explainer page.
  */
 const LEGACY_PREFIXES = ['Home', 'home', 'AppPDFFiles', 'apppdffiles', 'Account', 'account', 'Applicant', 'applicant', 'Employer', 'employer']

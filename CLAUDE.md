@@ -2,7 +2,13 @@
 
 ## What this is
 
+**Primary Source Verification Guide** (domain gbsqchp.com), published by **MRP Business Consulting**.
 Independent information portal for healthcare professionals getting licensed in the GCC, Qatar first.
+Branding rules: the site never names Instead Global, 2682736 Alberta Inc. or gulfbridgeservices.com, and never
+presents itself as connected to Gulf Bridge Services. GBS appears only as a historical fact (a former DHP-approved
+provider, 2018–2024) on the legacy page, the circular tracker and the PSV history paragraph. The business is
+100% online: no address, phone or office anywhere. Enquiries come through the Crisp chat bubble (Site settings →
+Chat & enquiries → Crisp website ID) and the /contact form.
 Positioning: *the neutral, always-current pre-submission guide — read this before you pay a verifier.*
 It is **not** a PSV provider and must never look like one: no application forms, no payments, no regulator logos,
 the independence disclaimer on every page.
@@ -37,6 +43,9 @@ Payload skill for this repo: `.claude/skills/payload/SKILL.md` (read it before t
 6. **Legacy GBS URLs** redirect in `next.config.ts` → `/gbs-psv-portal`. Keep that page published forever.
 7. Newsletter sign-ups go through the custom endpoint `POST /api/subscribers/subscribe` (validation + honeypot);
    direct creates on `subscribers` are admin-only.
+8. Contact form: `POST /api/contact-messages/submit` (validation, honeypot, 5 per IP per 10 min). Every message is
+   saved in `contact-messages` and, when `SMTP_*` env vars are set, emailed to `CONTACT_TO_EMAIL` with Reply-To set
+   to the sender. Never render the recipient address on the site.
 
 ## Writing rules (applies to seed content and CMS content)
 

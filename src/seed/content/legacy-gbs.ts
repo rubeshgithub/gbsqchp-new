@@ -32,7 +32,10 @@ export const legacyGbs = {
       url: 'https://dhp.moph.gov.qa/en/Pages/PrimarysourceVerification.aspx',
     },
   ],
-  changeLog: [{ date: '2026-10-09', note: 'First published.' }],
+  changeLog: [
+    { date: '2026-10-09', note: 'First published.' },
+    { date: '2026-10-12', note: 'Updated the publisher details: the site is now the Primary Source Verification Guide by MRP Business Consulting.' },
+  ],
   faqs: [
     {
       question: 'Is my old GBS PSV report still valid?',
@@ -45,9 +48,9 @@ export const legacyGbs = {
         'The DHP Registration and Licensing section, through the contact details on dhp.moph.gov.qa. This website has no access to GBS case records and cannot trace an application or a payment.',
     },
     {
-      question: 'Is this website Gulf Bridge Services?',
+      question: 'Is this website the old GBS portal?',
       answer:
-        'No. This is an independent information service published by Instead Global, which now holds the gbsqchp.com domain. It is not a PSV provider, it does not take applications or payments, and it has no connection with the Ministry of Public Health or the DHP.',
+        'No. This is the Primary Source Verification Guide, an independent information service published by MRP Business Consulting. It is not a PSV provider, it does not take applications or payments, and it has no connection with the Ministry of Public Health or the DHP.',
     },
   ],
   markdown: `
@@ -75,6 +78,6 @@ Start with the [Primary Source Verification guide for Qatar](/qatar/psv), which 
 
 ## About this website
 
-The domain kept its name because thousands of applicants, employers and official documents still refer to it. The site itself is an independent information service: it explains the rules, quotes fees and dates from official sources with the date they were last checked, and links you to the provider and the regulator. It does not verify documents, take applications or accept payments.
+The domain kept its name because thousands of applicants, employers and official documents still refer to it. The site is now the Primary Source Verification Guide, an independent information service published by MRP Business Consulting: it explains the rules, quotes fees and dates from official sources with the date they were last checked, and links you to the provider and the regulator. It does not verify documents, take applications or accept payments.
 `,
 }

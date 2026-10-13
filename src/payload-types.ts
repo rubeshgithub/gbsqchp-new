@@ -75,6 +75,7 @@ export interface Config {
     professions: Profession;
     countries: Country;
     subscribers: Subscriber;
+    'contact-messages': ContactMessage;
     media: Media;
     users: User;
     'payload-kv': PayloadKv;
@@ -92,6 +93,7 @@ export interface Config {
     professions: ProfessionsSelect<false> | ProfessionsSelect<true>;
     countries: CountriesSelect<false> | CountriesSelect<true>;
     subscribers: SubscribersSelect<false> | SubscribersSelect<true>;
+    'contact-messages': ContactMessagesSelect<false> | ContactMessagesSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
@@ -437,7 +439,7 @@ export interface Author {
   name: string;
   slug: string;
   /**
-   * e.g. "Managing Director, Instead Global"
+   * e.g. "MRP Business Consulting"
    */
   jobTitle?: string | null;
   /**
@@ -593,6 +595,37 @@ export interface Subscriber {
   createdAt: string;
 }
 /**
+ * Every message sent from the /contact form. Also emailed to the enquiries inbox; kept here even if the email fails.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact-messages".
+ */
+export interface ContactMessage {
+  id: string;
+  subject: string;
+  name: string;
+  email: string;
+  phone?: string | null;
+  /**
+   * Country of training
+   */
+  country?: string | null;
+  topic?: ('psv' | 'licensing' | 'exam' | 'documents' | 'employer' | 'other') | null;
+  message: string;
+  /**
+   * Page the form was sent from
+   */
+  page?: string | null;
+  emailStatus?: ('pending' | 'sent' | 'failed' | 'not-configured') | null;
+  /**
+   * Tick once replied
+   */
+  handled?: boolean | null;
+  emailError?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
@@ -674,6 +707,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'subscribers';
         value: string | Subscriber;
+      } | null)
+    | ({
+        relationTo: 'contact-messages';
+        value: string | ContactMessage;
       } | null)
     | ({
         relationTo: 'media';
@@ -935,6 +972,25 @@ export interface SubscribersSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact-messages_select".
+ */
+export interface ContactMessagesSelect<T extends boolean = true> {
+  subject?: T;
+  name?: T;
+  email?: T;
+  phone?: T;
+  country?: T;
+  topic?: T;
+  message?: T;
+  page?: T;
+  emailStatus?: T;
+  handled?: T;
+  emailError?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
@@ -1059,16 +1115,25 @@ export interface SiteSetting {
   siteName: string;
   tagline?: string | null;
   siteUrl?: string | null;
-  legalName?: string | null;
-  parentBrand?: string | null;
-  parentUrl?: string | null;
-  contactEmail?: string | null;
+  /**
+   * Shown in the footer and as the publisher in structured data.
+   */
+  publisherName?: string | null;
+  /**
+   * One line in the footer and on the contact page.
+   */
+  onlineOnlyNote?: string | null;
   logo?: (string | null) | Media;
   defaultOgImage?: (string | null) | Media;
   disclaimerShort: string;
   disclaimerLong?: string | null;
   newsletterTitle?: string | null;
   newsletterBlurb?: string | null;
+  /**
+   * Crisp → Settings → Website Settings → Setup instructions → the CRISP_WEBSITE_ID value (a UUID). Leave empty to hide the chat bubble.
+   */
+  crispWebsiteId?: string | null;
+  contactIntro?: string | null;
   /**
    * G-XXXXXXXXXX (leave empty to disable)
    */
@@ -1091,16 +1156,16 @@ export interface SiteSettingsSelect<T extends boolean = true> {
   siteName?: T;
   tagline?: T;
   siteUrl?: T;
-  legalName?: T;
-  parentBrand?: T;
-  parentUrl?: T;
-  contactEmail?: T;
+  publisherName?: T;
+  onlineOnlyNote?: T;
   logo?: T;
   defaultOgImage?: T;
   disclaimerShort?: T;
   disclaimerLong?: T;
   newsletterTitle?: T;
   newsletterBlurb?: T;
+  crispWebsiteId?: T;
+  contactIntro?: T;
   ga4Id?: T;
   social?:
     | T

@@ -12,13 +12,8 @@ export function Footer({ settings }: { settings: SiteSetting }) {
           <div>
             <h4>{settings.siteName}</h4>
             <p>{settings.tagline}</p>
-            {settings.parentBrand && (
-              <p>
-                A service of{' '}
-                {settings.parentUrl ? <a href={settings.parentUrl}>{settings.parentBrand}</a> : settings.parentBrand}
-                {settings.legalName ? ` · ${settings.legalName}` : ''}
-              </p>
-            )}
+            {settings.publisherName && <p>Published by {settings.publisherName}.</p>}
+            {settings.onlineOnlyNote && <p>{settings.onlineOnlyNote}</p>}
           </div>
           <div>
             <h4>Qatar</h4>
@@ -44,20 +39,15 @@ export function Footer({ settings }: { settings: SiteSetting }) {
                 <Link href="/#newsletter">DHP circular alerts</Link>
               </li>
               <li>
-                <Link href="/gbs-psv-portal">Looking for the GBS portal?</Link>
+                <Link href="/contact">Contact us</Link>
               </li>
-              {settings.contactEmail && (
-                <li>
-                  <a href={`mailto:${settings.contactEmail}`}>Contact</a>
-                </li>
-              )}
             </ul>
           </div>
         </div>
         <div className="footer-disclaimer">
           <p>{settings.disclaimerLong}</p>
           <p>
-            © {year} {settings.legalName || settings.siteName}. Fees and dates are quoted from the official sources linked on
+            © {year} {settings.publisherName || settings.siteName}. Fees and dates are quoted from the official sources linked on
             each page, with the date they were last checked.
           </p>
         </div>

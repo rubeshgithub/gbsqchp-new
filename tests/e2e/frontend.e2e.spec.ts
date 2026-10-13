@@ -44,3 +44,15 @@ test.describe('Provider guide pages', () => {
     })
   }
 })
+
+test.describe('Contact page', () => {
+  test('renders the form and rejects an invalid email without sending', async ({ page }) => {
+    await page.goto('http://localhost:3000/contact')
+    await expect(page.locator('h1')).toContainText('Contact us')
+    await expect(page.locator('.site-footer')).toContainText('MRP Business Consulting')
+    const res = await page.request.post('http://localhost:3000/api/contact-messages/submit', {
+      data: { name: 'Test', email: 'not-an-email', message: 'This should be rejected by validation.' },
+    })
+    expect(res.status()).toBe(400)
+  })
+})

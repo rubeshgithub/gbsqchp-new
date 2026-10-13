@@ -13,7 +13,7 @@ describe('Payload Local API', () => {
 
   it('exposes every collection of the content model', async () => {
     const slugs = payload.config.collections.map((c) => c.slug)
-    for (const slug of ['pages', 'authors', 'vendors', 'fees', 'circulars', 'professions', 'countries', 'subscribers', 'media', 'users']) {
+    for (const slug of ['pages', 'authors', 'vendors', 'fees', 'circulars', 'professions', 'countries', 'subscribers', 'contact-messages', 'media', 'users']) {
       expect(slugs).toContain(slug)
     }
   })

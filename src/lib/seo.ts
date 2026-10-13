@@ -47,14 +47,11 @@ export function organizationJsonLd(settings: SiteSetting) {
     '@type': 'Organization',
     name: settings.siteName,
     url: settings.siteUrl || SITE_URL,
-    legalName: settings.legalName || undefined,
-    parentOrganization: settings.parentBrand
-      ? { '@type': 'Organization', name: settings.parentBrand, url: settings.parentUrl || undefined }
-      : undefined,
+    parentOrganization: settings.publisherName ? { '@type': 'Organization', name: settings.publisherName } : undefined,
     sameAs: settings.social?.map((s) => s.url) || undefined,
-    contactPoint: settings.contactEmail
-      ? [{ '@type': 'ContactPoint', email: settings.contactEmail, contactType: 'customer support' }]
-      : undefined,
+    contactPoint: [
+      { '@type': 'ContactPoint', contactType: 'customer support', url: `${settings.siteUrl || SITE_URL}/contact`, availableLanguage: ['English'] },
+    ],
   }
 }
 
@@ -78,7 +75,13 @@ export function articleJsonLd(page: Page, settings: SiteSetting) {
     datePublished: page.publishedAt || page.createdAt,
     dateModified: page.updatedAt,
     author: author
-      ? { '@type': 'Person', name: author.name, jobTitle: author.jobTitle || undefined, url: author.linkedin || undefined }
+      ? {
+          '@type': 'Person',
+          name: author.name,
+          jobTitle: author.jobTitle && author.jobTitle !== settings.publisherName ? author.jobTitle : undefined,
+          worksFor: settings.publisherName ? { '@type': 'Organization', name: settings.publisherName } : undefined,
+          url: author.linkedin || undefined,
+        }
       : { '@type': 'Organization', name: settings.siteName },
     publisher: { '@type': 'Organization', name: settings.siteName, url: settings.siteUrl || SITE_URL },
   }

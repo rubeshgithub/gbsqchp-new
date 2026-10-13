@@ -18,7 +18,7 @@ export const Authors: CollectionConfig = {
   fields: [
     { name: 'name', type: 'text', required: true },
     { name: 'slug', type: 'text', required: true, unique: true },
-    { name: 'jobTitle', type: 'text', admin: { description: 'e.g. "Managing Director, Instead Global"' } },
+    { name: 'jobTitle', type: 'text', admin: { description: 'e.g. "MRP Business Consulting"' } },
     { name: 'bio', type: 'textarea', admin: { description: 'Three to five sentences. Lead with the licensing / verification experience.' } },
     {
       name: 'credentials',

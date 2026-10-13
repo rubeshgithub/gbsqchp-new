@@ -29,9 +29,9 @@ const START_HERE = [
     text: 'Your profession, your add-ons, every approved provider side by side.',
   },
   {
-    href: '/gbs-psv-portal',
-    title: 'Looking for the GBS portal?',
-    text: 'The GBS verification service ended in February 2024. What that means for old cases and where to apply now.',
+    href: '/contact',
+    title: 'Ask a question',
+    text: 'We are online-only. Send your question through the contact form or the chat bubble and we reply by email.',
   },
   {
     href: '/qatar/circulars',

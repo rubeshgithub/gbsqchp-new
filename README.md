@@ -1,6 +1,6 @@
-# gbsqchp.com — GCC healthcare licensing & PSV portal
+# gbsqchp.com — Primary Source Verification Guide
 
-Independent information portal for internationally trained healthcare professionals applying to Qatar's
+Published by MRP Business Consulting. Independent information portal for internationally trained healthcare professionals applying to Qatar's
 Department of Healthcare Professions (DHP), expanding to the rest of the GCC. Built with **Next.js 16 (App Router)**
 and **Payload CMS 3** on **MongoDB**.
 
@@ -62,8 +62,14 @@ into prose**: they live in the **Fees**, **Vendors** and **Circulars** collectio
 
 ### Legacy URLs
 
-The domain was the Gulf Bridge Services PSV portal (2018–2024). `/Home/*`, `/AppPDFFiles/*`, `/Account/*`,
+The domain hosted a former DHP-approved PSV portal (2018–2024). `/Home/*`, `/AppPDFFiles/*`, `/Account/*`,
 `/Applicant/*` and `/Employer/*` are 301-redirected to `/gbs-psv-portal` in `next.config.ts`.
+
+## Contact form and chat
+
+- `/contact` saves every message in the admin (Audience → Contact messages). To also email it, set `SMTP_HOST`,
+  `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM` and `CONTACT_TO_EMAIL` in `.env` (see `.env.example`).
+- Crisp chat: paste the Crisp website ID into Admin → Site settings → Chat & enquiries. Empty = no chat bubble.
 
 ## Deployment notes
 

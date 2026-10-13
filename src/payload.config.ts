@@ -1,4 +1,5 @@
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
+import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
 import { seoPlugin } from '@payloadcms/plugin-seo'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
@@ -8,6 +9,7 @@ import sharp from 'sharp'
 
 import { Authors } from './collections/Authors'
 import { Circulars } from './collections/Circulars'
+import { ContactMessages } from './collections/ContactMessages'
 import { Countries } from './collections/Countries'
 import { Fees } from './collections/Fees'
 import { Media } from './collections/Media'
@@ -23,6 +25,23 @@ const dirname = path.dirname(filename)
 
 const serverURL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
 
+// Outgoing email (contact form). Only configured when SMTP_HOST is set; otherwise Payload logs emails to the console
+// and contact messages are still saved in the admin under Audience → Contact messages.
+const smtpPort = Number(process.env.SMTP_PORT || 587)
+const email = process.env.SMTP_HOST
+  ? nodemailerAdapter({
+      defaultFromAddress: process.env.SMTP_FROM || process.env.SMTP_USER || '',
+      defaultFromName: process.env.SMTP_FROM_NAME || 'Primary Source Verification Guide',
+      skipVerify: true,
+      transportOptions: {
+        host: process.env.SMTP_HOST,
+        port: smtpPort,
+        secure: smtpPort === 465,
+        auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+      },
+    })
+  : undefined
+
 export default buildConfig({
   serverURL,
   admin: {
@@ -31,10 +50,10 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
     meta: {
-      titleSuffix: ' · gbsqchp.com admin',
+      titleSuffix: ' · PSV Guide admin',
     },
   },
-  collections: [Pages, Authors, Vendors, Fees, Circulars, Professions, Countries, Subscribers, Media, Users],
+  collections: [Pages, Authors, Vendors, Fees, Circulars, Professions, Countries, Subscribers, ContactMessages, Media, Users],
   globals: [SiteSettings],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
@@ -47,6 +66,7 @@ export default buildConfig({
     // transactions (e.g. a standalone test instance). Leave unset in production.
     transactionOptions: process.env.DB_TRANSACTIONS === 'false' ? false : undefined,
   }),
+  email,
   sharp,
   plugins: [
     seoPlugin({
