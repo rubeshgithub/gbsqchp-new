@@ -52,6 +52,13 @@ ok "${PRETTY_NAME}, $(uname -m), $(nproc) CPU, $(awk '/MemTotal/{printf "%.1f GB
 PUBLIC_IP="$(curl -4 -fsS --max-time 8 https://api.ipify.org 2>/dev/null || curl -4 -fsS --max-time 8 https://ifconfig.me 2>/dev/null || hostname -I | awk '{print $1}')"
 ok "public IPv4: ${PUBLIC_IP}"
 
+if [[ -L "$APP_DIR" && -x /usr/local/sbin/gbsqchp-deploy ]]; then
+  ok "already installed with release folders and automatic deploys"
+  echo "    Deploy the latest code:   sudo gbsqchp-deploy"
+  echo "    Re-check HTTPS:           sudo bash ${APP_DIR}/deploy/enable-https.sh"
+  exit 0
+fi
+
 # -----------------------------------------------------------------------------------------------------
 step "Installing base packages (only what is missing)"
 NEED=()
@@ -385,6 +392,7 @@ cat <<EOF
   Internal URL    http://127.0.0.1:${PORT}
   Server IP       ${PUBLIC_IP}
   Update later    sudo bash ${APP_DIR}/deploy/update.sh
+  Auto-deploy     sudo bash ${APP_DIR}/deploy/setup-ci.sh   (deploys from GitHub on every push to main)
   Admin           https://${DOMAIN}/admin  (same users as on your PC – it is the same database)
 
   DNS at GoDaddy for ${DOMAIN}:   A  @    → ${PUBLIC_IP}

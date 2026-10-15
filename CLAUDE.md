@@ -51,6 +51,11 @@ Payload skill for this repo: `.claude/skills/payload/SKILL.md` (read it before t
    (ads, sending the alert emails, a new form field, a new processor) means updating that page and `LAST_UPDATED`
    in the same change. It promises: contact messages deleted within 24 months of the last reply, an unsubscribe
    link in every alert email, replies to privacy requests within 30 days.
+10. Deploys: `.github/workflows/ci-deploy.yml` type-checks and lints every push/PR and, on `main`, deploys the commit
+   over SSH (`gbsqchp-ci` user, forced command `deploy <sha> [--seed]`) to `/usr/local/sbin/gbsqchp-deploy`
+   (root-owned copy of `deploy/release.sh` – changes to that file reach the server only when RK re-runs
+   `deploy/setup-ci.sh`). Releases build beside the live one and roll back automatically if the health check fails.
+   CI must stay green: `npx tsc --noEmit` and `npm run lint` with zero errors before pushing.
 
 ## Writing rules (applies to seed content and CMS content)
 

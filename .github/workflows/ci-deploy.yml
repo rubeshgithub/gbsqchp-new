@@ -1,0 +1,93 @@
+name: CI / Deploy
+
+# Every push and pull request: install, type-check and lint.
+# Pushes to main that pass: deploy that exact commit to the OVH server (gbsqchp.com) over SSH.
+# Manual run (Actions → CI / Deploy → Run workflow) can also re-run the content seed.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: Re-run the content seed after deploying (overwrites admin edits to the seeded guide pages)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+env:
+  # Public facts about the server (not secrets). The private key is the DEPLOY_SSH_KEY repository secret.
+  DEPLOY_HOST: ''
+  DEPLOY_PORT: '22'
+  DEPLOY_USER: gbsqchp-ci
+  DEPLOY_KNOWN_HOSTS: ''
+
+jobs:
+  check:
+    name: Type-check and lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npx tsc --noEmit
+      - run: npm run lint
+
+  deploy:
+    name: Deploy to gbsqchp.com
+    needs: check
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    concurrency:
+      group: production-deploy
+      cancel-in-progress: false
+    environment:
+      name: production
+      url: https://gbsqchp.com
+    steps:
+      - name: Prepare SSH
+        id: ssh
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+        run: |
+          if [ -z "$DEPLOY_SSH_KEY" ] || [ -z "$DEPLOY_HOST" ] || [ -z "$DEPLOY_KNOWN_HOSTS" ]; then
+            echo "::warning::Automatic deploy is not configured yet (DEPLOY_SSH_KEY secret, DEPLOY_HOST or DEPLOY_KNOWN_HOSTS missing) – skipped."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          echo "ready=true" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy ${{ github.sha }}
+        if: steps.ssh.outputs.ready == 'true'
+        env:
+          SEED: ${{ github.event_name == 'workflow_dispatch' && inputs.seed && ' --seed' || '' }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -p "$DEPLOY_PORT" \
+            -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o BatchMode=yes \
+            -o ServerAliveInterval=30 -o ConnectTimeout=20 \
+            "$DEPLOY_USER@$DEPLOY_HOST" "deploy ${GITHUB_SHA}${SEED}"
+
+      - name: Check the live site
+        if: steps.ssh.outputs.ready == 'true'
+        run: |
+          for path in / /qatar/psv /privacy /sitemap.xml; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' --retry 3 --retry-delay 5 "https://gbsqchp.com${path}")
+            echo "${path} → ${code}"
+            [ "$code" = 200 ] || { echo "::error::https://gbsqchp.com${path} returned ${code}"; exit 1; }
+          done
+
+      - name: Remove the key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key

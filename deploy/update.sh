@@ -3,7 +3,8 @@
 #  gbsqchp.com – deploy the latest code from GitHub.
 #     sudo bash /var/www/gbsqchp/deploy/update.sh            pull, install, build, restart
 #     sudo bash /var/www/gbsqchp/deploy/update.sh --seed     …and re-run the content seed
-#  The site is offline while it builds (usually 2–5 minutes). .env and uploaded media are never touched.
+#  Before deploy/setup-ci.sh has been run, the site is offline while it builds (2–5 minutes). Afterwards this
+#  simply runs /usr/local/sbin/gbsqchp-deploy (zero-downtime releases). .env and media are never touched.
 # =====================================================================================================
 set -Eeuo pipefail
 
@@ -19,6 +20,12 @@ trap 'die "update stopped at line $LINENO ($BASH_COMMAND). If the site is down, 
 as_app() { sudo -u "$APP_USER" -H env PATH="$NODE_DIR/bin:/usr/local/bin:/usr/bin:/bin" HOME="$APP_HOME" "$@"; }
 
 [[ $EUID -eq 0 ]] || die "run with sudo:  sudo bash $0"
+
+# Once automatic deploys are set up (deploy/setup-ci.sh), all deploys go through the release deployer:
+# build next to the live site, switch in seconds, roll back on failure.
+if [[ -x /usr/local/sbin/gbsqchp-deploy ]]; then
+  exec /usr/local/sbin/gbsqchp-deploy "$@"
+fi
 [[ -d "$APP_DIR/.git" && -x "$NODE_DIR/bin/node" ]] || die "not installed yet – run deploy/setup-server.sh first"
 
 step "Pulling ${BRANCH}"

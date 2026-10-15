@@ -44,7 +44,7 @@ sudo bash /var/www/gbsqchp/deploy/enable-https.sh
 
 ## 5. Contact-form email (Amazon SES)
 
-Edit `/var/www/gbsqchp/.env` (`sudo nano /var/www/gbsqchp/.env`), fill in:
+Edit the server's `.env` (`sudo nano /var/www/gbsqchp/.env` – after setup-ci it lives in `/var/www/gbsqchp-shared/`; the old path still works), fill in:
 
 ```
 SMTP_HOST=email-smtp.ca-west-1.amazonaws.com
@@ -54,14 +54,47 @@ SMTP_PASS=<SES SMTP password>
 
 then `sudo systemctl restart gbsqchp`.
 
+## 6. Automatic deploys from GitHub (CI/CD)
+
+One-time, on the server:
+
+```bash
+sudo bash /var/www/gbsqchp/deploy/setup-ci.sh
+```
+
+It installs the release deployer, creates a `gbsqchp-ci` account whose SSH key can only run
+`deploy <commit> [--seed]` (no shell, no port forwarding, no other sudo), switches the site to release folders and
+prints two things: the server's public SSH details (send to Claude – they go into the workflow file) and how to
+add the private key as the `DEPLOY_SSH_KEY` repository secret on GitHub (do that yourself, then
+`sudo shred -u /root/gbsqchp-ci-deploy-key`).
+
+From then on, every push to `main` runs `.github/workflows/ci-deploy.yml`:
+
+1. **Check** – `npm ci`, TypeScript and ESLint (also on pull requests).
+2. **Deploy** – only if the check passed: GitHub connects as `gbsqchp-ci`, the server clones that exact commit into
+   `/var/www/gbsqchp-releases/<time>-<sha>`, installs and builds it while the current release keeps serving, switches
+   the `/var/www/gbsqchp` symlink, restarts (≈2 s) and checks the site answers. If the new release fails, the previous
+   one is restored automatically and the GitHub run turns red.
+3. **Verify** – GitHub fetches `/`, `/qatar/psv`, `/privacy` and `/sitemap.xml` on https://gbsqchp.com.
+
+Deploys never overlap (one at a time). To re-run the content seed, use Actions → CI / Deploy → Run workflow → tick
+"seed".
+
 ## Day-to-day
 
 | Task | Command |
 |---|---|
-| Deploy the latest code from GitHub | `sudo bash /var/www/gbsqchp/deploy/update.sh` (site is offline for the 2–5 minute build) |
-| …and reload the seeded guide content | `sudo bash /var/www/gbsqchp/deploy/update.sh --seed` (overwrites edits to the seeded pages) |
+| Deploy | push to `main` (automatic), or on the server `sudo gbsqchp-deploy` |
+| Deploy one exact commit | `sudo gbsqchp-deploy --ref <sha>` |
+| Re-run the content seed | GitHub: Run workflow with "seed", or `sudo gbsqchp-deploy --seed` (overwrites edits to the seeded pages) |
+| Roll back to the previous release | `sudo gbsqchp-deploy --rollback` |
 | Status / restart | `sudo systemctl status gbsqchp` · `sudo systemctl restart gbsqchp` |
 | Live log | `sudo journalctl -u gbsqchp -f` |
+| Replace the deploy key | `sudo bash /var/www/gbsqchp/deploy/setup-ci.sh --new-key`, then update the GitHub secret |
+
+Layout after setup-ci: `/var/www/gbsqchp` → live release, `/var/www/gbsqchp-releases/` (last 3 kept),
+`/var/www/gbsqchp-shared/` (`.env` and `media/`, linked into every release). Edit settings in
+`/var/www/gbsqchp-shared/.env`, then `sudo systemctl restart gbsqchp`.
 
 The server and your PC use the same Atlas database, so admin users and content are shared. Uploaded images are
 stored on whichever machine they were uploaded from (`media/` folder) — upload production images on the live
