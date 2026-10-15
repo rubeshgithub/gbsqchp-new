@@ -54,8 +54,8 @@ SUDOERS=/etc/sudoers.d/gbsqchp-ci
 TMP_SUDO="$(mktemp)"
 cat >"$TMP_SUDO" <<EOF
 # Written by deploy/setup-ci.sh – the GitHub Actions account may run the site deployer, nothing else.
-Defaults:${CI_USER} !requiretty
-${CI_USER} ALL=(root) NOPASSWD: /usr/local/sbin/gbsqchp-deploy --ref *
+# (Its SSH key is further limited to "deploy <sha> [--seed]" by /usr/local/sbin/gbsqchp-deploy-ssh.)
+${CI_USER} ALL=(root) NOPASSWD: /usr/local/sbin/gbsqchp-deploy
 EOF
 visudo -cqf "$TMP_SUDO" || die "sudoers check failed"
 install -m 440 -o root -g root "$TMP_SUDO" "$SUDOERS"; rm -f "$TMP_SUDO"
