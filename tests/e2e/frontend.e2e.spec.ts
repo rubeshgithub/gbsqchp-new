@@ -56,3 +56,16 @@ test.describe('Contact page', () => {
     expect(res.status()).toBe(400)
   })
 })
+
+test.describe('Privacy notice', () => {
+  test('is linked from the footer and the contact form, and lists the processors', async ({ page }) => {
+    await page.goto('http://localhost:3000/contact')
+    await expect(page.locator('.contact-form a[href="/privacy"]')).toBeVisible()
+    await page.locator('.site-footer a[href="/privacy"]').click()
+    await expect(page).toHaveURL(/\/privacy$/)
+    await expect(page.locator('h1')).toHaveText('Privacy notice')
+    await expect(page.locator('main')).toContainText('MRP Business Consulting')
+    await expect(page.locator('main table')).toContainText('Amazon Web Services')
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /\/privacy$/)
+  })
+})

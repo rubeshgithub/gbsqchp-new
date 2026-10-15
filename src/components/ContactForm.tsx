@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import React, { useState } from 'react'
 
 type Status = 'idle' | 'sending' | 'done' | 'error'
@@ -116,7 +117,7 @@ export function ContactForm() {
       </div>
       <p className="form-note">
         Please do not send passport copies, certificates or other documents through this form. We use your details only to
-        reply to you.
+        reply to you – see our <Link href="/privacy">privacy notice</Link>.
       </p>
       <div>
         <button className="btn btn-primary" type="submit" disabled={status === 'sending'}>

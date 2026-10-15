@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import React, { useState } from 'react'
 
 type Props = {
@@ -93,6 +94,12 @@ export function NewsletterForm({ title, blurb, source }: Props) {
           <button className="btn btn-primary" type="submit" disabled={status === 'sending'}>
             {status === 'sending' ? 'Sending…' : 'Get alerts'}
           </button>
+          <p className="form-note" style={{ gridColumn: '1 / -1' }}>
+            We use your email only for these alerts and you can leave at any time.{' '}
+            <Link href="/privacy" style={{ color: 'inherit', textDecoration: 'underline' }}>
+              Privacy notice
+            </Link>
+          </p>
           {status === 'error' && (
             <p className="form-note" role="alert" style={{ gridColumn: '1 / -1', color: '#fecaca' }}>
               {message}

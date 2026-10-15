@@ -46,6 +46,11 @@ Payload skill for this repo: `.claude/skills/payload/SKILL.md` (read it before t
 8. Contact form: `POST /api/contact-messages/submit` (validation, honeypot, 5 per IP per 10 min). Every message is
    saved in `contact-messages` and, when `SMTP_*` env vars are set, emailed to `CONTACT_TO_EMAIL` with Reply-To set
    to the sender. Never render the recipient address on the site.
+9. Privacy notice (`src/app/(frontend)/privacy/page.tsx`) must describe every way the site handles personal data.
+   The Crisp and Google Analytics sections render only when those are enabled in Site settings. Any new data flow
+   (ads, sending the alert emails, a new form field, a new processor) means updating that page and `LAST_UPDATED`
+   in the same change. It promises: contact messages deleted within 24 months of the last reply, an unsubscribe
+   link in every alert email, replies to privacy requests within 30 days.
 
 ## Writing rules (applies to seed content and CMS content)
 

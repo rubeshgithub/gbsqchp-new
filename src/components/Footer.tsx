@@ -41,6 +41,9 @@ export function Footer({ settings }: { settings: SiteSetting }) {
               <li>
                 <Link href="/contact">Contact us</Link>
               </li>
+              <li>
+                <Link href="/privacy">Privacy notice</Link>
+              </li>
             </ul>
           </div>
         </div>
