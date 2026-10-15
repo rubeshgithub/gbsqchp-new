@@ -200,14 +200,17 @@ const { MongoClient } = require("mongodb");
 const client = new MongoClient(url, { serverSelectionTimeoutMS: 15000 });
 client.connect()
   .then(() => client.db().command({ ping: 1 }))
-  .then(() => { console.log("ok"); return client.close(); })
+  .then(() => Promise.all([client.db().collection("pages").countDocuments(), client.db().collection("users").countDocuments()]))
+  .then(([p, u]) => { console.log("pages=" + p + " users=" + u); return client.close(); })
   .catch((e) => { console.error(e.message); process.exit(1); });
 '
 if ! DB_OUT="$(as_app bash -c "cd '$APP_DIR' && node -e '$DB_CHECK'" 2>&1)"; then
   printf '%s\n' "$DB_OUT" | sed 's/^/    /'
   die "the server cannot reach MongoDB. In MongoDB Atlas → Security → Network Access, add this server's IP ${PUBLIC_IP} (or check the connection string in ${ENV_FILE}), then run this script again."
 fi
-ok "connected to MongoDB"
+PAGE_COUNT="$(grep -oE 'pages=[0-9]+' <<<"$DB_OUT" | cut -d= -f2 || true)"
+USER_COUNT="$(grep -oE 'users=[0-9]+' <<<"$DB_OUT" | cut -d= -f2 || true)"
+ok "connected to MongoDB (${PAGE_COUNT:-0} guide pages in the database)"
 
 # -----------------------------------------------------------------------------------------------------
 step "Building the site (next build – 2 to 6 minutes)"
@@ -218,7 +221,7 @@ as_app bash -c "cd '$APP_DIR' && NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 N
 ok "build $(cat "$APP_DIR/.next/BUILD_ID")"
 
 # -----------------------------------------------------------------------------------------------------
-if [[ "$FIRST_INSTALL" == 1 && "${SKIP_SEED:-0}" != 1 ]]; then
+if [[ ( "$FIRST_INSTALL" == 1 || "${PAGE_COUNT:-0}" == 0 ) && "${SKIP_SEED:-0}" != 1 ]]; then
   step "Loading the guide content into the database (seed – safe to repeat)"
   as_app bash -c "cd '$APP_DIR' && NODE_OPTIONS=--no-deprecation node node_modules/payload/bin.js run src/seed/index.ts" | sed 's/^/    /' | tail -n 15
   ok "content seeded"
@@ -374,6 +377,7 @@ if [[ "$WEB" == nginx || "$WEB" == apache ]]; then
 fi
 
 # -----------------------------------------------------------------------------------------------------
+[[ "${USER_COUNT:-1}" == 0 ]] && warn "No admin user yet – open https://${DOMAIN}/admin NOW and create yours (until then, anyone could)."
 printf '\n%s================  gbsqchp.com is installed  ================%s\n' "$c_ok" "$c_off"
 cat <<EOF
   App folder      ${APP_DIR}   (settings: ${ENV_FILE})
