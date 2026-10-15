@@ -20,10 +20,11 @@ permissions:
 
 env:
   # Public facts about the server (not secrets). The private key is the DEPLOY_SSH_KEY repository secret.
-  DEPLOY_HOST: ''
+  DEPLOY_HOST: 148.113.173.49
   DEPLOY_PORT: '22'
   DEPLOY_USER: gbsqchp-ci
-  DEPLOY_KNOWN_HOSTS: ''
+  # The server's public SSH host key, so the runner refuses to deploy anywhere else (printed by deploy/setup-ci.sh).
+  DEPLOY_KNOWN_HOSTS: 148.113.173.49 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmmCKDW//qBV3I3D10Z2lr9vQ2pcxYib0BxcCBecx/x
 
 jobs:
   check:
