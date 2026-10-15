@@ -73,6 +73,8 @@ The domain hosted a former DHP-approved PSV portal (2018–2024). `/Home/*`, `/A
 
 ## Deployment notes
 
+- **Production server (OVH):** see [`deploy/README.md`](deploy/README.md) — one script installs the site as a
+  systemd service behind nginx, `deploy/update.sh` deploys new commits, `deploy/enable-https.sh` adds Let's Encrypt.
 - Set `NEXT_PUBLIC_SERVER_URL=https://gbsqchp.com` and a strong `PAYLOAD_SECRET` in production.
 - Frontend routes are server-rendered per request (`dynamic = 'force-dynamic'` in the frontend layout). Once the
   production MongoDB is reachable during `next build`, switch to ISR (`export const revalidate = 600`) for speed.
