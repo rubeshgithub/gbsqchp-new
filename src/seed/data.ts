@@ -136,12 +136,12 @@ export const circulars = [
     number: 'DHP/2024/10',
     authority: 'DHP' as const,
     status: 'in-force' as const,
-    title: 'Modification on the qualifying examination fees',
-    issuedOn: null,
+    title: 'Modification on the qualifying examination fee',
+    issuedOn: '2024-04-18',
     topics: ['exam', 'fees'],
-    summary: 'Changes the fees for the DHP qualifying examination (title from the official circulars list; the fee figures have not yet been transcribed from the PDF).',
+    summary: 'Sets the Prometric fee for the DHP qualifying exam: US$238 from 19 Jan 2024 and 1 Jan 2025, US$244 from 1 Jan 2026. Cancelling or rescheduling costs US$25 at 30 or more days before the exam, US$40 at 5–29 days, and the full exam fee at under 5 days, for a no-show, or for arriving more than 30 minutes late.',
     officialUrl: 'https://dhp.moph.gov.qa/en/QCHPCirculars/DHP-2024-10%20E.pdf',
-    verified: false,
+    verified: true,
   },
   {
     number: 'DHP/2024/16',
@@ -329,9 +329,9 @@ type SeedFee = {
 }
 
 const DF_SRC = {
-  sourceLabel: 'DataFlow – DHP price list (Sept 2024) and Customer Reference Kit for DHP',
+  sourceLabel: 'DataFlow – DHP price list (PDF dated 28 Jul 2025) and Customer Reference Kit for DHP',
   sourceUrl: 'https://dataflowgroup.com/wp-content/uploads/2024/09/DHP-Price-List-Google-Docs.pdf',
-  verifiedOn: VERIFIED_ON,
+  verifiedOn: '2026-10-16',
 }
 const QB_SRC = {
   sourceLabel: 'Circular DHP/2025/20 – QuadraBay packages',
@@ -352,7 +352,7 @@ export const fees: SeedFee[] = [
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'A', packageName: 'Physicians & Dentists', professionSlugs: ['general-practitioner', 'specialist-physician', 'dentist'], amount: 1210, targetDays: 20, daysUnit: 'working', includes: ['2 educational qualifications', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: DF_STANDARD_NOTE, ...DF_SRC },
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'B', packageName: 'Allied Health Practitioners & Complementary Medicine', professionSlugs: ['physiotherapist', 'medical-laboratory-technologist', 'radiographer', 'dietitian', 'paramedic', 'allied-health-other'], amount: 990, targetDays: 20, daysUnit: 'working', includes: ['1 educational qualification', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: DF_STANDARD_NOTE, ...DF_SRC },
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'C', packageName: 'Retrospective – physicians & dentists working in Qatar for more than 5 years', amount: 800, targetDays: 20, daysUnit: 'working', includes: ['Up to 2 educational qualifications', '1 professional licence', 'Cross check'], notes: 'Retrospective packages are for practitioners already licensed in Qatar who are asked to complete PSV; no employment verification is included.', ...DF_SRC },
-  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'D', packageName: 'Retrospective – physicians & dentists working in Qatar for more than 5 years (reduced scope)', amount: 700, targetDays: 20, daysUnit: 'working', includes: ['Up to 2 educational qualifications', '1 professional licence', 'Cross check'], notes: 'Listed by DataFlow with the same components as Package C at a lower fee; ask DataFlow which applies to you.', ...DF_SRC },
+  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'D', packageName: 'Retrospective – allied health professionals (other than physicians & dentists) working in Qatar for more than 3 years', amount: 700, targetDays: 20, daysUnit: 'working', includes: ['1 educational qualification', '1 professional licence', 'Cross check'], notes: 'Retrospective packages are for practitioners already licensed in Qatar who are asked to complete PSV; no employment verification is included.', ...DF_SRC },
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'E', packageName: 'Nurses & Pharmacists', professionSlugs: ['registered-nurse', 'midwife', 'pharmacist'], amount: 990, targetDays: 20, daysUnit: 'working', includes: ['1 educational qualification', '1 professional licence', 'Last 3 years of experience (up to 3 employers)', 'Cross check'], notes: DF_STANDARD_NOTE, ...DF_SRC },
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'F', packageName: 'Trainee (no experience)', amount: 600, targetDays: 20, daysUnit: 'working', includes: ['1 educational qualification', 'Cross check'], ...DF_SRC },
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'G', packageName: 'Clinical Nurse Specialist / Nurse Practitioner / Nurse Educator', professionSlugs: ['advanced-practice-nurse'], amount: 1210, targetDays: 20, daysUnit: 'working', includes: ['2 educational qualifications', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: DF_STANDARD_NOTE, ...DF_SRC },
@@ -385,7 +385,7 @@ export const fees: SeedFee[] = [
   { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'standard', packageCode: 'I', packageName: 'Good Standing Certificates (2–3)', amount: 550, targetDays: 20, daysUnit: 'business', includes: ['2–3 good standing certificates', 'GlobeX check'], ...QB_SRC },
   // ---------- QuadraBay – add-ons ----------
   { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'addon', addonKey: 'report-transfer', packageName: 'Report transfer', amount: 150, ...QB_SRC },
-  { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'addon', addonKey: 'extra-education', packageName: 'Additional document (educational)', amount: 150, notes: 'QuadraBay prices additional documents as a bundle: 1 = QAR 150, 2 = 200, 3 = 250, 4 = 300. The calculator uses the single-document price.', ...QB_SRC },
+  { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'addon', addonKey: 'extra-education', packageName: 'Additional document (educational)', amount: 150, notes: 'Bundle pricing: 1 = QAR 150, 2 = 200, 3 = 250, 4 = 300.', ...QB_SRC },
   { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'addon', addonKey: 'good-standing', packageName: 'Additional document (good standing)', amount: 150, notes: 'Bundle pricing: 1 = QAR 150, 2 = 200, 3 = 250, 4 = 300.', ...QB_SRC },
   { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'addon', addonKey: 'extra-licence', packageName: 'Additional document (licence)', amount: 150, notes: 'Bundle pricing: 1 = QAR 150, 2 = 200, 3 = 250, 4 = 300.', ...QB_SRC },
   { vendorSlug: 'quadrabay', countryCode: 'QA', tier: 'addon', addonKey: 'extra-employer', packageName: 'Additional document (employment)', amount: 150, notes: 'Bundle pricing: 1 = QAR 150, 2 = 200, 3 = 250, 4 = 300.', ...QB_SRC },

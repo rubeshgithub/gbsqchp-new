@@ -804,3 +804,69 @@ textarea:focus {
   font-size: 0.9rem;
   margin: 0;
 }
+
+/* ---------- master fee table (FeeComparison) ---------- */
+.fee-compare th[scope='row'] {
+  font-weight: 600;
+  min-width: 190px;
+}
+
+.fee-compare .fee-amount {
+  font-weight: 600;
+  white-space: nowrap;
+  margin-right: 6px;
+}
+
+.fee-compare .fee-lowest {
+  color: var(--teal);
+}
+
+.fee-compare tbody th[scope='row'] {
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.95rem;
+}
+
+.fee-compare tbody th[scope='row'] .meta {
+  font-weight: 400;
+}
+
+.fee-compare td.fee {
+  white-space: nowrap;
+}
+
+.block-subtitle {
+  margin: 28px 0 10px;
+  font-size: 1.1rem;
+}
+
+.fee-notes {
+  padding-left: 1.2em;
+}
+
+.fee-notes li {
+  margin-bottom: 4px;
+}
+
+@media (max-width: 700px) {
+  .fee-compare td {
+    min-width: 160px;
+  }
+
+  .fee-compare th[scope='row'] {
+    min-width: 150px;
+  }
+}
+
+/* ---------- tables inside page bodies (Lexical table feature) ---------- */
+.article-body .lexical-table-container {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 16px 0;
+}
+
+.article-body td p,
+.article-body th p {
+  margin: 0;
+}

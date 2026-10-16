@@ -9,6 +9,7 @@ import { Breadcrumbs } from './Breadcrumbs'
 import { ChangeLog } from './ChangeLog'
 import { CircularTable } from './CircularTable'
 import { FaqSection } from './FaqSection'
+import { FeeComparison } from './FeeComparison'
 import { FeeCalculatorBlock } from './FeeCalculatorBlock'
 import { JsonLd } from './JsonLd'
 import { NewsletterForm } from './NewsletterForm'
@@ -35,10 +36,11 @@ export async function PageTemplate({ page, settings }: { page: Page; settings: S
   const author = rel<Author>(page.author)
   const featuredVendor = rel<Vendor>(page.featuredVendor)
   const crumbs = breadcrumbsFromPath(page.path, page.title, SEGMENT_LABELS)
-  const needsFees = Boolean((page.showVendorTable || featuredVendor) && country)
+  const needsVendors = Boolean((page.showVendorTable || page.showFeeComparison) && country)
+  const needsFees = Boolean((page.showVendorTable || page.showFeeComparison || featuredVendor) && country)
 
   const [vendors, fees, circulars] = await Promise.all([
-    page.showVendorTable && country ? getVendorsForCountry(country.id) : Promise.resolve([]),
+    needsVendors && country ? getVendorsForCountry(country.id) : Promise.resolve([]),
     needsFees && country ? getFeesForCountry(country.id) : Promise.resolve([]),
     page.showCirculars ? getCirculars(country?.id) : Promise.resolve([]),
   ])
@@ -66,11 +68,13 @@ export async function PageTemplate({ page, settings }: { page: Page; settings: S
         <VerifiedStamp page={page} />
       </header>
 
-      {featuredVendor ? <VendorPackages vendor={featuredVendor} fees={fees} /> : comparison}
+      {page.showFeeComparison && <FeeComparison vendors={vendors} fees={fees} />}
+
+      {featuredVendor ? <VendorPackages vendor={featuredVendor} fees={fees} /> : !page.showFeeComparison && comparison}
 
       <RichTextBlock content={page.content} />
 
-      {featuredVendor && comparison}
+      {(featuredVendor || page.showFeeComparison) && comparison}
 
       {page.showCalculator && country && <FeeCalculatorBlock country={country} />}
 

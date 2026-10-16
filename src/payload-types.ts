@@ -184,6 +184,10 @@ export interface Page {
    */
   showVendorTable?: boolean | null;
   /**
+   * Render the master fee table (every package × every approved provider, standard and fast-tier totals, US$, add-ons) above the body. Reads Vendors + Fees.
+   */
+  showFeeComparison?: boolean | null;
+  /**
    * Embed the fee & timeline calculator.
    */
   showCalculator?: boolean | null;
@@ -774,6 +778,7 @@ export interface PagesSelect<T extends boolean = true> {
   summary?: T;
   content?: T;
   showVendorTable?: T;
+  showFeeComparison?: T;
   showCalculator?: T;
   showCirculars?: T;
   featuredVendor?: T;

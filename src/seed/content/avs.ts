@@ -78,6 +78,8 @@ AVS's own site describes a wider menu – education, employment, identity, crimi
 
 ## How much does AVS cost, and what is in each package?
 
+For all three providers' prices side by side, extra-document worked examples and the total cost of a Qatar licence, see [PSV fees for Qatar DHP](/qatar/psv/fees).
+
 AVS prices by profession rather than by DHP's package letters; the table above maps each AVS package to the letter used across this site so you can compare like with like. The headline fees from the AVS schedule:
 
 - **Physicians and dentists: QAR 1,050.** Up to two educational qualifications, one professional licence, the last five years of experience with up to three employers, one cross check.

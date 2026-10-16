@@ -1,7 +1,7 @@
 /**
  * Seed content: DataFlow guide for Qatar DHP.
  * Facts checked 11 Oct 2026 against DataFlow's DHP organisation page, its "Customer Reference Kit for DHP" (2026
- * edition) and the DHP price list PDF (Sept 2024, still the list DataFlow links to), plus the DHP PSV page.
+ * edition) and the DHP price list PDF (file dated 28 July 2025, still the list DataFlow links to), plus the DHP PSV page.
  * Figures labelled "reported" come from applicant and consultancy accounts, not from DataFlow.
  */
 
@@ -19,7 +19,7 @@ export const dataflowGuide = {
   },
   showVendorTable: true,
   showCalculator: false,
-  verifiedOn: '2026-10-11',
+  verifiedOn: '2026-10-16',
   verifiedAgainst: [
     {
       label: 'DataFlow – DHP (MOPH Qatar) organisation page',
@@ -30,7 +30,7 @@ export const dataflowGuide = {
       url: 'https://dataflowgroup.com/wp-content/uploads/2024/09/Customer-Reference-Kit-for-DHP-EN-2.pdf',
     },
     {
-      label: 'DataFlow – DHP price list (Sept 2024)',
+      label: 'DataFlow – DHP price list (PDF dated 28 July 2025)',
       url: 'https://dataflowgroup.com/wp-content/uploads/2024/09/DHP-Price-List-Google-Docs.pdf',
     },
     {
@@ -38,7 +38,10 @@ export const dataflowGuide = {
       url: 'https://dhp.moph.gov.qa/en/Pages/PrimarysourceVerification.aspx',
     },
   ],
-  changeLog: [{ date: '2026-10-11', note: 'First published. Fees from the Sept 2024 price list; steps and 20-working-day average from the 2026 reference kit.' }],
+  changeLog: [
+    { date: '2026-10-11', note: 'First published. Fees from DataFlow’s DHP price list; steps and 20-working-day average from the 2026 reference kit.' },
+    { date: '2026-10-16', note: 'Corrected Package D: it is the retrospective package for allied health professionals in Qatar for more than three years (one qualification, one licence), not a physicians’ package. Price list date corrected to 28 July 2025.' },
+  ],
   faqs: [
     {
       question: 'How much is DataFlow for nurses in Qatar?',
@@ -81,6 +84,8 @@ The [PSV overview](/qatar/psv) compares all three providers; the [QuadraBay](/qa
 
 ## How much does DataFlow cost for Qatar?
 
+For all three providers' prices side by side, extra-document worked examples and the total cost of a Qatar licence, see [PSV fees for Qatar DHP](/qatar/psv/fees).
+
 The table above is DataFlow's published DHP schedule, in Qatari riyals. The numbers to remember:
 
 - **Package A – physicians and dentists: QAR 1,210.** Up to two qualifications, one licence, the last five years of employment with up to three employers.
@@ -88,7 +93,7 @@ The table above is DataFlow's published DHP schedule, in Qatari riyals. The numb
 - **Package B – allied health and complementary medicine: QAR 990.** One qualification, one licence, five years of employment.
 - **Package G – clinical nurse specialists, nurse practitioners and nurse educators: QAR 1,210**, the same scope as Package A.
 - **Package F – trainee with no experience: QAR 600**, one qualification only.
-- **Packages C and D – retrospective: QAR 800 / 700**, for physicians and dentists who have already worked in Qatar for more than five years and are asked to complete PSV; no employment check.
+- **Packages C and D – retrospective: QAR 800 / 700.** C is for physicians and dentists who have worked in Qatar for more than five years (up to two qualifications and one licence); D is for allied health professionals who have worked in Qatar for more than three years (one qualification and one licence). Both are for practitioners asked to complete PSV after licensing, and neither includes an employment check.
 - **Packages H to L** cover single purposes: a visiting practitioner's licence (QAR 300), two to three good-standing certificates (QAR 550), one good standing plus the latest employment letter (QAR 550), an allied-health qualification on its own (QAR 400) and non-medical staff (QAR 400).
 
 Anything outside your package is charged per document: QAR 400 for an extra qualification, QAR 300 each for an extra licence, good-standing certificate, surgical logbook or employer beyond three. Two more lines matter at checkout. First, DataFlow's reference kit warns that "if your issuing authority applies verification fees, the amount will be added to the total" – Indian universities and some nursing councils charge for answering, and you pay that through DataFlow. Second, you pay when you submit, not when the result is positive, and neither the price list nor the reference kit mentions a refund for a document that comes back *Unable to Verify* – so fix the file before you pay rather than after.

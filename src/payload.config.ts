@@ -1,7 +1,7 @@
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
 import { seoPlugin } from '@payloadcms/plugin-seo'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { EXPERIMENTAL_TableFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
@@ -55,7 +55,8 @@ export default buildConfig({
   },
   collections: [Pages, Authors, Vendors, Fees, Circulars, Professions, Countries, Subscribers, ContactMessages, Media, Users],
   globals: [SiteSettings],
-  editor: lexicalEditor(),
+  // Tables in page bodies (e.g. the total-cost table on /qatar/psv/fees). Also lets the seed's Markdown tables convert.
+  editor: lexicalEditor({ features: ({ defaultFeatures }) => [...defaultFeatures, EXPERIMENTAL_TableFeature()] }),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),

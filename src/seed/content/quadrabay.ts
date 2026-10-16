@@ -74,6 +74,8 @@ Nothing in DHP's rules favours one provider over another. The [PSV overview](/qa
 
 ## How much does QuadraBay cost for Qatar?
 
+For all three providers' prices side by side, extra-document worked examples and the total cost of a Qatar licence, see [PSV fees for Qatar DHP](/qatar/psv/fees).
+
 The table above lists every line in the circular. In summary:
 
 - **Package A – physicians and dentists: QAR 1,100 Standard, QAR 1,400 Prestige.** Up to two qualifications, one licence, the last five years of employment with up to three employers.

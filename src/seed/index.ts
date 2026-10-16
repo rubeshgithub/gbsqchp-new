@@ -4,12 +4,13 @@
  * guide pages. Safe to re-run: records are matched on their natural keys (slug, number, package+tier).
  */
 import { convertMarkdownToLexical, editorConfigFactory } from '@payloadcms/richtext-lexical'
-import type { CollectionSlug, Payload } from 'payload'
+import type { CollectionSlug, Payload, RichTextField } from 'payload'
 import { getPayload } from 'payload'
 
 import config from '../payload.config'
 import { avsGuide } from './content/avs'
 import { dataflowGuide } from './content/dataflow'
+import { feesGuide } from './content/fees'
 import { legacyGbs } from './content/legacy-gbs'
 import { psvPillar } from './content/psv-pillar'
 import { quadrabayGuide } from './content/quadrabay'
@@ -25,6 +26,7 @@ type SeedPage = {
   summary: string
   meta: { title: string; description: string }
   showVendorTable?: boolean
+  showFeeComparison?: boolean
   showCalculator?: boolean
   showCirculars?: boolean
   featuredVendorSlug?: string
@@ -157,10 +159,12 @@ async function run() {
   log('site settings updated')
 
   // ---------- pages ----------
-  const editorConfig = await editorConfigFactory.default({ config: payload.config })
+  // Use the Pages body field's own editor (it includes the table feature), so Markdown tables become real tables.
+  const contentField = payload.collections.pages.config.flattenedFields.find((f) => f.name === 'content') as RichTextField
+  const editorConfig = editorConfigFactory.fromField({ field: contentField })
 
   const pageIds: Record<string, string> = {}
-  const pages: SeedPage[] = [psvPillar, legacyGbs, dataflowGuide, quadrabayGuide, avsGuide]
+  const pages: SeedPage[] = [psvPillar, legacyGbs, dataflowGuide, quadrabayGuide, avsGuide, feesGuide]
   for (const page of pages) {
     const { markdown, verifiedAgainst, meta, featuredVendorSlug, ...rest } = page
     const content = convertMarkdownToLexical({ editorConfig, markdown: markdown.trim() })
@@ -188,10 +192,11 @@ async function run() {
 
   // cross-link the pages and attach guide pages to vendors / circulars
   const related: Record<string, string[]> = {
-    [psvPillar.path]: [dataflowGuide.path, quadrabayGuide.path, avsGuide.path, legacyGbs.path],
-    [dataflowGuide.path]: [psvPillar.path, quadrabayGuide.path, avsGuide.path],
-    [quadrabayGuide.path]: [psvPillar.path, dataflowGuide.path, avsGuide.path],
-    [avsGuide.path]: [psvPillar.path, dataflowGuide.path, quadrabayGuide.path],
+    [psvPillar.path]: [feesGuide.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path, legacyGbs.path],
+    [dataflowGuide.path]: [psvPillar.path, feesGuide.path, quadrabayGuide.path, avsGuide.path],
+    [quadrabayGuide.path]: [psvPillar.path, feesGuide.path, dataflowGuide.path, avsGuide.path],
+    [avsGuide.path]: [psvPillar.path, feesGuide.path, dataflowGuide.path, quadrabayGuide.path],
+    [feesGuide.path]: [psvPillar.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
     [legacyGbs.path]: [psvPillar.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
   }
   for (const [path, targets] of Object.entries(related)) {
@@ -208,6 +213,7 @@ async function run() {
   }
   const circularExplainers: Record<string, string> = {
     '15/2018': legacyGbs.path,
+    'DHP/2024/10': feesGuide.path,
     'DHP/2024/09': legacyGbs.path,
     'DHP/2025/20': quadrabayGuide.path,
     'DHP/2026/36': avsGuide.path,

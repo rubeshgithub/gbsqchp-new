@@ -95,6 +95,15 @@ export const Pages: CollectionConfig = {
           admin: { description: 'Render the PSV provider comparison table (reads Vendors + Fees for this page\'s country).' },
         },
         {
+          name: 'showFeeComparison',
+          type: 'checkbox',
+          defaultValue: false,
+          admin: {
+            description:
+              'Render the master fee table (every package × every approved provider, standard and fast-tier totals, US$, add-ons) above the body. Reads Vendors + Fees.',
+          },
+        },
+        {
           name: 'showCalculator',
           type: 'checkbox',
           defaultValue: false,

@@ -69,3 +69,25 @@ test.describe('Privacy notice', () => {
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /\/privacy$/)
   })
 })
+
+test.describe('PSV fees page', () => {
+  test('renders the master fee table from the Fees collection, the total-cost table and the calculator', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/psv/fees')
+    await expect(page.locator('h1')).toContainText('PSV fees for Qatar DHP')
+    const master = page.locator('.fee-compare')
+    await expect(master.locator('thead').first()).toContainText('QuadraBay')
+    await expect(master.locator('tbody tr').first()).toContainText('QAR 1,210')
+    await expect(master).toContainText('Prestige: QAR 1,400 in total')
+    await expect(master.locator('.fee-notes li')).toHaveCount(5)
+    await expect(page.locator('.article-body table')).toContainText('US$244')
+    await expect(page.locator('#calculator')).toBeVisible()
+    const schema = (await page.locator('script[type="application/ld+json"]').allTextContents()).join(' ')
+    expect(schema).toContain('FAQPage')
+  })
+
+  test('is linked from the PSV pillar and the footer', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/psv')
+    await expect(page.locator('.article-body a[href="/qatar/psv/fees"]')).toBeVisible()
+    await expect(page.locator('.site-footer a[href="/qatar/psv/fees"]')).toBeVisible()
+  })
+})

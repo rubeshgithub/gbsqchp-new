@@ -26,7 +26,7 @@ export const psvPillar = {
       url: 'https://dhp.moph.gov.qa/en/Pages/PrimarysourceVerification.aspx',
     },
     {
-      label: 'DataFlow – DHP price list (Sept 2024)',
+      label: 'DataFlow – DHP price list (PDF dated 28 July 2025)',
       url: 'https://dataflowgroup.com/wp-content/uploads/2024/09/DHP-Price-List-Google-Docs.pdf',
     },
     {
@@ -95,7 +95,7 @@ Gulf Bridge Services (GBS) was the second approved provider from July 2018 until
 Nothing in DHP's rules favours one provider: all three reports are accepted for new applications, renewals, upgrades and re-registration. Choose on your own situation:
 
 1. **You already hold a DataFlow or QuadraBay report for another GCC regulator.** Transfer it rather than restart. DataFlow charges QAR 323 to re-issue a report that was issued to another authority (QAR 215 if it was already issued to DHP) and quotes a new DHP report within five days when nothing new is needed; QuadraBay charges QAR 150 for its own reports.
-2. **Price matters and the standard target is fine.** Compare the package for your profession in the table above. For nurses and pharmacists (Package E) QuadraBay and AVS list QAR 900 against DataFlow's QAR 990; for physicians and dentists (Package A) AVS lists QAR 1,050, QuadraBay QAR 1,100 and DataFlow QAR 1,210. AVS also verifies two qualifications and five years of employment in every package, where the others' Package E covers one and three.
+2. **Price matters and the standard target is fine.** Compare the package for your profession in the table above, or see every package, add-on and the total cost of a licence on the [PSV fees page](/qatar/psv/fees). For nurses and pharmacists (Package E) QuadraBay and AVS list QAR 900 against DataFlow's QAR 990; for physicians and dentists (Package A) AVS lists QAR 1,050, QuadraBay QAR 1,100 and DataFlow QAR 1,210. AVS also verifies two qualifications and five years of employment in every package, where the others' Package E covers one and three.
 3. **You need a published fast target.** QuadraBay's Prestige tier targets 14 business days (QAR 1,200 for Package E, QAR 1,400 for Package A); DataFlow's Express service adds QAR 529 for a 14-working-day target. AVS sells Express for QAR 400 but publishes no target.
 4. **Your employer has a preference.** Ask HR which provider their corporate account uses. Hospitals that submit in bulk often want every file with the same provider.
 5. **Your file is complicated** – a closed university, an institution in Sudan or Syria, a name change, a long break in practice. The provider matters less than your preparation. Fix the file first; the six checks at the end of this page show where to start, and the provider guides linked below explain each portal's rules.
