@@ -90,7 +90,8 @@ jobs:
           done
           # Redirects that keep one canonical address: www → apex, http → https.
           for url in https://www.gbsqchp.com/qatar/psv http://gbsqchp.com/qatar/psv; do
-            read -r code target < <(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' "$url")
+            out=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' "$url" || true)
+            code=${out%% *}; target=${out#* }
             echo "${url} → ${code} ${target}"
             case "$code" in 301|308) ;; *) echo "::error::${url} should redirect permanently, got ${code}"; exit 1 ;; esac
             [ "$target" = "https://gbsqchp.com/qatar/psv" ] || { echo "::error::${url} redirects to ${target}"; exit 1; }
