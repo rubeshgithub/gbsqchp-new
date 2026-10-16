@@ -13,7 +13,7 @@ import { breadcrumbJsonLd } from '@/lib/seo'
  * those services are switched on in Site settings, so the notice and the site cannot drift apart.
  * Change LAST_UPDATED whenever the wording changes.
  */
-const LAST_UPDATED = '2026-10-15'
+const LAST_UPDATED = '2026-10-16'
 
 export const metadata: Metadata = {
   title: 'Privacy notice',
@@ -39,6 +39,7 @@ export default async function PrivacyPage() {
   ]
 
   const processors: [string, string][] = [
+    ['Cloudflare', 'Delivers the site to your browser and protects it from attacks; it sees your IP address and the pages you request.'],
     ['OVHcloud', 'Hosts the web server that runs this site.'],
     ['MongoDB Atlas (MongoDB, Inc.)', 'Hosts the database where contact messages and alert sign-ups are stored.'],
     ['Amazon Web Services (Amazon SES)', 'Delivers the email that forwards your contact message to our inbox, and our replies.'],
@@ -121,7 +122,7 @@ export default async function PrivacyPage() {
 
         <h3>Technical information when you visit</h3>
         <p>
-          Like every website, our server records basic technical information about each request – IP address, browser type, the
+          Like every website, our server and Cloudflare, which delivers the site, record basic technical information about each request – IP address, browser type, the
           page asked for and the time – to keep the site running and secure. To stop the contact form being abused we briefly
           keep a count of messages per IP address; that count is held in memory for ten minutes and never stored.
         </p>
