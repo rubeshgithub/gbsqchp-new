@@ -21,11 +21,28 @@ const nextConfig: NextConfig = {
     ],
   },
   async redirects() {
-    return LEGACY_PREFIXES.map((prefix) => ({
-      source: `/${prefix}/:path*`,
-      destination: '/gbs-psv-portal',
-      permanent: true,
-    }))
+    return [
+      // One canonical host for search engines: www.gbsqchp.com → gbsqchp.com (same path and query).
+      {
+        source: '/:path*',
+        has: [{ type: 'host' as const, value: 'www.gbsqchp.com' }],
+        destination: 'https://gbsqchp.com/:path*',
+        permanent: true,
+      },
+      // Behind Cloudflare (Full strict) a plain-http visit still reaches the server over HTTPS, so the server's own
+      // http→https redirect never fires; Cloudflare's CF-Visitor header tells us what the visitor actually used.
+      {
+        source: '/:path*',
+        has: [{ type: 'header' as const, key: 'cf-visitor', value: '.*"scheme":"http".*' }],
+        destination: 'https://gbsqchp.com/:path*',
+        permanent: true,
+      },
+      ...LEGACY_PREFIXES.map((prefix) => ({
+        source: `/${prefix}/:path*`,
+        destination: '/gbs-psv-portal',
+        permanent: true,
+      })),
+    ]
   },
   async headers() {
     return [

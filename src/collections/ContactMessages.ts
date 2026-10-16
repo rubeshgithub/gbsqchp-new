@@ -22,9 +22,15 @@ const WINDOW_MS = 10 * 60 * 1000
 const MAX_PER_WINDOW = 5
 const hits = new Map<string, number[]>()
 
+/**
+ * The visitor's IP. The site sits behind Cloudflare, which puts the real address in CF-Connecting-IP; Apache then
+ * appends Cloudflare's own address to X-Forwarded-For, so that header is only a fallback (local dev, direct access).
+ */
 function clientIp(req: PayloadRequest) {
+  const cf = req.headers.get('cf-connecting-ip')?.trim()
+  if (cf) return cf
   const fwd = req.headers.get('x-forwarded-for')
-  return (fwd ? fwd.split(',')[0] : req.headers.get('x-real-ip')) || 'unknown'
+  return (fwd ? fwd.split(',')[0].trim() : req.headers.get('x-real-ip')) || 'unknown'
 }
 
 function rateLimited(ip: string) {
