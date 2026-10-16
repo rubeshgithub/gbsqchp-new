@@ -131,7 +131,7 @@ async function run() {
       professions: (professionSlugs || []).map((s) => professionIds[s]).filter(Boolean),
       includes: (includes || []).map((item) => ({ item })),
       currency: f.currency || 'QAR',
-      active: true,
+      active: f.active ?? true,
     })
     feeCount += 1
   }

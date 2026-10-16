@@ -323,6 +323,8 @@ type SeedFee = {
   daysUnit?: 'working' | 'business' | 'calendar'
   includes?: string[]
   notes?: string
+  /** false hides a retired price line everywhere (the seed never deletes records). */
+  active?: boolean
   sourceLabel: string
   sourceUrl: string
   verifiedOn: string
@@ -345,7 +347,7 @@ const AVS_SRC = {
 }
 
 const DF_STANDARD_NOTE = 'DataFlow’s reference kit quotes an average of 20 working days from the day all documents are submitted; its FAQ allows up to three months. Express (+QAR 529) targets 14 working days.'
-const AVS_STANDARD_NOTE = 'The AVS portal shows a 20-day turnaround on the package card; AVS does not say whether these are working days. Every AVS clinical package covers up to two qualifications and five years of employment.'
+const AVS_STANDARD_NOTE = 'The 20-day turnaround is shown on the AVS portal’s package card, not in AVS’s PDFs; AVS does not say whether these are working days. Every AVS clinical package covers up to two qualifications and five years of employment.'
 
 export const fees: SeedFee[] = [
   // ---------- DataFlow – standard packages ----------
@@ -362,7 +364,7 @@ export const fees: SeedFee[] = [
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'K', packageName: 'AHP education only', amount: 400, targetDays: 20, daysUnit: 'working', includes: ['1 educational qualification', 'Cross check'], ...DF_SRC },
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'standard', packageCode: 'L', packageName: 'Non-medical staff', amount: 400, targetDays: 20, daysUnit: 'working', includes: ['1 educational qualification', 'Cross check'], ...DF_SRC },
   // ---------- DataFlow – add-ons and optional services ----------
-  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'addon', addonKey: 'express-upgrade', packageName: 'Express service (14 working days)', amount: 529, targetDays: 14, daysUnit: 'working', notes: 'Applies to packages A, B, C, D, E and G. Packages F and H–L: QAR 215 / 323 / 430 / 529 for 1 / 2 / 3 / 4+ documents.', ...DF_SRC },
+  { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'addon', addonKey: 'express-upgrade', packageName: 'Express service (14 working days)', amount: 529, targetDays: 14, daysUnit: 'working', notes: 'Applies to packages A, B, C, D, E and G. For packages F and H–L, report transfers and additional documents, express is priced by document count: QAR 215 / 323 / 430 / 529 for 1 / 2 / 3 / 4+ documents.', ...DF_SRC },
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'addon', addonKey: 'extra-education', packageName: 'Additional educational qualification', amount: 400, ...DF_SRC },
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'addon', addonKey: 'good-standing', packageName: 'Additional good standing certificate', amount: 300, ...DF_SRC },
   { vendorSlug: 'dataflow', countryCode: 'QA', tier: 'addon', addonKey: 'logbook', packageName: 'Surgical logbook', amount: 300, ...DF_SRC },
@@ -398,7 +400,7 @@ export const fees: SeedFee[] = [
   { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'B', packageName: 'Allied Health Practitioners / Complementary Medicine', professionSlugs: ['physiotherapist', 'medical-laboratory-technologist', 'radiographer', 'dietitian', 'paramedic', 'allied-health-other'], amount: 900, targetDays: 20, daysUnit: 'calendar', includes: ['Up to 2 educational qualifications', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: AVS_STANDARD_NOTE, ...AVS_SRC },
   { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'E', packageName: 'Nurses / Pharmacists', professionSlugs: ['registered-nurse', 'midwife', 'pharmacist'], amount: 900, targetDays: 20, daysUnit: 'calendar', includes: ['Up to 2 educational qualifications', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: AVS_STANDARD_NOTE, ...AVS_SRC },
   { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'F', packageName: 'Trainee with no experience (any profession)', amount: 525, targetDays: 20, daysUnit: 'calendar', includes: ['1 educational qualification', 'Cross check'], ...AVS_SRC },
-  { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'G', packageName: 'Clinical Nurse Specialist / Nurse Practitioner / Nurse Educator', professionSlugs: ['advanced-practice-nurse'], amount: 1050, targetDays: 20, daysUnit: 'calendar', includes: ['Up to 2 educational qualifications', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: AVS_STANDARD_NOTE, ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'G', packageName: 'Clinical Nurse Specialist / Nurse Practitioner / Nurse Educator', professionSlugs: ['advanced-practice-nurse'], amount: 1050, targetDays: 20, daysUnit: 'calendar', includes: ['Up to 2 educational qualifications', '1 professional licence', 'Last 5 years of experience (up to 3 employers)', 'Cross check'], notes: 'AVS labels this package “(Qatar to Qatar)”; confirm with AVS that the price applies to applicants coming from abroad.', ...AVS_SRC },
   { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'H', packageName: 'Visiting Physicians & AHP (health licence only)', amount: 300, includes: ['1 health licence', 'Cross check'], ...AVS_SRC },
   { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'I', packageName: 'Good Standing Certificates (2–3)', amount: 500, includes: ['2–3 good standing certificates'], ...AVS_SRC },
   { vendorSlug: 'avs', countryCode: 'QA', tier: 'standard', packageCode: 'J', packageName: 'Good Standing + Employment Certificate', amount: 500, includes: ['1 good standing certificate', '1 employment certificate (most recent)'], ...AVS_SRC },
@@ -410,8 +412,8 @@ export const fees: SeedFee[] = [
   { vendorSlug: 'avs', countryCode: 'QA', tier: 'addon', addonKey: 'good-standing', packageName: 'Additional good standing certificate', amount: 250, ...AVS_SRC },
   { vendorSlug: 'avs', countryCode: 'QA', tier: 'addon', addonKey: 'extra-employer', packageName: 'Additional employment check', amount: 250, ...AVS_SRC },
   { vendorSlug: 'avs', countryCode: 'QA', tier: 'addon', addonKey: 'logbook', packageName: 'Additional logbook', amount: 250, ...AVS_SRC },
-  { vendorSlug: 'avs', countryCode: 'QA', tier: 'addon', addonKey: 'report-transfer', packageName: 'Report transfer from another vendor', amount: 250, notes: 'AVS also lists “report transfer within the same client” at QAR 150 and “report transfer / re-issuance” at QAR 250. Whether DHP accepts a report transferred between providers is not stated in any circular – ask DHP first.', ...AVS_SRC },
-  { vendorSlug: 'avs', countryCode: 'QA', tier: 'addon', addonKey: 'report-reissue', packageName: 'Report transfer / re-issuance', amount: 250, ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'addon', addonKey: 'report-transfer', packageName: 'Report transfer / re-issuance (an AVS report)', amount: 250, notes: 'AVS’s “Report Transfer / Re-Issuance”: re-issuance or transfer of a previously completed AVS verification report. AVS also lists “report transfer from another vendor” at QAR 250 and “report transfer within the same client” at QAR 150; no DHP circular says DHP accepts a report moved between providers – ask DHP first.', ...AVS_SRC },
+  { vendorSlug: 'avs', countryCode: 'QA', tier: 'addon', addonKey: 'report-reissue', packageName: 'Report transfer / re-issuance', amount: 250, active: false, notes: 'Retired 16 Oct 2026: the same AVS service is now listed once, under report transfer.', ...AVS_SRC },
   { vendorSlug: 'avs', countryCode: 'QA', tier: 'optional', addonKey: 'applicant-assist', packageName: 'VIP application assistance (help completing and following up the application)', amount: 100, ...AVS_SRC },
   { vendorSlug: 'avs', countryCode: 'QA', tier: 'optional', addonKey: 'other', packageName: 'Express + applicant assist bundle', amount: 480, ...AVS_SRC },
 ]

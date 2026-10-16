@@ -13,7 +13,7 @@ export const feesGuide = {
   path: '/qatar/psv/fees',
   section: 'psv' as const,
   summary:
-    'Primary Source Verification for a Qatar DHP licence costs QAR 900 to 1,210 for a practising clinician’s standard package: QAR 900 for nurses, pharmacists and allied health at QuadraBay and AVS (QAR 990 at DataFlow), and QAR 1,050 to 1,210 for physicians and dentists. Extra documents, a faster tier and the provider you pick can move the total by several hundred riyals. This page puts every published price from the three DHP-approved providers in one table, shows what each package covers, and adds the other costs of a Qatar licence: the US$244 qualifying exam and DHP’s evaluation and licence fees.',
+    'Primary Source Verification for a Qatar DHP licence costs QAR 900 to 1,210 for a practising clinician’s standard package: QAR 900 for nurses, pharmacists and allied health at QuadraBay and AVS (QAR 990 at DataFlow), and QAR 1,050 to 1,210 for physicians and dentists. Extra documents, a faster tier and the provider you pick can move the total by several hundred riyals. This page puts the main PSV packages from the three DHP-approved providers in one table, shows what each package covers, and adds the other costs of a Qatar licence: the US$244 qualifying exam and DHP’s evaluation and licence fees.',
   meta: {
     title: 'PSV Fees in Qatar 2026: DataFlow, QuadraBay & AVS Prices',
     description:
@@ -62,7 +62,7 @@ export const feesGuide = {
     {
       question: 'Does my employer pay for PSV?',
       answer:
-        'It depends on your contract. The PSV application is yours – you register, sign the authorization and pay – although providers also run business accounts for facilities that submit staff in bulk. DHP’s evaluation and licence applications go through the healthcare facility’s focal point in the DHP portal, and DHP’s last published FAQ (2014) describes the focal point paying those fees. Ask your recruiter in writing which costs the employer covers or reimburses before you pay anything.',
+        'It depends on your contract. The PSV application is yours – you register, sign the authorization and pay – although providers also run business accounts for facilities that submit staff in bulk. Licence applications are submitted by the employing facility’s focal point in the DHP portal, and the last fee FAQ, published in 2014 by DHP’s predecessor QCHP, describes the focal point paying the evaluation and licence fees. A preliminary evaluation can reportedly now be filed without an employer (Circular DHP/2024/22). Ask your recruiter in writing which costs the employer covers or reimburses before you pay anything.',
     },
     {
       question: 'How much is PSV in US dollars or Indian rupees?',
@@ -78,12 +78,12 @@ export const feesGuide = {
   markdown: `
 ## How much does PSV cost for a Qatar DHP licence?
 
-The table above lists every package DHP's three approved providers publish for new applications, with the standard price, the total if you pay for the faster tier, and the US dollar equivalent. In short:
+The table above lists the main packages each of DHP's three approved providers publishes for healthcare practitioners, with the standard price, the total if you pay for the faster tier, and the US dollar equivalent. In short:
 
 - **Nurses, midwives and pharmacists:** QAR 900 at QuadraBay and AVS, QAR 990 at DataFlow.
 - **Allied health professionals:** QAR 900 at QuadraBay and AVS, QAR 990 at DataFlow.
 - **Physicians and dentists:** QAR 1,050 at AVS, QAR 1,100 at QuadraBay, QAR 1,210 at DataFlow.
-- **Clinical nurse specialists, nurse practitioners and nurse educators:** the same as physicians – QAR 1,050, 1,100 and 1,210.
+- **Clinical nurse specialists, nurse practitioners and nurse educators:** the same as physicians – QAR 1,050, 1,100 and 1,210. AVS labels its package for these roles "Qatar to Qatar", so confirm with AVS that the price applies if you are coming from abroad.
 - **Trainees with no experience:** QAR 525 at AVS and QAR 600 at DataFlow; QuadraBay's circular lists no trainee package.
 
 All three providers are accepted for every DHP licensing category and application type, so nothing in DHP's rules makes the dearer provider the safer choice. The [PSV overview](/qatar/psv) explains the process; the provider guides for [DataFlow](/qatar/psv/dataflow), [QuadraBay](/qatar/psv/quadrabay) and [AVS](/qatar/psv/avs) cover each portal in detail. To price your own file, use the [fee calculator](/tools/psv-fee-calculator) below the FAQ.
@@ -97,7 +97,7 @@ The headline price only compares like with like if the package covers your docum
 - **DataFlow and QuadraBay, physicians and dentists (Package A):** up to two qualifications, one licence and the last five years, with up to three employers.
 - **AVS, every clinical package:** up to two qualifications, one licence and the last five years with up to three employers – for nurses and allied health as well as physicians.
 
-Each provider also runs its own background check within the package: DataFlow and AVS call it a cross check, QuadraBay a GlobeX database check. Good-standing certificates and surgical logbooks are not part of any standard clinical package; you add them, or buy the good-standing package (Package I) if the certificate is all you need.
+Each provider also runs its own background check within the package: DataFlow and AVS call it a cross check, QuadraBay a GlobeX database check. Good-standing certificates and surgical logbooks are not part of any standard clinical package; you add them, or buy the good-standing package (Package I, two to three certificates) if certificates are all you need.
 
 ## What do extra documents cost?
 
@@ -118,7 +118,7 @@ One cost appears on no price list. DataFlow's reference kit warns that if the in
 The faster tiers buy priority in the provider's own queue. They cannot make a registrar or a former employer answer sooner, and the clock stops whenever the provider is waiting for something from you.
 
 - **QuadraBay Prestige** is a separate package with a published target of 14 business days: QAR 1,200 for nurses, pharmacists and allied health, QAR 1,400 for physicians, dentists and advanced nursing roles. It is the cheapest published fast target.
-- **DataFlow Express** adds QAR 529 to packages A to E and G for an average of 14 working days – QAR 1,519 in total for a nurse, QAR 1,739 for a physician. The trainee, good-standing and other small packages are charged by document count instead (QAR 215 for one document up to 529 for four or more).
+- **DataFlow Express** adds QAR 529 to packages A to E and G for an average of 14 working days – QAR 1,519 in total for a nurse, QAR 1,739 for a physician. For the trainee, good-standing and other small packages, and for report transfers and extra documents, Express is priced by document count instead (QAR 215 for one document up to 529 for four or more).
 - **AVS Express** adds QAR 400, but AVS says that "final turnaround time and service conditions are subject to AVS confirmation" – there is no published target to hold it to.
 
 Pay for speed when your institutions are known to answer quickly and a start date depends on it. When the delay is a slow university, a faster tier mostly buys a faster wait.
@@ -137,9 +137,9 @@ PSV is one of four costs. The other three are DHP's and Prometric's, not the pro
 | DHP licence | QAR 600 | QAR 1,000 | QAR 1,200 |
 | **Approximate total** | **QAR 2,488–2,578** | **QAR 3,038–3,198** | **QAR 3,238–3,398** |
 
-The exam fee is official: Circular DHP/2024/10 set it at US$244 for exams from 1 January 2026, with US$25 to reschedule 30 or more days ahead and US$40 at 5–29 days. Holders of certain certificates are exempt from the exam altogether; the list is in Circular DHP/2025/19, linked from DHP's qualifying-exam page.
+The exam fee is official: Circular DHP/2024/10 set it at US$244 for exam bookings made from 1 January 2026, with US$25 to reschedule 30 or more days ahead and US$40 at 5–29 days. Holders of certain certificates are exempt from the exam altogether; the list is in Circular DHP/2025/19, linked from DHP's qualifying-exam page.
 
-The evaluation and licence fees are less certain. DHP does not publish a current fee schedule on its website; the figures above are from the last table its predecessor, the Qatar Council for Healthcare Practitioners, published (November 2014), and current guides still quote the same amounts. The portal shows the exact fee at payment – confirm it there. The same FAQ lists licence renewal at the same price as the licence.
+The evaluation and licence fees are less certain. DHP does not publish a current fee schedule on its website; the figures above are from the last table its predecessor, the Qatar Council for Healthcare Practitioners, published (November 2014). The portal shows the exact fee at payment – confirm it there. The same FAQ lists licence renewal at the same price as the licence.
 
 ## How do you pay, and what happens if a document fails?
 
