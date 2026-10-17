@@ -50,7 +50,7 @@ export const quadrabayGuide = {
     {
       question: 'How long does QuadraBay take?',
       answer:
-        'The published targets are 20 business days for Standard and 14 for Prestige, counted from the day your file is complete. They are targets, not guarantees: QuadraBay cannot make a university or a former employer answer faster, and the clock stops whenever it is waiting for something from you.',
+        'Circular DHP/2025/20 sets targets of 20 business days for Standard and 14 for Prestige. It does not say when the count starts; assume it runs from the day your file is complete, as DataFlow’s does. They are targets, not guarantees: QuadraBay cannot make a university or a former employer answer faster, and any time it spends waiting for something from you adds to the total.',
     },
     {
       question: 'What happens if I miss the 30-day document window?',

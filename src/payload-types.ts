@@ -155,7 +155,8 @@ export interface Page {
    * Full URL path, lowercase, e.g. /qatar/psv/dataflow
    */
   path: string;
-  section: 'psv' | 'licensing' | 'exam' | 'circulars' | 'documents' | 'careers' | 'tools' | 'legacy' | 'general';
+  section:
+    'psv' | 'licensing' | 'exam' | 'circulars' | 'documents' | 'careers' | 'tools' | 'articles' | 'legacy' | 'general';
   country?: (string | null) | Country;
   /**
    * Answer-first intro (2–4 sentences). Answers the query in the first two sentences. Also the meta-description fallback.

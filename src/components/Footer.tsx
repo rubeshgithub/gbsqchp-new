@@ -48,6 +48,9 @@ export function Footer({ settings }: { settings: SiteSetting }) {
                 <Link href="/#newsletter">DHP circular alerts</Link>
               </li>
               <li>
+                <Link href="/articles">Updates &amp; news</Link>
+              </li>
+              <li>
                 <Link href="/contact">Contact us</Link>
               </li>
               <li>

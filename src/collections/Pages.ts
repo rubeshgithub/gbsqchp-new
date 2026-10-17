@@ -10,6 +10,7 @@ export const PAGE_SECTIONS = [
   { label: 'Documents by country', value: 'documents' },
   { label: 'Careers (how to become …)', value: 'careers' },
   { label: 'Tools', value: 'tools' },
+  { label: 'Articles (news & updates, dated)', value: 'articles' },
   { label: 'Legacy / about', value: 'legacy' },
   { label: 'General', value: 'general' },
 ] as const

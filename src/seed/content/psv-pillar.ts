@@ -48,7 +48,7 @@ export const psvPillar = {
     { date: '2026-10-09', note: 'First published. Three-provider comparison, fees and timelines as of this date.' },
     { date: '2026-10-11', note: 'Added AVS fees and approval date (Circular DHP/2026/36, 3 Sep 2026); corrected DataFlow transfer fee (QAR 323 for reports issued to another authority) and the 20-working-day average from DataFlow’s reference kit. Removed the claim that Circular DHP/2025/24 made PSV mandatory from 1 January 2026: the circular, read in full, covers experience and exam rules, not PSV. PSV is mandatory for all applicants under DHP’s standing requirements.' },
     { date: '2026-10-16', note: 'Documents section checked against DHP’s guidelines for physicians, nurses and allied health: surgical logbooks cover the last three years (not two) and are needed for clinical privileges; good-standing certificates are usually needed at licensing, must be no more than six months old then and, under Circular DHP/2025/08, reach DHP only through PSV; certificates need no attestation when verified by PSV. The front-and-back rule for degrees now cites DataFlow’s own checklist.' },
-    { date: '2026-10-17', note: 'DHP evaluation time corrected: 25 working days applies to physicians and dentists; nurses, pharmacists and allied health have 15 (Circular DHP/2024/16). DataFlow’s FAQ figures restated: 15–25 working days, up to three months at worst.' },
+    { date: '2026-10-17', note: 'DHP evaluation time corrected: 25 working days applies to physicians and dentists; nurses, pharmacists and allied health have 15 (Circular DHP/2024/16). DataFlow’s FAQ figures restated: 15–25 working days, with a warning that verification can take up to three months. Real-world range attributed to its single source.' },
   ],
   faqs: [
     {
@@ -117,7 +117,7 @@ You do not need to attest anything first: DHP's guidelines say verification by a
 
 ## How long does PSV take?
 
-DataFlow's reference kit quotes an average of 20 working days from the day every document is in, and its FAQ gives 15 to 25 working days while warning that verification can take up to three months; applicants and consultancies consistently report 25 to 35 working days when the file is complete and 45 to 60 when a university or former employer is slow to reply. QuadraBay publishes 20 business days for its Standard tier and 14 for Prestige; the AVS portal shows a 20-day turnaround. The faster tiers shorten the provider's own handling, not your university's response time, and every provider stops the clock while it waits for information from you. The [timeline guide](/qatar/psv/timeline) compares every target with what applicants report, and adds DHP's own processing times.
+DataFlow's reference kit quotes an average of 20 working days from the day every document is in, and its FAQ gives 15 to 25 working days while warning that verification can take up to three months; one consultancy reports 25 to 35 working days when the file is complete and 45 to 60 when universities or councils are slow to respond. Circular DHP/2025/20 sets QuadraBay's targets at 20 business days for Standard and 14 for Prestige; the AVS portal shows a 20-day turnaround. The faster tiers shorten the provider's own handling, not your university's response time, and DataFlow counts its time only from a complete file – assume the same of the others. The [timeline guide](/qatar/psv/timeline) compares every target with what applicants report, and adds DHP's own processing times.
 
 The single biggest delay is an institution that ignores the request. Tell the registrar or HR office that a verification request is coming, give the provider a named contact and a direct email, and follow up yourself if the case has not moved in 15 working days.
 
@@ -127,7 +127,7 @@ The report comes back with one of three outcomes per document: **Positive**, **U
 
 ## Six things to do before you pay a provider
 
-1. Make your name identical, letter for letter, across your passport, degree, licence and employment letters. A single spelling difference is a Discrepancy.
+1. Check your name letter for letter across your passport, degree, licence and employment letters, and have a document ready that links any name that differs. An unexplained difference can come back as a Discrepancy; the [name-mismatch guide](/qatar/psv/problems/name-mismatch) explains the fix.
 2. Time your certificates of good standing for the licensing stage, so they are no more than six months old when the licence application goes in.
 3. Get every experience letter reissued on letterhead with exact dates in DD/MM/YYYY, your job title, full-time status and a signatory with a phone number and official email.
 4. Warn each registrar and HR office that a request is coming, and give the provider a named contact.

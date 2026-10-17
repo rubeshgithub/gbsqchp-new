@@ -135,7 +135,7 @@ Three things explain most of the gap between the average and the worst cases:
 
 - **The clock starts late.** "All documents and information required" includes anything DataFlow asks for after you submit. Until you answer an *insufficient document* request, the case is not on the clock.
 - **The university decides the pace.** DataFlow sends the request, follows up and waits. A registrar who needs a fee, a signed consent or a physical letter can hold a file for weeks. Telling the registrar in advance, naming a contact and paying any verification fee on day one is the single most effective thing you can do; the [PSV overview](/qatar/psv) covers what to do before you pay, and a follow-up playbook with email templates is in preparation.
-- **Discrepancies restart the component.** A different spelling of your name, a graduation date that differs from the transcript, or an employer who reports different dates sends that document back to you and, after correction, back to the source.
+- **Discrepancies restart the component.** A different spelling of your name, a graduation date that differs from the transcript, or an employer who reports different dates sends that document back to you and, after correction, back to the source. The [name-mismatch guide](/qatar/psv/problems/name-mismatch) covers the evidence that prevents the first of these, and DataFlow's free one-time Appeal if a report already shows one.
 
 If nothing has moved for 15 working days, raise a ticket: the support centre has separate routes for *Submit Missing Document / Information* and *Check an existing support request*.
 

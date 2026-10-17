@@ -9,6 +9,7 @@ const NAV = [
   { href: '/qatar/psv', label: 'PSV guide' },
   { href: '/qatar/circulars', label: 'Circulars' },
   { href: '/tools/psv-fee-calculator', label: 'Fee calculator' },
+  { href: '/articles', label: 'Updates' },
   { href: '/contact', label: 'Contact' },
 ]
 

@@ -128,7 +128,7 @@ Three items open every file, whatever the package:
 
 - **Your passport.** DataFlow lists it as "mandatory for all documents"; AVS's application guide asks for a clear, uncut copy. Type your name in every portal exactly as it appears in the passport, in full, including middle names.
 - **A signed Letter of Authorization.** It gives the provider your consent to contact your university, regulator and employers. DataFlow's portal generates it for you to sign digitally; AVS's application guide tells you to download, complete and upload it; expect to sign QuadraBay's inside its online application.
-- **Proof of any change of name.** If a certificate carries a different name – a maiden name, a different spelling or word order – DataFlow's DHP checklist asks for the "name change certificate, if applicable (Marriage certificate, affidavit, any legal document, etc.)". Upload it beside the certificate that carries the other name.
+- **Proof of any change of name.** If a certificate carries a different name – a maiden name, a different spelling or word order – DataFlow's DHP checklist asks for the "name change certificate, if applicable (Marriage certificate, affidavit, any legal document, etc.)". Upload it beside the certificate that carries the other name; the [name-mismatch guide](/qatar/psv/problems/name-mismatch) covers which evidence suits which difference.
 
 DataFlow's offline form also asks for the full name of each institution, with no "abbreviated terms or initials", and for employers to be listed from your current one backwards. The online portals ask for the same details, so have them written out before you start.
 
@@ -160,7 +160,7 @@ Your **health licence** is the third component. The package verifies one; if DHP
 
 ## When do you need a certificate of good standing?
 
-Since 1 August 2025 a certificate of good standing reaches DHP only through PSV. Circular DHP/2025/08 (14 July 2025) ended the old route, in which your regulator emailed or posted the certificate to DHP, and requires every practitioner "to submit a primary source verification report for the good standing certificate" instead; certificates sent by email or post after that date "will no longer be accepted". DHP's nurse and allied health guidelines still describe the old route, a certificate sent directly by the registration authority, so follow the circular.
+Since 1 August 2025 a certificate of good standing reaches DHP only through PSV. Circular DHP/2025/08 (14 July 2025) ended the old route, in which your regulator emailed or posted the certificate to DHP, and requires every practitioner "to submit a primary source verification report for the good standing certificate" instead; certificates sent by email or post after that date "will no longer be accepted". DHP's nurse and allied health guidelines still describe the old route, a certificate sent directly by the registration authority, so follow the circular ([our update on the change](/articles/qatar-good-standing-certificates-through-psv)).
 
 When you need it depends on the stage:
 
@@ -189,7 +189,7 @@ Each provider publishes only a few rules, but breaking one costs you a query and
 | --- | --- | --- | --- |
 | Copies | "Clear and legible", including the university logo; front and reverse of each degree | Colour scans, each document in one file | "Clear scanned copies"; passport uncut |
 | File names | No published rule | Must start with a letter – a name beginning with a number is rejected | No published rule |
-| Details you type | Name as in passport; institution names in full | As on the documents | Each field "as per the document" |
+| Details you type | Name as in passport; institution names in full | As on the documents | Details "as per" each document (e.g. "Details as per the Education certificate") |
 | Requests after you submit | "A member of the DataFlow Group team will contact you to address any additional requirements" | 30 days to reply, then the component closes as *Unable to Check* | Issuing authorities "may request additional documents or information" |
 
 Rules that suit all three: scan at a resolution where small print and stamps are readable, keep every page of a document in one PDF, include both sides when anything is printed on the back, and name files plainly – for example *Passport.pdf*, *BSc-Nursing-degree-and-transcript.pdf*, *Employer-1-letter.pdf* – starting with a letter so the same files work in every portal.

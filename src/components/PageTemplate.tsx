@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { getCirculars, getFeesForCountry, getVendorsForCountry, rel } from '@/lib/data'
+import { formatDate, getCirculars, getExistingPaths, getFeesForCountry, getVendorsForCountry, rel } from '@/lib/data'
 import { articleJsonLd, breadcrumbJsonLd, breadcrumbsFromPath, faqJsonLd } from '@/lib/seo'
 import type { Author, Country, Page, SiteSetting, Vendor } from '@/payload-types'
 
@@ -29,13 +29,17 @@ const SEGMENT_LABELS: Record<string, string> = {
   documents: 'Documents',
   careers: 'Careers',
   tools: 'Tools',
+  articles: 'Articles',
 }
 
 export async function PageTemplate({ page, settings }: { page: Page; settings: SiteSetting }) {
   const country = rel<Country>(page.country)
   const author = rel<Author>(page.author)
   const featuredVendor = rel<Vendor>(page.featuredVendor)
-  const crumbs = breadcrumbsFromPath(page.path, page.title, SEGMENT_LABELS)
+  const allCrumbs = breadcrumbsFromPath(page.path, page.title, SEGMENT_LABELS)
+  const middle = allCrumbs.slice(1, -1).map((c) => c.path)
+  const existing = middle.length > 0 ? await getExistingPaths(middle) : new Set<string>()
+  const crumbs = allCrumbs.filter((c, i) => i === 0 || i === allCrumbs.length - 1 || existing.has(c.path))
   const needsVendors = Boolean((page.showVendorTable || page.showFeeComparison) && country)
   const needsFees = Boolean((page.showVendorTable || page.showFeeComparison || featuredVendor) && country)
 
@@ -64,6 +68,11 @@ export async function PageTemplate({ page, settings }: { page: Page; settings: S
 
       <header className="article-header">
         <h1>{page.title}</h1>
+        {page.section === 'articles' && page.publishedAt && (
+          <p className="meta article-date">
+            Published <time dateTime={page.publishedAt}>{formatDate(page.publishedAt)}</time>
+          </p>
+        )}
         <p className="lead">{page.summary}</p>
         <VerifiedStamp page={page} />
       </header>

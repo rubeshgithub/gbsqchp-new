@@ -346,7 +346,7 @@ const AVS_SRC = {
   verifiedOn: VERIFIED_ON,
 }
 
-const DF_STANDARD_NOTE = 'DataFlow’s reference kit quotes an average of 20 working days from the day all documents are submitted; its FAQ allows up to three months. Express (+QAR 529) targets 14 working days.'
+const DF_STANDARD_NOTE = 'DataFlow’s reference kit quotes an average of 20 working days from the day all documents are submitted; its FAQ gives 15 to 25 working days and warns that verification can take up to three months. Express (+QAR 529) averages 14 working days.'
 const AVS_STANDARD_NOTE = 'The 20-day turnaround is shown on the AVS portal’s package card, not in AVS’s PDFs; AVS does not say whether these are working days. Every AVS clinical package covers up to two qualifications and five years of employment.'
 
 export const fees: SeedFee[] = [

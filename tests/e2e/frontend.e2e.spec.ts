@@ -133,3 +133,38 @@ test.describe('PSV timeline page', () => {
     await expect(page.locator('.site-footer a[href="/qatar/psv/timeline"]')).toBeVisible()
   })
 })
+
+test.describe('Name mismatch page', () => {
+  test('renders, links from the documents guide, and skips the missing /problems breadcrumb', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/psv/problems/name-mismatch')
+    await expect(page.locator('h1')).toContainText('Name mismatch between passport and certificates')
+    await expect(page.locator('.article-body table')).toContainText('Marriage certificate')
+    const crumbs = page.locator('nav.breadcrumbs a')
+    await expect(crumbs).toHaveText(['Home', 'Qatar', 'Primary Source Verification'])
+    const schema = (await page.locator('script[type="application/ld+json"]').allTextContents()).join(' ')
+    expect(schema).toContain('FAQPage')
+    expect(schema).not.toContain('/qatar/psv/problems"')
+    await page.goto('http://localhost:3000/qatar/psv/documents')
+    await expect(page.locator('.article-body a[href="/qatar/psv/problems/name-mismatch"]').first()).toBeVisible()
+  })
+})
+
+test.describe('Articles', () => {
+  test('lists dated updates newest first and links each one', async ({ page }) => {
+    await page.goto('http://localhost:3000/articles')
+    await expect(page.locator('h1')).toContainText('Updates')
+    const items = page.locator('.article-list li')
+    await expect(items).toHaveCount(2)
+    await expect(items.first().locator('h2')).toContainText('good-standing')
+    await expect(page.locator('.site-header a[href="/articles"]')).toBeVisible()
+  })
+
+  test('an article shows its date, NewsArticle schema and an Articles breadcrumb', async ({ page }) => {
+    await page.goto('http://localhost:3000/articles/qatar-good-standing-certificates-through-psv')
+    await expect(page.locator('.article-date time')).toHaveText('17 Oct 2026')
+    await expect(page.locator('nav.breadcrumbs a')).toHaveText(['Home', 'Articles'])
+    const schema = (await page.locator('script[type="application/ld+json"]').allTextContents()).join(' ')
+    expect(schema).toContain('"NewsArticle"')
+    await expect(page.locator('.article-body a[href="/qatar/psv/documents"]').first()).toBeVisible()
+  })
+})

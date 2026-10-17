@@ -36,6 +36,43 @@ export async function getPageByPath(path: string, options?: { draft?: boolean })
   return result.docs[0] ?? null
 }
 
+/** Routes served by dedicated Next.js pages (not CMS pages) that a breadcrumb may link to. */
+const STATIC_CRUMB_PATHS = new Set(['/', '/qatar', '/qatar/circulars', '/articles'])
+
+/**
+ * Which of these paths resolve to a real page (a static route or a published CMS page). Breadcrumbs use it to skip
+ * intermediate segments such as /qatar/psv/problems that have no page of their own, so they never link to a 404.
+ */
+export async function getExistingPaths(paths: string[]): Promise<Set<string>> {
+  const existing = new Set(paths.filter((p) => STATIC_CRUMB_PATHS.has(p)))
+  const unknown = paths.filter((p) => !existing.has(p))
+  if (unknown.length === 0) return existing
+  const payload = await getPayloadClient()
+  const result = await payload.find({
+    collection: 'pages',
+    where: { and: [{ path: { in: unknown } }, { _status: { equals: 'published' } }] },
+    limit: unknown.length,
+    depth: 0,
+    select: { path: true },
+  })
+  for (const doc of result.docs) if (doc.path) existing.add(doc.path)
+  return existing
+}
+
+/** Published articles (section "articles"), newest first. */
+export async function getArticles(limit = 100) {
+  const payload = await getPayloadClient()
+  const result = await payload.find({
+    collection: 'pages',
+    where: { and: [{ section: { equals: 'articles' } }, { _status: { equals: 'published' } }] },
+    sort: '-publishedAt',
+    limit,
+    depth: 0,
+    select: { title: true, path: true, summary: true, publishedAt: true, updatedAt: true },
+  })
+  return result.docs
+}
+
 export type PageSummary = Pick<Page, 'id' | 'title' | 'path' | 'section' | 'summary' | 'country' | 'updatedAt' | 'verifiedOn'>
 
 export async function getPublishedPages(where?: Where): Promise<PageSummary[]> {

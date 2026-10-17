@@ -75,12 +75,18 @@ Payload skill for this repo: `.claude/skills/payload/SKILL.md` (read it before t
 The 25 Phase-1 page briefs (slug, title tag, meta, outline, facts with sources, FAQs, internal links) are in the
 project doc `GBSQCHP-phase1-content-plan-and-briefs.md`. Published so far: `/qatar/psv` (pillar), `/gbs-psv-portal`
 (legacy), `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs` (provider guides), `/qatar/psv/fees`, `/qatar/psv/documents`,
-`/qatar/psv/timeline`. Next in order: `/qatar/psv/problems/name-mismatch`, the first `/articles/` piece, `/qatar/psv/status`, `/qatar/psv/report-transfer`,
+`/qatar/psv/timeline`, `/qatar/psv/problems/name-mismatch`. Next in order: `/qatar/psv/status`, `/qatar/psv/report-transfer`,
 then the problem pages under `/qatar/psv/problems/…`, the circular explainers under `/qatar/circulars/…`, and the
 licensing hub `/qatar/licensing`. Add nav/footer links (`src/components/Header.tsx`, `Footer.tsx`) only when the
 target page is published. The provider guides refer to the status, report-transfer and
 university-not-responding guides but currently link them to `/qatar/psv` (no dead links); retarget those links in
 `src/seed/content/*.ts` when each page is published.
+
+**Articles (`/articles`)** are dated updates – a new circular, provider or fee change – stored as Pages with
+`section: 'articles'`, a `publishedAt` date and a path under `/articles/…`. The `/articles` index lists them newest
+first; articles get `NewsArticle` JSON-LD and a "Published" date line. Each article links to the evergreen guide it
+affects; the guides stay current and carry the change log. Seed files live in `src/seed/content/articles/`.
+Breadcrumbs skip intermediate segments with no page (e.g. `/qatar/psv/problems`) – see `getExistingPaths`.
 
 To add a page from a brief: write the Markdown in `src/seed/content/<slug>.ts` following `psv-pillar.ts`, register
 it in `src/seed/index.ts`, run `npm run seed`, then review in `/admin`. Markdown tables work (the editor has

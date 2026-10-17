@@ -68,7 +68,7 @@ export function articleJsonLd(page: Page, settings: SiteSetting) {
   const author = rel<Author>(page.author)
   return {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': page.section === 'articles' ? 'NewsArticle' : 'Article',
     headline: page.meta?.title || page.title,
     description: page.meta?.description || page.summary,
     mainEntityOfPage: absoluteUrl(page.path),

@@ -13,7 +13,7 @@ export const timelineGuide = {
   path: '/qatar/psv/timeline',
   section: 'psv' as const,
   summary:
-    'On paper, Primary Source Verification for Qatar takes about four weeks: DataFlow quotes 15 to 25 working days from a complete file, QuadraBay targets 20 business days (14 on its Prestige tier) and the AVS portal shows a 20-day turnaround. In practice 25 to 35 working days is commonly reported for a clean file, and 45 to 60 when a university or former employer is slow to answer. After that, DHP’s own published time for evaluating your application is 25 working days for physicians and dentists and 15 for nurses, pharmacists and allied health. This guide sets out every published target, what stops the clock, what applicants report, and what you can do before you pay to save weeks.',
+    'On paper, Primary Source Verification for Qatar takes about four weeks: DataFlow quotes 15 to 25 working days from a complete file, QuadraBay targets 20 business days (14 on its Prestige tier) and the AVS portal shows a 20-day turnaround. In practice one consultancy reports 25 to 35 working days for a clean DataFlow file, and 45 to 60 when universities or councils are slow to respond. After that, DHP’s own published time for evaluating your application is 25 working days for physicians and dentists and 15 for nurses, pharmacists and allied health. This guide sets out every published target, what stops the clock, what applicants report, and what you can do before you pay to save weeks.',
   meta: {
     title: 'How Long Does DataFlow Take for Qatar? Real PSV Timelines',
     description:
@@ -50,6 +50,10 @@ export const timelineGuide = {
       circularNumber: 'DHP/2024/16',
     },
     {
+      label: 'DataFlow – DHP programme page (report re-issuance time)',
+      url: 'https://dataflowgroup.com/organization/dhp-moph-qatar/',
+    },
+    {
       label: 'DHP – Primary Source Verification',
       url: 'https://dhp.moph.gov.qa/en/Pages/PrimarysourceVerification.aspx',
     },
@@ -69,7 +73,7 @@ export const timelineGuide = {
     {
       question: 'Why has my case been pending for 40 days?',
       answer:
-        'Almost always because one institution has not answered. Look at the status of each component rather than the case as a whole: one university or employer usually holds up an otherwise finished report. DataFlow’s FAQ names the usual causes – “an incomplete submission with missing documents from an applicant, a late response from the issuing authorities” – and its targets run from a complete file, so any day spent waiting for something from you does not count. Answer every request within a day or two, and if nothing has moved for about three weeks, open a ticket with the provider and contact the institution yourself.',
+        'Almost always because one institution has not answered. Look at the status of each component rather than the case as a whole: one university or employer usually holds up an otherwise finished report. DataFlow’s FAQ names the usual causes – “an incomplete submission with missing documents from an applicant, a late response from the issuing authorities” – and its 15-to-25-day range runs from payment and a complete set of documents, so time spent waiting for something from you is outside it. Answer every request within a day or two, and if nothing has moved for about three weeks, open a ticket with the provider and contact the institution yourself.',
     },
     {
       question: 'Can I apply for DHP evaluation before my PSV report is ready?',
@@ -93,17 +97,17 @@ Each provider publishes a target. Read them as averages or targets from the day 
 | QuadraBay | 20 business days (Standard) | Prestige: 14 business days | Circular DHP/2025/20 |
 | AVS | "20 days turnaround" on the portal's package card | Express (QAR 400): no published target | AVS portal and fee schedule |
 
-Twenty working days is about four calendar weeks once weekends are counted; fourteen is about three. AVS does not say whether its 20 days are working or calendar days. DataFlow's general FAQ sets the outer edge: in an answer about licensing through its TrueProfile service it says verification "can take up to 3 months".
+Twenty working days is about four calendar weeks once weekends are counted; fourteen is about three. AVS does not say whether its 20 days are working or calendar days. DataFlow's general FAQ also warns, in an answer about licensing through its TrueProfile service, that verification "can take up to 3 months".
 
 ## When does the clock start, and what stops it?
 
-Every target runs from a **complete** file, and "complete" is the provider's call:
+DataFlow states that its count runs from a **complete** file; QuadraBay and AVS do not say when theirs starts, so assume the same:
 
 - **DataFlow** counts its 15 to 25 working days "from the date of payment and submission of a complete set of documents", and its reference kit counts its 20-day average "from the day of submission of all documents and information required to process the application". Anything you add later "will be subject to additional fees and will delay your final report".
 - **QuadraBay** gives you 30 days to supply anything it asks for after you submit. If the window closes, that component is closed as *Unable to Check*, which leaves the report incomplete for DHP.
 - **AVS** warns that "Issuing Authorities may request additional documents or information during verification" but publishes no window.
 
-DataFlow's FAQ lists the causes of delay plainly: "an incomplete submission with missing documents from an applicant, a late response from the issuing authorities", or "unavoidable incidents such as conflicts, strikes, natural disasters". Only the first is in your hands, and it is the one that most often turns four weeks into eight. The [documents guide](/qatar/psv/documents) covers what each document must show so the provider does not have to come back to you.
+DataFlow's FAQ lists the causes of delay plainly: "an incomplete submission with missing documents from an applicant, a late response from the issuing authorities", or "unavoidable incidents such as conflicts, strikes, natural disasters". Only the first is in your hands. The [documents guide](/qatar/psv/documents) covers what each document must show so the provider does not have to come back to you.
 
 ## What do applicants actually report?
 
@@ -141,7 +145,7 @@ PSV is the first stage. Circular DHP/2024/16 sets DHP's own processing times, in
 | Licensing | 15 | 10 |
 | Temporary licence | 5 | 5 |
 
-Adding the published targets gives a floor for planning, not an estimate. A nurse with a clean file is looking at roughly 20 working days of PSV, 15 of evaluation and 10 of licensing – about nine weeks of official processing time – before any days waiting on documents, the qualifying exam if it applies, or the employer's own steps. A physician's equivalent is about twelve weeks.
+Adding the published averages and targets gives a baseline for planning, if every stage runs to schedule – not an estimate. A nurse with a clean file is looking at roughly 20 working days of PSV, 15 of evaluation and 10 of licensing – about nine weeks of official processing time – before any days waiting on documents, the qualifying exam if it applies, or the employer's own steps. A physician's equivalent is about twelve weeks.
 
 One more verification sits inside that period. Since 1 August 2025 DHP accepts a certificate of good standing only as a PSV report (Circular DHP/2025/08), and it is usually needed at the licensing stage. Order it while your evaluation is in progress, so the verified certificate is ready when the licence application goes in, while still being under six months old.
 
@@ -150,10 +154,10 @@ One more verification sits inside that period. Since 1 August 2025 DHP accepts a
 Most of the time you can save is saved before you submit:
 
 1. **Tell every institution a request is coming.** Ask the registrar and each HR office who handles verification requests, whether they charge, and how they want to be contacted. Give the provider that named contact.
-2. **Pay institution fees on day one.** Universities and councils that charge for verification wait until they are paid; DataFlow and AVS pass these fees on to you.
+2. **Settle institution fees quickly.** Some universities and councils charge for answering a verification request, and all three providers may ask you for that fee; DataFlow's reference kit says "If your issuing authority applies verification fees, the amount will be added to the total." Pay it as soon as you are asked.
 3. **Fix names and dates first.** A name that differs from your passport or a graduation date that differs from the transcript sends the component back to you. The [documents guide](/qatar/psv/documents) lists what to check.
 4. **Submit everything in one go.** DataFlow says anything submitted later "will be subject to additional fees and will delay your final report", and a late addition waits for its own institution's reply at every provider.
-5. **Watch the portal and your email daily for the first month.** Answer any request within a day or two – QuadraBay's 30-day window is a hard limit.
+5. **Check the portal and your email at least weekly – ideally every few days – during the first month.** Answer any request within a day or two – QuadraBay's 30-day window is a hard limit.
 6. **Plan the good-standing verification** for the evaluation stage, not after it.
 
 ## When should you escalate?

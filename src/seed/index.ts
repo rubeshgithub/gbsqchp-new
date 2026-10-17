@@ -13,6 +13,9 @@ import { dataflowGuide } from './content/dataflow'
 import { feesGuide } from './content/fees'
 import { documentsGuide } from './content/documents'
 import { timelineGuide } from './content/timeline'
+import { nameMismatchGuide } from './content/name-mismatch'
+import { goodStandingArticle } from './content/articles/good-standing-psv'
+import { avsApprovedArticle } from './content/articles/avs-approved'
 import { legacyGbs } from './content/legacy-gbs'
 import { psvPillar } from './content/psv-pillar'
 import { quadrabayGuide } from './content/quadrabay'
@@ -24,7 +27,9 @@ type AnyData = Record<string, unknown>
 type SeedPage = {
   title: string
   path: string
-  section: 'psv' | 'licensing' | 'exam' | 'circulars' | 'documents' | 'careers' | 'tools' | 'legacy' | 'general'
+  section: 'psv' | 'licensing' | 'exam' | 'circulars' | 'documents' | 'careers' | 'tools' | 'articles' | 'legacy' | 'general'
+  /** Articles only: the publication date shown on the page and in the /articles list (ISO date). */
+  publishedAt?: string
   summary: string
   meta: { title: string; description: string }
   showVendorTable?: boolean
@@ -166,7 +171,7 @@ async function run() {
   const editorConfig = editorConfigFactory.fromField({ field: contentField })
 
   const pageIds: Record<string, string> = {}
-  const pages: SeedPage[] = [psvPillar, legacyGbs, dataflowGuide, quadrabayGuide, avsGuide, feesGuide, documentsGuide, timelineGuide]
+  const pages: SeedPage[] = [psvPillar, legacyGbs, dataflowGuide, quadrabayGuide, avsGuide, feesGuide, documentsGuide, timelineGuide, nameMismatchGuide, goodStandingArticle, avsApprovedArticle]
   for (const page of pages) {
     const { markdown, verifiedAgainst, meta, featuredVendorSlug, ...rest } = page
     const content = convertMarkdownToLexical({ editorConfig, markdown: markdown.trim() })
@@ -199,8 +204,11 @@ async function run() {
     [quadrabayGuide.path]: [psvPillar.path, feesGuide.path, documentsGuide.path, timelineGuide.path, dataflowGuide.path, avsGuide.path],
     [avsGuide.path]: [psvPillar.path, feesGuide.path, documentsGuide.path, timelineGuide.path, dataflowGuide.path, quadrabayGuide.path],
     [feesGuide.path]: [psvPillar.path, documentsGuide.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
-    [documentsGuide.path]: [psvPillar.path, feesGuide.path, timelineGuide.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
+    [documentsGuide.path]: [psvPillar.path, feesGuide.path, timelineGuide.path, nameMismatchGuide.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
     [timelineGuide.path]: [psvPillar.path, documentsGuide.path, feesGuide.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
+    [nameMismatchGuide.path]: [documentsGuide.path, psvPillar.path, timelineGuide.path, dataflowGuide.path],
+    [goodStandingArticle.path]: [documentsGuide.path, feesGuide.path, timelineGuide.path, psvPillar.path],
+    [avsApprovedArticle.path]: [avsGuide.path, feesGuide.path, psvPillar.path, dataflowGuide.path, quadrabayGuide.path],
     [legacyGbs.path]: [psvPillar.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
   }
   for (const [path, targets] of Object.entries(related)) {

@@ -870,3 +870,11 @@ textarea:focus {
 .article-body th p {
   margin: 0;
 }
+
+/* ---------- articles (dated updates) ---------- */
+.article-date { margin: 0.25rem 0 0.75rem; }
+.article-list { list-style: none; padding: 0; margin: 1.5rem 0 2rem; }
+.article-list li { padding: 1.25rem 0; border-top: 1px solid var(--border, #e2e8f0); }
+.article-list li:first-child { border-top: 0; padding-top: 0; }
+.article-list h2 { font-size: 1.2rem; margin: 0.25rem 0 0.5rem; }
+.article-list p { margin: 0; }
