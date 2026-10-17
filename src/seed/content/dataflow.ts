@@ -129,7 +129,7 @@ When the report is complete it is shared with DHP automatically and a copy appea
 
 ## How long does DataFlow take for Qatar, and what slows it down?
 
-DataFlow's reference kit says a DHP report takes "an average of 20 working days ... from the day of submission of all documents and information required to process the application". Its general FAQ allows up to three months. Applicants and consultancies report 25 to 35 working days for a clean file and 45 to 60 when an institution is slow to respond (reported, for example, by [Allocation Assist](https://www.allocationassist.com/how-long-dataflow-verification-take/)). Express cases average 14 working days.
+DataFlow's reference kit says a DHP report takes "an average of 20 working days ... from the day of submission of all documents and information required to process the application". Its general FAQ gives "15 to 25 working days" from payment and a complete set of documents, and warns elsewhere that verification "can take up to 3 months". Applicants and consultancies report 25 to 35 working days for a clean file and 45 to 60 when an institution is slow to respond (reported, for example, by [Allocation Assist](https://www.allocationassist.com/how-long-dataflow-verification-take/)). Express cases average 14 working days. The [timeline guide](/qatar/psv/timeline) compares these figures with QuadraBay's and AVS's and adds DHP's own processing times.
 
 Three things explain most of the gap between the average and the worst cases:
 

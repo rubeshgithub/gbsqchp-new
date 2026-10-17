@@ -74,8 +74,8 @@ Payload skill for this repo: `.claude/skills/payload/SKILL.md` (read it before t
 
 The 25 Phase-1 page briefs (slug, title tag, meta, outline, facts with sources, FAQs, internal links) are in the
 project doc `GBSQCHP-phase1-content-plan-and-briefs.md`. Published so far: `/qatar/psv` (pillar), `/gbs-psv-portal`
-(legacy), `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs` (provider guides), `/qatar/psv/fees`, `/qatar/psv/documents`.
-Next in order: `/qatar/psv/timeline`, `/qatar/psv/status`, `/qatar/psv/report-transfer`,
+(legacy), `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs` (provider guides), `/qatar/psv/fees`, `/qatar/psv/documents`,
+`/qatar/psv/timeline`. Next in order: `/qatar/psv/problems/name-mismatch`, the first `/articles/` piece, `/qatar/psv/status`, `/qatar/psv/report-transfer`,
 then the problem pages under `/qatar/psv/problems/…`, the circular explainers under `/qatar/circulars/…`, and the
 licensing hub `/qatar/licensing`. Add nav/footer links (`src/components/Header.tsx`, `Footer.tsx`) only when the
 target page is published. The provider guides refer to the status, report-transfer and
@@ -101,8 +101,9 @@ the admin panel.
 - Read 16 Oct 2026: DHP/2024/10 (exam fee US$244 from 1 Jan 2026; cancel/reschedule US$25 / US$40 / full fee).
 - Read 16 Oct 2026: DHP/2025/08 (scanned PDF, OCR): from 1 Aug 2025 good-standing certificates reach DHP only as a
   PSV report – this overrides the "sent directly by the registration authority" wording in the profession guidelines.
-- Still to open: DHP/2025/19 exemption list, DHP/2024/22, DHP/2024/16
-  (processing times), DHP/2024/09. Set `verified: true` on each record after reading.
+- Read 17 Oct 2026: DHP/2024/16 (5 Jun 2024): DHP processing times in working days from a complete application with
+  verified documents – evaluation 25 (physicians/dentists) / 15 (others), licensing 15 / 10, temporary licence 5.
+- Still to open: DHP/2025/19 exemption list, DHP/2024/22, DHP/2024/09. Set `verified: true` on each record after reading.
 - DHP publishes no current evaluation/licence fee schedule; the fees page uses the last published table (QCHP FAQ,
   Nov 2014: evaluation QAR 100; licence QAR 600 nurses/pharmacists/AHP, 1,000 general physicians/dentists, 1,200
   specialists) and says so. Replace with an official source when one appears.

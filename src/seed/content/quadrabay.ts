@@ -103,7 +103,7 @@ QuadraBay's concierge service (QAR 150) does steps 2 to 5 for you after you send
 
 ## How long does QuadraBay take, and what is the 30-day rule?
 
-The circular publishes two targets: **20 business days for Standard and 14 for Prestige**. Like every provider's target, assume it is counted from a complete file. Prestige buys priority in QuadraBay's own queue; it cannot buy a faster reply from a registrar in Kerala or an HR department in Riyadh, and the time QuadraBay spends waiting for your answer is not counted. Treat the targets as what a clean file achieves when every institution answers promptly.
+The circular publishes two targets: **20 business days for Standard and 14 for Prestige**. Like every provider's target, assume it is counted from a complete file. Prestige buys priority in QuadraBay's own queue; it cannot buy a faster reply from a registrar in Kerala or an HR department in Riyadh, and the time QuadraBay spends waiting for your answer is not counted. Treat the targets as what a clean file achieves when every institution answers promptly; the [timeline guide](/qatar/psv/timeline) compares them with DataFlow's and AVS's.
 
 Two rules in the circular decide whether your file is clean:
 

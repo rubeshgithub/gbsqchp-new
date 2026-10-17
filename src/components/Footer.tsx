@@ -28,6 +28,9 @@ export function Footer({ settings }: { settings: SiteSetting }) {
                 <Link href="/qatar/psv/documents">Documents required for PSV</Link>
               </li>
               <li>
+                <Link href="/qatar/psv/timeline">How long PSV takes</Link>
+              </li>
+              <li>
                 <Link href="/qatar">Qatar hub – all guides</Link>
               </li>
               <li>

@@ -112,3 +112,24 @@ test.describe('PSV documents page', () => {
     await expect(page.locator('.site-footer a[href="/qatar/psv/documents"]')).toBeVisible()
   })
 })
+
+test.describe('PSV timeline page', () => {
+  test('renders the provider targets, DHP processing times and the FAQ', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/psv/timeline')
+    await expect(page.locator('h1')).toContainText('How long does PSV take for Qatar')
+    const tables = page.locator('.article-body table')
+    await expect(tables).toHaveCount(3)
+    await expect(tables.first()).toContainText('Prestige: 14 business days')
+    await expect(tables.nth(2)).toContainText('Evaluation')
+    const schema = (await page.locator('script[type="application/ld+json"]').allTextContents()).join(' ')
+    expect(schema).toContain('FAQPage')
+  })
+
+  test('is linked from the PSV pillar, the DataFlow and QuadraBay guides and the footer', async ({ page }) => {
+    for (const path of ['/qatar/psv', '/qatar/psv/dataflow', '/qatar/psv/quadrabay']) {
+      await page.goto(`http://localhost:3000${path}`)
+      await expect(page.locator('.article-body a[href="/qatar/psv/timeline"]').first()).toBeVisible()
+    }
+    await expect(page.locator('.site-footer a[href="/qatar/psv/timeline"]')).toBeVisible()
+  })
+})
