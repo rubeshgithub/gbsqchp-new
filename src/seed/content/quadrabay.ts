@@ -110,7 +110,7 @@ Two rules in the circular decide whether your file is clean:
 - **The 30-day window.** When QuadraBay needs something more – a clearer scan, a missing page, a corrected employment letter, a fee the university charges – you have 30 days to provide it. After that the component is closed as *Unable to Check*. That is not a verified document, so the report is incomplete for DHP – check the portal and your email weekly during the first month.
 - **File names start with a letter.** A small rule that rejects uploads and costs applicants days before anyone notices.
 
-The avoidable delays are the same ones that slow every provider: names that differ between passport and certificate, employment letters without exact dates and a reachable signatory, universities that need to be told a request is coming. The [PSV overview](/qatar/psv) lists the six checks to make before you pay.
+The avoidable delays are the same ones that slow every provider: names that differ between passport and certificate, employment letters without exact dates and a reachable signatory, universities that need to be told a request is coming. The [documents guide](/qatar/psv/documents) sets out what each document must show and a checklist to run before you pay.
 
 ## QuadraBay vs DataFlow for Qatar: which should you choose?
 

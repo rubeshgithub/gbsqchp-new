@@ -74,11 +74,11 @@ Payload skill for this repo: `.claude/skills/payload/SKILL.md` (read it before t
 
 The 25 Phase-1 page briefs (slug, title tag, meta, outline, facts with sources, FAQs, internal links) are in the
 project doc `GBSQCHP-phase1-content-plan-and-briefs.md`. Published so far: `/qatar/psv` (pillar), `/gbs-psv-portal`
-(legacy), `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs` (provider guides), `/qatar/psv/fees`.
-Next in order: `/qatar/psv/documents`, `/qatar/psv/timeline`, `/qatar/psv/status`, `/qatar/psv/report-transfer`,
+(legacy), `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs` (provider guides), `/qatar/psv/fees`, `/qatar/psv/documents`.
+Next in order: `/qatar/psv/timeline`, `/qatar/psv/status`, `/qatar/psv/report-transfer`,
 then the problem pages under `/qatar/psv/problems/…`, the circular explainers under `/qatar/circulars/…`, and the
 licensing hub `/qatar/licensing`. Add nav/footer links (`src/components/Header.tsx`, `Footer.tsx`) only when the
-target page is published. The provider guides refer to the documents, status, report-transfer and
+target page is published. The provider guides refer to the status, report-transfer and
 university-not-responding guides but currently link them to `/qatar/psv` (no dead links); retarget those links in
 `src/seed/content/*.ts` when each page is published.
 
@@ -96,8 +96,12 @@ the admin panel.
   "PSV mandatory for all from 1 Jan 2026" and the break-in-practice thresholds in briefs 16 and 18 are NOT in that
   circular; re-source them (DHP guidelines PDFs or another circular) before writing those pages. PSV is mandatory
   for everyone under DHP's standing PSV page wording – cite that, not a circular.
+- Read 16 Oct 2026: DHP Guidelines for Physicians, Nurses and AHP (documents, attestation, translation, good standing
+  at licensing); QCHP good-standing policy v2.0 ("not more than 6 months old" at licensing). Pages cite these.
 - Read 16 Oct 2026: DHP/2024/10 (exam fee US$244 from 1 Jan 2026; cancel/reschedule US$25 / US$40 / full fee).
-- Still to open: DHP/2025/19 exemption list, DHP/2025/08 (good-standing procedure), DHP/2024/22, DHP/2024/16
+- Read 16 Oct 2026: DHP/2025/08 (scanned PDF, OCR): from 1 Aug 2025 good-standing certificates reach DHP only as a
+  PSV report – this overrides the "sent directly by the registration authority" wording in the profession guidelines.
+- Still to open: DHP/2025/19 exemption list, DHP/2024/22, DHP/2024/16
   (processing times), DHP/2024/09. Set `verified: true` on each record after reading.
 - DHP publishes no current evaluation/licence fee schedule; the fees page uses the last published table (QCHP FAQ,
   Nov 2014: evaluation QAR 100; licence QAR 600 nurses/pharmacists/AHP, 1,000 general physicians/dentists, 1,200

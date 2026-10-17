@@ -61,7 +61,7 @@ export const dataflowGuide = {
     {
       question: 'Does the DataFlow fee include the good standing certificate?',
       answer:
-        'No. Packages A, B, E and G verify qualifications, one licence and employment only. A certificate of good standing is QAR 300 as an add-on, QAR 550 for Package I (two to three certificates) or QAR 550 for Package J (one certificate plus your most recent employment letter). Order it late rather than early: DHP guidelines are reported to require the certificate to be recent (under six months) when you submit.',
+        'No. Packages A, B, E and G verify qualifications, one licence and employment only. A certificate of good standing is QAR 300 as an add-on, QAR 550 for Package I (two to three certificates) or QAR 550 for Package J (one certificate plus your most recent employment letter). Order it late rather than early: DHP asks for it at the licensing stage in most cases, the good-standing policy requires it to be no more than six months old when you apply for the licence, and since 1 August 2025 DHP accepts it only as a PSV report (Circular DHP/2025/08).',
     },
     {
       question: 'Where is the DataFlow office in Doha?',
@@ -109,7 +109,7 @@ Every package starts with your passport, which DataFlow lists as "mandatory for 
 - **Employment** – letters covering the last five years (three for nurses and pharmacists) from up to three employers. Each letter needs the exact start and end dates, your job title, your employment status and a signatory whom DataFlow can email or call. A relieving letter without dates and a title will come back as a discrepancy.
 - **Cross check** – listed in every package. It is DataFlow's own check, not a document you supply.
 
-Not in the standard packages: certificates of good standing, surgical logbooks and any licence other than the current one. Add them at the add-on prices above, or buy Package I or J if the certificate is all you need. Before you upload anything, make sure the name, date of birth and qualification title are identical across every document; the [PSV overview](/qatar/psv) lists the six checks to make before you pay.
+Not in the standard packages: certificates of good standing, surgical logbooks and any licence other than the current one. Add them at the add-on prices above, or buy Package I or J if the certificate is all you need. Before you upload anything, make sure the name, date of birth and qualification title are identical across every document; the [documents guide](/qatar/psv/documents) lists what each document must show, including the transcripts and both sides of each degree that DataFlow’s checklist asks for.
 
 ## How do you apply to DataFlow for DHP, step by step?
 

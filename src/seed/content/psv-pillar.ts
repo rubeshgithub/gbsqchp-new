@@ -11,7 +11,7 @@ export const psvPillar = {
   path: '/qatar/psv',
   section: 'psv' as const,
   summary:
-    "Before Qatar's Department of Healthcare Professions (DHP) will evaluate you, one of its three approved providers – DataFlow, QuadraBay or AVS – must verify your degree, licence, employment and good-standing certificates at the source. DHP lists verification among the mandatory requirements for registration and licensing for every practitioner and will not evaluate an application without the report attached. This guide explains what gets verified, what each provider charges, how long it really takes and how to choose.",
+    "Before Qatar's Department of Healthcare Professions (DHP) will evaluate you, one of its three approved providers – DataFlow, QuadraBay or AVS – must verify your degree, licence and employment (and, at the licensing stage, your good-standing certificates) at the source. DHP lists verification among the mandatory requirements for registration and licensing for every practitioner and will not evaluate an application without the report attached. This guide explains what gets verified, what each provider charges, how long it really takes and how to choose.",
   meta: {
     title: 'PSV for Qatar DHP 2026: DataFlow vs QuadraBay vs AVS',
     description:
@@ -47,6 +47,7 @@ export const psvPillar = {
   changeLog: [
     { date: '2026-10-09', note: 'First published. Three-provider comparison, fees and timelines as of this date.' },
     { date: '2026-10-11', note: 'Added AVS fees and approval date (Circular DHP/2026/36, 3 Sep 2026); corrected DataFlow transfer fee (QAR 323 for reports issued to another authority) and the 20-working-day average from DataFlow’s reference kit. Removed the claim that Circular DHP/2025/24 made PSV mandatory from 1 January 2026: the circular, read in full, covers experience and exam rules, not PSV. PSV is mandatory for all applicants under DHP’s standing requirements.' },
+    { date: '2026-10-16', note: 'Documents section checked against DHP’s guidelines for physicians, nurses and allied health: surgical logbooks cover the last three years (not two) and are needed for clinical privileges; good-standing certificates are usually needed at licensing, must be no more than six months old then and, under Circular DHP/2025/08, reach DHP only through PSV; certificates need no attestation when verified by PSV. The front-and-back rule for degrees now cites DataFlow’s own checklist.' },
   ],
   faqs: [
     {
@@ -72,7 +73,7 @@ export const psvPillar = {
     {
       question: 'How long is a PSV report valid?',
       answer:
-        'DHP has not published a fixed validity period for the report itself. What does expire is the good-standing certificate inside it, which must be under six months old when you submit, and DHP can ask for fresh verification of employment added since the report. Check with the DHP registration section for an older report.',
+        'DHP has not published a fixed validity period for the report itself. What does expire is the certificate of good standing, which must be no more than six months old when you apply for the licence, and DHP can ask for fresh verification of employment added since the report. Check with the DHP registration section for an older report.',
     },
   ],
   markdown: `
@@ -102,16 +103,16 @@ Nothing in DHP's rules favours one provider: all three reports are accepted for 
 
 ## What documents does the provider verify?
 
-Every provider works from the same DHP package structure, so the document set is the same whichever you choose:
+Every provider works from the same DHP package structure, so the document set is the same whichever you choose. The [documents guide](/qatar/psv/documents) covers each one in detail, with the upload rules of each portal:
 
 - **Passport** and a signed **Letter of Authorization** (the provider's own form) allowing it to contact your institutions.
-- **Educational certificates** – two for physicians, dentists and advanced-practice nurses (Packages A and G), one for nurses, pharmacists and allied health (Packages B and E) at DataFlow and QuadraBay; AVS includes two in every package. Degrees issued in India, Pakistan, Egypt and Afghanistan are requested front and back (reported by applicants; confirm on the provider's checklist).
+- **Educational certificates** – two for physicians, dentists and advanced-practice nurses (Packages A and G), one for nurses, pharmacists and allied health (Packages B and E) at DataFlow and QuadraBay; AVS includes two in every clinical package. Each comes with its transcript or mark sheets; DataFlow's DHP checklist asks for the front and reverse side of every degree certificate.
 - **Professional licence or registration** from the country where you currently practise.
 - **Employment certificates** for the last five years (Packages A, B, G) or three years (Package E; five at AVS), up to three employers, each on letterhead with exact start and end dates, job title, full-time status and a signatory the provider can contact.
-- **Certificates of good standing**, less than six months old at submission. DataFlow and QuadraBay price them as Package I: two to three certificates for QAR 550; AVS charges QAR 500.
-- **Surgical logbook** for surgical specialties (last two years).
+- **Certificates of good standing**, usually at the licensing stage and no more than six months old when you apply for the licence. Since 1 August 2025 DHP accepts them only as a PSV report (Circular DHP/2025/08), not by email or post from your regulator. DataFlow and QuadraBay price them as Package I: two to three certificates for QAR 550; AVS charges QAR 500.
+- **Surgical logbook** for surgeons applying for clinical privileges (the last three years, verified by the PSV provider).
 
-Anything not in English or Arabic needs a certified translation. On the QuadraBay portal every file name must start with a letter, not a number, or the upload is rejected.
+You do not need to attest anything first: DHP's guidelines say verification by an approved provider replaces attestation. Anything not in English or Arabic needs an official translation. On the QuadraBay portal every file name must start with a letter, not a number, or the upload is rejected.
 
 ## How long does PSV take?
 
@@ -126,10 +127,10 @@ The report comes back with one of three outcomes per document: **Positive**, **U
 ## Six things to do before you pay a provider
 
 1. Make your name identical, letter for letter, across your passport, degree, licence and employment letters. A single spelling difference is a Discrepancy.
-2. Order fresh certificates of good standing so they are under six months old on the day you submit.
+2. Time your certificates of good standing for the licensing stage, so they are no more than six months old when the licence application goes in.
 3. Get every experience letter reissued on letterhead with exact dates in DD/MM/YYYY, your job title, full-time status and a signatory with a phone number and official email.
 4. Warn each registrar and HR office that a request is coming, and give the provider a named contact.
-5. Scan every page clearly, in colour, and name the files starting with a letter.
+5. Scan every page clearly, in colour, and name the files starting with a letter. The [documents guide](/qatar/psv/documents) has the full checklist.
 6. Save the case number the day you pay, and check the status weekly rather than waiting for an email.
 `,
 }

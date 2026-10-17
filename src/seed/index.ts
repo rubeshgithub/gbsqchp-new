@@ -11,6 +11,7 @@ import config from '../payload.config'
 import { avsGuide } from './content/avs'
 import { dataflowGuide } from './content/dataflow'
 import { feesGuide } from './content/fees'
+import { documentsGuide } from './content/documents'
 import { legacyGbs } from './content/legacy-gbs'
 import { psvPillar } from './content/psv-pillar'
 import { quadrabayGuide } from './content/quadrabay'
@@ -164,7 +165,7 @@ async function run() {
   const editorConfig = editorConfigFactory.fromField({ field: contentField })
 
   const pageIds: Record<string, string> = {}
-  const pages: SeedPage[] = [psvPillar, legacyGbs, dataflowGuide, quadrabayGuide, avsGuide, feesGuide]
+  const pages: SeedPage[] = [psvPillar, legacyGbs, dataflowGuide, quadrabayGuide, avsGuide, feesGuide, documentsGuide]
   for (const page of pages) {
     const { markdown, verifiedAgainst, meta, featuredVendorSlug, ...rest } = page
     const content = convertMarkdownToLexical({ editorConfig, markdown: markdown.trim() })
@@ -192,11 +193,12 @@ async function run() {
 
   // cross-link the pages and attach guide pages to vendors / circulars
   const related: Record<string, string[]> = {
-    [psvPillar.path]: [feesGuide.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path, legacyGbs.path],
-    [dataflowGuide.path]: [psvPillar.path, feesGuide.path, quadrabayGuide.path, avsGuide.path],
-    [quadrabayGuide.path]: [psvPillar.path, feesGuide.path, dataflowGuide.path, avsGuide.path],
-    [avsGuide.path]: [psvPillar.path, feesGuide.path, dataflowGuide.path, quadrabayGuide.path],
-    [feesGuide.path]: [psvPillar.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
+    [psvPillar.path]: [feesGuide.path, documentsGuide.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path, legacyGbs.path],
+    [dataflowGuide.path]: [psvPillar.path, feesGuide.path, documentsGuide.path, quadrabayGuide.path, avsGuide.path],
+    [quadrabayGuide.path]: [psvPillar.path, feesGuide.path, documentsGuide.path, dataflowGuide.path, avsGuide.path],
+    [avsGuide.path]: [psvPillar.path, feesGuide.path, documentsGuide.path, dataflowGuide.path, quadrabayGuide.path],
+    [feesGuide.path]: [psvPillar.path, documentsGuide.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
+    [documentsGuide.path]: [psvPillar.path, feesGuide.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
     [legacyGbs.path]: [psvPillar.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
   }
   for (const [path, targets] of Object.entries(related)) {
@@ -214,6 +216,7 @@ async function run() {
   const circularExplainers: Record<string, string> = {
     '15/2018': legacyGbs.path,
     'DHP/2024/10': feesGuide.path,
+    'DHP/2025/08': documentsGuide.path,
     'DHP/2024/09': legacyGbs.path,
     'DHP/2025/20': quadrabayGuide.path,
     'DHP/2026/36': avsGuide.path,

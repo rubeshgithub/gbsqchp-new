@@ -91,3 +91,24 @@ test.describe('PSV fees page', () => {
     await expect(page.locator('.site-footer a[href="/qatar/psv/fees"]')).toBeVisible()
   })
 })
+
+test.describe('PSV documents page', () => {
+  test('renders the scope table, the upload-rules table and the FAQ', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/psv/documents')
+    await expect(page.locator('h1')).toContainText('Documents required for PSV in Qatar')
+    const tables = page.locator('.article-body table')
+    await expect(tables).toHaveCount(2)
+    await expect(tables.first()).toContainText('Nurses, midwives, pharmacists (E)')
+    await expect(tables.nth(1)).toContainText('Must start with a letter')
+    const schema = (await page.locator('script[type="application/ld+json"]').allTextContents()).join(' ')
+    expect(schema).toContain('FAQPage')
+  })
+
+  test('is linked from the PSV pillar, the provider guides and the footer', async ({ page }) => {
+    for (const path of ['/qatar/psv', '/qatar/psv/dataflow', '/qatar/psv/quadrabay', '/qatar/psv/avs']) {
+      await page.goto(`http://localhost:3000${path}`)
+      await expect(page.locator('.article-body a[href="/qatar/psv/documents"]').first()).toBeVisible()
+    }
+    await expect(page.locator('.site-footer a[href="/qatar/psv/documents"]')).toBeVisible()
+  })
+})
