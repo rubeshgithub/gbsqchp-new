@@ -37,7 +37,7 @@ export const avsApprovedArticle = {
     {
       question: 'Do I have to switch to AVS?',
       answer:
-        'No. The circular says practitioners may submit verification requests through AVS “as well as through the other verification companies approved by the Department”. DataFlow and QuadraBay remain approved, and nothing in DHP’s rules makes one provider’s report count for more than another’s.',
+        'No. The circular says practitioners may submit verification requests through AVS “as well as through the other verification companies approved by the Department”. DataFlow and QuadraBay remain approved, and nothing in DHP’s circulars treats one provider’s report differently from another’s.',
     },
     {
       question: 'Can I move a DataFlow or QuadraBay case to AVS?',
@@ -55,12 +55,12 @@ DHP's Primary Source Verification page now lists all three providers. For AVS it
 ## What does it mean for applicants?
 
 - **A cheaper option for physicians and dentists.** AVS's schedule lists QAR 1,050, against QAR 1,100 at QuadraBay and QAR 1,210 at DataFlow.
-- **More covered for nurses, pharmacists and allied health.** At QAR 900, every AVS clinical package verifies up to two qualifications and five years of employment; DataFlow's and QuadraBay's nurse package covers one qualification and three years.
+- **More covered for nurses, pharmacists and allied health.** At QAR 900, AVS verifies up to two qualifications and five years of employment. DataFlow's and QuadraBay's nurse and pharmacist package covers one qualification and three years; their allied health package already covers five years, so for allied health the difference is the second qualification.
 - **A local office.** AVS is the only provider based in Qatar, the first since Gulf Bridge Services' contract ended in February 2024.
 
 ## What is still unknown?
 
-AVS is new to the programme, and its published terms are thin. Its Express service (QAR 400) has no published turnaround; the portal's "20 days turnaround" label does not say whether it means working days; and there is no published refund policy, appeal process or statement of how long a report stays valid. Its network of contacts at universities and employers abroad is also newer than DataFlow's (in the programme since 2009) or QuadraBay's (verifying for Bahrain and Kuwait since 2021).
+AVS is new to the programme, and its published terms are thin. Its Express service (QAR 400) has no published turnaround; the portal's "20 days turnaround" label does not say whether it means working days; and there is no published refund policy, appeal process or statement of how long a report stays valid. Its network of contacts at universities and employers abroad is also newer than DataFlow's (in the programme since 2009) or QuadraBay's (verifying for Bahrain since 2021, and for Kuwait).
 
 The [AVS guide](/qatar/psv/avs) covers the full fee schedule and the application steps, and the [PSV fees guide](/qatar/psv/fees) compares every price with DataFlow's and QuadraBay's.
 `,
