@@ -1,8 +1,9 @@
 name: Search Console export
 
 # Pulls Google Search Console data for gbsqchp.com with a read-only service account (secret GSC_SERVICE_ACCOUNT_JSON)
-# and uploads it as an artifact. The repository is public, so the data is encrypted to the public key in
-# .github/gsc-export-public-key.pem before upload; only the holder of the matching private key can read it.
+# and force-pushes it to the `gsc-data` branch (one commit, replaced each run). The repository is public, so the data
+# is encrypted to the public key in .github/gsc-export-public-key.pem first; only the holder of the matching private
+# key can read it.
 # The script prints counts only, never data rows.
 
 on:
@@ -15,7 +16,7 @@ on:
         default: '90'
 
 permissions:
-  contents: read
+  contents: write # to push the encrypted export to the gsc-data branch
 
 concurrency:
   group: gsc-export
@@ -45,10 +46,16 @@ jobs:
           openssl pkeyutl -encrypt -pubin -inkey .github/gsc-export-public-key.pem \
             -pkeyopt rsa_padding_mode:oaep -pkeyopt rsa_oaep_md:sha256 -in key.bin -out key.bin.enc
           rm -rf gsc-out gsc.tar.gz key.bin
-      - uses: actions/upload-artifact@v4
-        with:
-          name: gsc-export
-          path: |
-            gsc.tar.gz.enc
-            key.bin.enc
-          retention-days: 30
+      - name: Publish to the gsc-data branch
+        run: |
+          set -euo pipefail
+          mkdir publish && mv gsc.tar.gz.enc key.bin.enc publish/
+          cd publish
+          printf 'Encrypted Search Console export (see .github/workflows/gsc-export.yml on main).\n' > README.md
+          git init -q -b gsc-data
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add . && git commit -q -m "Search Console export $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -q -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gsc-data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

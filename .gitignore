@@ -51,3 +51,7 @@ node_modules/
 
 # archives dropped into the folder during setup (the dotfiles zip contains .env)
 *.zip
+
+# Python
+__pycache__/
+*.pyc
