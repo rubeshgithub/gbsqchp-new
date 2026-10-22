@@ -6,9 +6,9 @@ name: Search Console export
 # key can read it.
 # The script prints counts only, never data rows.
 
+# Run on demand only: the weekly SEO review session generates a fresh key pair, commits the public key, then
+# dispatches this workflow – a fixed schedule would encrypt to a key nobody holds any more.
 on:
-  schedule:
-    - cron: '17 9 * * 1' # Mondays 09:17 UTC
   workflow_dispatch:
     inputs:
       days:

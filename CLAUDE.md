@@ -97,7 +97,7 @@ the admin panel.
 
 ## Search Console data
 
-`.github/workflows/gsc-export.yml` (Mondays 09:17 UTC, or dispatch with `days`) runs `scripts/gsc-export.py` with a
+`.github/workflows/gsc-export.yml` (dispatch only, input `days`; run by the weekly SEO review – see the project doc `claude/GBSQCHP-seo-weekly-playbook.md`) runs `scripts/gsc-export.py` with a
 read-only service account (secret `GSC_SERVICE_ACCOUNT_JSON`, property `sc-domain:gbsqchp.com`): search analytics by
 date/query/page/country/device, sitemaps, and URL Inspection for every sitemap URL. The repo is public, so the script
 logs counts only and the output is encrypted (AES key wrapped with `.github/gsc-export-public-key.pem`) and
