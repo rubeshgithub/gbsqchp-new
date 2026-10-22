@@ -3,8 +3,9 @@
  * Facts checked 22 Oct 2026 against: the PRC Citizen's Charter 2025 (1st edition) as published by the PRC Koronadal
  * regional office (Certificate of Good Standing, Certification of Passing / Board Rating, authenticated PIC/COR copies:
  * who may avail, requirements, fees, LERIS appointment + window); the PRC Citizen's Charter 2026 (COGS handled by the
- * Regional Office Licensure and Registration Division; "Statebord verification" for foreign agencies); PRC Resolution
- * No. 1957 s. 2025 (title only: COGS from the AIPO discontinued for PIC renewal); DHP Guidelines for Nurses and for
+ * Regional Office Licensure and Registration Division; "Stateboard verification" for foreign agencies); PRC Resolution
+ * No. 1957 s. 2025 (11 Feb 2025, full text: AIPO COGS discontinued for PIC renewal except Pharmacy, Criminology and
+ * Interior Design); DHP Guidelines for Nurses and for
  * Physicians; Circular DHP/2025/08; DataFlow's DHP offline form and reference kit. Filipino name patterns are
  * illustrative. The Department of Migrant Workers is mentioned only as a pointer.
  */
@@ -74,12 +75,12 @@ export const philippinesGuide = {
     {
       question: 'My PRC ID has expired. Can I still get a certificate of good standing?',
       answer:
-        'Renew first. The PRC’s Citizen’s Charter lists the Certificate of Good Standing as a service for “Registered professionals with valid Professional Identification Card/ Electronic-PIC (e-PIC)”, and DHP asks for valid licences for the years of experience it counts. PRC Resolution No. 1957, s. 2025 discontinued the requirement for a good-standing certificate from your accredited professional organisation when renewing the PRC ID.',
+        'Renew first. The PRC’s Citizen’s Charter lists the Certificate of Good Standing as a service for “Registered professionals with valid Professional Identification Card/ Electronic-PIC (e-PIC)”, and DHP asks for valid licences for the years of experience it counts. PRC Resolution No. 1957, s. 2025 discontinued the requirement for a good-standing certificate from your accredited professional organisation when renewing the PRC ID – except for pharmacists (and criminologists and interior designers), who still need it to renew.',
     },
     {
       question: 'Which PSV provider is cheapest for a Filipino nurse with a BSN?',
       answer:
-        'For one qualification and one PRC licence, QuadraBay and AVS both list QAR 900 and DataFlow QAR 990. AVS covers five years of employment in that price, against three years at QuadraBay and DataFlow, so if you have worked for more than three years – in the Philippines and abroad – compare the extra-employer and extra-licence fees in the [PSV fees guide](/qatar/psv/fees) before you choose.',
+        'For one qualification and one PRC licence, QuadraBay and AVS both list QAR 900 and DataFlow QAR 990. The usual extra for a Filipino nurse is a second licence – a Saudi, UAE or other Gulf licence held in the years DHP counts – which adds QAR 150 at QuadraBay, QAR 250 at AVS and QAR 300 at DataFlow. If you already have a DataFlow report issued to another Gulf regulator, DataFlow re-issues it to DHP for QAR 323 when nothing new needs verifying. The [PSV fees guide](/qatar/psv/fees) has every price side by side.',
     },
   ],
   markdown: `
@@ -89,17 +90,17 @@ DHP's approved providers – DataFlow, QuadraBay and AVS – sell packages by pr
 
 | Your qualification | DHP category | Package | What to watch |
 | --- | --- | --- | --- |
-| BS Nursing (BSN) | Registered General Nurse | E – nurses, midwives, pharmacists | DHP wants 2 years' clinical experience after registration and licensing |
-| BS Midwifery | Midwife | E | DHP asks for a bachelor's in midwifery (or BSN plus post-graduate midwifery) and 3 years as a midwife |
+| BS Nursing (BSN) | Registered General Nurse | E – nurses and pharmacists | DHP wants 2 years' clinical experience after registration and licensing |
+| BS Midwifery | Midwife | E (midwives apply under it) | DHP asks for a bachelor's in midwifery "or equivalent" (or BSN plus a post-graduate midwifery programme) and 3 years as a midwife after registration; a midwifery diploma rather than a BS may not meet it – DHP decides |
 | Doctor of Medicine (MD) | General Practitioner | A – physicians and dentists | DHP asks overseas GPs for 5 years' clinical experience |
 | MD + residency / specialty training | Specialist | A | Package A covers up to two qualifications |
 | Doctor of Dental Medicine (DMD) | Dentist | A | |
 | BS Pharmacy | Pharmacist | E | |
 | BS Medical Technology, BS Physical Therapy, BS Radiologic Technology and similar | Allied health | B | One qualification at DataFlow and QuadraBay, two at AVS |
 
-Package A and the AVS nurse and allied health packages cover the last five years of employment with up to three employers; DataFlow's and QuadraBay's Package E covers three years. The [documents guide](/qatar/psv/documents) has the full scope table and the [PSV fees guide](/qatar/psv/fees) every price.
+Packages A and B at all three providers, and AVS's nurse package, cover the last five years of employment with up to three employers; DataFlow's and QuadraBay's Package E covers three years. The [documents guide](/qatar/psv/documents) has the full scope table and the [PSV fees guide](/qatar/psv/fees) every price.
 
-Two DHP rules matter for Philippine degrees. For nurses, DHP's Guidelines for Nurses accept a "Bachelor's Degree in nursing (duration: 4 years)" for a Registered General Nurse, followed by two years' clinical experience "after registration and licensing" – so experience counts from your PRC registration, not from graduation. For doctors, the Guidelines for Physicians ask for a degree from a university listed in the IMED/FAIMER directory and a minimum six-year undergraduate medical degree "or equivalent", and say "The internship program can be considered for completion of the required undergraduate study years". The Philippine MD follows a separate bachelor's degree, so keep your pre-medical degree and your post-graduate internship certificate with your MD diploma; DHP decides equivalence at evaluation, not the PSV provider.
+Two DHP rules matter for Philippine degrees. For nurses, DHP's Guidelines for Nurses accept a "Bachelor's Degree in nursing (duration: 4 years)" for a Registered General Nurse, followed by two years' clinical experience "after registration and licensing" – so experience counts from your PRC registration, not from graduation. For doctors, the Guidelines for Physicians ask for a degree from a university listed in the IMED/FAIMER directory and a minimum six-year undergraduate medical degree "(MBChB/MBBS/MBBCh/ Northern American MD or equivalent)", and say "The internship program can be considered for completion of the required undergraduate study years". The Philippine MD follows a separate bachelor's degree, on the North American model, so keep your pre-medical degree and your post-graduate internship certificate with your MD diploma; DHP decides equivalence at evaluation, not the PSV provider. If the provider has to verify the pre-medical degree as well as the MD and your specialty training, that is a third qualification and an extra fee (QAR 400 at DataFlow, QAR 150 at QuadraBay, QAR 300 at AVS).
 
 ## How do you get your PRC certificate of good standing?
 
@@ -108,13 +109,13 @@ Since 1 August 2025 DHP accepts a certificate of good standing only as a PSV rep
 The PRC's Citizen's Charter (2025, 1st edition, as published by its Koronadal regional office) describes the service, "Request for the Issuance of Certificate of Good Standing (COGS)":
 
 - **Who may apply:** "Registered professionals with valid Professional Identification Card/ Electronic-PIC (e-PIC)" – renew an expired ID first.
-- **How:** book an appointment through your **LERIS** account, then present your documents at the PRC window; a representative can go for you with an authorisation letter.
+- **How:** book an appointment through your **LERIS** account, then present your documents at the PRC window. A representative can go for you: a registered professional with their valid PRC ID and your signed original authorisation letter, anyone else with a valid government ID and an original Special Power of Attorney.
 - **What to bring:** a screenshot of the system-generated action sheet, your valid PRC ID or e-PIC, and one documentary stamp per copy.
 - **Fee:** PHP 75 per copy plus PHP 30 documentary stamp tax.
 
 The 2026 charter places the service with the PRC Regional Office's Licensure and Registration Division, so use the regional office where you book the appointment. Ask your PSV provider before you go whether it wants the original certificate uploaded, or a particular number of copies.
 
-The same charter lists a **Certification of Passing / Board Rating** (also PHP 75 plus PHP 30 documentary stamp) and authenticated copies of your PRC ID and Certificate of Registration. You do not need these for DHP, but some employers ask for the board rating.
+The same charter lists a **Certification of Passing / Board Rating** (also PHP 75 plus PHP 30 documentary stamp) and authenticated copies of your PRC ID and Certificate of Registration. DHP's guidelines and DataFlow's checklist do not list them, but some employers ask for the board rating.
 
 ## Which Philippine documents should you upload?
 
@@ -137,7 +138,7 @@ Filipino naming conventions are one of the commonest reasons for a PSV query. Ty
 - **Married name:** the passport is in a married name, the diploma and TOR in the maiden name – often with the maiden surname moved into the middle-name field.
 - **Abbreviations and spacing:** "Ma." for Maria, "Jr." or "III" present on some documents and not others, "Dela Cruz" against "De la Cruz".
 
-Type your name exactly as in your passport wherever a portal asks for your own name, list every other version as an alternative name (DataFlow's form asks you to "give your name in full (as per your Passport/ National ID) and recognized alternatives"), and upload a document that links the names – usually your PSA marriage certificate, or your PSA birth certificate for middle-name and spelling questions. The [name-mismatch guide](/qatar/psv/problems/name-mismatch) covers which evidence suits which case and what to do if a report already shows a discrepancy.
+Type your name exactly as in your passport wherever a portal asks for your own name, list every other version as an alternative name (DataFlow's form asks you to "give your name in full (as per your Passport/ National ID) and recognized alternatives where applicable"), and upload a document that links the names – usually your PSA marriage certificate, or your PSA birth certificate for middle-name and spelling questions. The [name-mismatch guide](/qatar/psv/problems/name-mismatch) covers which evidence suits which case and what to do if a report already shows a discrepancy.
 
 ## How do Philippine schools and employers handle verification requests?
 

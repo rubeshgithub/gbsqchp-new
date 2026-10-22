@@ -103,7 +103,7 @@ DHP's approved providers – DataFlow, QuadraBay and AVS – sell packages by pr
 | B.Pharm / Pharm.D | Pharmacist | E | Good standing: usually your State Pharmacy Council – confirm |
 | BPT, BMLT, B.Sc radiology and similar | Allied health | B | One qualification at DataFlow and QuadraBay, two at AVS |
 
-Package A and the AVS nurse and allied health packages cover the last five years of employment with up to three employers; DataFlow's and QuadraBay's Package E covers three years. The [documents guide](/qatar/psv/documents) has the full scope table, and the [PSV fees guide](/qatar/psv/fees) every price.
+Packages A and B at all three providers, and AVS's nurse package, cover the last five years of employment with up to three employers; DataFlow's and QuadraBay's Package E covers three years. The [documents guide](/qatar/psv/documents) has the full scope table, and the [PSV fees guide](/qatar/psv/fees) every price.
 
 Two DHP rules matter for Indian degrees. For nurses, DHP's Guidelines for Nurses accept a "Bachelor's Degree in nursing (duration: 4 years)" or a "Diploma in nursing (duration: 3 years after graduation from 12 years of high school)". For doctors, the Guidelines for Physicians ask for a degree from a university listed in the IMED/FAIMER directory and a minimum six-year undergraduate degree "or equivalent", and say "The internship program can be considered for completion of the required undergraduate study years" when the programme is shorter – so keep your internship completion certificate with your MBBS degree.
 
@@ -149,7 +149,7 @@ Name differences are among the most common PSV queries for Indian applicants. Th
 - **Father's or husband's name** added on some documents and not on others.
 - **A married name** on the passport and the maiden name on the degree.
 
-Type your name exactly as in your passport wherever a portal asks for your own name, list every other version as an alternative name (DataFlow's form asks you to "give your name in full (as per your Passport/ National ID) and recognized alternatives"), and upload a document that links the names – a marriage certificate, a gazette notification of a name change or an affidavit. The [name-mismatch guide](/qatar/psv/problems/name-mismatch) covers which evidence suits which case and what to do if a report already shows a discrepancy.
+Type your name exactly as in your passport wherever a portal asks for your own name, list every other version as an alternative name (DataFlow's form asks you to "give your name in full (as per your Passport/ National ID) and recognized alternatives where applicable"), and upload a document that links the names – a marriage certificate, a gazette notification of a name change or an affidavit. The [name-mismatch guide](/qatar/psv/problems/name-mismatch) covers which evidence suits which case and what to do if a report already shows a discrepancy.
 
 ## How do Indian universities handle verification requests?
 
