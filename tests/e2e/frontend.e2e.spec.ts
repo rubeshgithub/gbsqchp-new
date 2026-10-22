@@ -168,3 +168,16 @@ test.describe('Articles', () => {
     await expect(page.locator('.article-body a[href="/qatar/psv/documents"]').first()).toBeVisible()
   })
 })
+
+test.describe('India country guide', () => {
+  test('renders the qualification table, NMC good-standing facts and is linked from documents and the footer', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/psv/countries/india')
+    await expect(page.locator('h1')).toContainText('Qatar DHP licence from India')
+    await expect(page.locator('.article-body table').first()).toContainText('GNM diploma')
+    await expect(page.locator('.article-body')).toContainText('National Medical Commission')
+    await expect(page.locator('nav.breadcrumbs a')).toHaveText(['Home', 'Qatar', 'Primary Source Verification'])
+    await expect(page.locator('.site-footer a[href="/qatar/psv/countries/india"]')).toBeVisible()
+    await page.goto('http://localhost:3000/qatar/psv/documents')
+    await expect(page.locator('.article-body a[href="/qatar/psv/countries/india"]').first()).toBeVisible()
+  })
+})

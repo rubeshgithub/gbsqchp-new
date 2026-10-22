@@ -30,6 +30,7 @@ const SEGMENT_LABELS: Record<string, string> = {
   careers: 'Careers',
   tools: 'Tools',
   articles: 'Articles',
+  countries: 'By country',
 }
 
 export async function PageTemplate({ page, settings }: { page: Page; settings: SiteSetting }) {

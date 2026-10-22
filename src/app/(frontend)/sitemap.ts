@@ -22,7 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${SITE_URL}${p.path}`,
       lastModified: p.updatedAt,
       changeFrequency: 'monthly',
-      priority: p.section === 'psv' || p.section === 'licensing' ? 0.9 : 0.6,
+      priority: p.section === 'psv' || p.section === 'licensing' || p.section === 'documents' ? 0.9 : 0.6,
     }))
   } catch {
     // Database unavailable – still emit the static routes.
