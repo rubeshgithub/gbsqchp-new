@@ -15,7 +15,7 @@ export const indiaGuide = {
   path: '/qatar/psv/countries/india',
   section: 'documents' as const,
   summary:
-    'If you trained or worked in India, your Qatar DHP application runs on the same three steps as everyone else’s – Primary Source Verification, DHP evaluation, then licensing – but the Indian parts of your file decide how smoothly it goes: which council issues your certificate of good standing, how your university handles verification requests, and whether the names on your mark sheets match your passport. Doctors get their certificate of good standing from the National Medical Commission through their State Medical Council; nurses get theirs from their State Nursing Council. Below: the package that fits each Indian qualification, where each certificate comes from, the Indian documents to upload, and the problems Indian files most often run into.',
+    'If you trained or worked in India, your Qatar DHP application runs on the same three steps as everyone else’s – Primary Source Verification, DHP evaluation, then licensing – but the Indian parts of your file decide how smoothly it goes: which council issues your certificate of good standing, how your university handles verification requests, and whether the names on your mark sheets match your passport. Doctors can get a certificate of good standing from the National Medical Commission, applied for through their State Medical Council; nurses usually get theirs from their State Nursing Council. Below: the package that fits each Indian qualification, where each certificate comes from, the Indian documents to upload, and the problems Indian files most often run into.',
   meta: {
     title: 'Qatar PSV for Indian Nurses & Doctors: DataFlow Guide 2026',
     description:
@@ -74,7 +74,7 @@ export const indiaGuide = {
     {
       question: 'Is a GNM diploma accepted for a Qatar nursing licence?',
       answer:
-        'DHP’s Guidelines for Nurses accept a “Diploma in nursing (duration: 3 years after graduation from 12 years of high school)” for a Registered General Nurse, as well as a four-year bachelor’s degree, each followed by two years of clinical experience after registration. Check that your GNM certificate or transcript shows a programme that meets that length; DHP decides equivalence at evaluation, not the PSV provider.',
+        'DHP’s Guidelines for Nurses accept a “Diploma in nursing (duration: 3 years after graduation from 12 years of high school)” for a Registered General Nurse, as well as a four-year bachelor’s degree, each followed by two years of clinical experience after registration and licensing. Check that your GNM certificate or transcript shows a programme that meets that length; DHP decides equivalence at evaluation, not the PSV provider.',
     },
     {
       question: 'How do I send my NMC good standing certificate for Qatar?',
@@ -84,7 +84,7 @@ export const indiaGuide = {
     {
       question: 'Which PSV provider is cheapest for an Indian nurse with GNM and Post Basic B.Sc?',
       answer:
-        'AVS, on published prices: its QAR 900 nurse package covers up to two qualifications and five years of employment, so both diplomas are included. At QuadraBay the second qualification adds QAR 150 to the QAR 900 package, and at DataFlow it adds QAR 400 to QAR 990. The [PSV fees guide](/qatar/psv/fees) has every price side by side.',
+        'With one council registration, AVS, on published prices: its QAR 900 nurse package covers up to two qualifications and five years of employment, so both are included – against QAR 1,050 at QuadraBay (QAR 900 plus QAR 150 for the second qualification) and QAR 1,390 at DataFlow (QAR 990 plus QAR 400). Add a second state registration and QuadraBay becomes cheapest: about QAR 1,100, against QAR 1,150 at AVS and QAR 1,690 at DataFlow. The [PSV fees guide](/qatar/psv/fees) has every price side by side.',
     },
   ],
   markdown: `
@@ -99,8 +99,8 @@ DHP's approved providers – DataFlow, QuadraBay and AVS – sell packages by pr
 | GNM + Post Basic B.Sc Nursing | Registered General Nurse | E | Two qualifications: included at AVS, an add-on at DataFlow and QuadraBay |
 | MBBS | General Practitioner | A – physicians and dentists | DHP asks overseas GPs for 5 years' clinical experience |
 | MBBS + MD / MS / DNB | Specialist | A | Package A covers up to two qualifications |
-| BDS / MDS | Dentist | A | Good standing comes from your State Dental Council |
-| B.Pharm / Pharm.D | Pharmacist | E | Good standing comes from your State Pharmacy Council |
+| BDS / MDS | Dentist | A | Good standing: usually your State Dental Council – confirm |
+| B.Pharm / Pharm.D | Pharmacist | E | Good standing: usually your State Pharmacy Council – confirm |
 | BPT, BMLT, B.Sc radiology and similar | Allied health | B | One qualification at DataFlow and QuadraBay, two at AVS |
 
 Package A and the AVS nurse and allied health packages cover the last five years of employment with up to three employers; DataFlow's and QuadraBay's Package E covers three years. The [documents guide](/qatar/psv/documents) has the full scope table, and the [PSV fees guide](/qatar/psv/fees) every price.
@@ -111,17 +111,17 @@ Two DHP rules matter for Indian degrees. For nurses, DHP's Guidelines for Nurses
 
 Since 1 August 2025 DHP accepts a certificate of good standing only as a PSV report (Circular DHP/2025/08). You obtain the certificate in India; your PSV provider verifies it; DHP sees the verified report. It is usually needed at the licensing stage and must be no more than six months old then – the [documents guide](/qatar/psv/documents) explains the timing.
 
-**Doctors (MBBS and above):** the certificate is issued by the **National Medical Commission (NMC)**, on the recommendation of your State Medical Council. The NMC's application form says:
+**Doctors (MBBS and above):** one route is a certificate from the **National Medical Commission (NMC)**, issued on the recommendation of your State Medical Council; some State Medical Councils also issue certificates of their own. Ask your council and your PSV provider which one to use. The NMC's application form says:
 
 - the application "is to be forwarded to this office through the Registrar of the State Medical Council", which certifies that you hold current registration and that no disciplinary proceedings were taken or are in progress;
-- you attach an attested copy of your permanent registration certificate with your MBBS degree;
+- you attach attested copies of your permanent registration certificate and your MBBS degree;
 - doctors registered with the erstwhile Medical Council of India can also apply online, through the NMC's [doctor portal](https://application.nmc.org.in/login);
 - the fee is ₹2,000 + 18% GST; ₹2,360 including GST for a certificate e-mailed to you, or ₹8,900 including GST for one sent to a foreign authority;
 - "The digitally signed certificates would be sent by e-mail", and the certificate is "valid upto six months".
 
 Because DHP no longer takes certificates directly, ask your PSV provider which delivery it needs before you pay the NMC.
 
-**Nurses and midwives:** your **State Nursing Council** – the council you are registered with – issues good-standing and verification certificates. The Kerala Nurses and Midwives Council, for example, publishes guidelines for obtaining a good-standing certificate and a verification certificate, and a fee notice, on [knmc.org](https://knmc.org/). If you are registered in more than one state, plan for a certificate from each council that covers your recent experience.
+**Nurses and midwives:** usually your **State Nursing Council** – the council you are registered with – issues good-standing and verification certificates. The Kerala Nurses and Midwives Council, for example, publishes guidelines for obtaining a good-standing certificate and a verification certificate, and a fee notice, on [knmc.org](https://knmc.org/). If you were registered in more than one state during the years DHP counts, ask your PSV provider whether it needs a certificate from each council.
 
 **Dentists and pharmacists:** ask the State Dental Council or State Pharmacy Council you are registered with for its good-standing process.
 
@@ -132,7 +132,7 @@ Because DHP no longer takes certificates directly, ask your PSV provider which d
 The names on Indian certificates differ from the generic lists, so match them carefully:
 
 - **Degree or diploma certificate** – the final certificate, front and back. DataFlow's DHP checklist asks for the "Front and reverse side of degree certificates". If you hold only a provisional certificate, ask the provider whether it will accept it before you pay.
-- **Mark sheets or consolidated transcript** – DataFlow's checklist asks for "mark sheets/Transcript of Records" with every qualification. Upload all years in the same file as the degree.
+- **Mark sheets or consolidated transcript** – DataFlow's checklist asks for "mark sheets/Transcript of Records" with every qualification. We suggest uploading all years in the same file as the degree.
 - **Internship completion certificate** – doctors, with the MBBS degree (see above).
 - **Council registration certificate** – and the latest renewal if your council registers for a fixed period. DHP asks for licences "accompanying the required years of work experience", so include each state registration you held in that period.
 - **Experience certificates** – one per employer, on letterhead, with your exact dates, designation and an issue date. A relieving letter alone often lacks these; ask HR for an experience certificate as well.
@@ -142,22 +142,22 @@ You do not need MEA or embassy attestation for these: DHP's guidelines say PSV r
 
 ## Initials, surnames and other name problems
 
-Indian names cause more PSV queries than any other single issue. The common cases:
+Name differences are among the most common PSV queries for Indian applicants. The usual cases:
 
 - **Initials** on certificates ("K. Rajan") and the full name in the passport ("Kumar Rajan").
 - **Passports with an empty surname field**, so the given name and surname are split differently from the certificates.
 - **Father's or husband's name** added on some documents and not on others.
 - **A married name** on the passport and the maiden name on the degree.
 
-Type your name exactly as in your passport wherever a portal asks for your own name, list every other version as an alternative name (DataFlow's form has a field for "recognized alternatives"), and upload a document that links the names – a marriage certificate, a gazette notification of a name change or an affidavit. The [name-mismatch guide](/qatar/psv/problems/name-mismatch) covers which evidence suits which case and what to do if a report already shows a discrepancy.
+Type your name exactly as in your passport wherever a portal asks for your own name, list every other version as an alternative name (DataFlow's form asks you to "give your name in full (as per your Passport/ National ID) and recognized alternatives"), and upload a document that links the names – a marriage certificate, a gazette notification of a name change or an affidavit. The [name-mismatch guide](/qatar/psv/problems/name-mismatch) covers which evidence suits which case and what to do if a report already shows a discrepancy.
 
 ## How do Indian universities handle verification requests?
 
 The provider writes to your university, council and employers and waits for each to answer – that wait is most of the time PSV takes. Three things help with Indian institutions:
 
 1. **Tell the university first.** Find the office that answers verification requests (often the examination or verification section of the university, or of the health-sciences university your college was affiliated to) and warn them a request is coming.
-2. **Pay any verification fee quickly.** DataFlow's reference kit says "If your issuing authority applies verification fees, the amount will be added to the total", and AVS says issuing authorities may request fees too.
-3. **Check the right institution is named.** If your college was affiliated to a university, the degree is the university's; name the university as the issuer, written in full, as DataFlow's form asks.
+2. **Pay any verification fee quickly.** DataFlow's reference kit says "If your issuing authority applies verification fees, the amount will be added to the total."
+3. **Name both institutions in full.** DataFlow's form asks for the full name of the institution attended and says "Do not use abbreviated terms or initials". If your college was affiliated to a university, write the college's full name and make sure the awarding university also appears in full.
 
 The [timeline guide](/qatar/psv/timeline) sets out how long each step takes and when to escalate.
 
@@ -173,6 +173,6 @@ Emigration from India is a separate process from DHP licensing. Rules for Indian
 4. Experience certificates – not only relieving letters – with exact dates and an issue date.
 5. Every name variant listed, with a document linking them.
 6. University and employers told to expect the request; any verification fee ready.
-7. Good standing planned for the licensing stage – NMC for doctors, State Nursing Council for nurses – and delivered the way your PSV provider asks.
+7. Good standing planned for the licensing stage – from the NMC or your State Medical Council for doctors, usually the State Nursing Council for nurses – and delivered the way your PSV provider asks.
 `,
 }
