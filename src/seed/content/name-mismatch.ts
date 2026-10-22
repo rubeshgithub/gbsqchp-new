@@ -87,7 +87,7 @@ Check your passport against every document you will upload – degree, transcrip
 - **Order:** family name first on one document and last on another.
 - **Missing or extra names:** a middle name, father's name or grandfather's name on the passport but not on the certificate, or the other way round.
 - **Initials:** "K. Rajan" on a certificate, the full name on the passport – common on Indian certificates; the [guide for Indian applicants](/qatar/psv/countries/india) covers the Indian cases.
-- **Married and maiden names:** a degree in the name you had at graduation, a passport in your married name.
+- **Married and maiden names:** a degree in the name you had at graduation, a passport in your married name. Filipino applicants also meet middle-name and "Ma." differences – see the [guide for Filipino applicants](/qatar/psv/countries/philippines).
 - **A legal change of name** made after a certificate was issued.
 
 Check your date of birth the same way. A different date of birth is not a name problem, but expect it to be handled like one – and only the issuer can correct it.

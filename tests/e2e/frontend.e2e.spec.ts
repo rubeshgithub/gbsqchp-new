@@ -181,3 +181,15 @@ test.describe('India country guide', () => {
     await expect(page.locator('.article-body a[href="/qatar/psv/countries/india"]').first()).toBeVisible()
   })
 })
+
+test.describe('Philippines country guide', () => {
+  test('renders the qualification table and PRC good-standing facts, linked from documents and the footer', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/psv/countries/philippines')
+    await expect(page.locator('h1')).toContainText('Qatar DHP licence from the Philippines')
+    await expect(page.locator('.article-body table').first()).toContainText('BS Nursing (BSN)')
+    await expect(page.locator('.article-body')).toContainText('LERIS')
+    await expect(page.locator('.site-footer a[href="/qatar/psv/countries/philippines"]')).toBeVisible()
+    await page.goto('http://localhost:3000/qatar/psv/documents')
+    await expect(page.locator('.article-body a[href="/qatar/psv/countries/philippines"]').first()).toBeVisible()
+  })
+})
