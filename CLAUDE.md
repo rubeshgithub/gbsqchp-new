@@ -95,6 +95,18 @@ new or changed seed content goes live only after a deploy with the seed (GitHub 
 workflow → tick "seed"). Editors can also create pages directly in
 the admin panel.
 
+## Search Console data
+
+`.github/workflows/gsc-export.yml` (Mondays 09:17 UTC, or dispatch with `days`) runs `scripts/gsc-export.py` with a
+read-only service account (secret `GSC_SERVICE_ACCOUNT_JSON`, property `sc-domain:gbsqchp.com`): search analytics by
+date/query/page/country/device, sitemaps, and URL Inspection for every sitemap URL. The repo is public, so the script
+logs counts only and the output is encrypted (AES key wrapped with `.github/gsc-export-public-key.pem`) and
+force-pushed to the `gsc-data` branch. To read it: clone that branch, unwrap `key.bin.enc` with the private key
+(`openssl pkeyutl -decrypt … -pkeyopt rsa_padding_mode:oaep -pkeyopt rsa_oaep_md:sha256`), then
+`openssl enc -d -aes-256-cbc -pbkdf2 -pass file:key.bin`. The private key lives only in Claude's session workspace
+(`/home/claude/.gsc/gsc_key.pem`); if it is lost, generate a new pair and commit the new public key – old exports
+become unreadable, new ones work. Actions log and artifact downloads are blocked from Claude's workspace, hence the branch.
+
 ## Known gaps / to verify
 
 - Read and verified on 11 Oct 2026: DHP/2026/36 (AVS, 3 Sep 2026) and DHP/2025/24. **DHP/2025/24 does not mention
