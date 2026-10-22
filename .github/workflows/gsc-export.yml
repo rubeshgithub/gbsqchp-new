@@ -1,0 +1,54 @@
+name: Search Console export
+
+# Pulls Google Search Console data for gbsqchp.com with a read-only service account (secret GSC_SERVICE_ACCOUNT_JSON)
+# and uploads it as an artifact. The repository is public, so the data is encrypted to the public key in
+# .github/gsc-export-public-key.pem before upload; only the holder of the matching private key can read it.
+# The script prints counts only, never data rows.
+
+on:
+  schedule:
+    - cron: '17 9 * * 1' # Mondays 09:17 UTC
+  workflow_dispatch:
+    inputs:
+      days:
+        description: How many days of data to export (max 480)
+        default: '90'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gsc-export
+  cancel-in-progress: false
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install --quiet google-auth requests
+      - name: Export
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+          DAYS: ${{ inputs.days || '90' }}
+        run: python scripts/gsc-export.py gsc-out "$DAYS"
+      - name: Encrypt
+        run: |
+          set -euo pipefail
+          tar -czf gsc.tar.gz gsc-out
+          openssl rand -out key.bin 32
+          openssl enc -aes-256-cbc -pbkdf2 -salt -in gsc.tar.gz -out gsc.tar.gz.enc -pass file:key.bin
+          openssl pkeyutl -encrypt -pubin -inkey .github/gsc-export-public-key.pem \
+            -pkeyopt rsa_padding_mode:oaep -pkeyopt rsa_oaep_md:sha256 -in key.bin -out key.bin.enc
+          rm -rf gsc-out gsc.tar.gz key.bin
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gsc-export
+          path: |
+            gsc.tar.gz.enc
+            key.bin.enc
+          retention-days: 30
