@@ -209,6 +209,20 @@ test.describe('Pakistan country guide', () => {
   })
 })
 
+test.describe('Report-transfer guide', () => {
+  test('renders the fee table and worked example and is linked from the provider guides and the footer', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/psv/report-transfer')
+    await expect(page.locator('h1')).toContainText('Transferring a DataFlow or QuadraBay report')
+    await expect(page.locator('.article-body table').first()).toContainText('QAR 323')
+    await expect(page.locator('.article-body')).toContainText('QAR 923')
+    await expect(page.locator('.site-footer a[href="/qatar/psv/report-transfer"]')).toBeVisible()
+    await page.goto('http://localhost:3000/qatar/psv/dataflow')
+    await expect(page.locator('.article-body a[href="/qatar/psv/report-transfer"]').first()).toBeVisible()
+    await page.goto('http://localhost:3000/qatar/psv/quadrabay')
+    await expect(page.locator('.article-body a[href="/qatar/psv/report-transfer"]').first()).toBeVisible()
+  })
+})
+
 test.describe('Status-check guide', () => {
   test('renders the tracker table and is linked from the provider guides and the footer', async ({ page }) => {
     await page.goto('http://localhost:3000/qatar/psv/status')

@@ -125,6 +125,6 @@ Whichever you choose, the file you upload matters more than the logo on the repo
 
 ## Can you transfer an old DataFlow report to QuadraBay?
 
-QuadraBay's QAR 150 transfer fee is for QuadraBay's own reports moving between regulators – a Bahrain or Kuwait report reissued to DHP. No DHP circular says that a report can be moved from one approved provider to another, and neither DataFlow nor QuadraBay publishes a procedure for it. If your existing report is from DataFlow, the practical routes are a DataFlow transfer (QAR 323) or a fresh QuadraBay application at full price. AVS lists a "report transfer from another vendor" service at QAR 250, but DHP has not stated that it accepts such a report; ask the DHP registration section before paying for one. The [PSV overview](/qatar/psv) sets out the transfer options for all three providers.
+QuadraBay's QAR 150 transfer fee is for QuadraBay's own reports moving between regulators – a Bahrain or Kuwait report reissued to DHP. No DHP circular says that a report can be moved from one approved provider to another, and neither DataFlow nor QuadraBay publishes a procedure for it. If your existing report is from DataFlow, the practical routes are a DataFlow transfer (QAR 323) or a fresh QuadraBay application at full price. AVS lists a "report transfer from another vendor" service at QAR 250, but DHP has not stated that it accepts such a report; ask the DHP registration section before paying for one. The [report-transfer guide](/qatar/psv/report-transfer) sets out the transfer options for all three providers.
 `,
 }
