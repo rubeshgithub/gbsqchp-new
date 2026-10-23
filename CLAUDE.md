@@ -76,8 +76,9 @@ The 25 Phase-1 page briefs (slug, title tag, meta, outline, facts with sources, 
 project doc `GBSQCHP-phase1-content-plan-and-briefs.md`. Published so far: `/qatar/psv` (pillar), `/gbs-psv-portal`
 (legacy), `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs` (provider guides), `/qatar/psv/fees`, `/qatar/psv/documents`,
 `/qatar/psv/timeline`, `/qatar/psv/problems/name-mismatch`, `/qatar/psv/status`, `/qatar/exam/prometric`, `/qatar/licensing` (hub,
-in the header), country guides `/qatar/psv/countries/{india,philippines,pakistan}`, `/qatar/psv/report-transfer`. Next in order:
-the problem pages under `/qatar/psv/problems/…`, the circular explainers under `/qatar/circulars/…`, and more
+in the header), country guides `/qatar/psv/countries/{india,philippines,pakistan}`, `/qatar/psv/report-transfer`,
+`/qatar/psv/problems/{unable-to-verify,discrepancy}`. Next in order: university-not-responding, experience-letter-format,
+the good-standing guide, then the other problem pages under `/qatar/psv/problems/…`, the circular explainers under `/qatar/circulars/…`, and more
 country guides. Add nav/footer links (`src/components/Header.tsx`, `Footer.tsx`) only when the
 target page is published. The provider guides refer to the
 university-not-responding guide but currently link it to `/qatar/psv` (no dead links); retarget those links in
