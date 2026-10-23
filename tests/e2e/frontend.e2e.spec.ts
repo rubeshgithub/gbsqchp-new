@@ -223,6 +223,18 @@ test.describe('Report-transfer guide', () => {
   })
 })
 
+test.describe('Unable to Verify guide', () => {
+  test('renders the label table and appeal steps and is linked from the status guide and the footer', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/psv/problems/unable-to-verify')
+    await expect(page.locator('h1')).toContainText('Unable to Verify')
+    await expect(page.locator('.article-body table').first()).toContainText('Unable to Check')
+    await expect(page.locator('.article-body')).toContainText('within 180 days')
+    await expect(page.locator('.site-footer a[href="/qatar/psv/problems/unable-to-verify"]')).toBeVisible()
+    await page.goto('http://localhost:3000/qatar/psv/status')
+    await expect(page.locator('.article-body a[href="/qatar/psv/problems/unable-to-verify"]').first()).toBeVisible()
+  })
+})
+
 test.describe('Status-check guide', () => {
   test('renders the tracker table and is linked from the provider guides and the footer', async ({ page }) => {
     await page.goto('http://localhost:3000/qatar/psv/status')

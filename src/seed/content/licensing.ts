@@ -150,7 +150,7 @@ Dentists and pharmacists have their own DHP guidelines. Country-specific notes f
 
 ## Common problems that delay a licence
 
-- **A document the issuer will not confirm.** It becomes an Unable to Verify or Discrepancy result and, at evaluation, an interview. The [status-check guide](/qatar/psv/status) explains the outcomes; the [name-mismatch guide](/qatar/psv/problems/name-mismatch) prevents the commonest one.
+- **A document the issuer will not confirm.** It becomes an Unable to Verify or Discrepancy result and, at evaluation, an interview. The [Unable to Verify guide](/qatar/psv/problems/unable-to-verify) explains how to resolve it first; the [name-mismatch guide](/qatar/psv/problems/name-mismatch) prevents the commonest one.
 - **Experience DHP will not count.** The physician guidelines say experience certificates not listed in your CV or submitted with your first evaluation will not be considered in later applications.
 - **An expired document.** Preliminary evaluations, temporary licences, medical reports and good-standing certificates all have six-month limits; plan the order so nothing lapses while you wait for the next step.
 `,
