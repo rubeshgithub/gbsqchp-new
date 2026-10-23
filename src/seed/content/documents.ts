@@ -154,6 +154,8 @@ DHP wants "work experience certificates (with an issue date)" for the years your
 - your job title and department;
 - the date the letter was issued, and a named signatory the provider can contact (our advice: it makes the employer's confirmation quicker).
 
+The [experience certificate guide](/qatar/psv/problems/experience-letter-format) has a sample letter to give your HR office.
+
 The packages cover the last five years (three in DataFlow's and QuadraBay's Package E) with up to three employers. A fourth employer is an add-on, and so is any period outside the window that you need DHP to count. A long gap between jobs is a separate question for DHP: its allied health guidelines describe a supervised training approval for applicants with a break from practice or a lack of experience.
 
 Your **health licence** is the third component. The package verifies one; if DHP needs the licences that accompany each period of your experience, add the others before you pay rather than when DHP returns the file.

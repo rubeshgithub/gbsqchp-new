@@ -23,6 +23,7 @@ import { reportTransferGuide } from './content/report-transfer'
 import { unableToVerifyGuide } from './content/unable-to-verify'
 import { discrepancyGuide } from './content/discrepancy'
 import { universityNotRespondingGuide } from './content/university-not-responding'
+import { experienceLetterGuide } from './content/experience-letter'
 import { statusGuide } from './content/status'
 import { examGuide } from './content/exam'
 import { licensingGuide } from './content/licensing'
@@ -181,7 +182,7 @@ async function run() {
   const editorConfig = editorConfigFactory.fromField({ field: contentField })
 
   const pageIds: Record<string, string> = {}
-  const pages: SeedPage[] = [psvPillar, legacyGbs, dataflowGuide, quadrabayGuide, avsGuide, feesGuide, documentsGuide, timelineGuide, nameMismatchGuide, goodStandingArticle, avsApprovedArticle, indiaGuide, philippinesGuide, pakistanGuide, statusGuide, examGuide, licensingGuide, reportTransferGuide, unableToVerifyGuide, discrepancyGuide, universityNotRespondingGuide]
+  const pages: SeedPage[] = [psvPillar, legacyGbs, dataflowGuide, quadrabayGuide, avsGuide, feesGuide, documentsGuide, timelineGuide, nameMismatchGuide, goodStandingArticle, avsApprovedArticle, indiaGuide, philippinesGuide, pakistanGuide, statusGuide, examGuide, licensingGuide, reportTransferGuide, unableToVerifyGuide, discrepancyGuide, universityNotRespondingGuide, experienceLetterGuide]
   for (const page of pages) {
     const { markdown, verifiedAgainst, meta, featuredVendorSlug, ...rest } = page
     const content = convertMarkdownToLexical({ editorConfig, markdown: markdown.trim() })
@@ -222,6 +223,7 @@ async function run() {
     [statusGuide.path]: [timelineGuide.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path, nameMismatchGuide.path],
     [indiaGuide.path]: [documentsGuide.path, nameMismatchGuide.path, feesGuide.path, timelineGuide.path, psvPillar.path, philippinesGuide.path],
     [philippinesGuide.path]: [documentsGuide.path, nameMismatchGuide.path, feesGuide.path, timelineGuide.path, psvPillar.path, indiaGuide.path],
+    [experienceLetterGuide.path]: [documentsGuide.path, discrepancyGuide.path, nameMismatchGuide.path, universityNotRespondingGuide.path, feesGuide.path],
     [universityNotRespondingGuide.path]: [statusGuide.path, timelineGuide.path, unableToVerifyGuide.path, documentsGuide.path, dataflowGuide.path],
     [discrepancyGuide.path]: [nameMismatchGuide.path, unableToVerifyGuide.path, statusGuide.path, documentsGuide.path, dataflowGuide.path],
     [unableToVerifyGuide.path]: [statusGuide.path, nameMismatchGuide.path, timelineGuide.path, dataflowGuide.path, quadrabayGuide.path],

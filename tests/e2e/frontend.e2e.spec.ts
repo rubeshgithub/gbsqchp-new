@@ -260,6 +260,18 @@ test.describe('University-not-responding guide', () => {
   })
 })
 
+test.describe('Experience certificate guide', () => {
+  test('renders the element table and sample letter and is linked from documents and the footer', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/psv/problems/experience-letter-format')
+    await expect(page.locator('h1')).toContainText('Experience certificate format')
+    await expect(page.locator('.article-body table').first()).toContainText('Issue date')
+    await expect(page.locator('.article-body blockquote').first()).toBeVisible()
+    await expect(page.locator('.site-footer a[href="/qatar/psv/problems/experience-letter-format"]')).toBeVisible()
+    await page.goto('http://localhost:3000/qatar/psv/documents')
+    await expect(page.locator('.article-body a[href="/qatar/psv/problems/experience-letter-format"]').first()).toBeVisible()
+  })
+})
+
 test.describe('Status-check guide', () => {
   test('renders the tracker table and is linked from the provider guides and the footer', async ({ page }) => {
     await page.goto('http://localhost:3000/qatar/psv/status')

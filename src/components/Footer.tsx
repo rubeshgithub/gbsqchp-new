@@ -49,6 +49,9 @@ export function Footer({ settings }: { settings: SiteSetting }) {
                 <Link href="/qatar/psv/problems/university-not-responding">University not responding</Link>
               </li>
               <li>
+                <Link href="/qatar/psv/problems/experience-letter-format">Experience certificate format</Link>
+              </li>
+              <li>
                 <Link href="/qatar/exam/prometric">Qatar Prometric exam</Link>
               </li>
               <li>
