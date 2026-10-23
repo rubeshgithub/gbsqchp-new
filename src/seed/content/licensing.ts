@@ -15,7 +15,7 @@ export const licensingGuide = {
   path: '/qatar/licensing',
   section: 'licensing' as const,
   summary:
-    'A Qatar healthcare licence comes from the Department of Healthcare Professions (DHP) at the Ministry of Public Health, formerly the Qatar Council for Healthcare Practitioners (QCHP). Every applicant goes through the same gates: Primary Source Verification of your documents, a DHP evaluation submitted through your employer’s representative, the Prometric qualifying exam unless you are exempt, then licensing – with an optional six-month temporary licence in between – and renewal every cycle once you have met the CPD requirement. This guide walks through each gate with DHP’s own requirements, processing times and links to the detailed guides.',
+    'A Qatar healthcare licence comes from the Department of Healthcare Professions (DHP) at the Ministry of Public Health, formerly the Qatar Council for Healthcare Practitioners (QCHP). Every applicant goes through the same gates: Primary Source Verification of your documents, a DHP evaluation submitted through your employer’s representative, the Prometric qualifying exam if your scope requires it, then licensing – with an optional six-month temporary licence in between – and renewal, which requires meeting DHP’s two-year CPD cycle. This guide walks through each gate with DHP’s own requirements, processing times and links to the detailed guides.',
   meta: {
     title: 'How to Get a DHP (QCHP) Licence in Qatar: 2026 Guide',
     description:
@@ -93,11 +93,10 @@ The **Department of Healthcare Professions (DHP)** at the Ministry of Public Hea
 | Step | What happens | Official time (working days) |
 | --- | --- | --- |
 | 1. Primary Source Verification | An approved provider – DataFlow, QuadraBay or AVS – verifies your qualifications, licences and employment with the issuers | Provider targets of about 14–25 days, longer in practice |
-| 2. Evaluation | You apply online; your employer's representative reviews and submits; DHP checks your file and your PSV report | 25 (physicians, dentists) / 15 (others) |
-| 3. Qualifying exam | The Prometric exam, unless you hold an exempting exam or another exemption | Booked with Prometric |
-| 4. Temporary licence (optional) | Six months, non-renewable, after evaluation | 5 |
-| 5. Licensing | Your full licence, issued for a licensed facility | 15 (physicians, dentists) / 10 (others) |
-| 6. Renewal | Allowed only once your CPD requirement is met | 7 |
+| 2. Evaluation, including the qualifying exam where your scope requires it | You apply online; your employer's representative reviews and submits; DHP checks your file and your PSV report | 25 (physicians, dentists) / 15 (others) |
+| 3. Temporary licence (optional) | Six months, non-renewable, after evaluation | 5 |
+| 4. Licensing | Your full licence, issued for a licensed facility | 15 (physicians, dentists) / 10 (others) |
+| 5. Renewal | Allowed only once your CPD requirement is met | 7 |
 
 DHP's times come from Circular DHP/2024/16 and run from "a complete application that meets all requirements and includes verified documents"; an application sent back to you is counted again from the day you resubmit. The [timeline guide](/qatar/psv/timeline) adds the PSV stage and shows how the whole journey adds up.
 
@@ -105,31 +104,29 @@ DHP's times come from Circular DHP/2024/16 and run from "a complete application 
 
 DHP's PSV page tells every practitioner to apply for verification **before** applying for evaluation, and to attach the report to the evaluation application. Since 1 August 2025 the certificate of good standing also reaches DHP only through PSV (Circular DHP/2025/08). Start here: the [PSV overview](/qatar/psv) compares the three providers, the [documents guide](/qatar/psv/documents) lists what each verifies, and the [fees guide](/qatar/psv/fees) prices it.
 
-### 2. Evaluation
+### 2. Evaluation and the qualifying exam
 
 According to DHP's Guidelines for Nurses, after you submit and pay, "The application after submission/payment will go to the Employer Representative's landing page", where the employer representative must review the documents, approve and submit the application – the status shows "Pending with Employer" at that stage. The Registration Section then checks the file and the results of primary source verification:
 
 - **A clean verification** – the application is approved and DHP issues a **Preliminary Evaluation** and a CID letter, printed from the employer representative's page. The physician guidelines say a preliminary evaluation "is only valid for 6 months".
-- **Unable to verify or negative** – DHP's process map shows the applicant called for interview; depending on the result, the document is re-verified within 14 days or the applicant is rejected and blacklisted.
-- **Not enough experience or a break from practice** – the applicant is told to train or complete experience and re-apply.
+- **Unable to verify or negative** – DHP's process maps show the applicant called for interview; depending on the result, the application proceeds to approval, the document is re-verified within 14 days, or the applicant is rejected and blacklisted.
+- **Not enough experience or a break from practice** – on the nurses' process map, the applicant is told to train or complete the experience and re-apply. On the physicians' map, overseas applicants who are not eligible, have a break of practice or lack experience are rejected; only Qatari and family-sponsored doctors are offered supervised or assistant-specialty routes.
 
-DHP returns an incomplete application with comments; the [documents guide](/qatar/psv/documents) covers everything DHP asks for at this stage.
+Physicians' applications that do not meet the requirements are sent back "maximum for 3 times" before rejection; the [documents guide](/qatar/psv/documents) covers everything DHP asks for at this stage.
 
-### 3. The qualifying exam
+**The exam sits inside evaluation.** DHP's Qualifying Examination Policy has practitioners sit it "at the evaluation stage", and the nurses' evaluation document list includes the exam pass certificate. The scopes that sit it include general practitioners, general dentists, pharmacists, registered general nurses, registered midwives, laboratory and radiology technologists and technicians, physiotherapists, paramedics, dental assistants, hygienists and dental lab technicians, and Category 3 specialists. Category 1 and 2 specialists do not, and DHP's nursing table marks it "Not required" for clinical nurse specialists, nurse practitioners and nurse educators among others. You are also exempt if you hold an exempting exam listed in Circular DHP/2025/19 – which must itself be PSV-verified – or under Circular DHP/2025/24 (Qataris, offspring of Qatari women, Qatar graduates). The [Prometric exam guide](/qatar/exam/prometric) has the format, pass marks, fees, attempts and the full exemption list.
 
-GPs, general dentists, pharmacists, nurses, midwives and most allied health professionals sit DHP's Prometric exam, "at the evaluation stage" according to DHP's Qualifying Examination Policy, unless they hold an exempting exam listed in Circular DHP/2025/19 – which must itself be PSV-verified – or are exempt under Circular DHP/2025/24 (Qataris, offspring of Qatari women, Qatar graduates). Specialists in Categories 1 and 2 do not sit it. The [Prometric exam guide](/qatar/exam/prometric) has the format, pass marks, fees, attempts and the full exemption list.
-
-### 4. The temporary licence
+### 3. The temporary licence
 
 DHP's Policy for Temporary Licenses describes it as "a license granted after the completion of the evaluation process with a validity of six months and is non-renewable". Without a Qatar ID you need a home-country medical report and police clearance, both attested by the Ministry of Foreign Affairs, plus undertaking letters from you and the facility. You must apply for the full licence while the temporary one is valid; otherwise, the nurse guidelines say, you have to apply for evaluation again – and "In case of negative verification reports and proven incidents of fraud, temporary license will be suspended".
 
-### 5. Licensing
+### 4. Licensing
 
-The full licence application needs your Qatar ID with the employer as sponsor (or a family-sponsorship QID with the employer's letter of intent), the PSV report, a police clearance certificate, a medical report no more than six months old, a CPR certificate where your guidelines require one, and the verified certificate of good standing. The licence is issued for a licensed facility: if the facility's own licence is not yet in place, DHP sends the request back marked complete but pending the facility licence, and when you change employer DHP issues "a new Medical License with the new facility's name".
+The full licence application needs your Qatar ID with the employer as sponsor (or a family-sponsorship QID with the employer's letter of intent), the PSV report, a police clearance certificate from Qatar's Ministry of Interior, a medical report no more than six months old, the verified certificate of good standing and, for nurses, a recognised CPR certificate (some categories are exempted by circular 12/2023). For physicians, DHP's guidelines refer to Circular DHP/2024/06, which makes the healthcare facility responsible for checking CPR. The licence is issued for a licensed facility: if the facility's own licence is not yet in place, DHP sends the request back marked complete but pending the facility licence, and when you change employer DHP issues "a new Medical License with the new facility's name".
 
-### 6. Renewal and CPD
+### 5. Renewal and CPD
 
-You renew online, and the portal will not let you apply until you meet DHP's continuing professional development requirement. DHP's CPD Cycle Policy (version 6.0) sets a two-year cycle:
+You renew online, and the portal will not let you apply until you meet DHP's continuing professional development requirement. DHP's physician guidelines refer to "the 2 years license cycle", and DHP's CPD Cycle Policy (version 6.0) sets a two-year CPD cycle:
 
 | | Credits per two-year cycle | Of which, every year | Of which, Category 1 (accredited group activities) |
 | --- | --- | --- | --- |
@@ -143,11 +140,11 @@ No qualifying exam is needed at renewal.
 | Profession | Qualification | Experience before applying | Exam |
 | --- | --- | --- | --- |
 | General practitioner | Medical degree of at least six years "or equivalent", from a university in the IMED/FAIMER directory | Five years' clinical experience for overseas applicants | Prometric, unless exempt |
-| Specialist, Category 1 or 2 | Postgraduate degree listed in DHP's Category 1 or 2 | One year (Category 1) or two years (Category 2) after the postgraduate degree | Not required |
-| Specialist, Category 3 | Structured postgraduate training of at least three years plus an exit or board exam | Three years after the postgraduate degree, in government or training hospitals | Required |
-| Registered general nurse | Bachelor's in nursing (4 years) or diploma (3 years after 12 years of school) | Two years after registration and licensing (three with an associate degree) | Prometric, unless exempt (e.g. NCLEX-RN) |
+| Specialist, Category 1 or 2 | Postgraduate degree listed in DHP's Category 1 or 2 | "5 years' experience in total plus the required experience post-specialty degree": one year (Category 1) or two years (Category 2) after the postgraduate degree | Not required |
+| Specialist, Category 3 | Structured postgraduate training of at least three years plus an exit or board exam | Five years in total plus three years after the postgraduate degree, in government or semi-government hospitals or hospitals that run postgraduate training programmes | Required (three attempts for specialty exams) |
+| Registered general nurse | Bachelor's in nursing (4 years) or diploma (3 years after 12 years of school) | Two years after registration and licensing (three with an associate degree) | Prometric, unless exempt (e.g. NCLEX-RN passed within five years) |
 | Midwife | Bachelor's in midwifery or equivalent, or a nursing degree plus post-graduate midwifery | Three years as a midwife | Prometric |
-| Allied health | Bachelor's or diploma in the field | Generally two to five years, depending on the scope | Prometric for most scopes |
+| Allied health | Bachelor's (therapists, technologists) or diploma (technicians) in the field | In general two to five years after graduation for therapists and technologists, at least two for technicians, depending on the scope | Prometric for the scopes listed above |
 
 Dentists and pharmacists have their own DHP guidelines. Country-specific notes for [India](/qatar/psv/countries/india) and the [Philippines](/qatar/psv/countries/philippines) show how local qualifications map onto these rows.
 

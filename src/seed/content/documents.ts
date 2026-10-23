@@ -203,7 +203,7 @@ The PSV report is one item in DHP's own evaluation application. DHP's guidelines
 - your Qatar ID (front and back) or your national ID;
 - the qualifying exam pass certificate, where the exam applies to you – or a verified exempting exam such as NCLEX-RN (see the [Prometric exam guide](/qatar/exam/prometric)).
 
-At licensing, DHP adds a police clearance certificate, a medical report no more than six months old, a valid CPR certificate, and the verified certificate of good standing described above. The [PSV overview](/qatar/psv) explains how the PSV report moves into evaluation.
+At licensing, DHP adds a police clearance certificate from Qatar's Ministry of Interior, a medical report no more than six months old, a CPR certificate where your guidelines require one (nurses and allied health; for physicians the facility checks CPR under Circular DHP/2024/06), and the verified certificate of good standing described above. The [PSV overview](/qatar/psv) explains how the PSV report moves into evaluation.
 
 ## Checklist before you pay
 

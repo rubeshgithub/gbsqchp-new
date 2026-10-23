@@ -17,7 +17,7 @@ export const examGuide = {
   path: '/qatar/exam/prometric',
   section: 'exam' as const,
   summary:
-    'The DHP qualifying exam is a computer-based Prometric test – 150 multiple-choice questions in three hours for most professions – that general practitioners, general dentists, pharmacists, nurses, midwives and most allied health professionals must pass for a Qatar licence. It costs US$244 for anyone registering from 1 January 2026, the pass mark is 50% for nurses and most allied health, 60% for GPs, general dentists and pharmacists and 65% for most specialists, and you have five attempts. Certain foreign licensing exams – USMLE Step 2, PLAB 1, NCLEX-RN and others listed in Circular DHP/2025/19 – exempt you, but since 1 January 2026 only if the exam itself has been primary-source verified. Below: format, pass marks, fees, attempts, validity, exemptions and booking.',
+    'The DHP qualifying exam is a computer-based Prometric test – 150 multiple-choice questions in three hours for most professions – that general practitioners, general dentists, pharmacists, registered nurses, midwives, Category 3 specialists and several allied health scopes must pass for a Qatar licence. It costs US$244 for anyone registering from 1 January 2026, the pass mark is 50% for nurses and most allied health, 60% for GPs, general dentists and pharmacists and 65% for most specialists, and you have five attempts. Certain foreign licensing exams – USMLE Step 2, PLAB 1, NCLEX-RN and others listed in Circular DHP/2025/19 – exempt you, but since 1 January 2026 only if the exam itself has been primary-source verified. Below: format, pass marks, fees, attempts, validity, exemptions and booking.',
   meta: {
     title: 'Qatar Prometric Exam 2026: Fees, Pass Marks & Exemptions',
     description:
@@ -121,6 +121,7 @@ Cancelling or rescheduling costs US$25 if you do it 30 or more days before the e
 ## How many attempts do you get, and how long does a pass last?
 
 - **Five attempts.** DHP's exam page: "Applicants can sit for the qualifying exam for 5 consecutive times whatever the gap between each attempt." The Qualifying Examination Policy counts the five attempts per scope – a technologist who failed the technician exam still has five attempts at the technologist exam – and allows an additional attempt "if a clear justification is provided".
+- **Three attempts for specialty exams.** DHP's Guidelines for Physicians note for the specialty scope: "3 exam trials are only allowed".
 - **Rounding after five attempts.** The policy allows a score to be rounded up if you are no more than 3 marks short of the pass mark, on condition that you have sat all five attempts; your highest mark counts.
 - **Three years' validity.** The policy sets the validity of the qualifying exam at three years. It also says you do not need to sit the exam again if you submit your evaluation application within one month of the result expiring.
 - **No exam at renewal.** "A healthcare practitioner is not required to take a qualifying examination at the time of license renewal."

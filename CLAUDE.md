@@ -77,8 +77,8 @@ project doc `GBSQCHP-phase1-content-plan-and-briefs.md`. Published so far: `/qat
 (legacy), `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs` (provider guides), `/qatar/psv/fees`, `/qatar/psv/documents`,
 `/qatar/psv/timeline`, `/qatar/psv/problems/name-mismatch`, `/qatar/psv/status`, `/qatar/exam/prometric`, `/qatar/licensing` (hub,
 in the header), country guides `/qatar/psv/countries/{india,philippines}`. Next in order: `/qatar/psv/report-transfer`,
-then the problem pages under `/qatar/psv/problems/…`, the circular explainers under `/qatar/circulars/…`, and the
-licensing hub `/qatar/licensing`. Add nav/footer links (`src/components/Header.tsx`, `Footer.tsx`) only when the
+then the problem pages under `/qatar/psv/problems/…`, the circular explainers under `/qatar/circulars/…`, and more
+country guides. Add nav/footer links (`src/components/Header.tsx`, `Footer.tsx`) only when the
 target page is published. The provider guides refer to the report-transfer and
 university-not-responding guides but currently link them to `/qatar/psv` (no dead links); retarget those links in
 `src/seed/content/*.ts` when each page is published.
@@ -128,7 +128,7 @@ become unreadable, new ones work. Actions log and artifact downloads are blocked
   Temporary Licenses (6 months, non-renewable, after evaluation), CPD Cycle Policy v6.0 (2-year cycle; 80 credits
   physicians/dentists, 40 others; ≥50% yearly and ≥50% Category 1), full text of the Nurses and Physicians guidelines
   (evaluation goes through the employer representative; negative/UTV → interview → re-verify in 14 days or blacklisted).
-  No source read gives the validity of a full licence – do not state one.
+  The physician guidelines mention "the 2 years license cycle"; no source states a full licence's validity in so many words.
 - Still to open: DHP/2024/22 (preliminary evaluation without employer – the guidelines' process map requires the
   employer representative), DHP/2024/09. Set `verified: true` on each record after reading.
 - WebFetch now needs user approval for URLs not already in the conversation; for official PDFs use Nimble extract
