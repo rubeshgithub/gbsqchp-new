@@ -43,6 +43,9 @@ export function Footer({ settings }: { settings: SiteSetting }) {
                 <Link href="/qatar/psv/problems/unable-to-verify">Unable to Verify</Link>
               </li>
               <li>
+                <Link href="/qatar/psv/problems/discrepancy">Discrepancy or negative report</Link>
+              </li>
+              <li>
                 <Link href="/qatar/exam/prometric">Qatar Prometric exam</Link>
               </li>
               <li>

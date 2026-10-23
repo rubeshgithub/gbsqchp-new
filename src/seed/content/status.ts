@@ -98,7 +98,7 @@ Trackers show a status for the case and for each document – degree, licence, e
 The final result for each document is what matters for DHP. In plain terms:
 
 - **A clean result** – the issuer confirmed the document as submitted (providers word this differently).
-- **Discrepancy** – in practice, the issuer answered but something differs, such as a date, a title or a name. DataFlow lets you raise an Appeal "within 180 days of completion of your Unable To Verify or Discrepancy report", and its FAQ says a one-time re-verification through an Appeal is free of charge. The [name-mismatch guide](/qatar/psv/problems/name-mismatch) covers the commonest cause.
+- **Discrepancy** – in practice, the issuer answered but something differs, such as a date, a title or a name ([Discrepancy guide](/qatar/psv/problems/discrepancy)). DataFlow lets you raise an Appeal "within 180 days of completion of your Unable To Verify or Discrepancy report", and its FAQ says a one-time re-verification through an Appeal is free of charge. The [name-mismatch guide](/qatar/psv/problems/name-mismatch) covers the commonest cause.
 - **Unable to Verify** (DataFlow) – in practice, the issuer did not confirm the document. The same 180-day Appeal window applies; re-verifying an Unable to Verify report costs extra when DataFlow needs documents or details you did not provide. The [Unable to Verify guide](/qatar/psv/problems/unable-to-verify) covers causes and the appeal step by step.
 - **Unable to Check** (QuadraBay) – the component was closed because the information QuadraBay asked for was not supplied within 30 days of its request (Circular DHP/2025/20).
 

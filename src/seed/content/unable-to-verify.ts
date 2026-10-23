@@ -79,7 +79,7 @@ export const unableToVerifyGuide = {
   markdown: `
 ## What does "Unable to Verify" mean?
 
-Every document in a PSV report ends with a result. A clean result means the issuer confirmed it. **Unable to Verify** means the provider could not get a confirmation – the university, council or employer did not answer, could not be reached, or could not find the record. On its own it is not a finding that the document is false. A **Discrepancy** is different: the issuer answered, but something differs from what you submitted – a date, a title, a name.
+Every document in a PSV report ends with a result. A clean result means the issuer confirmed it. **Unable to Verify** means the provider could not get a confirmation – the university, council or employer did not answer, could not be reached, or could not find the record. On its own it is not a finding that the document is false. A **Discrepancy** is different: the issuer answered, but something differs from what you submitted – a date, a title, a name. The [Discrepancy guide](/qatar/psv/problems/discrepancy) covers that.
 
 The providers use different labels:
 
