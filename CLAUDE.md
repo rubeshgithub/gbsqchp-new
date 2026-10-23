@@ -75,10 +75,11 @@ Payload skill for this repo: `.claude/skills/payload/SKILL.md` (read it before t
 The 25 Phase-1 page briefs (slug, title tag, meta, outline, facts with sources, FAQs, internal links) are in the
 project doc `GBSQCHP-phase1-content-plan-and-briefs.md`. Published so far: `/qatar/psv` (pillar), `/gbs-psv-portal`
 (legacy), `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs` (provider guides), `/qatar/psv/fees`, `/qatar/psv/documents`,
-`/qatar/psv/timeline`, `/qatar/psv/problems/name-mismatch`. Next in order: `/qatar/psv/status`, `/qatar/psv/report-transfer`,
+`/qatar/psv/timeline`, `/qatar/psv/problems/name-mismatch`, `/qatar/psv/status`, `/qatar/exam/prometric`, `/qatar/licensing` (hub,
+in the header), country guides `/qatar/psv/countries/{india,philippines}`. Next in order: `/qatar/psv/report-transfer`,
 then the problem pages under `/qatar/psv/problems/…`, the circular explainers under `/qatar/circulars/…`, and the
 licensing hub `/qatar/licensing`. Add nav/footer links (`src/components/Header.tsx`, `Footer.tsx`) only when the
-target page is published. The provider guides refer to the status, report-transfer and
+target page is published. The provider guides refer to the report-transfer and
 university-not-responding guides but currently link them to `/qatar/psv` (no dead links); retarget those links in
 `src/seed/content/*.ts` when each page is published.
 
@@ -121,7 +122,17 @@ become unreadable, new ones work. Actions log and artifact downloads are blocked
   PSV report – this overrides the "sent directly by the registration authority" wording in the profession guidelines.
 - Read 17 Oct 2026: DHP/2024/16 (5 Jun 2024): DHP processing times in working days from a complete application with
   verified documents – evaluation 25 (physicians/dentists) / 15 (others), licensing 15 / 10, temporary licence 5.
-- Still to open: DHP/2025/19 exemption list, DHP/2024/22, DHP/2024/09. Set `verified: true` on each record after reading.
+- Read 23 Oct 2026 (scanned PDFs, OCR): DHP/2025/19 (26 Nov 2025; exempting exams; exempting exams must be valid and PSV-verified
+  from 1 Jan 2026) and the Qualifying Examination Policy v04 (evaluation stage, 3-year validity, 5 attempts per scope,
+  rounding rule; degree-based exemptions not repeated in DHP/2025/19 – treat as 'confirm with DHP'). Also read: Policy for
+  Temporary Licenses (6 months, non-renewable, after evaluation), CPD Cycle Policy v6.0 (2-year cycle; 80 credits
+  physicians/dentists, 40 others; ≥50% yearly and ≥50% Category 1), full text of the Nurses and Physicians guidelines
+  (evaluation goes through the employer representative; negative/UTV → interview → re-verify in 14 days or blacklisted).
+  No source read gives the validity of a full licence – do not state one.
+- Still to open: DHP/2024/22 (preliminary evaluation without employer – the guidelines' process map requires the
+  employer representative), DHP/2024/09. Set `verified: true` on each record after reading.
+- WebFetch now needs user approval for URLs not already in the conversation; for official PDFs use Nimble extract
+  (base64 PDF in the saved result → decode → pdftotext, or pdftoppm + tesseract for scans).
 - DHP publishes no current evaluation/licence fee schedule; the fees page uses the last published table (QCHP FAQ,
   Nov 2014: evaluation QAR 100; licence QAR 600 nurses/pharmacists/AHP, 1,000 general physicians/dentists, 1,200
   specialists) and says so. Replace with an official source when one appears.
