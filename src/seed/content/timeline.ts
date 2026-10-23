@@ -169,7 +169,7 @@ If a component has not moved for about three weeks, act on it rather than waitin
 - **DataFlow:** raise a ticket at the [applicant support centre](https://support.dataflowgroup.com/), which has separate routes for *Submit Missing Document / Information* and *Check an existing support request*, or message +974 4419 6582 on WhatsApp.
 - **QuadraBay:** email dhp.support@quadrabay.com with your reference; status is on the [tracker](https://track.quadrabay.com/).
 - **AVS:** email dhp.helpdesk@avsqatar.com or call +974 4464 4490 (Sunday to Thursday, 8 am to 4 pm); status is on the [AVS dashboard](https://www.avsqatar.com/avs/dashboard).
-- **The institution itself:** a polite email to the registrar or HR office with the provider's reference number often moves a stuck request faster than the provider's own reminders.
+- **The institution itself:** a polite email to the registrar or HR office with the provider's reference number often moves a stuck request faster than the provider's own reminders. The [follow-up guide](/qatar/psv/problems/university-not-responding) has a day-by-day schedule and e-mail templates.
 
 The [status-check guide](/qatar/psv/status) explains how to find which document is holding a case up. Once the report is with DHP, the times in Circular DHP/2024/16 apply. If an evaluation runs well past them, DHP's registration section is reachable at dhpregistration@moph.gov.qa. The [PSV overview](/qatar/psv) explains how the report moves into evaluation, and the provider guides for [DataFlow](/qatar/psv/dataflow), [QuadraBay](/qatar/psv/quadrabay) and [AVS](/qatar/psv/avs) cover each portal's tracking in detail.
 `,

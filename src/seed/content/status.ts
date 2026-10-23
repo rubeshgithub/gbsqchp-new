@@ -114,7 +114,7 @@ A report with a Discrepancy or an unverified document is not a clean report for 
 
 1. **Find the stuck document.** Open the per-document view and note which institution has not answered.
 2. **Answer anything the provider asked you for.** DataFlow counts its timelines from a complete file, and QuadraBay closes a component after 30 days without your reply.
-3. **Contact the institution yourself.** Give the registrar or HR office the provider's name and your reference number, and ask whether it needs a fee or a signed consent.
+3. **Contact the institution yourself.** Give the registrar or HR office the provider's name and your reference number, and ask whether it needs a fee or a signed consent – the [follow-up guide](/qatar/psv/problems/university-not-responding) has e-mail templates.
 4. **Open a support request after about three weeks without movement.** DataFlow's [support centre](https://support.dataflowgroup.com/) has routes to *Submit Missing Document / Information* and to *Check an existing support request*; DataFlow's DHP page also lists WhatsApp +974 4419 6582 and dhpsupport@dataflowgroup.com. QuadraBay's support address is dhp.support@quadrabay.com; AVS's helpdesk is dhp.helpdesk@avsqatar.com or +974 4464 4490.
 
 The [timeline guide](/qatar/psv/timeline) sets out each provider's published targets and when to escalate, and the provider guides for [DataFlow](/qatar/psv/dataflow), [QuadraBay](/qatar/psv/quadrabay) and [AVS](/qatar/psv/avs) cover each portal in detail.

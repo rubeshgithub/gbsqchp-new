@@ -120,7 +120,7 @@ An appeal re-verifies "the same documents that they submitted in their applicati
 ## What should you do before you appeal?
 
 1. **Find out why.** Read the status and any remarks on the document in the report or tracker, and ask support what the issuer said, if anything.
-2. **Call the issuer yourself.** Find the office that handles verification – a university's examinations or verification section, a council's registration desk, a hospital's HR – and ask what it needs.
+2. **Call the issuer yourself** ([follow-up guide and templates](/qatar/psv/problems/university-not-responding)). Find the office that handles verification – a university's examinations or verification section, a council's registration desk, a hospital's HR – and ask what it needs.
 3. **Pay any fee the issuer charges** and keep the receipt.
 4. **Give a named contact** with an official e-mail address on the institution's own domain, not a personal address.
 5. **Fix name and date problems** with the document that links the names or a corrected letter – the [name-mismatch guide](/qatar/psv/problems/name-mismatch) explains which.

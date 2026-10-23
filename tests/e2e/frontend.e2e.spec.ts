@@ -246,6 +246,18 @@ test.describe('Discrepancy guide', () => {
   })
 })
 
+test.describe('University-not-responding guide', () => {
+  test('renders the schedule table and templates and is linked from the timeline and the footer', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/psv/problems/university-not-responding')
+    await expect(page.locator('h1')).toContainText('University or employer not responding')
+    await expect(page.locator('.article-body table').first()).toContainText('Day 10')
+    await expect(page.locator('.article-body blockquote').first()).toBeVisible()
+    await expect(page.locator('.site-footer a[href="/qatar/psv/problems/university-not-responding"]')).toBeVisible()
+    await page.goto('http://localhost:3000/qatar/psv/timeline')
+    await expect(page.locator('.article-body a[href="/qatar/psv/problems/university-not-responding"]').first()).toBeVisible()
+  })
+})
+
 test.describe('Status-check guide', () => {
   test('renders the tracker table and is linked from the provider guides and the footer', async ({ page }) => {
     await page.goto('http://localhost:3000/qatar/psv/status')
