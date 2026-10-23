@@ -77,12 +77,10 @@ project doc `GBSQCHP-phase1-content-plan-and-briefs.md`. Published so far: `/qat
 (legacy), `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs` (provider guides), `/qatar/psv/fees`, `/qatar/psv/documents`,
 `/qatar/psv/timeline`, `/qatar/psv/problems/name-mismatch`, `/qatar/psv/status`, `/qatar/exam/prometric`, `/qatar/licensing` (hub,
 in the header), country guides `/qatar/psv/countries/{india,philippines,pakistan}`, `/qatar/psv/report-transfer`,
-`/qatar/psv/problems/{unable-to-verify,discrepancy}`. Next in order: university-not-responding, experience-letter-format,
+`/qatar/psv/problems/{unable-to-verify,discrepancy,university-not-responding,experience-letter-format}`. Next in order:
 the good-standing guide, then the other problem pages under `/qatar/psv/problems/…`, the circular explainers under `/qatar/circulars/…`, and more
 country guides. Add nav/footer links (`src/components/Header.tsx`, `Footer.tsx`) only when the
-target page is published. The provider guides refer to the
-university-not-responding guide but currently link it to `/qatar/psv` (no dead links); retarget those links in
-`src/seed/content/*.ts` when each page is published.
+target page is published. Link each new page from the guides that mention its topic when it is published (no dead links).
 
 **Articles (`/articles`)** are dated updates – a new circular, provider or fee change – stored as Pages with
 `section: 'articles'`, a `publishedAt` date and a path under `/articles/…`. The `/articles` index lists them newest
