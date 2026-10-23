@@ -41,6 +41,10 @@ export const experienceLetterGuide = {
       url: 'https://dataflowgroup.com/wp-content/uploads/2024/09/DF-Offline-Application-Form-DHP-updated-1.pdf',
     },
     {
+      label: 'AVS – DHP application guide (employment details)',
+      url: 'https://avsqatar.com/files/AVS_DHP_Application_Guide.pdf',
+    },
+    {
       label: 'Gulf News – Qatar detects 27 individuals who submitted false certificates (11 Aug 2026)',
       url: 'https://gulfnews.com/world/gulf/qatar/qatar-detects-27-individuals-who-submitted-false-certificates-for-healthcare-licences-1.500637814',
     },
@@ -48,14 +52,14 @@ export const experienceLetterGuide = {
   changeLog: [
     {
       date: '2026-10-23',
-      note: 'First published. Requirements from DHP’s Guidelines for Nurses and Physicians and DataFlow’s DHP form; the sample letter is this site’s own suggestion.',
+      note: 'First published. Requirements from DHP’s Guidelines for Nurses and Physicians and DataFlow’s DHP form; the sample letter is this site’s own suggestion. Independent fact-check applied (12 findings).',
     },
   ],
   faqs: [
     {
       question: 'Is a relieving letter or an appointment letter enough?',
       answer:
-        'Usually not on its own. An appointment letter shows when you started, not that you worked there; a relieving letter often shows only the last day. DHP asks for work experience certificates “with an issue date” covering the years your scope requires, so ask HR for an experience certificate that shows both dates and your title, and keep the others as supporting documents.',
+        'In our experience, usually not on its own. An appointment letter shows when you started, not that you worked there; a relieving letter often shows only the last day. DHP asks for work experience certificates “with an issue date” covering the years your scope requires, so ask HR for an experience certificate that shows both dates and your title, and keep the others as supporting documents.',
     },
     {
       question: 'I am still working there. What should the end date say?',
@@ -65,12 +69,12 @@ export const experienceLetterGuide = {
     {
       question: 'Does the letter need to be attested?',
       answer:
-        'Not for DHP licensing. DHP’s guidelines say verification by the PSV provider replaces attestation of certificates: the provider confirms the letter with the employer directly. An employer or visa process may ask for attested copies for its own purposes.',
+        'Not for PSV or DHP evaluation. DHP’s guidelines say “the verification process done by the verification companies replaces attestation of certificates”: the provider confirms the letter with the employer directly. An employer or visa process may ask for attested copies for its own purposes.',
     },
     {
       question: 'My job title changed during my employment. What should the letter show?',
       answer:
-        'Each title with its own dates, as in the employer’s records – for example “Staff Nurse, 1 March 2019 to 31 August 2021; Senior Staff Nurse, 1 September 2021 to date”. Enter the same in the provider’s form and your CV. A single title for the whole period, when HR’s records show two, invites a Discrepancy.',
+        'Each title with its own dates, as in the employer’s records – for example “Staff Nurse, 1 March 2019 to 31 August 2021; Senior Staff Nurse, 1 September 2021 to date”. Enter the same in the provider’s form and your CV. A single title for the whole period, when HR’s records show two, can lead to a query or a Discrepancy.',
     },
   ],
   markdown: `
@@ -78,19 +82,19 @@ export const experienceLetterGuide = {
 
 DHP's Guidelines for Nurses ask for "recent work experience certificates with issue date, required as per the applicant's scope of practice"; its Guidelines for Physicians ask for "the recent last 5 years work experience certificates (with an issue date)". The PSV provider then asks each employer to confirm what the letter says. DataFlow's DHP form asks, for every employer, the employer's name and country, your start date, end date, and job title or department; AVS asks for employment "Details as per the experience" certificate.
 
-So a letter that verifies cleanly shows:
+So a letter that verifies cleanly shows the following. The issue date comes from DHP and the employer, dates and title from DataFlow's form; the rest is our advice, to make the employer's confirmation straightforward:
 
-| Element | What to check |
-| --- | --- |
-| Letterhead | The employer's full legal name, address and contact details, as the employer actually appears in official records |
-| Your name | Exactly as in your passport, or with the document that links the names |
-| Start and end dates | Day, month and year – not "2019 to 2022" – and "to date" if you still work there |
-| Job title and department | As in HR's records; each title with its own dates if it changed |
-| Employment status | Full-time or part-time, permanent or temporary – as in HR's records |
-| Issue date | DHP asks for certificates "with an issue date" |
-| Signatory | Name, title, signature and stamp, with an official e-mail address the provider can use |
+| Element | What to check | Source |
+| --- | --- | --- |
+| Letterhead | The employer's full name and country, plus its address and contact details | Name and country: DataFlow form; the rest: our advice |
+| Your name | Exactly as in your passport, or with the document that links the names | Our advice |
+| Start and end dates | Day, month and year – not "2019 to 2022" – and "to date" if you still work there | Dates: DataFlow form; full dates: our advice |
+| Job title and department | As in HR's records; each title with its own dates if it changed | DataFlow form |
+| Employment status | Full-time or part-time, permanent or temporary – as in HR's records | Our advice |
+| Issue date | DHP asks for certificates "with an issue date" | DHP |
+| Signatory | Name, title, signature and stamp, with an official e-mail address the provider can use | Our advice |
 
-Facility licence matters too. DHP's Guidelines for Physicians say a "Practitioner working in a healthcare facility without a license will not be eligible for registration/licensing in the state of Qatar", and both sets of guidelines ask for your own licences "accompanying the required years of work experience". The experience is only counted alongside the licence you held for it.
+Licences matter too. DHP's Guidelines for Physicians say a "Practitioner working in a healthcare facility without a license will not be eligible for registration/licensing in the state of Qatar" – make sure both you and the facility were licensed for the period. Both sets of guidelines ask for your licences "accompanying the required years of work experience" (for nurses, "if applicable").
 
 ## A sample experience certificate
 
@@ -117,8 +121,8 @@ Hand this to your HR office as a starting point. It is our suggestion, not a DHP
 
 ## Which mistakes send a file back?
 
-- **Years only, or month and year only.** The provider confirms exact dates; a vague letter is a query or a Discrepancy.
-- **Dates that differ from your CV.** Physicians submit a CV "as per DHP C.V template", and DHP's guidelines say any experience certificate "that was not submitted/mentioned in the C.V in the first evaluation application will not be considered" later. Make the CV, the form and every letter say the same thing.
+- **Years only, or month and year only.** The provider confirms dates with the employer; a vague letter can lead to a query or a Discrepancy.
+- **Dates that differ from your CV.** Physicians submit a CV "as per DHP C.V template", and DHP's Guidelines for Physicians say any experience certificate "that was not submitted/mentioned in the C.V in the first evaluation application will not be considered" later. Make the CV, the form and every letter say the same thing.
 - **A title HR does not use.** "Charge Nurse" on the letter, "Staff Nurse" in the HR system: the provider reports what HR confirms.
 - **No issue date**, or an old letter for a job you still hold.
 - **A personal e-mail for the signatory**, or a signatory who has left – the provider cannot get a confirmation.
@@ -126,13 +130,13 @@ Hand this to your HR office as a starting point. It is our suggestion, not a DHP
 
 ## Special cases
 
-- **Locum and supervised physicians.** DHP's Guidelines for Physicians ask for a locum's work experience certificate from the Qatar facility "signed by the medical director, showing the visit details", and for supervised practice an experience certificate signed by the medical director "showing the start and end dates of the supervision period (full time 8 hours per day 5 days a week)".
-- **Agency or outsourced staff.** If an agency employed you and placed you at a hospital, ask both for letters: the agency confirms employment, the hospital confirms where and what you worked. Tell the provider which one held your contract.
+- **Locum and supervised physicians.** At renewal, DHP's Guidelines for Physicians ask locum physicians for a work experience certificate from the Qatar facility, "signed by the medical director, showing the visit details of the locum doctor over the last 2 years". When a GP (supervised) or Assistant Specialty physician applies to change scope, they ask for an experience certificate signed by the medical director "showing the start and end dates of the supervision period (full time 8 hours per day 5 days a week)".
+- **Agency or outsourced staff.** If an agency employed you and placed you at a hospital, ask both for letters: the agency confirms employment, the hospital confirms where and what you worked. Tell the provider which one held your contract. For physicians already licensed in Qatar through a healthcare agency, DHP's Guidelines for Physicians add that work in homes, schools and nurseries beyond six months in the two-year licence cycle "will not be counted by DHP for renewal or change place of work to a licensed healthcare facility".
 - **A closed employer.** Tell the provider before you pay, and give it any body that holds the records – see the [follow-up guide](/qatar/psv/problems/university-not-responding).
-- **Gaps between jobs.** A long gap is a DHP question, not a PSV one; DHP's guidelines refer to a break-from-practice policy and supervised training for applicants with a break or a lack of experience.
+- **Gaps between jobs.** A long gap is a DHP question, not a PSV one; DHP's guidelines refer to a break-from-practice policy, with training (nurses) or a supervised practice period (physicians).
 
 ## Never adjust a letter
 
-Ask HR to correct a wrong date or title; never correct it yourself. DHP's guidelines say the verification report is reviewed at evaluation and that "any misleading information provided will result in further investigations", and in August 2026 Gulf News reported that the Ministry of Public Health had permanently barred 27 people from Qatar's healthcare sector for submitting falsified experience certificates. The [Discrepancy guide](/qatar/psv/problems/discrepancy) explains how a genuine error is corrected, and the [documents guide](/qatar/psv/documents) lists everything else you upload.
+Ask HR to correct a wrong date or title; never correct it yourself. DHP's guidelines say the verification report is reviewed at evaluation and that "any misleading information provided will result in further investigations", and in August 2026 [Gulf News](https://gulfnews.com/world/gulf/qatar/qatar-detects-27-individuals-who-submitted-false-certificates-for-healthcare-licences-1.500637814) reported that the Ministry of Public Health had permanently barred 27 people from Qatar's healthcare sector for submitting falsified experience certificates. The [Discrepancy guide](/qatar/psv/problems/discrepancy) explains how a genuine error is corrected, and the [documents guide](/qatar/psv/documents) lists everything else you upload.
 `,
 }
