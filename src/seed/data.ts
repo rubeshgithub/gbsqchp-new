@@ -183,7 +183,7 @@ export const circulars = [
     title: 'List of qualifying exams that exempt from the qualifying exam (Prometric) required for licensing purposes',
     issuedOn: '2025-11-26',
     topics: ['exam', 'psv'],
-    summary: 'Lists the exams that exempt from the DHP qualifying (Prometric) exam. GPs: IFOM Clinical Science Exam, USMLE Step 2, PLAB Part 1, MCCQE Part 1, AMC MCQ, MRCGP Part 1 AKT, PRES (MCQ) Part 2. General dentists: NJCE II, NDEB Canada, Irish Dental Council exams, NZDREX, UK ORE (not older than 5 years), or registration in Australia, Ireland, New Zealand or the UK for graduates of accredited programmes there. Pharmacists: NAPLEX, PEBC, OSPAP, OPRA, CAOP. Nurses: NCLEX-RN. Allied health: NBDHE. The exam must be valid, and from 1 January 2026 no exempting exam is accepted without a verification report from a PSV company.',
+    summary: 'Lists the exams that exempt from the DHP qualifying (Prometric) exam. GPs: IFOM Clinical Science Exam, USMLE Step 2, PLAB Part 1, MCCQE Part 1, AMC MCQ, MRCGP Part 1 AKT, PRES (MCQ) Part 2. General dentists: NJCE II, all parts of the NDEB Canada exam, all parts of the Irish Dental Council exam (I and II), all parts of NZDREX, UK ORE for non-UK graduates (not older than 5 years), or registration in Australia, Ireland, New Zealand or the UK for graduates of accredited programmes there. Pharmacists: NAPLEX, PEBC, OSPAP, OPRA, CAOP. Nurses: NCLEX-RN. Allied health: NBDHE. The exam must be valid, and it must be verified by a verification company – no exam is accepted without a verification report after 1 January 2026.',
     officialUrl: 'https://dhp.moph.gov.qa/en/QCHPCirculars/DHP%2019%202025%20E.pdf',
     verified: true,
   },

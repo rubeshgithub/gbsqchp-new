@@ -76,7 +76,7 @@ export const examGuide = {
     {
       question: 'I passed NCLEX-RN. Do I still need the Prometric exam?',
       answer:
-        'No, if your NCLEX result is valid and verified. Circular DHP/2025/19 lists NCLEX-RN as the exempting exam for nurses, says “The qualifying examination must be valid”, and requires every exempting exam to be verified by a verification company – “No exam will be accepted without a verification report after the date 01-01-2026.” DHP’s Guidelines for Nurses describe NCLEX holders as exempt when they passed within the previous five years. Add the exam certificate to your PSV application.',
+        'No, if your NCLEX result is valid and verified. Circular DHP/2025/19 lists NCLEX-RN as the exempting exam for nurses, says “The qualifying examination must be valid”, and requires every exempting exam to be verified by a verification company – “No exam will be accepted without a verification report after the date 01-01-2026.” DHP’s Guidelines for Nurses add that NCLEX holders are exempt “provided that the applicant successfully completed the exam within the previous five years”. Add the exam certificate to your PSV application.',
     },
     {
       question: 'How long is a Prometric pass valid for Qatar?',
@@ -86,7 +86,7 @@ export const examGuide = {
     {
       question: 'What happens if I cancel or miss my exam?',
       answer:
-        'Circular DHP/2024/10 sets the charges, collected by Prometric: US$25 to cancel or reschedule 30 or more days before the exam, US$40 between 5 and 29 days before, and the full exam fee if you cancel less than 5 days before, do not turn up, or arrive more than 30 minutes late and are refused entry.',
+        'Circular DHP/2024/10 sets the charges, collected by Prometric: US$25 to cancel or reschedule 30 or more days before the exam, US$40 between 5 and 29 days before, and the full exam fee if you cancel or reschedule less than 5 days before, do not turn up, or arrive more than 30 minutes late and are refused entry.',
     },
   ],
   markdown: `
@@ -100,11 +100,11 @@ DHP's Qualifying Examination Policy says practitioners in these scopes sit the e
 
 | | General practitioner, general dentist, pharmacist | Nurses, midwives and most allied health | Most medical and dental specialties |
 | --- | --- | --- | --- |
-| Questions | 150 MCQs | 150 MCQs | 150 MCQs (some dental specialties 151–158) |
+| Questions | 150 MCQs | 150 MCQs | 150 MCQs |
 | Time | 3 hours | 3 hours | 3 hours |
 | Pass mark | 60% | 50% | 65% |
 
-Exceptions on the official pages: the dietitian exam is 160 questions in 3 hours 10 minutes and can be taken by remote testing (Prometric), and sports medicine has a 55% cut score (DHP). DHP's exam page links an exam blueprint and reference list for each category – read yours before you book. Prometric notes updated content for the pharmacist exam from 1 May 2025 and the general dentist exam from 17 June 2025.
+The two official pages differ in a few places, so check your category on both before you book: Prometric lists the dietitian exam as 160 questions in 3 hours 10 minutes (DHP lists 150 in 3 hours) and offers it by remote testing; Prometric lists some dental specialty exams at 151–158 questions (DHP lists 150); and DHP gives sports medicine a 55% cut score where Prometric lists 65%. DHP's exam page links an exam blueprint and reference list for each category – read yours before you book. Prometric notes updated content for the pharmacist exam from 1 May 2025 and the general dentist exam from 17 June 2025.
 
 ## How much does the exam cost?
 
@@ -142,7 +142,7 @@ Two conditions sit under the list: "The qualifying examination must be valid", a
 Other exemptions:
 
 - **By nationality or place of study.** Circular DHP/2025/24 exempts Qataris, the offspring of Qatari women and graduates of Qatar institutions from the qualifying exam.
-- **By degree (check first).** DHP's older Qualifying Examination Policy also exempts dentists with a postgraduate degree of at least two years that includes accredited clinical training, and pharmacists, nurses and allied health professionals with a clinical master's or PhD in their field. The newer circular does not repeat these exemptions, so confirm with DHP (DHPRegistration@moph.gov.qa) before relying on one.
+- **By degree (check first).** DHP's older Qualifying Examination Policy also exempts dentists with a postgraduate degree of at least two years that includes accredited clinical training, and pharmacists, nurses and allied health professionals with a clinical master's or PhD in their field. The newer circular does not repeat these exemptions, and its list of exempting exams also differs from the policy's (for example, the policy names USMLE Step 3 where the circular names Step 2), so follow the circular and confirm with DHP (DHPRegistration@moph.gov.qa) before relying on a degree-based exemption.
 
 ## How do you book the exam?
 
