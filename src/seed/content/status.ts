@@ -15,7 +15,7 @@ export const statusGuide = {
   path: '/qatar/psv/status',
   section: 'psv' as const,
   summary:
-    'To check a DataFlow application for Qatar, go to dataflowstatus.com and enter your DataFlow case number and passport number – that is the route DataFlow gives for cases filed on or before 31 August 2024 – or sign in to the DataFlow portal you applied through for newer cases. QuadraBay applicants track in their dashboard or at track.quadrabay.com, and AVS applicants on the avsqatar.com dashboard with their reference number. Each tracker shows the status of every document, not just the case, and that is where you find which university or employer is holding your report up. Below: where to look for each provider, what the outcomes mean, how to download and authenticate the report, and what to do when nothing moves.',
+    'To check a DataFlow application for Qatar, go to dataflowstatus.com and enter your DataFlow case number and passport number – that is the route DataFlow gives for cases filed on or before 31 August 2024 – or sign in to the DataFlow portal you applied through for newer cases. QuadraBay applicants track in their dashboard or at track.quadrabay.com, and AVS applicants on the avsqatar.com dashboard with their reference number. DataFlow’s tracker and QuadraBay’s show the status of each document, not just the case, and that is where you find which university or employer is holding your report up. Below: where to look for each provider, what the outcomes mean, how to download and authenticate the report, and what to do when nothing moves.',
   meta: {
     title: 'DataFlow Status Check for Qatar: Track Your PSV Report',
     description:
@@ -57,17 +57,17 @@ export const statusGuide = {
     {
       question: 'I lost my DataFlow case number. How do I check my status?',
       answer:
-        'Look for the confirmation e-mail DataFlow sends from notifications@dataflowgroup.com once your payment is settled – it contains the case number. If you cannot find it, DataFlow’s FAQ says you can search by your client reference number, “your unique number under the regulator you are applying for”. If neither works, raise a request at support.dataflowgroup.com with your passport details; DataFlow asks you to quote the case or reference number whenever you have it.',
+        'Look for the confirmation e-mail DataFlow sends from notifications@dataflowgroup.com once your payment is settled – it contains the case number. If you cannot find it, DataFlow’s FAQ says you can search by your client reference number, “your unique number under the regulator you are applying for”. If neither works, raise a request at support.dataflowgroup.com – support cannot reliably find a file by name alone, so include the e-mail address and passport details you applied with.',
     },
     {
       question: 'How do I get the PDF report to attach to my DHP application?',
       answer:
-        'Download it from the tracker. DataFlow’s FAQ says you can download your report at dataflowstatus.com with your case number and passport number once it is ready, and that it e-mails you when the application is complete; DataFlow also sends the final report to the regulator. QuadraBay issues the report through its portal and AVS through its dashboard. DHP’s PSV page asks you to attach the report to the online evaluation application, so keep the PDF.',
+        'From the provider. DataFlow’s FAQ says it e-mails you when the application is complete, shares the final report with your regulator, and lets you download your report at dataflowstatus.com with your case number and passport number – that tracker covers cases filed on or before 31 August 2024; newer reports appear in the DataFlow account you applied through. QuadraBay issues the report through its portal; AVS says the report is “issued/shared in accordance with the applicable authority process”. DHP’s PSV page asks you to attach the report to the online evaluation application, so keep the PDF.',
     },
     {
       question: 'Can my employer see my DataFlow status?',
       answer:
-        'Not through your personal tracker unless you share your details. DataFlow says the final report goes to you and to the regulator. Hospitals that submit applications through DataFlow’s business portal, or QuadraBay’s Business Account, track the cases they submitted themselves – ask HR whether your application was filed that way.',
+        'Only if they have your details: anyone with your DataFlow case number and passport number can open dataflowstatus.com, so share them only with people you trust. DataFlow’s FAQ says it e-mails you when the application is complete and shares the final report with your regulator. Hospitals can also submit applications for their staff – QuadraBay’s Business Account, for example, gives facilities consolidated tracking of the cases they submit – so ask HR whether your application was filed that way.',
     },
     {
       question: 'My status has not changed for weeks. Is something wrong?',
@@ -83,7 +83,7 @@ Each provider has its own tracker, and DataFlow has two depending on when you ap
 | Provider | Where to track | What you need |
 | --- | --- | --- |
 | DataFlow – applied on or before 31 August 2024 | [dataflowstatus.com](https://www.dataflowstatus.com/) | DataFlow case number and passport number (or your client reference number) |
-| DataFlow – newer cases | The DataFlow portal you applied through (dhp.dataflowgroup.com); the DHP page's *Track Status* button opens app.dataflowgroup.com | Your portal login |
+| DataFlow – newer cases | The DataFlow portal you applied through; the DHP page's *Track Status* buttons link to the portal sign-in (dhp.dataflowgroup.com or app.dataflowgroup.com) | Your portal login |
 | QuadraBay | Your dashboard on [dhp.quadrabay.com](https://dhp.quadrabay.com/), or [track.quadrabay.com](https://track.quadrabay.com/) | Your QuadraBay reference |
 | AVS | [avsqatar.com/avs/dashboard](https://www.avsqatar.com/avs/dashboard) | Your AVS reference number |
 
@@ -95,20 +95,20 @@ Save your case or reference number the day you pay. DataFlow sends it in an auto
 
 Trackers show a status for the case and for each document – degree, licence, each employer, each good-standing certificate. The providers do not publish a glossary of their in-progress labels, so read them literally and watch for two things: a request for something from you, and a document that has not moved.
 
-The final result for each document is what matters for DHP:
+The final result for each document is what matters for DHP. In plain terms:
 
-- **Verified / positive** – the issuer confirmed the document as submitted.
-- **Discrepancy** – the issuer answered, but something differs: a date, a title, a name. DataFlow lets you raise an Appeal "within 180 days of completion of your Unable To Verify or Discrepancy report". The [name-mismatch guide](/qatar/psv/problems/name-mismatch) covers the commonest cause.
-- **Unable to Verify** (DataFlow) – the issuer did not confirm the document. The same 180-day Appeal window applies; a re-verification costs extra when DataFlow needs documents or details you did not provide.
+- **A clean result** – the issuer confirmed the document as submitted (providers word this differently).
+- **Discrepancy** – in practice, the issuer answered but something differs, such as a date, a title or a name. DataFlow lets you raise an Appeal "within 180 days of completion of your Unable To Verify or Discrepancy report", and its FAQ says a one-time re-verification through an Appeal is free of charge. The [name-mismatch guide](/qatar/psv/problems/name-mismatch) covers the commonest cause.
+- **Unable to Verify** (DataFlow) – in practice, the issuer did not confirm the document. The same 180-day Appeal window applies; re-verifying an Unable to Verify report costs extra when DataFlow needs documents or details you did not provide.
 - **Unable to Check** (QuadraBay) – the component was closed because the information QuadraBay asked for was not supplied within 30 days of its request (Circular DHP/2025/20).
 
-A report with a Discrepancy or an unverified document is not a clean report for DHP. Deal with it at the provider before you attach it to your evaluation.
+A report with a Discrepancy or an unverified document is not a clean report for DHP, and DataFlow shares the final report with the regulator itself. Deal with it at the provider – through an appeal or a corrected document – before you apply for evaluation.
 
 ## How do you download and authenticate the report?
 
-- **Download.** DataFlow e-mails you when the application is complete and sends the final report to the regulator; you download your copy from the tracker. QuadraBay issues the report through its portal, AVS through its dashboard.
+- **Download.** DataFlow e-mails you when the application is complete and shares the final report with the regulator; download your copy from dataflowstatus.com (cases filed on or before 31 August 2024) or from the DataFlow account you applied through. QuadraBay issues the report through its portal; AVS says the report is "issued/shared in accordance with the applicable authority process" – download your copy from your AVS account.
 - **Attach.** DHP's PSV page asks you to attach the verification report to the online evaluation application – keep the PDF.
-- **Authenticate.** A DataFlow report carries a QR code. DataFlow's [Check a Report](https://dataflowgroup.com/check-a-report/) page tells anyone – "an individual applicant, client facility or government regulator" – to scan it with the free Qryptal app and compare the result with the printed report; if they differ, the report is not official.
+- **Authenticate.** A DataFlow report carries a QR code. DataFlow's [Check a Report](https://dataflowgroup.com/check-a-report/) page tells anyone – "an individual applicant, client facility or government regulator" – to scan it with the Qryptal app (no account sign-up needed) and compare the result with the printed report; if they differ, the report is not official.
 
 ## What should you do when nothing moves?
 
