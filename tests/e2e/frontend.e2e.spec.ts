@@ -214,7 +214,7 @@ test.describe('Report-transfer guide', () => {
     await page.goto('http://localhost:3000/qatar/psv/report-transfer')
     await expect(page.locator('h1')).toContainText('Transferring a DataFlow or QuadraBay report')
     await expect(page.locator('.article-body table').first()).toContainText('QAR 323')
-    await expect(page.locator('.article-body')).toContainText('QAR 923')
+    await expect(page.locator('.article-body')).toContainText('QAR 1,223')
     await expect(page.locator('.site-footer a[href="/qatar/psv/report-transfer"]')).toBeVisible()
     await page.goto('http://localhost:3000/qatar/psv/dataflow')
     await expect(page.locator('.article-body a[href="/qatar/psv/report-transfer"]').first()).toBeVisible()
@@ -232,6 +232,17 @@ test.describe('Unable to Verify guide', () => {
     await expect(page.locator('.site-footer a[href="/qatar/psv/problems/unable-to-verify"]')).toBeVisible()
     await page.goto('http://localhost:3000/qatar/psv/status')
     await expect(page.locator('.article-body a[href="/qatar/psv/problems/unable-to-verify"]').first()).toBeVisible()
+  })
+})
+
+test.describe('Discrepancy guide', () => {
+  test('renders the appeal facts and is linked from the status guide and the footer', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/psv/problems/discrepancy')
+    await expect(page.locator('h1')).toContainText('Discrepancy or negative report')
+    await expect(page.locator('.article-body')).toContainText('within 180 days of completion')
+    await expect(page.locator('.site-footer a[href="/qatar/psv/problems/discrepancy"]')).toBeVisible()
+    await page.goto('http://localhost:3000/qatar/psv/status')
+    await expect(page.locator('.article-body a[href="/qatar/psv/problems/discrepancy"]').first()).toBeVisible()
   })
 })
 
