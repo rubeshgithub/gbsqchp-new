@@ -193,3 +193,16 @@ test.describe('Philippines country guide', () => {
     await expect(page.locator('.article-body a[href="/qatar/psv/countries/philippines"]').first()).toBeVisible()
   })
 })
+
+test.describe('Status-check guide', () => {
+  test('renders the tracker table and is linked from the provider guides and the footer', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/psv/status')
+    await expect(page.locator('h1')).toContainText('DataFlow status check for Qatar DHP')
+    await expect(page.locator('.article-body table').first()).toContainText('dataflowstatus.com')
+    await expect(page.locator('.site-footer a[href="/qatar/psv/status"]')).toBeVisible()
+    for (const path of ['/qatar/psv/dataflow', '/qatar/psv/quadrabay', '/qatar/psv/avs', '/qatar/psv/timeline']) {
+      await page.goto(`http://localhost:3000${path}`)
+      await expect(page.locator('.article-body a[href="/qatar/psv/status"]').first()).toBeVisible()
+    }
+  })
+})

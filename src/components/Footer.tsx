@@ -31,6 +31,9 @@ export function Footer({ settings }: { settings: SiteSetting }) {
                 <Link href="/qatar/psv/timeline">How long PSV takes</Link>
               </li>
               <li>
+                <Link href="/qatar/psv/status">DataFlow status check</Link>
+              </li>
+              <li>
                 <Link href="/qatar/psv/countries/india">PSV for Indian applicants</Link>
               </li>
               <li>
