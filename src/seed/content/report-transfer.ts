@@ -17,7 +17,7 @@ export const reportTransferGuide = {
   path: '/qatar/psv/report-transfer',
   section: 'psv' as const,
   summary:
-    'If DataFlow has already verified you for another regulator – DHA, DOH, MOHAP, SCFHS, NHRA, Oman or the UK – you can usually transfer that report to Qatar’s DHP instead of paying for a new one: DataFlow charges QAR 323 to re-issue a report made for another authority (QAR 215 if it was already issued to DHP) and quotes a new DHP report “within 5 days if no additional documents are needed”. QuadraBay transfers its own reports for QAR 150. What a transfer does not cover is anything new since the old report – a later employer, a fresh certificate of good standing – which is verified at the source and priced as an add-on. No DHP circular says a report can move from one provider to another. Below: costs, what still needs verifying, the steps, and when a new application is the better choice.',
+    'If DataFlow has already verified you for another regulator – DHA, DOH, MOHAP, SCFHS, NHRA, Oman’s MOH or another regulator abroad – you can usually transfer that report to Qatar’s DHP instead of paying for a new one: DataFlow charges QAR 323 to re-issue a report made for another authority (QAR 215 if it was already issued to DHP) and quotes a new DHP report “within 5 days if no additional documents are needed”. QuadraBay lists a report transfer at QAR 150. What a transfer does not cover is anything new since the old report – a later employer and licence, a fresh certificate of good standing – which is verified at the source and priced as an add-on, so the more that is new, the smaller the saving. No DHP circular says a report can move from one provider to another. Below: costs, what still needs verifying, two worked examples, the steps, and when a new application is the better choice.',
   meta: {
     title: 'DataFlow Report Transfer to Qatar DHP: Fees & Steps 2026',
     description:
@@ -52,14 +52,14 @@ export const reportTransferGuide = {
   changeLog: [
     {
       date: '2026-10-23',
-      note: 'First published. Transfer fees from DataFlow’s DHP price list, Circular DHP/2025/20 and AVS’s fee schedule; transfer wording from DataFlow’s DHP programme page.',
+      note: 'First published. Transfer fees from DataFlow’s DHP price list, Circular DHP/2025/20 and AVS’s fee schedule; transfer wording from DataFlow’s DHP programme page. Independent fact-check applied: worked examples now count the new licence.',
     },
   ],
   faqs: [
     {
       question: 'Can I use my DHA or SCFHS DataFlow report for Qatar?',
       answer:
-        'Yes, through a DataFlow report transfer. DataFlow’s DHP page says it “allows applicants to transfer their reports between Gulf health regulators and internationally”, and its price list charges QAR 323 to re-issue a report previously issued to another authority as a DHP report. You cannot simply upload the old PDF to DHP: the report has to be re-issued to DHP. Anything new since the old report – a later employer, a certificate of good standing – is verified as an add-on.',
+        'Yes, through a DataFlow report transfer. DataFlow’s DHP page says it “allows applicants to transfer their reports between Gulf health regulators and internationally”, and its price list charges QAR 323 to re-issue a report previously issued to another authority as a DHP report. DataFlow’s process is to re-issue the report to DHP for that fee; neither DHP nor DataFlow describes DHP accepting a report addressed to another regulator. Anything new since the old report – a later employer and licence, a certificate of good standing – is verified as an add-on.',
     },
     {
       question: 'Can I transfer my DataFlow report to QuadraBay or AVS to save money?',
@@ -69,7 +69,7 @@ export const reportTransferGuide = {
     {
       question: 'I already had a DHP report and I am changing employer. Do I need a new one?',
       answer:
-        'Usually not a whole new report. DataFlow re-issues a report that was previously issued to DHP for QAR 215, and you add whatever is new – the latest employer, a fresh good-standing certificate – as add-ons or as Package J (one good-standing certificate plus your most recent employment certificate, QAR 550 at DataFlow, QAR 500 at AVS). Check with your new employer which documents DHP wants verified for the new licence.',
+        'Usually not a whole new report. DataFlow re-issues a report that was previously issued to DHP for QAR 215 – for example for a re-registration or a new employer – and you add whatever is new – the latest employer, a fresh good-standing certificate – as add-ons or as Package J (one good-standing certificate plus your most recent employment certificate, QAR 550 at DataFlow, QAR 500 at AVS). Check with your new employer which documents DHP wants verified for the new licence.',
     },
     {
       question: 'Can I transfer a QuadraBay report from Bahrain to Qatar?',
@@ -79,22 +79,22 @@ export const reportTransferGuide = {
     {
       question: 'Is DataFlow Express worth it on a transfer?',
       answer:
-        'Rarely. For report transfers DataFlow prices Express by document count – QAR 215 for one document up to QAR 529 for four or more – and the transfer itself is already quoted at five days when nothing new is needed. When something new is needed, the wait is the employer or council answering, which Express does not change.',
+        'Usually not. For report transfers DataFlow prices Express by document count – QAR 215 for one document up to QAR 529 for four or more – and the transfer itself is already quoted at five days when nothing new is needed. When something new is needed, most of the wait is the employer or council answering: Express shortens DataFlow’s own handling, not their reply.',
     },
   ],
   markdown: `
 ## Can you reuse a report from another regulator?
 
-Yes, if the report is from the same provider. DataFlow's DHP page says it "allows applicants to transfer their reports between Gulf health regulators and internationally", and that you can "Apply for a Report Transfer and receive your new DHP – MOPH Qatar report within 5 days if no additional documents are needed". QuadraBay lists a report transfer in its DHP fees (Circular DHP/2025/20), and AVS lists one in its fee schedule.
+Yes for DataFlow, which publishes a transfer route. DataFlow's DHP page says it "allows applicants to transfer their reports between Gulf health regulators and internationally", and that you can "Apply for a Report Transfer and receive your new DHP – MOPH Qatar report within 5 days if no additional documents are needed". QuadraBay lists a report transfer in its DHP fees (Circular DHP/2025/20), and AVS lists one in its fee schedule, but neither publishes which regulators' reports it re-issues to DHP – ask before you pay.
 
-What a transfer does is re-issue verification that has already been done as a report addressed to DHP. You cannot attach a report issued to the Dubai Health Authority or the Saudi Commission to your DHP evaluation as it is; DHP's PSV page asks for a report from one of its approved providers, attached to the evaluation application.
+What a transfer does is re-issue verification that has already been done as a report addressed to DHP. DataFlow's process is to re-issue the report to DHP for a fee; neither DHP nor DataFlow describes DHP accepting a report addressed to the Dubai Health Authority or the Saudi Commission as it is. DHP's PSV page asks you to attach the verification report to the evaluation application.
 
 ## How much does a transfer cost?
 
 | Provider | What is transferred | Fee |
 | --- | --- | --- |
 | DataFlow | A report previously issued to another authority (DHA, DOH, MOHAP, SCFHS, NHRA, Oman and others) | QAR 323 |
-| DataFlow | A report previously issued to DHP – re-registration or a new employer | QAR 215 |
+| DataFlow | A report previously issued to DHP (for example, re-registration or a new employer) | QAR 215 |
 | QuadraBay | A QuadraBay report | QAR 150 |
 | AVS | An AVS report (transfer or re-issuance) | QAR 250 |
 | AVS | A report "from another vendor" | QAR 250 – DHP has not said it accepts one |
@@ -105,26 +105,37 @@ Each is a fraction of a new package – QAR 900 to 1,210 for a standard package,
 
 The transfer covers what the old report verified. Anything that came after it, or that DHP's rules need and the other regulator did not, is verified at the source and priced as an extra document:
 
-- **Employment since the old report.** DHP's guidelines ask for the experience that fits your scope and for licences "accompanying the required years of work experience". A job you started after the old report was issued is new.
-- **A certificate of good standing.** DHP wants it at the licensing stage, no more than six months old, and since 1 August 2025 only as a PSV report (Circular DHP/2025/08). A certificate verified for another regulator a year ago is too old.
-- **Documents DHP needs that the other regulator did not** – a second qualification, a surgical logbook, an exempting exam certificate (Circular DHP/2025/19 requires these to be PSV-verified from 1 January 2026).
+- **Employment and licences since the old report.** DHP's guidelines ask for the experience that fits your scope and for licences "accompanying the required years of work experience". A job you started after the old report was issued is new – and so is the licence you got for it, such as the DHA licence you received after DataFlow verified you for DHA.
+- **A certificate of good standing.** DHP wants it at the licensing stage, no more than six months old, and since 1 August 2025 only as a PSV report (Circular DHP/2025/08). The six months run from the certificate's issue date, so one used for another regulator will usually need replacing – and it comes from the authority that licensed you for your most recent years of work.
+- **Documents DHP needs that the other regulator did not** – a second qualification, or an exempting exam certificate (PSV-verified from 1 January 2026 under Circular DHP/2025/19). Surgeons applying for privileges also need a surgical logbook "verified by PSV company" (DHP's Guidelines for Physicians).
 
 Extra documents cost QAR 300 each at DataFlow (QAR 400 for a qualification), QAR 150 to 300 for one to four documents at QuadraBay, and QAR 250 each at AVS (QAR 300 for a qualification). Each one takes as long as that employer or council takes to answer – so "within 5 days" applies only when nothing new is needed.
 
-The results come with the report, too. If the old report shows a Discrepancy or Unable to Verify against any document, that is what the re-issued report shows; resolve it at the provider first – DataFlow allows an appeal within 180 days of the report – as the [status guide](/qatar/psv/status) explains.
+The results come with the report, too. A re-issued report carries the old results, so expect a Discrepancy or Unable to Verify to carry over unless the document is re-verified. DataFlow allows an appeal within 180 days of the report's completion; for an older report, ask DataFlow support how the result can be re-verified before you transfer. The [status guide](/qatar/psv/status) explains the outcomes.
 
-## Worked example: a nurse moving from Dubai to Doha
+## Worked examples: a nurse moving from Dubai to Doha
 
-A nurse verified by DataFlow for DHA in 2024 has since changed employer once and needs a certificate of good standing for DHP.
+A nurse verified by DataFlow for DHA in 2024 now applies to DHP. The prices below are the published ones; DataFlow does not list a price for adding an employer to a transfer, so its extra-document rate of QAR 300 is assumed – confirm it with DataFlow.
 
-| Route | Cost on published prices |
+**Little has changed.** She is still with the employer and licence the old report covered, and needs only a certificate of good standing:
+
+| Route | Cost |
 | --- | --- |
-| DataFlow transfer + new employer + good standing | QAR 323 + 300 + 300 = **QAR 923** |
-| New QuadraBay application (Package E covers three years of employment) + good standing | QAR 900 + 150 = **QAR 1,050** |
-| New AVS application (nurse package covers five years) + good standing | QAR 900 + 250 = **QAR 1,150** |
-| New DataFlow application (Package E) + good standing | QAR 990 + 300 = **QAR 1,290** |
+| DataFlow transfer + good standing | QAR 323 + 300 = **QAR 623** |
+| New QuadraBay application (Package E) + good standing | QAR 900 + 150 = **QAR 1,050** |
 
-The transfer is cheapest and verifies only two documents. A new application re-verifies the degree and every employer from the start, which is where most of PSV's time goes – the [timeline guide](/qatar/psv/timeline) explains why. A new application makes sense when the old report has an unresolved problem, or when so much has changed that the add-ons approach the price of a package.
+The transfer is clearly cheaper, and with only one new document it is also the faster route.
+
+**A lot has changed.** Since the report she has taken a new job in Dubai with a DHA licence, so the new employer, the new licence and a good-standing certificate all need verifying:
+
+| Route | Cost |
+| --- | --- |
+| DataFlow transfer + new employer + new licence + good standing | QAR 323 + 300 + 300 + 300 = **QAR 1,223** |
+| New QuadraBay application (Package E, three years of employment) + 2 extra documents | QAR 900 + 200 = **QAR 1,100** |
+| New AVS application (five years of employment) + licence + good standing | QAR 900 + 250 + 250 = **QAR 1,400** |
+| New DataFlow application (Package E) + licence + good standing | QAR 990 + 300 + 300 = **QAR 1,590** |
+
+Here a new QuadraBay application is slightly cheaper, but it re-verifies the degree and every employer in the package's three-year window – where most of PSV's time goes, as the [timeline guide](/qatar/psv/timeline) explains – while the transfer verifies only the three new documents. If DataFlow lets you combine a transfer with Package J (one good-standing certificate plus your most recent employment certificate, QAR 550), the transfer route drops to QAR 1,173. Each extra licence, employer or certificate narrows the transfer's advantage; a new application also makes sense when the old report has an unresolved problem.
 
 ## How do you apply for a DataFlow transfer?
 

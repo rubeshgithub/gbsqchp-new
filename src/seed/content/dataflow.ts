@@ -76,7 +76,7 @@ The DataFlow Group is a Dubai-headquartered verification company that has worked
 
 It is no longer the only option. DHP endorsed QuadraBay as a second provider on 2 December 2025 (Circular DHP/2025/20) and Approved Verification Services (AVS) as a third on 3 September 2026 (Circular DHP/2026/36). What *is* mandatory is verification itself: DHP's PSV page calls it "one of the mandatory requirements for registration and licensing" and tells every practitioner to apply for it before applying for evaluation. So the question is not whether to verify but which provider to pay. Three reasons applicants still pick DataFlow:
 
-- **Transfers.** If you were verified for DHA, DOH, MOHAP, SCFHS, NHRA or Oman's MOH through DataFlow, a transfer to DHP is cheaper and faster than a fresh application anywhere else (see the last section).
+- **Transfers.** If you were verified for DHA, DOH, MOHAP, SCFHS, NHRA or Oman's MOH through DataFlow, a transfer to DHP is usually cheaper and faster than a fresh application, unless several new documents need verifying (see the last section).
 - **Employers.** DataFlow runs a business portal for facilities that submit staff in bulk, and an employer that uses it may simply tell you to use the same provider.
 - **Track record.** Universities in India, the Philippines, Pakistan, Egypt and Nigeria have answered DataFlow requests for seventeen years and often have a named contact for them. That matters more than the fee when your degree comes from a small college.
 
