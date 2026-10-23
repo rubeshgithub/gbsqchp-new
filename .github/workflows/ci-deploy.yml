@@ -88,6 +88,10 @@ jobs:
             echo "${path} → ${code}"
             [ "$code" = 200 ] || { echo "::error::https://gbsqchp.com${path} returned ${code}"; exit 1; }
           done
+          # URLs from the domain's previous website answer 410 Gone (src/lib/gone.ts).
+          code=$(curl -s -o /dev/null -w '%{http_code}' https://gbsqchp.com/guide/uae || true)
+          echo "/guide/uae → ${code}"
+          [ "$code" = 410 ] || { echo "::error::/guide/uae should return 410, got ${code}"; exit 1; }
           # Redirects that keep one canonical address: www → apex, http → https.
           for url in https://www.gbsqchp.com/qatar/psv http://gbsqchp.com/qatar/psv; do
             out=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' "$url" || true)
