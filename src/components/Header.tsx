@@ -7,6 +7,7 @@ import type { SiteSetting } from '@/payload-types'
 const NAV = [
   { href: '/qatar', label: 'Qatar' },
   { href: '/qatar/psv', label: 'PSV guide' },
+  { href: '/qatar/licensing', label: 'Licensing' },
   { href: '/qatar/circulars', label: 'Circulars' },
   { href: '/tools/psv-fee-calculator', label: 'Fee calculator' },
   { href: '/articles', label: 'Updates' },

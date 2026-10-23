@@ -220,3 +220,16 @@ test.describe('Prometric exam guide', () => {
     await expect(page.locator('.article-body a[href="/qatar/exam/prometric"]').first()).toBeVisible()
   })
 })
+
+test.describe('Licensing hub', () => {
+  test('renders the steps, CPD and profession tables and is in the header and footer', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/licensing')
+    await expect(page.locator('h1')).toContainText('How to get a DHP licence in Qatar')
+    const tables = page.locator('.article-body table')
+    await expect(tables).toHaveCount(3)
+    await expect(tables.first()).toContainText('Evaluation')
+    await expect(page.locator('nav.breadcrumbs a')).toHaveText(['Home', 'Qatar'])
+    await expect(page.locator('.site-header a[href="/qatar/licensing"]')).toBeVisible()
+    await expect(page.locator('.site-footer a[href="/qatar/licensing"]')).toBeVisible()
+  })
+})

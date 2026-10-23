@@ -137,6 +137,8 @@ They are worth it when two things are true: your institutions are known to answe
 
 ## How long does the rest of the Qatar licence take?
 
+The [licensing guide](/qatar/licensing) explains each DHP step; this section covers the time each one takes.
+
 PSV is the first stage. Circular DHP/2024/16 sets DHP's own processing times, in working days, counted from "a complete application that meets all requirements and includes verified documents"; an application sent back to you restarts the count from the day you resubmit:
 
 | DHP request | Physicians and dentists | Nurses, pharmacists, allied health |

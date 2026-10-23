@@ -22,6 +22,9 @@ export function Footer({ settings }: { settings: SiteSetting }) {
                 <Link href="/qatar/psv">Primary Source Verification</Link>
               </li>
               <li>
+                <Link href="/qatar/licensing">How to get a DHP licence</Link>
+              </li>
+              <li>
                 <Link href="/qatar/psv/fees">PSV fees compared</Link>
               </li>
               <li>
