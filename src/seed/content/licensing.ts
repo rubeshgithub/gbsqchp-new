@@ -146,7 +146,7 @@ No qualifying exam is needed at renewal.
 | Midwife | Bachelor's in midwifery or equivalent, or a nursing degree plus post-graduate midwifery | Three years as a midwife | Prometric |
 | Allied health | Bachelor's (therapists, technologists) or diploma (technicians) in the field | In general two to five years after graduation for therapists and technologists, at least two for technicians, depending on the scope | Prometric for the scopes listed above |
 
-Dentists and pharmacists have their own DHP guidelines. Country-specific notes for [India](/qatar/psv/countries/india) and the [Philippines](/qatar/psv/countries/philippines) show how local qualifications map onto these rows.
+Dentists and pharmacists have their own DHP guidelines. Country-specific notes for [India](/qatar/psv/countries/india), the [Philippines](/qatar/psv/countries/philippines) and [Pakistan](/qatar/psv/countries/pakistan) show how local qualifications map onto these rows.
 
 ## Common problems that delay a licence
 

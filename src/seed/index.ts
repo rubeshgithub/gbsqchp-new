@@ -18,6 +18,7 @@ import { goodStandingArticle } from './content/articles/good-standing-psv'
 import { avsApprovedArticle } from './content/articles/avs-approved'
 import { indiaGuide } from './content/countries/india'
 import { philippinesGuide } from './content/countries/philippines'
+import { pakistanGuide } from './content/countries/pakistan'
 import { statusGuide } from './content/status'
 import { examGuide } from './content/exam'
 import { licensingGuide } from './content/licensing'
@@ -176,7 +177,7 @@ async function run() {
   const editorConfig = editorConfigFactory.fromField({ field: contentField })
 
   const pageIds: Record<string, string> = {}
-  const pages: SeedPage[] = [psvPillar, legacyGbs, dataflowGuide, quadrabayGuide, avsGuide, feesGuide, documentsGuide, timelineGuide, nameMismatchGuide, goodStandingArticle, avsApprovedArticle, indiaGuide, philippinesGuide, statusGuide, examGuide, licensingGuide]
+  const pages: SeedPage[] = [psvPillar, legacyGbs, dataflowGuide, quadrabayGuide, avsGuide, feesGuide, documentsGuide, timelineGuide, nameMismatchGuide, goodStandingArticle, avsApprovedArticle, indiaGuide, philippinesGuide, pakistanGuide, statusGuide, examGuide, licensingGuide]
   for (const page of pages) {
     const { markdown, verifiedAgainst, meta, featuredVendorSlug, ...rest } = page
     const content = convertMarkdownToLexical({ editorConfig, markdown: markdown.trim() })
@@ -217,6 +218,7 @@ async function run() {
     [statusGuide.path]: [timelineGuide.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path, nameMismatchGuide.path],
     [indiaGuide.path]: [documentsGuide.path, nameMismatchGuide.path, feesGuide.path, timelineGuide.path, psvPillar.path, philippinesGuide.path],
     [philippinesGuide.path]: [documentsGuide.path, nameMismatchGuide.path, feesGuide.path, timelineGuide.path, psvPillar.path, indiaGuide.path],
+    [pakistanGuide.path]: [documentsGuide.path, examGuide.path, nameMismatchGuide.path, feesGuide.path, timelineGuide.path, indiaGuide.path],
     [goodStandingArticle.path]: [documentsGuide.path, feesGuide.path, timelineGuide.path, psvPillar.path],
     [avsApprovedArticle.path]: [avsGuide.path, feesGuide.path, psvPillar.path, dataflowGuide.path, quadrabayGuide.path],
     [legacyGbs.path]: [psvPillar.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],

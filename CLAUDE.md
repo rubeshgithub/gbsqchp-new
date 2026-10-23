@@ -76,7 +76,7 @@ The 25 Phase-1 page briefs (slug, title tag, meta, outline, facts with sources, 
 project doc `GBSQCHP-phase1-content-plan-and-briefs.md`. Published so far: `/qatar/psv` (pillar), `/gbs-psv-portal`
 (legacy), `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs` (provider guides), `/qatar/psv/fees`, `/qatar/psv/documents`,
 `/qatar/psv/timeline`, `/qatar/psv/problems/name-mismatch`, `/qatar/psv/status`, `/qatar/exam/prometric`, `/qatar/licensing` (hub,
-in the header), country guides `/qatar/psv/countries/{india,philippines}`. Next in order: `/qatar/psv/report-transfer`,
+in the header), country guides `/qatar/psv/countries/{india,philippines,pakistan}`. Next in order: `/qatar/psv/report-transfer`,
 then the problem pages under `/qatar/psv/problems/…`, the circular explainers under `/qatar/circulars/…`, and more
 country guides. Add nav/footer links (`src/components/Header.tsx`, `Footer.tsx`) only when the
 target page is published. The provider guides refer to the report-transfer and
@@ -129,6 +129,11 @@ become unreadable, new ones work. Actions log and artifact downloads are blocked
   physicians/dentists, 40 others; ≥50% yearly and ≥50% Category 1), full text of the Nurses and Physicians guidelines
   (evaluation goes through the employer representative; negative/UTV → interview → re-verify in 14 days or blacklisted).
   The physician guidelines mention "the 2 years license cycle"; no source states a full licence's validity in so many words.
+- Read 23 Oct 2026 for the Pakistan guide: PM&DC FAQ (good standing via portal, PKR 7,000) and Registration Regulations
+  2023 (regs 25–26: six months, one certificate per named foreign authority; fee schedule says Rs 5,000); PNMC verification
+  page (PKR 10,000 foreign); PNMC programme pages (Post RN BSN 2 yrs; MSN Cat I = 10 yrs school + 3-yr diploma).
+  Pakistan is NOT in DHP's specialty qualification table → FCPS/MS/MD are Category 3; MCPS is 2 years. pnmc.gov.pk,
+  pcsindh.com and beoe.gov.pk are blocked from the shell proxy – use WebFetch/Nimble.
 - Still to open: DHP/2024/22 (preliminary evaluation without employer – the guidelines' process map requires the
   employer representative), DHP/2024/09. Set `verified: true` on each record after reading.
 - WebFetch now needs user approval for URLs not already in the conversation; for official PDFs use Nimble extract

@@ -194,6 +194,21 @@ test.describe('Philippines country guide', () => {
   })
 })
 
+test.describe('Pakistan country guide', () => {
+  test('renders the qualification table, PM&DC and Category 3 facts, linked from documents, licensing and the footer', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/psv/countries/pakistan')
+    await expect(page.locator('h1')).toContainText('Qatar DHP licence from Pakistan')
+    await expect(page.locator('.article-body table').first()).toContainText('MBBS + FCPS')
+    await expect(page.locator('.article-body')).toContainText('Category 3')
+    await expect(page.locator('.article-body')).toContainText('PNMC')
+    await expect(page.locator('.site-footer a[href="/qatar/psv/countries/pakistan"]')).toBeVisible()
+    await page.goto('http://localhost:3000/qatar/psv/documents')
+    await expect(page.locator('.article-body a[href="/qatar/psv/countries/pakistan"]').first()).toBeVisible()
+    await page.goto('http://localhost:3000/qatar/licensing')
+    await expect(page.locator('.article-body a[href="/qatar/psv/countries/pakistan"]').first()).toBeVisible()
+  })
+})
+
 test.describe('Status-check guide', () => {
   test('renders the tracker table and is linked from the provider guides and the footer', async ({ page }) => {
     await page.goto('http://localhost:3000/qatar/psv/status')
