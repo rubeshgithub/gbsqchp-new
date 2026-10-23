@@ -111,7 +111,7 @@ The transfer covers what the old report verified. Anything that came after it, o
 
 Extra documents cost QAR 300 each at DataFlow (QAR 400 for a qualification), QAR 150 to 300 for one to four documents at QuadraBay, and QAR 250 each at AVS (QAR 300 for a qualification). Each one takes as long as that employer or council takes to answer – so "within 5 days" applies only when nothing new is needed.
 
-The results come with the report, too. A re-issued report carries the old results, so expect a Discrepancy or Unable to Verify to carry over unless the document is re-verified. DataFlow allows an appeal within 180 days of the report's completion; for an older report, ask DataFlow support how the result can be re-verified before you transfer. The [status guide](/qatar/psv/status) explains the outcomes.
+The results come with the report, too. Expect a re-issued report to carry the old results – a Discrepancy or Unable to Verify included – unless the document is re-verified; ask DataFlow before you transfer. DataFlow allows an appeal within 180 days of the report's completion; for an older report, ask DataFlow support how the result can be re-verified before you transfer. The [Unable to Verify guide](/qatar/psv/problems/unable-to-verify) explains the appeal.
 
 ## Worked examples: a nurse moving from Dubai to Doha
 
