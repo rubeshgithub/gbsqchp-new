@@ -66,6 +66,8 @@ test.describe('Privacy notice', () => {
     await expect(page.locator('h1')).toHaveText('Privacy notice')
     await expect(page.locator('main')).toContainText('MRP Business Consulting')
     await expect(page.locator('main table')).toContainText('Amazon Web Services')
+    // After a client-side navigation the previous page's canonical can linger for a moment; wait for one.
+    await expect(page.locator('link[rel="canonical"]')).toHaveCount(1)
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /\/privacy$/)
   })
 })
