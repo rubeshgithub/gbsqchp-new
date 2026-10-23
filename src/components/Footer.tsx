@@ -34,6 +34,9 @@ export function Footer({ settings }: { settings: SiteSetting }) {
                 <Link href="/qatar/psv/status">DataFlow status check</Link>
               </li>
               <li>
+                <Link href="/qatar/exam/prometric">Qatar Prometric exam</Link>
+              </li>
+              <li>
                 <Link href="/qatar/psv/countries/india">PSV for Indian applicants</Link>
               </li>
               <li>

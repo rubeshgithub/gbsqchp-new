@@ -19,6 +19,7 @@ import { avsApprovedArticle } from './content/articles/avs-approved'
 import { indiaGuide } from './content/countries/india'
 import { philippinesGuide } from './content/countries/philippines'
 import { statusGuide } from './content/status'
+import { examGuide } from './content/exam'
 import { legacyGbs } from './content/legacy-gbs'
 import { psvPillar } from './content/psv-pillar'
 import { quadrabayGuide } from './content/quadrabay'
@@ -174,7 +175,7 @@ async function run() {
   const editorConfig = editorConfigFactory.fromField({ field: contentField })
 
   const pageIds: Record<string, string> = {}
-  const pages: SeedPage[] = [psvPillar, legacyGbs, dataflowGuide, quadrabayGuide, avsGuide, feesGuide, documentsGuide, timelineGuide, nameMismatchGuide, goodStandingArticle, avsApprovedArticle, indiaGuide, philippinesGuide, statusGuide]
+  const pages: SeedPage[] = [psvPillar, legacyGbs, dataflowGuide, quadrabayGuide, avsGuide, feesGuide, documentsGuide, timelineGuide, nameMismatchGuide, goodStandingArticle, avsApprovedArticle, indiaGuide, philippinesGuide, statusGuide, examGuide]
   for (const page of pages) {
     const { markdown, verifiedAgainst, meta, featuredVendorSlug, ...rest } = page
     const content = convertMarkdownToLexical({ editorConfig, markdown: markdown.trim() })
@@ -210,6 +211,7 @@ async function run() {
     [documentsGuide.path]: [psvPillar.path, feesGuide.path, timelineGuide.path, nameMismatchGuide.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
     [timelineGuide.path]: [psvPillar.path, statusGuide.path, documentsGuide.path, feesGuide.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
     [nameMismatchGuide.path]: [documentsGuide.path, psvPillar.path, timelineGuide.path, dataflowGuide.path],
+    [examGuide.path]: [feesGuide.path, timelineGuide.path, documentsGuide.path, psvPillar.path, nameMismatchGuide.path],
     [statusGuide.path]: [timelineGuide.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path, nameMismatchGuide.path],
     [indiaGuide.path]: [documentsGuide.path, nameMismatchGuide.path, feesGuide.path, timelineGuide.path, psvPillar.path, philippinesGuide.path],
     [philippinesGuide.path]: [documentsGuide.path, nameMismatchGuide.path, feesGuide.path, timelineGuide.path, psvPillar.path, indiaGuide.path],
@@ -234,6 +236,7 @@ async function run() {
     'DHP/2024/10': feesGuide.path,
     'DHP/2025/08': documentsGuide.path,
     'DHP/2024/16': timelineGuide.path,
+    'DHP/2025/19': examGuide.path,
     'DHP/2024/09': legacyGbs.path,
     'DHP/2025/20': quadrabayGuide.path,
     'DHP/2026/36': avsGuide.path,

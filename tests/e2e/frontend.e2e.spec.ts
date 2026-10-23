@@ -206,3 +206,17 @@ test.describe('Status-check guide', () => {
     }
   })
 })
+
+test.describe('Prometric exam guide', () => {
+  test('renders format, fee and exemption tables and is linked from fees and the footer', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/exam/prometric')
+    await expect(page.locator('h1')).toContainText('Qatar Prometric exam')
+    const tables = page.locator('.article-body table')
+    await expect(tables).toHaveCount(3)
+    await expect(tables.nth(1)).toContainText('US$244')
+    await expect(tables.nth(2)).toContainText('NCLEX-RN')
+    await expect(page.locator('.site-footer a[href="/qatar/exam/prometric"]')).toBeVisible()
+    await page.goto('http://localhost:3000/qatar/psv/fees')
+    await expect(page.locator('.article-body a[href="/qatar/exam/prometric"]').first()).toBeVisible()
+  })
+})
