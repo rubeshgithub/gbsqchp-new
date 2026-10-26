@@ -19,7 +19,7 @@ export const licensingGuide = {
   meta: {
     title: 'How to Get a DHP (QCHP) Licence in Qatar: 2026 Guide',
     description:
-      'Qatar healthcare licensing step by step: PSV, DHP evaluation, Prometric exam, temporary and full licence, renewal and CPD, with DHP’s official processing times.',
+      'DHP (Department of Healthcare Professions) licensing in Qatar step by step: PSV, evaluation, Prometric exam, temporary and full licence, renewal and CPD.',
   },
   showVendorTable: false,
   showCalculator: false,
@@ -60,8 +60,14 @@ export const licensingGuide = {
       date: '2026-10-23',
       note: 'First published. Process, temporary licence, licensing and renewal rules from DHP’s guidelines and policies; processing times from Circular DHP/2024/16.',
     },
+    { date: '2026-10-26', note: 'Added an FAQ on what DHP stands for, from the “Who licenses” section, and reworded the search description. No facts changed.' },
   ],
   faqs: [
+    {
+      question: 'What does DHP stand for in Qatar?',
+      answer:
+        'DHP is the Department of Healthcare Professions at Qatar’s Ministry of Public Health. It evaluates, licenses and renews the licences of physicians, dentists, nurses, pharmacists and allied healthcare practitioners, through its online Registration and Licensing System at dhpportal.moph.gov.qa. It took over this work from the Qatar Council for Healthcare Practitioners (QCHP).',
+    },
     {
       question: 'Is QCHP the same as DHP?',
       answer:

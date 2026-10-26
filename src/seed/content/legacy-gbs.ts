@@ -9,7 +9,7 @@ export const legacyGbs = {
   summary:
     "Gulf Bridge Services (GBS) operated gbsqchp.com as the Qatar Council for Healthcare Practitioners' second approved Primary Source Verification channel from July 2018 until the Department of Healthcare Professions ended the contract on 7 February 2024 (Circular DHP/2024/09). GBS no longer accepts or processes PSV applications. If you need verification for a DHP licence today, apply through DataFlow, QuadraBay or AVS – the three providers DHP currently approves.",
   meta: {
-    title: 'GBS QCHP PSV Portal: Service Ended – What to Do Now',
+    title: 'Gulf Bridge Services (GBS) QCHP Portal: Service Ended',
     description:
       "Gulf Bridge Services' DHP primary source verification contract ended on 7 Feb 2024 (Circular DHP/2024/09). Where to apply for PSV in Qatar now.",
   },
@@ -35,6 +35,7 @@ export const legacyGbs = {
   changeLog: [
     { date: '2026-10-09', note: 'First published.' },
     { date: '2026-10-12', note: 'Updated the publisher details: the site is now the Primary Source Verification Guide by MRP Business Consulting.' },
+    { date: '2026-10-26', note: 'Search title now spells out Gulf Bridge Services so people looking for the former provider land on this page. No facts changed.' },
   ],
   faqs: [
     {

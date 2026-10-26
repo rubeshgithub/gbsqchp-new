@@ -19,9 +19,9 @@ export const examGuide = {
   summary:
     'The DHP qualifying exam is a computer-based Prometric test – 150 multiple-choice questions in three hours for most professions – that general practitioners, general dentists, pharmacists, registered nurses, midwives, Category 3 specialists and several allied health scopes must pass for a Qatar licence. It costs US$244 for anyone registering from 1 January 2026, the pass mark is 50% for nurses and most allied health, 60% for GPs, general dentists and pharmacists and 65% for most specialists, and you have five attempts. Certain foreign licensing exams – USMLE Step 2, PLAB 1, NCLEX-RN and others listed in Circular DHP/2025/19 – exempt you, but since 1 January 2026 only if the exam itself has been primary-source verified. Below: format, pass marks, fees, attempts, validity, exemptions and booking.',
   meta: {
-    title: 'Qatar Prometric Exam 2026: Fees, Pass Marks & Exemptions',
+    title: 'Qatar Prometric Exam 2026: US$244 Fee, Validity, Pass Marks',
     description:
-      'DHP qualifying exam (Prometric): US$244 fee, 150 MCQs, pass marks by profession, five attempts, 3-year validity, and the exams that exempt you under DHP/2025/19.',
+      'Qatar Prometric test for the DHP licence: US$244 fee from 1 Jan 2026, 150 MCQs, pass marks by profession, five attempts, 3-year validity and exemptions.',
   },
   showVendorTable: false,
   showCalculator: false,
@@ -61,8 +61,14 @@ export const examGuide = {
       date: '2026-10-23',
       note: 'First published. Fees from Circular DHP/2024/10; exemptions from Circular DHP/2025/19 (read in full); format and pass marks from DHP’s and Prometric’s exam pages; attempts and validity from DHP’s Qualifying Examination Policy.',
     },
+    { date: '2026-10-26', note: 'Added an FAQ on the 2026 exam fee (Circular DHP/2024/10, as in the fee section) and reworded the search title and description. No facts changed.' },
   ],
   faqs: [
+    {
+      question: 'How much is the Qatar Prometric exam fee in 2026?',
+      answer:
+        'US$244 for anyone registering for the exam from 1 January 2026, under Circular DHP/2024/10 (it was US$238 for registrations from 19 January 2024). Cancelling or rescheduling costs US$25 if you do it 30 or more days before the exam and US$40 between 5 and 29 days before. The [PSV fees guide](/qatar/psv/fees) puts the exam fee alongside PSV and DHP’s own fees.',
+    },
     {
       question: 'Can I take the Prometric exam before my DataFlow report is ready?',
       answer:

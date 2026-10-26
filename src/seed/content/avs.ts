@@ -13,9 +13,9 @@ export const avsGuide = {
   summary:
     "Approved Verification Services (AVS) became the Department of Healthcare Professions' third approved Primary Source Verification provider on 3 September 2026 under Circular DHP/2026/36. It is the only Qatar-based provider, and its published schedule undercuts the others for physicians and dentists (QAR 1,050), matches QuadraBay for nurses, pharmacists and allied health professionals (QAR 900) and verifies more in those three packages than either. The portal shows a 20-day turnaround; Express costs QAR 400 but has no published target. This guide sets out every fee, what is verified, how the avsqatar.com portal works, and what is still unknown about a provider this new.",
   meta: {
-    title: 'AVS Qatar: Approved Verification Services for DHP PSV',
+    title: 'Approved Verification Services Qatar (AVS): DHP PSV Guide',
     description:
-      'Approved Verification Services (AVS) is Qatar DHP’s third PSV provider, approved 3 Sep 2026. Physicians QAR 1,050, nurses QAR 900, trainees QAR 525, express QAR 400 – fees, steps and contacts.',
+      'Approved Verification Services (AVS), Qatar DHP’s third PSV provider since 3 Sep 2026: QAR 1,050 for physicians, QAR 900 for nurses, steps and contacts.',
   },
   showVendorTable: true,
   showCalculator: false,
@@ -39,7 +39,10 @@ export const avsGuide = {
       url: 'https://avsqatar.com/files/DHP%20Reference%20Program%20Guide.pdf',
     },
   ],
-  changeLog: [{ date: '2026-10-11', note: 'First published. Fees transcribed from the AVS fee schedule; approval date from the circular PDF.' }],
+  changeLog: [
+    { date: '2026-10-11', note: 'First published. Fees transcribed from the AVS fee schedule; approval date from the circular PDF.' },
+    { date: '2026-10-26', note: 'Search title and description shortened to lead with the provider’s full name. No facts changed.' },
+  ],
   faqs: [
     {
       question: 'Is AVS accepted for new DHP applications and renewals?',
