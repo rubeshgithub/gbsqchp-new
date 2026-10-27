@@ -74,6 +74,7 @@ export const documentsGuide = {
       date: '2026-10-16',
       note: 'First published. Document rules taken from DHP’s three profession guidelines, the good-standing policy and each provider’s own checklist.',
     },
+    { date: '2026-10-27', note: 'Linked the new certificate of good standing guide. No facts changed.' },
   ],
   faqs: [
     {
@@ -162,7 +163,7 @@ Your **health licence** is the third component. The package verifies one; if DHP
 
 ## When do you need a certificate of good standing?
 
-Since 1 August 2025 a certificate of good standing reaches DHP only through PSV. Circular DHP/2025/08 (14 July 2025) ended the old route, in which your regulator emailed or posted the certificate to DHP, and requires every practitioner "to submit a primary source verification report for the good standing certificate" instead; certificates sent by email or post after that date "will no longer be accepted". DHP's nurse and allied health guidelines still describe the old route, a certificate sent directly by the registration authority, so follow the circular ([our update on the change](/articles/qatar-good-standing-certificates-through-psv)).
+Since 1 August 2025 a certificate of good standing reaches DHP only through PSV. Circular DHP/2025/08 (14 July 2025) ended the old route, in which your regulator emailed or posted the certificate to DHP, and requires every practitioner "to submit a primary source verification report for the good standing certificate" instead; certificates sent by email or post after that date "will no longer be accepted". DHP's nurse and allied health guidelines still describe the old route, a certificate sent directly by the registration authority, so follow the circular ([our update on the change](/articles/qatar-good-standing-certificates-through-psv)). The [good-standing guide](/qatar/psv/problems/good-standing-certificate) covers which years the certificates must cover and how to get one.
 
 When you need it depends on the stage:
 

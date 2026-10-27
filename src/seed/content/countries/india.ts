@@ -64,6 +64,8 @@ export const indiaGuide = {
       date: '2026-10-22',
       note: 'First published. Good-standing process for doctors from the NMC application form; nursing qualification rules from DHP’s Guidelines for Nurses.',
     },
+    { date: '2026-10-27', note: 'Linked the new certificate of good standing guide. No facts changed.' },
+    { date: '2026-10-27', note: 'Added a short section on taking the Prometric exam in India, linking the exam guide.' },
   ],
   faqs: [
     {
@@ -109,7 +111,7 @@ Two DHP rules matter for Indian degrees. For nurses, DHP's Guidelines for Nurses
 
 ## Where does your certificate of good standing come from?
 
-Since 1 August 2025 DHP accepts a certificate of good standing only as a PSV report (Circular DHP/2025/08). You obtain the certificate in India; your PSV provider verifies it; DHP sees the verified report. It is usually needed at the licensing stage and must be no more than six months old then – the [documents guide](/qatar/psv/documents) explains the timing.
+Since 1 August 2025 DHP accepts a certificate of good standing only as a PSV report (Circular DHP/2025/08). You obtain the certificate in India; your PSV provider verifies it; DHP sees the verified report. It is usually needed at the licensing stage and must be no more than six months old then – the [good-standing guide](/qatar/psv/problems/good-standing-certificate) explains the rules and timing.
 
 **Doctors (MBBS and above):** one route is a certificate from the **National Medical Commission (NMC)**, issued on the recommendation of your State Medical Council; some State Medical Councils also issue certificates of their own. Ask your council and your PSV provider which one to use. The NMC's application form says:
 
@@ -160,6 +162,10 @@ The provider writes to your university, council and employers and waits for each
 3. **Name both institutions in full.** DataFlow's form asks for the full name of the institution attended and says "Do not use abbreviated terms or initials". If your college was affiliated to a university, write the college's full name and make sure the awarding university also appears in full.
 
 The [timeline guide](/qatar/psv/timeline) sets out how long each step takes and when to escalate.
+
+## Can you take the Prometric exam in India?
+
+If your scope needs the DHP qualifying exam, you can sit it at a Prometric test centre in India: Prometric's scheduler for the DHP programme shows which Indian centres have seats. The fee is US$244 for registrations from 1 January 2026 (Circular DHP/2024/10). Do your PSV first – the exam comes at the evaluation stage. The [Prometric exam guide](/qatar/exam/prometric) covers the format, pass marks, exemptions and booking.
 
 ## Before you travel
 

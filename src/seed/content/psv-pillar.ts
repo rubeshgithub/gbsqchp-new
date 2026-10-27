@@ -50,6 +50,7 @@ export const psvPillar = {
     { date: '2026-10-16', note: 'Documents section checked against DHP’s guidelines for physicians, nurses and allied health: surgical logbooks cover the last three years (not two) and are needed for clinical privileges; good-standing certificates are usually needed at licensing, must be no more than six months old then and, under Circular DHP/2025/08, reach DHP only through PSV; certificates need no attestation when verified by PSV. The front-and-back rule for degrees now cites DataFlow’s own checklist.' },
     { date: '2026-10-17', note: 'DHP evaluation time corrected: 25 working days applies to physicians and dentists; nurses, pharmacists and allied health have 15 (Circular DHP/2024/16). DataFlow’s FAQ figures restated: 15–25 working days, with a warning that verification can take up to three months. Real-world range attributed to its single source.' },
     { date: '2026-10-26', note: 'Linked each provider in the provider list to its own guide (DataFlow, QuadraBay, AVS).' },
+    { date: '2026-10-27', note: 'Linked the new certificate of good standing guide. No facts changed.' },
   ],
   faqs: [
     {
@@ -111,7 +112,7 @@ Every provider works from the same DHP package structure, so the document set is
 - **Educational certificates** – two for physicians, dentists and advanced-practice nurses (Packages A and G), one for nurses, pharmacists and allied health (Packages B and E) at DataFlow and QuadraBay; AVS includes two in every clinical package. Each comes with its transcript or mark sheets; DataFlow's DHP checklist asks for the front and reverse side of every degree certificate.
 - **Professional licence or registration** from the country where you currently practise.
 - **Employment certificates** for the last five years (Packages A, B, G) or three years (Package E; five at AVS), up to three employers, each on letterhead with exact start and end dates, job title, full-time status and a signatory the provider can contact.
-- **Certificates of good standing**, usually at the licensing stage and no more than six months old when you apply for the licence. Since 1 August 2025 DHP accepts them only as a PSV report (Circular DHP/2025/08), not by email or post from your regulator. DataFlow and QuadraBay price them as Package I: two to three certificates for QAR 550; AVS charges QAR 500.
+- **Certificates of good standing**, usually at the licensing stage and no more than six months old when you apply for the licence. Since 1 August 2025 DHP accepts them only as a PSV report (Circular DHP/2025/08), not by email or post from your regulator. DataFlow and QuadraBay price them as Package I: two to three certificates for QAR 550; AVS charges QAR 500. The [good-standing guide](/qatar/psv/problems/good-standing-certificate) explains the rules.
 - **Surgical logbook** for surgeons applying for clinical privileges (the last three years, verified by the PSV provider).
 
 You do not need to attest anything first: DHP's guidelines say verification by an approved provider replaces attestation. Anything not in English or Arabic needs an official translation. On the QuadraBay portal every file name must start with a letter, not a number, or the upload is rejected.

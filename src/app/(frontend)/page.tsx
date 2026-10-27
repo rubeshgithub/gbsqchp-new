@@ -79,6 +79,10 @@ export default async function HomePage() {
             Provider data has not been seeded yet. Run <code>npm run seed</code> after connecting the database.
           </p>
         )}
+        <p className="callout callout-info">
+          Looking for the old GBS QCHP PSV portal? Gulf Bridge Services stopped verifying for DHP in February 2024.{' '}
+          <Link href="/gbs-psv-portal">What happened and where to apply now →</Link>
+        </p>
       </section>
 
       <section className="section container">

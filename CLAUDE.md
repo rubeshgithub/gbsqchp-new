@@ -6,7 +6,8 @@
 Independent information portal for healthcare professionals getting licensed in the GCC, Qatar first.
 Branding rules: the site never names Instead Global, 2682736 Alberta Inc. or gulfbridgeservices.com, and never
 presents itself as connected to Gulf Bridge Services. GBS appears only as a historical fact (a former DHP-approved
-provider, 2018–2024) on the legacy page, the circular tracker and the PSV history paragraph. The business is
+provider, 2018–2024) on the legacy page, the circular tracker, the PSV history paragraph and the homepage's one-line
+"looking for the old GBS portal?" pointer to the legacy page. The business is
 100% online: no address, phone or office anywhere. The author byline is **Alex Morgan · MRP Corporate Services**, with no
 LinkedIn or photo; RK's own name and LinkedIn never appear on the site, in schema or in the public API. Enquiries come through the Crisp chat bubble (Site settings →
 Chat & enquiries → Crisp website ID) and the /contact form.
@@ -78,8 +79,8 @@ project doc `GBSQCHP-phase1-content-plan-and-briefs.md`. Published so far: `/qat
 (legacy), `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs` (provider guides), `/qatar/psv/fees`, `/qatar/psv/documents`,
 `/qatar/psv/timeline`, `/qatar/psv/problems/name-mismatch`, `/qatar/psv/status`, `/qatar/exam/prometric`, `/qatar/licensing` (hub,
 in the header), country guides `/qatar/psv/countries/{india,philippines,pakistan}`, `/qatar/psv/report-transfer`,
-`/qatar/psv/problems/{unable-to-verify,discrepancy,university-not-responding,experience-letter-format}`. Next in order:
-the good-standing guide, then the other problem pages under `/qatar/psv/problems/…`, the circular explainers under `/qatar/circulars/…`, and more
+`/qatar/psv/problems/{unable-to-verify,discrepancy,university-not-responding,experience-letter-format,good-standing-certificate}`.
+Next in order: the other problem pages under `/qatar/psv/problems/…`, the circular explainers under `/qatar/circulars/…`, and more
 country guides. Add nav/footer links (`src/components/Header.tsx`, `Footer.tsx`) only when the
 target page is published. Link each new page from the guides that mention its topic when it is published (no dead links).
 

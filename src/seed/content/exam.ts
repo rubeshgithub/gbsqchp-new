@@ -61,9 +61,15 @@ export const examGuide = {
       date: '2026-10-23',
       note: 'First published. Fees from Circular DHP/2024/10; exemptions from Circular DHP/2025/19 (read in full); format and pass marks from DHP’s and Prometric’s exam pages; attempts and validity from DHP’s Qualifying Examination Policy.',
     },
+    { date: '2026-10-27', note: 'Added a section and FAQ on taking the exam in India, from Prometric’s DHP programme page (test-centre delivery, Locate tool, India helpline, remote dietitian exam); Indian test-centre cities marked as reported by consultancies.' },
     { date: '2026-10-26', note: 'Added an FAQ on the 2026 exam fee (Circular DHP/2024/10, as in the fee section) and reworded the search title and description. No facts changed.' },
   ],
   faqs: [
+    {
+      question: 'Can I take the Qatar Prometric exam in India?',
+      answer:
+        'Yes. Prometric delivers the DHP exam at its test centres, and its scheduler’s Locate option shows which centres in India have seats for your exam. Indian consultancies report centres in Delhi, Mumbai, Bengaluru, Chennai, Hyderabad, Kolkata and Thiruvananthapuram, among others – confirm the centre and date in the Locate tool before you pay. The fee is US$244 for registrations from 1 January 2026.',
+    },
     {
       question: 'How much is the Qatar Prometric exam fee in 2026?',
       answer:
@@ -154,6 +160,17 @@ Other exemptions:
 ## How do you book the exam?
 
 Book through Prometric's online scheduler for the DHP programme, where you can schedule, reschedule, cancel and confirm an appointment and find a test centre. Prometric's customer service for the programme works Sunday to Thursday, 8 am to 5 pm Qatar time (GMT+3). DHP's exam page gives the Doha test centre as Al Emadi Business Center, C Ring Road, Building C-16, first floor, Office 5A, and the enquiry e-mail Pnl-mena@prometric.com.
+
+## Can you take the Qatar Prometric exam in India?
+
+Yes, at a Prometric test centre. Prometric's page for the DHP programme says the exam is computer-based and delivered "in the Prometric test centres", and its scheduler has a **Locate** option: choose "Department of Healthcare Professions - MOPH - State of Qatar", then your exam and your country, to see which centres have seats. Indian consultancies report centres in cities including Delhi, Mumbai, Bengaluru, Chennai, Hyderabad, Kolkata and Thiruvananthapuram (reported – confirm the centre and date in the Locate tool before you pay).
+
+A few points for applicants in India:
+
+- **The fee is set in US dollars.** Circular DHP/2024/10 sets US$244 for registrations from 1 January 2026.
+- **Prometric's India helpline** is +91-124-4147700, Monday to Friday, 9 am to 5:30 pm IST, according to its DHP programme page. The DHP programme team itself works Sunday to Thursday on Qatar time.
+- **Dietitians can test remotely.** Prometric's DHP page mentions remote testing only for the dietitian exam; plan on a test centre for every other exam.
+- **Do PSV first.** DHP's policy places the exam at the evaluation stage, so start your DataFlow, QuadraBay or AVS application before you book. The [India guide](/qatar/psv/countries/india) covers the documents Indian applicants need.
 
 Before you book, make sure the name on your Prometric account matches your passport exactly – the same rule as for PSV, covered in the [name-mismatch guide](/qatar/psv/problems/name-mismatch).
 `,

@@ -80,6 +80,7 @@ export const pakistanGuide = {
       date: '2026-10-23',
       note: 'First published. Good-standing rules from PM&DC’s Registration Regulations 2023 and FAQ and from PNMC’s verification page; qualification rules from DHP’s Guidelines for Physicians and Nurses.',
     },
+    { date: '2026-10-27', note: 'Linked the new certificate of good standing guide. No facts changed.' },
   ],
   faqs: [
     {
@@ -141,7 +142,7 @@ A membership or fellowship of a UK Royal College is assessed under DHP's UK row 
 
 ## Where does your certificate of good standing come from?
 
-Since 1 August 2025 DHP accepts a certificate of good standing only as a PSV report (Circular DHP/2025/08). You obtain the certificate in Pakistan; your PSV provider verifies it; DHP sees the verified report. It is usually needed at the licensing stage and must be no more than six months old then – the [documents guide](/qatar/psv/documents) explains the timing, and the [good-standing article](/articles/qatar-good-standing-certificates-through-psv) explains the August 2025 change.
+Since 1 August 2025 DHP accepts a certificate of good standing only as a PSV report (Circular DHP/2025/08). You obtain the certificate in Pakistan; your PSV provider verifies it; DHP sees the verified report. It is usually needed at the licensing stage and must be no more than six months old then – the [good-standing guide](/qatar/psv/problems/good-standing-certificate) explains the rules and timing, and the [good-standing article](/articles/qatar-good-standing-certificates-through-psv) explains the August 2025 change.
 
 **Doctors and dentists – PM&DC.** Apply through the PM&DC online portal: its FAQ says to go to your dashboard, select the good-standing application form, attach the documents and pay, and lists the fee as PKR 7,000 (the fee schedule in the 2023 Regulations says PKR 5,000; the portal shows the current fee when you pay). PM&DC's Registration Regulations 2023 add three rules:
 

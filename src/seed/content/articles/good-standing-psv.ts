@@ -36,7 +36,10 @@ export const goodStandingArticle = {
       url: 'https://dhp.moph.gov.qa/en/DocumentsAR/Policy%20for%20Issuing%20Certificates%20of%20Good%20Standing.pdf',
     },
   ],
-  changeLog: [{ date: '2026-10-17', note: 'Published.' }],
+  changeLog: [
+    { date: '2026-10-17', note: 'Published.' },
+    { date: '2026-10-27', note: 'Linked the new certificate of good standing guide. No facts changed.' },
+  ],
   faqs: [
     {
       question: 'My regulator already emailed my certificate to DHP. Is that enough?',
@@ -76,6 +79,6 @@ Because DHP's own guidelines have not caught up. The Guidelines for Nurses still
 
 DHP still issues its own certificates of good standing to practitioners licensed in Qatar who move abroad, sent to the receiving regulator's official email. We have found no later rule changing the six-month age limit. And the evaluation stage still needs the main PSV report – qualifications, licence and employment – before DHP will look at your file.
 
-For everything a good-standing certificate and the rest of your file must show, see the [documents guide](/qatar/psv/documents); for how this fits into the overall timeline, see [how long PSV takes](/qatar/psv/timeline).
+For who issues the certificate, which years it must cover and what each provider charges, see the [good-standing guide](/qatar/psv/problems/good-standing-certificate). For everything the rest of your file must show, see the [documents guide](/qatar/psv/documents); for how this fits into the overall timeline, see [how long PSV takes](/qatar/psv/timeline).
 `,
 }

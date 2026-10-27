@@ -19,7 +19,7 @@ export function VendorCards({ vendors, fees }: { vendors: Vendor[]; fees: Fee[] 
             <span className={`badge ${v.status === 'approved' ? '' : 'badge-muted'}`}>
               {v.status === 'approved' ? 'DHP-approved' : 'Former provider'}
             </span>
-            <h3>{v.name}</h3>
+            <h3>{guide ? <Link href={guide.path}>{v.name}</Link> : v.name}</h3>
             {v.tagline && <p>{v.tagline}</p>}
             <p className="meta">
               {v.approvedOn && <>Approved {formatDate(v.approvedOn)}. </>}

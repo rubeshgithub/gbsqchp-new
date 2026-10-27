@@ -60,6 +60,7 @@ export const philippinesGuide = {
       date: '2026-10-22',
       note: 'First published. PRC good-standing process and fees from the PRC Citizen’s Charter; nursing and physician rules from DHP’s guidelines.',
     },
+    { date: '2026-10-27', note: 'Linked the new certificate of good standing guide. No facts changed.' },
   ],
   faqs: [
     {
@@ -104,7 +105,7 @@ Two DHP rules matter for Philippine degrees. For nurses, DHP's Guidelines for Nu
 
 ## How do you get your PRC certificate of good standing?
 
-Since 1 August 2025 DHP accepts a certificate of good standing only as a PSV report (Circular DHP/2025/08). You obtain the certificate from the PRC; your PSV provider verifies it; DHP sees the verified report. It is usually needed at the licensing stage and must be no more than six months old then – the [documents guide](/qatar/psv/documents) explains the timing.
+Since 1 August 2025 DHP accepts a certificate of good standing only as a PSV report (Circular DHP/2025/08). You obtain the certificate from the PRC; your PSV provider verifies it; DHP sees the verified report. It is usually needed at the licensing stage and must be no more than six months old then – the [good-standing guide](/qatar/psv/problems/good-standing-certificate) explains the rules and timing.
 
 The PRC's Citizen's Charter (2025, 1st edition, as published by its Koronadal regional office) describes the service, "Request for the Issuance of Certificate of Good Standing (COGS)":
 
