@@ -28,7 +28,7 @@ function formatDate(iso: string) {
 
 export default async function PrivacyPage() {
   const settings = await getSiteSettings()
-  const publisher = settings.publisherName || 'MRP Business Consulting'
+  const publisher = settings.publisherName || 'MRP Corporate Services'
   const siteName = settings.siteName || 'Primary Source Verification Guide'
   const crisp = isCrispEnabled(settings.crispWebsiteId)
   const analytics = Boolean(settings.ga4Id?.trim())

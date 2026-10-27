@@ -30,7 +30,7 @@ import { licensingGuide } from './content/licensing'
 import { legacyGbs } from './content/legacy-gbs'
 import { psvPillar } from './content/psv-pillar'
 import { quadrabayGuide } from './content/quadrabay'
-import { RENAMED_CIRCULARS, author, circulars, countries, fees, professions, vendors } from './data'
+import { PREVIOUS_AUTHOR_SLUGS, RENAMED_CIRCULARS, author, circulars, countries, fees, professions, vendors } from './data'
 
 type AnyData = Record<string, unknown>
 
@@ -156,12 +156,28 @@ async function run() {
   log(`fees: ${feeCount}`)
 
   // ---------- author ----------
+  // Rename an earlier author record in place (so its public API document changes too) before the usual upsert.
+  const previousAuthor = await payload.find({
+    collection: 'authors',
+    where: { slug: { in: PREVIOUS_AUTHOR_SLUGS } },
+    limit: 1,
+    depth: 0,
+    pagination: false,
+  })
+  const currentAuthor = await payload.find({ collection: 'authors', where: { slug: { equals: author.slug } }, limit: 1, depth: 0, pagination: false })
+  if (previousAuthor.docs[0] && !currentAuthor.docs[0]) {
+    await payload.update({ collection: 'authors', id: previousAuthor.docs[0].id, data: { slug: author.slug } as never, depth: 0 })
+  }
   const authorDoc = await upsert(
     payload,
     'authors',
     { slug: { equals: author.slug } },
     { ...author, credentials: author.credentials.map((item) => ({ item })) },
   )
+  // Any leftover earlier author (e.g. if both existed) is removed so its name is not served by the API.
+  for (const old of previousAuthor.docs) {
+    if (old.id !== authorDoc.id) await payload.delete({ collection: 'authors', id: old.id })
+  }
   log(`author: ${author.name}`)
 
   // ---------- site settings ----------
@@ -171,7 +187,7 @@ async function run() {
       siteName: 'Primary Source Verification Guide',
       tagline: 'The independent pre-submission guide to GCC healthcare licensing. Qatar first.',
       siteUrl: process.env.NEXT_PUBLIC_SERVER_URL || 'https://gbsqchp.com',
-      publisherName: 'MRP Business Consulting',
+      publisherName: 'MRP Corporate Services',
     },
   })
   log('site settings updated')

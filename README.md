@@ -1,6 +1,6 @@
 # gbsqchp.com — Primary Source Verification Guide
 
-Published by MRP Business Consulting. Independent information portal for internationally trained healthcare professionals applying to Qatar's
+Published by MRP Corporate Services. Independent information portal for internationally trained healthcare professionals applying to Qatar's
 Department of Healthcare Professions (DHP), expanding to the rest of the GCC. Built with **Next.js 16 (App Router)**
 and **Payload CMS 3** on **MongoDB**.
 

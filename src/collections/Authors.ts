@@ -7,7 +7,7 @@ export const Authors: CollectionConfig = {
   admin: {
     useAsTitle: 'name',
     group: 'Content',
-    description: 'Real people with real credentials. Author boxes and Person schema come from here.',
+    description: 'Author names shown in author boxes and in Person schema.',
   },
   access: {
     read: anyone,
@@ -18,7 +18,7 @@ export const Authors: CollectionConfig = {
   fields: [
     { name: 'name', type: 'text', required: true },
     { name: 'slug', type: 'text', required: true, unique: true },
-    { name: 'jobTitle', type: 'text', admin: { description: 'e.g. "MRP Business Consulting"' } },
+    { name: 'jobTitle', type: 'text', admin: { description: 'e.g. "MRP Corporate Services"' } },
     { name: 'bio', type: 'textarea', admin: { description: 'Three to five sentences. Lead with the licensing / verification experience.' } },
     {
       name: 'credentials',

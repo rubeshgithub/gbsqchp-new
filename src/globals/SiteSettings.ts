@@ -27,7 +27,7 @@ export const SiteSettings: GlobalConfig = {
         {
           name: 'publisherName',
           type: 'text',
-          defaultValue: 'MRP Business Consulting',
+          defaultValue: 'MRP Corporate Services',
           admin: { description: 'Shown in the footer and as the publisher in structured data.' },
         },
         {

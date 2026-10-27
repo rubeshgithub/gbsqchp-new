@@ -15,7 +15,7 @@ const TOPIC_LABELS: Record<(typeof TOPICS)[number], string> = {
 }
 
 /** Where enquiries are emailed. Server-side only – never rendered on the site. */
-const CONTACT_TO = process.env.CONTACT_TO_EMAIL || 'rubesh@insteadglobal.com'
+const CONTACT_TO = process.env.CONTACT_TO_EMAIL || 'customerservice@gbsqchp.com'
 
 // Simple in-memory rate limit: 5 messages per IP per 10 minutes (per server instance).
 const WINDOW_MS = 10 * 60 * 1000

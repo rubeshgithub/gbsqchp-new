@@ -34,7 +34,7 @@ export const legacyGbs = {
   ],
   changeLog: [
     { date: '2026-10-09', note: 'First published.' },
-    { date: '2026-10-12', note: 'Updated the publisher details: the site is now the Primary Source Verification Guide by MRP Business Consulting.' },
+    { date: '2026-10-12', note: 'Updated the publisher details: the site is now the Primary Source Verification Guide by MRP Corporate Services.' },
     { date: '2026-10-26', note: 'Search title now spells out Gulf Bridge Services so people looking for the former provider land on this page. No facts changed.' },
   ],
   faqs: [
@@ -51,7 +51,7 @@ export const legacyGbs = {
     {
       question: 'Is this website the old GBS portal?',
       answer:
-        'No. This is the Primary Source Verification Guide, an independent information service published by MRP Business Consulting. It is not a PSV provider, it does not take applications or payments, and it has no connection with the Ministry of Public Health or the DHP.',
+        'No. This is the Primary Source Verification Guide, an independent information service published by MRP Corporate Services. It is not a PSV provider, it does not take applications or payments, and it has no connection with the Ministry of Public Health or the DHP.',
     },
   ],
   markdown: `
@@ -79,6 +79,6 @@ Start with the [Primary Source Verification guide for Qatar](/qatar/psv), which 
 
 ## About this website
 
-The domain kept its name because thousands of applicants, employers and official documents still refer to it. The site is now the Primary Source Verification Guide, an independent information service published by MRP Business Consulting: it explains the rules, quotes fees and dates from official sources with the date they were last checked, and links you to the provider and the regulator. It does not verify documents, take applications or accept payments.
+The domain kept its name because thousands of applicants, employers and official documents still refer to it. The site is now the Primary Source Verification Guide, an independent information service published by MRP Corporate Services: it explains the rules, quotes fees and dates from official sources with the date they were last checked, and links you to the provider and the regulator. It does not verify documents, take applications or accept payments.
 `,
 }

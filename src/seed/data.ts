@@ -84,13 +84,17 @@ export const countries = [
   },
 ]
 
+// Earlier author slugs: the seed renames that record in place, so no old author document is left behind.
+export const PREVIOUS_AUTHOR_SLUGS = ['rubesh-krishnan']
+
 export const author = {
-  name: 'Rubesh Krishnan',
-  slug: 'rubesh-krishnan',
-  jobTitle: 'MRP Business Consulting',
-  bio: 'Twenty years in visa operations, healthcare recruitment and credential verification across the GCC. Writes the licensing guides on this site and checks every fee and date against the official circulars.',
-  credentials: ['Credential verification and healthcare licensing in the GCC', 'VFS Global visa operations (Chennai, Dubai)', 'Physician and nurse recruitment for GCC employers'],
-  linkedin: 'https://www.linkedin.com/in/rubeshkrishnan-662723133',
+  name: 'Alex Morgan',
+  slug: 'alex-morgan',
+  jobTitle: 'MRP Corporate Services',
+  bio: 'Writes and maintains the licensing guides on this site. Every fee, date and rule is checked against the official DHP circulars and guidelines and the providers’ own price lists, and each guide shows the date it was last verified.',
+  credentials: [] as string[],
+  linkedin: '',
+  photo: null,
 }
 
 export const professions = [

@@ -49,7 +49,7 @@ test.describe('Contact page', () => {
   test('renders the form and rejects an invalid email without sending', async ({ page }) => {
     await page.goto('http://localhost:3000/contact')
     await expect(page.locator('h1')).toContainText('Contact us')
-    await expect(page.locator('.site-footer')).toContainText('MRP Business Consulting')
+    await expect(page.locator('.site-footer')).toContainText('MRP Corporate Services')
     const res = await page.request.post('http://localhost:3000/api/contact-messages/submit', {
       data: { name: 'Test', email: 'not-an-email', message: 'This should be rejected by validation.' },
     })
@@ -64,7 +64,7 @@ test.describe('Privacy notice', () => {
     await page.locator('.site-footer a[href="/privacy"]').click()
     await expect(page).toHaveURL(/\/privacy$/)
     await expect(page.locator('h1')).toHaveText('Privacy notice')
-    await expect(page.locator('main')).toContainText('MRP Business Consulting')
+    await expect(page.locator('main')).toContainText('MRP Corporate Services')
     await expect(page.locator('main table')).toContainText('Amazon Web Services')
     // After a client-side navigation the previous page's canonical can linger for a moment; wait for one.
     await expect(page.locator('link[rel="canonical"]')).toHaveCount(1)

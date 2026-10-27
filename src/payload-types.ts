@@ -434,7 +434,7 @@ export interface Media {
   };
 }
 /**
- * Real people with real credentials. Author boxes and Person schema come from here.
+ * Author names shown in author boxes and in Person schema.
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "authors".
@@ -444,7 +444,7 @@ export interface Author {
   name: string;
   slug: string;
   /**
-   * e.g. "MRP Business Consulting"
+   * e.g. "MRP Corporate Services"
    */
   jobTitle?: string | null;
   /**

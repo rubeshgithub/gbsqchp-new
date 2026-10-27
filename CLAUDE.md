@@ -2,12 +2,13 @@
 
 ## What this is
 
-**Primary Source Verification Guide** (domain gbsqchp.com), published by **MRP Business Consulting**.
+**Primary Source Verification Guide** (domain gbsqchp.com), published by **MRP Corporate Services**.
 Independent information portal for healthcare professionals getting licensed in the GCC, Qatar first.
 Branding rules: the site never names Instead Global, 2682736 Alberta Inc. or gulfbridgeservices.com, and never
 presents itself as connected to Gulf Bridge Services. GBS appears only as a historical fact (a former DHP-approved
 provider, 2018–2024) on the legacy page, the circular tracker and the PSV history paragraph. The business is
-100% online: no address, phone or office anywhere. Enquiries come through the Crisp chat bubble (Site settings →
+100% online: no address, phone or office anywhere. The author byline is **Alex Morgan · MRP Corporate Services**, with no
+LinkedIn or photo; RK's own name and LinkedIn never appear on the site, in schema or in the public API. Enquiries come through the Crisp chat bubble (Site settings →
 Chat & enquiries → Crisp website ID) and the /contact form.
 Positioning: *the neutral, always-current pre-submission guide — read this before you pay a verifier.*
 It is **not** a PSV provider and must never look like one: no application forms, no payments, no regulator logos,
