@@ -161,6 +161,8 @@ Other exemptions:
 
 Book through Prometric's online scheduler for the DHP programme, where you can schedule, reschedule, cancel and confirm an appointment and find a test centre. Prometric's customer service for the programme works Sunday to Thursday, 8 am to 5 pm Qatar time (GMT+3). DHP's exam page gives the Doha test centre as Al Emadi Business Center, C Ring Road, Building C-16, first floor, Office 5A, and the enquiry e-mail Pnl-mena@prometric.com.
 
+Before you book, make sure the name on your Prometric account matches your passport exactly – the same rule as for PSV, covered in the [name-mismatch guide](/qatar/psv/problems/name-mismatch).
+
 ## Can you take the Qatar Prometric exam in India?
 
 Yes, at a Prometric test centre. Prometric's page for the DHP programme says the exam is computer-based and delivered "in the Prometric test centres", and its scheduler has a **Locate** option: choose "Department of Healthcare Professions - MOPH - State of Qatar", then your exam and your country, to see which centres have seats. Indian consultancies report centres in cities including Delhi, Mumbai, Bengaluru, Chennai, Hyderabad, Kolkata and Thiruvananthapuram (reported – confirm the centre and date in the Locate tool before you pay).
@@ -171,7 +173,5 @@ A few points for applicants in India:
 - **Prometric's India helpline** is +91-124-4147700, Monday to Friday, 9 am to 5:30 pm IST, according to its DHP programme page. The DHP programme team itself works Sunday to Thursday on Qatar time.
 - **Dietitians can test remotely.** Prometric's DHP page mentions remote testing only for the dietitian exam; plan on a test centre for every other exam.
 - **Do PSV first.** DHP's policy places the exam at the evaluation stage, so start your DataFlow, QuadraBay or AVS application before you book. The [India guide](/qatar/psv/countries/india) covers the documents Indian applicants need.
-
-Before you book, make sure the name on your Prometric account matches your passport exactly – the same rule as for PSV, covered in the [name-mismatch guide](/qatar/psv/problems/name-mismatch).
 `,
 }
