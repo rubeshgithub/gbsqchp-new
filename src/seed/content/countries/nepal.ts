@@ -20,7 +20,7 @@ export const nepalGuide = {
   path: '/qatar/psv/countries/nepal',
   section: 'documents' as const,
   summary:
-    'If you trained or worked in Nepal, your Qatar DHP application follows the same steps as everyone else’s – Primary Source Verification, DHP evaluation, then licensing – and a few Nepali details decide how it goes. Nurses get their verification or good-standing letter from the Nepal Nursing Council (NNC) through its online application and an e-mail to verification@nnc.org.np; doctors and dentists apply to the Nepal Medical Council (NMC); pharmacists apply online to the Nepal Pharmacy Council. Two things catch Nepali files more than any other: PCL Nursing is a diploma that starts after grade 10, which DHP may not assess as a Registered General Nurse qualification, and dates in Bikram Sambat (BS) on Nepali documents have to be matched to the AD dates you enter. Below: the package that fits each qualification, where each certificate comes from, which documents to upload, and how to avoid the usual problems.',
+    'If you trained or worked in Nepal, your Qatar DHP application follows the same steps as everyone else’s – Primary Source Verification, DHP evaluation, then licensing – and a few Nepali details decide how it goes. Nurses get a Verification Letter from the Nepal Nursing Council (NNC) through its online application and an e-mail to verification@nnc.org.np; doctors and dentists apply to the Nepal Medical Council (NMC); pharmacists apply online to the Nepal Pharmacy Council. Two Nepali details to check: PCL Nursing – reported to be a three-year Proficiency Certificate Level programme that starts after SEE (grade 10) – may not be assessed as a Registered General Nurse qualification, and dates in Bikram Sambat (BS) on Nepali documents have to be matched to the AD dates you enter. Below: the package that fits each qualification, where each certificate comes from, which documents to upload, and how to avoid the usual problems.',
   meta: {
     title: 'Qatar PSV for Nepali Nurses & Doctors: NNC, NMC Guide 2026',
     description:
@@ -63,19 +63,19 @@ export const nepalGuide = {
   changeLog: [
     {
       date: '2026-10-30',
-      note: 'First published. Nursing verification process from the Nepal Nursing Council’s own page; qualification rules from DHP’s Guidelines for Nurses and Physicians.',
+      note: 'First published. Nursing verification process from the Nepal Nursing Council’s own page; qualification rules from DHP’s Guidelines for Nurses and Physicians. Independent fact-check applied (9 findings).',
     },
   ],
   faqs: [
     {
       question: 'Is PCL Nursing accepted for a Qatar Registered Nurse licence?',
       answer:
-        'DHP decides at evaluation. Its Guidelines for Nurses accept, for a Registered General Nurse, a four-year bachelor’s degree in nursing or a “Diploma in nursing (duration: 3 years after graduation from 12 years of high school)”. PCL Nursing is reported to be a three-year programme that starts after SEE (grade 10), and DHP’s Assistant Nurse scope lists a “Diploma in nursing with course duration of 3 years, after completion of 9 years of general education”. If PCL is your only nursing qualification, ask DHP or your employer which scope it will be assessed under before you pay for PSV. A BSc Nursing, or a Bachelor of Nursing on top of PCL, is the safer route to the Registered General Nurse scope – but DHP still decides.',
+        'DHP decides at evaluation. Its Guidelines for Nurses accept, for a Registered General Nurse, a four-year bachelor’s degree in nursing, a “Diploma in nursing (duration: 3 years after graduation from 12 years of high school)”, or an associate degree with RGN licensure in the country of origin or graduation. PCL Nursing is reported to be a three-year programme that starts after SEE (grade 10), and DHP’s Assistant Nurse scope lists a “Diploma in nursing with course duration of 3 years, after completion of 9 years of general education”. If PCL is your only nursing qualification, ask DHP or your employer which scope it will be assessed under before you pay for PSV. A BSc Nursing, or a Bachelor of Nursing on top of PCL, is the safer route to the Registered General Nurse scope – but DHP still decides.',
     },
     {
       question: 'How do I get my Nepal Nursing Council verification letter for Qatar?',
       answer:
-        'Apply online at application.nnc.org.np, wait for NNC’s approval, pay the fee through “Pay Additional Fee”, and once “Payment Completed” shows in your payment history, e-mail the documents to verification@nnc.org.np with the subject “License No - Applicant Name - Program”. Since 1 August 2025 DHP accepts good standing only through PSV (Circular DHP/2025/08), so ask your PSV provider which destination address to give NNC before you apply.',
+        'Apply online at application.nnc.org.np, wait for NNC’s approval, pay the fee through “Pay Additional Fee”, and once “Payment Completed” shows in your payment history, e-mail the documents to verification@nnc.org.np with the subject “License No - Applicant Name - Program”. Since 1 August 2025 DHP accepts good standing only through PSV (Circular DHP/2025/08), so ask your PSV provider which destination address to give NNC – and confirm that NNC’s Verification Letter is what DHP needs as good standing – before you apply.',
     },
     {
       question: 'My certificates show dates in Bikram Sambat. What do I enter?',
@@ -85,7 +85,7 @@ export const nepalGuide = {
     {
       question: 'Which PSV provider is cheapest for a nurse with PCL Nursing and a Bachelor of Nursing?',
       answer:
-        'With one council registration, AVS, on published prices: its QAR 900 nurse package covers up to two qualifications and five years of employment, against QAR 1,050 at QuadraBay (QAR 900 plus QAR 150 for the second qualification) and QAR 1,390 at DataFlow (QAR 990 plus QAR 400). The [PSV fees guide](/qatar/psv/fees) has every price side by side.',
+        'With one council licence, AVS, on published prices: its QAR 900 nurse package covers up to two qualifications and five years of employment, against QAR 1,050 at QuadraBay (QAR 900 plus QAR 150 for the second qualification) and QAR 1,390 at DataFlow (QAR 990 plus QAR 400). NNC appears to issue a licence per programme, so if you hold separate PCL and BN licences, QuadraBay becomes cheapest: about QAR 1,100, against QAR 1,150 at AVS and QAR 1,690 at DataFlow. The [PSV fees guide](/qatar/psv/fees) has every price side by side.',
     },
   ],
   markdown: `
@@ -95,9 +95,9 @@ DHP's approved providers – DataFlow, QuadraBay and AVS – sell packages by pr
 
 | Your qualification | DHP category | Package | What to watch |
 | --- | --- | --- | --- |
-| BSc Nursing (4 years) | Registered General Nurse | E – nurses, midwives, pharmacists | DHP wants 2 years' clinical experience after registration |
+| BSc Nursing (4 years) | Registered General Nurse | E – nurses, midwives, pharmacists | DHP wants 2 years' clinical experience after registration, and the Prometric exam |
 | PCL Nursing | Registered General Nurse or Assistant Nurse – DHP decides | E | PCL is reported to start after grade 10; DHP's diploma rule counts from 12 years of school |
-| PCL Nursing + Bachelor of Nursing (BN / BNS) | Registered General Nurse or Assistant Nurse – DHP decides | E | Two qualifications: included at AVS, an add-on at DataFlow and QuadraBay |
+| PCL Nursing + Bachelor of Nursing (BN / BNS) | Registered General Nurse or Assistant Nurse – DHP decides | E | Check the BN's length; two qualifications are included at AVS, an add-on at DataFlow and QuadraBay |
 | MBBS (with internship) | General Practitioner | A – physicians and dentists | DHP asks overseas GPs for 5 years' clinical experience and the qualifying exam |
 | MBBS + MD / MS | Specialist | A | Nepali specialty degrees are assessed under DHP's Category 3 |
 | BDS / MDS | Dentist | A | Good standing from the Nepal Medical Council |
@@ -108,7 +108,7 @@ Packages A and B at all three providers, and AVS's nurse package, cover the last
 
 ## What DHP's rules mean for Nepali qualifications
 
-**Nurses.** DHP's Guidelines for Nurses accept, for a Registered General Nurse, a "Bachelor's Degree in nursing (duration: 4 years)" or a "Diploma in nursing (duration: 3 years after graduation from 12 years of high school)", each followed by two years of clinical experience after registration and licensing. A BSc Nursing matches the first. PCL Nursing is the one to check: college and admission guides describe it as a three-year CTEVT programme that students join after SEE (grade 10), and DHP's Assistant Nurse scope lists a "Diploma in nursing with course duration of 3 years, after completion of 9 years of general education". A post-basic Bachelor of Nursing on top of PCL adds a degree, but DHP's bachelor's row names a four-year degree. DHP, not the PSV provider, decides equivalence at evaluation – so if you trained through PCL, ask DHP or your employer which scope your qualifications will be assessed under before you pay for PSV.
+**Nurses.** DHP's Guidelines for Nurses accept, for a Registered General Nurse, a "Bachelor's Degree in nursing (duration: 4 years)" or a "Diploma in nursing (duration: 3 years after graduation from 12 years of high school)" – or an associate degree with RGN licensure in the country of origin or graduation – followed by two years of clinical experience after registration and licensing, and the Prometric exam. A BSc Nursing matches the first. PCL Nursing is the one to check: college and admission guides describe it as a three-year CTEVT programme that students join after SEE (grade 10), and DHP's Assistant Nurse scope lists a "Diploma in nursing with course duration of 3 years, after completion of 9 years of general education". A post-basic Bachelor of Nursing on top of PCL adds a degree, but DHP's bachelor's row names a four-year degree – check the length of yours. DHP, not the PSV provider, decides equivalence at evaluation – so if you trained through PCL, ask DHP or your employer which scope your qualifications will be assessed under before you pay for PSV.
 
 **Midwives.** DHP's Midwife scope asks for a bachelor's degree in midwifery or equivalent, or a bachelor's degree in nursing plus a recognised postgraduate midwifery programme, with three years as a midwife after registration.
 
@@ -122,15 +122,15 @@ Since 1 August 2025 DHP accepts a certificate of good standing only as a PSV rep
 
 **Nurses – Nepal Nursing Council.** NNC's Verification Letter page sets out an online process:
 
-1. Sign up at [application.nnc.org.np](https://application.nnc.org.np/Account/Login), link your licence under *My License*, complete your profile, upload the documents and submit; then wait for NNC's approval.
+1. Sign up at [application.nnc.org.np](https://application.nnc.org.np/Account/Login), link your licence under *My License*, complete your profile – a photo, your signature and colour scans of your citizenship certificate and licence, front and back – and submit; then wait for NNC's approval. If you already have an online account, go straight to *My License* and *Pay Additional Fee*.
 2. Pay the fee online through *Pay Additional Fee* once the application is approved. Only a payment that shows "Payment Completed" counts, physical vouchers are not valid, and payments are not refunded.
 3. E-mail all the documents, clearly scanned, in a single message to **verification@nnc.org.np**, with the subject "License No - Applicant Name - Program".
 
-The documents NNC lists are: an application to the Registrar with your current address and the full details of the destination (institution, address, country) and the purpose; the requesting institution's verification form, if it has one; your licence certificate, front and back, valid; your nursing transcript and character certificate; your passport bio-data page; and a police report issued within the last six months. Because the certificate now reaches DHP only through PSV, ask your PSV provider which destination and which form to give NNC before you apply.
+The documents NNC lists are: an application to the Registrar with your current address and the full details of the destination (institution, address, country) and the purpose; the requesting institution's verification form, if it has one; your licence certificate, front and back, valid, as a colour copy; your Registered Nursing level transcript and character certificate; your passport bio-data page; and a police report issued within the last six months. The page calls this a Verification Letter; because good standing now reaches DHP only through PSV, ask your PSV provider which destination and form to give NNC, and confirm the letter is what DHP needs as good standing, before you apply.
 
-**Doctors and dentists – Nepal Medical Council.** NMC issues the certificate on its "Application for Registration Status (Certificate of Goodstanding)" form. The form asks for your NMC registration number, the dates of your temporary and permanent registration, your highest qualification and specialty, your current employer, the reason for the application, the organisation you will submit it to, and whether you hold any study scholarship or bond (if so, you attach the release letters); its checklist includes a copy of your registration and the bank payment voucher. Download the current form from [nmc.org.np](https://www.nmc.org.np/) and name Qatar's Department of Healthcare Professions, through your PSV provider, as the organisation.
+**Doctors and dentists – Nepal Medical Council.** NMC issues the certificate on its "Application for Registration Status (Certificate of Goodstanding)" form. The form asks for your NMC registration number, the dates of your temporary and permanent registration, your highest qualification and specialty, your current employer, the reason for the application, the organisation you will submit it to, and whether you hold any study scholarship or bond (if so, you attach the release letters); its checklist includes a copy of your registration and the bank payment voucher. Download the current form from [nmc.org.np](https://www.nmc.org.np/), and ask your PSV provider what to write as the organisation (normally DHP, Qatar).
 
-**Pharmacists – Nepal Pharmacy Council.** The Council runs an online Good Standing Letter service: choose *Apply for Good Standing Letter* on its website, register with your mobile number and a one-time password, complete the form on your dashboard and submit it for review. Pay only into the Council's official bank account.
+**Pharmacists – Nepal Pharmacy Council.** CollegeNP reports that the Council runs an online Good Standing Letter service: choose *Apply for Good Standing Letter* on its website, register with your mobile number and a one-time password, complete the form on your dashboard and submit it for review. Pay only into the Council's official bank account.
 
 **Allied health – Nepal Health Professional Council.** Ask the council you are registered with for its good-standing or verification letter process, and tell your PSV provider if any years of your work were not covered by a registration.
 
@@ -143,14 +143,14 @@ The documents NNC lists are: an application to the Registrar with your current a
 - **Experience certificates** – one per employer, on letterhead, with exact start and end dates, your job title and an issue date. The [experience certificate guide](/qatar/psv/problems/experience-letter-format) has a sample.
 - **Passport** – a clear, uncut copy.
 
-You do not need attestation for these: DHP's guidelines say PSV replaces attestation. Anything in Nepali must be translated into English or Arabic and attached to a copy of the original.
+You do not need attestation for these: DHP's guidelines say PSV replaces attestation. Anything in Nepali must be officially translated into English or Arabic and attached to a copy of the original.
 
 ## Bikram Sambat dates and name differences
 
 Two things trip up Nepali files:
 
-- **BS and AD dates.** Many Nepali certificates and council documents carry Bikram Sambat dates. Provider forms and DHP's application use AD dates. Convert each one carefully, and use the same AD date everywhere – on the PSV form, in your CV and in DHP's application. A converted date that is off by a day or a month can come back as a Discrepancy.
-- **Names.** A middle name such as "Kumari" or "Bahadur" on some documents and not others, a surname spelled differently, or a married name in the passport. Type your name exactly as in your passport wherever a portal asks for your own name, list every other version as an alternative name, and upload a document that links them. The [name-mismatch guide](/qatar/psv/problems/name-mismatch) covers which evidence suits which case.
+- **BS and AD dates.** Many Nepali certificates and council documents carry Bikram Sambat dates. Provider forms and DHP's application ask for dates in the Gregorian (AD) calendar, as far as we have seen. Convert each one carefully, and use the same AD date everywhere – on the PSV form, in your CV and in DHP's application. A converted date that is off by a day or a month may be queried, or reported as a Discrepancy.
+- **Names.** For example, a middle name such as "Kumari" or "Bahadur" on some documents and not others, a surname spelled differently, or a married name in the passport. Type your name exactly as in your passport wherever a portal asks for your own name, list every other version as an alternative name, and upload a document that links them. The [name-mismatch guide](/qatar/psv/problems/name-mismatch) covers which evidence suits which case.
 
 ## How do Nepali institutions handle verification requests?
 
@@ -169,6 +169,6 @@ Working abroad from Nepal is a separate process from DHP licensing. Labour permi
 5. Experience certificates with exact dates, title and an issue date.
 6. Every BS date converted once, carefully, and used the same way everywhere.
 7. Every name variant listed, with a document linking them.
-8. Good standing planned for the licensing stage – NNC verification letter, NMC certificate or Pharmacy Council letter – and delivered the way your PSV provider asks.
+8. Good standing planned for the licensing stage – NNC Verification Letter, NMC certificate or Pharmacy Council letter – and delivered the way your PSV provider asks.
 `,
 }

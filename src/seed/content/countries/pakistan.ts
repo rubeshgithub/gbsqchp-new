@@ -168,7 +168,7 @@ Make sure your PM&DC licence itself is current: the Regulations' fee schedule li
 - **Experience certificates** – one per employer, on letterhead, with exact dates, designation and an issue date. For specialists, the letter should make clear that the hospital is governmental, semi-governmental or a training hospital.
 - **Passport** – a clear, uncut copy, with any name-change document.
 
-You do not need HEC, IBCC or Ministry of Foreign Affairs attestation for these: DHP's guidelines say PSV replaces attestation. Anything in Urdu must be translated into English or Arabic and attached to a copy of the original.
+You do not need HEC, IBCC or Ministry of Foreign Affairs attestation for these: DHP's guidelines say PSV replaces attestation. Anything in Urdu must be officially translated into English or Arabic and attached to a copy of the original.
 
 ## Names: "son of", "daughter of" and spellings
 
