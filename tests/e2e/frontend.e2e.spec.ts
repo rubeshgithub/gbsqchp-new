@@ -225,6 +225,20 @@ test.describe('Nepal country guide', () => {
   })
 })
 
+test.describe('Sri Lanka country guide', () => {
+  test('renders the qualification table and SLMC facts, linked from documents, good standing and the footer', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/psv/countries/sri-lanka')
+    await expect(page.locator('h1')).toContainText('Qatar DHP licence from Sri Lanka')
+    await expect(page.locator('.article-body table').first()).toContainText('Diploma in Nursing')
+    await expect(page.locator('.article-body')).toContainText('verifications@slmc.gov.lk')
+    await expect(page.locator('.site-footer a[href="/qatar/psv/countries/sri-lanka"]')).toBeVisible()
+    await page.goto('http://localhost:3000/qatar/psv/documents')
+    await expect(page.locator('.article-body a[href="/qatar/psv/countries/sri-lanka"]').first()).toBeVisible()
+    await page.goto('http://localhost:3000/qatar/psv/problems/good-standing-certificate')
+    await expect(page.locator('.article-body a[href="/qatar/psv/countries/sri-lanka"]').first()).toBeVisible()
+  })
+})
+
 test.describe('Report-transfer guide', () => {
   test('renders the fee table and worked example and is linked from the provider guides and the footer', async ({ page }) => {
     await page.goto('http://localhost:3000/qatar/psv/report-transfer')

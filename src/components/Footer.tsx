@@ -70,6 +70,9 @@ export function Footer({ settings }: { settings: SiteSetting }) {
                 <Link href="/qatar/psv/countries/nepal">PSV for Nepali applicants</Link>
               </li>
               <li>
+                <Link href="/qatar/psv/countries/sri-lanka">PSV for Sri Lankan applicants</Link>
+              </li>
+              <li>
                 <Link href="/qatar">Qatar hub – all guides</Link>
               </li>
               <li>

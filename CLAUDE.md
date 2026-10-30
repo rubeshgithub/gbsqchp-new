@@ -78,7 +78,7 @@ The 25 Phase-1 page briefs (slug, title tag, meta, outline, facts with sources, 
 project doc `GBSQCHP-phase1-content-plan-and-briefs.md`. Published so far: `/qatar/psv` (pillar), `/gbs-psv-portal`
 (legacy), `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs` (provider guides), `/qatar/psv/fees`, `/qatar/psv/documents`,
 `/qatar/psv/timeline`, `/qatar/psv/problems/name-mismatch`, `/qatar/psv/status`, `/qatar/exam/prometric`, `/qatar/licensing` (hub,
-in the header), country guides `/qatar/psv/countries/{india,philippines,pakistan,nepal}`, `/qatar/psv/report-transfer`,
+in the header), country guides `/qatar/psv/countries/{india,philippines,pakistan,nepal,sri-lanka}`, `/qatar/psv/report-transfer`,
 `/qatar/psv/problems/{unable-to-verify,discrepancy,university-not-responding,experience-letter-format,good-standing-certificate}`.
 Next in order: the other problem pages under `/qatar/psv/problems/…`, the circular explainers under `/qatar/circulars/…`, and more
 country guides. Add nav/footer links (`src/components/Header.tsx`, `Footer.tsx`) only when the

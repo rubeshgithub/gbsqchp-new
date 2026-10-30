@@ -125,6 +125,7 @@ If you still need your main verification, adding the certificate to that applica
 - **Philippines.** A PRC Certificate of Good Standing, booked through your LERIS account and handled at the PRC regional office where you book (PHP 75 per copy plus PHP 30 documentary stamp tax); your PRC ID must be valid. Details in the [Philippines guide](/qatar/psv/countries/philippines).
 - **Pakistan.** Doctors and dentists apply on the PM&DC portal; the certificate lasts six months and is issued for one named foreign authority. Nurses apply to PNMC (PKR 10,000 for a foreign country); pharmacists to their provincial pharmacy council. Details in the [Pakistan guide](/qatar/psv/countries/pakistan).
 - **Nepal.** Nurses apply online to the Nepal Nursing Council and e-mail the documents to verification@nnc.org.np once the fee shows as paid; doctors and dentists use the Nepal Medical Council's registration-status (good standing) form; pharmacists apply online to the Nepal Pharmacy Council. Details in the [Nepal guide](/qatar/psv/countries/nepal).
+- **Sri Lanka.** Nurses apply to the Sri Lanka Nursing Council for a good standing of registration; doctors, dentists and pharmacists ask the Sri Lanka Medical Council for a verification of registration for a foreign regulator (USD 55 or Rs. 17,000). Details in the [Sri Lanka guide](/qatar/psv/countries/sri-lanka).
 
 For any other country, ask the regulator that licensed you how it issues certificates to foreign authorities and how long it takes, and check the delivery your PSV provider needs before you pay.
 
