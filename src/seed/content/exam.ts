@@ -63,6 +63,7 @@ export const examGuide = {
     },
     { date: '2026-10-27', note: 'Added a section and FAQ on taking the exam in India, from Prometric’s DHP programme page (test-centre delivery, Locate tool, India helpline, remote dietitian exam); Indian test-centre cities marked as reported by consultancies.' },
     { date: '2026-10-26', note: 'Added an FAQ on the 2026 exam fee (Circular DHP/2024/10, as in the fee section) and reworded the search title and description. No facts changed.' },
+    { date: '2026-11-02', note: 'Fee FAQ now says the US$244 fee is the same for every profession, as the circular sets one fee. No facts changed.' },
   ],
   faqs: [
     {
@@ -73,7 +74,7 @@ export const examGuide = {
     {
       question: 'How much is the Qatar Prometric exam fee in 2026?',
       answer:
-        'US$244 for anyone registering for the exam from 1 January 2026, under Circular DHP/2024/10 (it was US$238 for registrations from 19 January 2024). Cancelling or rescheduling costs US$25 if you do it 30 or more days before the exam and US$40 between 5 and 29 days before. The [PSV fees guide](/qatar/psv/fees) puts the exam fee alongside PSV and DHP’s own fees.',
+        'US$244 for anyone registering for the exam from 1 January 2026, under Circular DHP/2024/10 (it was US$238 for registrations from 19 January 2024). It is one fee for everyone who sits the exam – nurses, pharmacists, general practitioners, dentists and allied health alike. Cancelling or rescheduling costs US$25 if you do it 30 or more days before the exam and US$40 between 5 and 29 days before. The [PSV fees guide](/qatar/psv/fees) puts the exam fee alongside PSV and DHP’s own fees.',
     },
     {
       question: 'Can I take the Prometric exam before my DataFlow report is ready?',

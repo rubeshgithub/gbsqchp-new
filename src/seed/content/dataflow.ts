@@ -13,9 +13,9 @@ export const dataflowGuide = {
   summary:
     "DataFlow has been the Department of Healthcare Professions' verification partner since 2009 and is the longest-established of the three approved providers. A new application costs QAR 1,210 for physicians and dentists (Package A) and QAR 990 for nurses, pharmacists and allied health professionals (Packages E and B), plus QAR 529 if you want the Express target. DataFlow's own reference kit quotes an average of 20 working days once every document is in; real cases run longer when a university is slow to answer. Below: the full price list, what each package verifies, the nine steps on dhp.dataflowgroup.com, how to track a case and when the paid extras are worth it.",
   meta: {
-    title: 'DataFlow Qatar (DHP): Fees, Documents & How to Apply 2026',
+    title: 'DataFlow Qatar (DHP) Fees 2026: QAR 990–1,210 & Express',
     description:
-      'DataFlow verification for Qatar DHP/QCHP: 2026 package fees in QAR, documents by profession, express and VIP options, status tracking and the Doha office.',
+      'DataFlow for Qatar DHP: QAR 1,210 for physicians and dentists, QAR 990 for nurses, pharmacists and allied health, Express QAR 529, documents and steps.',
   },
   showVendorTable: true,
   showCalculator: false,
@@ -41,6 +41,7 @@ export const dataflowGuide = {
   changeLog: [
     { date: '2026-10-11', note: 'First published. Fees from DataFlow’s DHP price list; steps and 20-working-day average from the 2026 reference kit.' },
     { date: '2026-10-16', note: 'Corrected Package D: it is the retrospective package for allied health professionals in Qatar for more than three years (one qualification, one licence), not a physicians’ package. Price list date corrected to 28 July 2025.' },
+    { date: '2026-11-02', note: 'Search title and description now lead with the package and Express fees already on this page. No facts changed.' },
   ],
   faqs: [
     {

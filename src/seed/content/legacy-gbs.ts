@@ -36,8 +36,14 @@ export const legacyGbs = {
     { date: '2026-10-09', note: 'First published.' },
     { date: '2026-10-12', note: 'Updated the publisher details: the site is now the Primary Source Verification Guide by MRP Corporate Services.' },
     { date: '2026-10-26', note: 'Search title now spells out Gulf Bridge Services so people looking for the former provider land on this page. No facts changed.' },
+    { date: '2026-11-02', note: 'Added an FAQ on where to log in now (DHP’s licensing system and the three provider portals, as named elsewhere on the site). No facts changed.' },
   ],
   faqs: [
+    {
+      question: 'Where do I log in now that the GBS QCHP portal has closed?',
+      answer:
+        'There is no GBS login any more. Your licence application – evaluation, licensing and renewal – goes through DHP’s online Registration and Licensing System at dhpportal.moph.gov.qa (see the [licensing guide](/qatar/licensing)). Verification happens on the portal of the provider you choose: DataFlow at dhp.dataflowgroup.com, QuadraBay at dhp.quadrabay.com or Approved Verification Services (AVS) at avsqatar.com.',
+    },
     {
       question: 'Is my old GBS PSV report still valid?',
       answer:

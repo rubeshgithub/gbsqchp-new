@@ -51,6 +51,7 @@ export const psvPillar = {
     { date: '2026-10-17', note: 'DHP evaluation time corrected: 25 working days applies to physicians and dentists; nurses, pharmacists and allied health have 15 (Circular DHP/2024/16). DataFlow’s FAQ figures restated: 15–25 working days, with a warning that verification can take up to three months. Real-world range attributed to its single source.' },
     { date: '2026-10-26', note: 'Linked each provider in the provider list to its own guide (DataFlow, QuadraBay, AVS).' },
     { date: '2026-10-27', note: 'Linked the new certificate of good standing guide. No facts changed.' },
+    { date: '2026-11-02', note: 'Linked the six country guides from the documents section. No facts changed.' },
   ],
   faqs: [
     {
@@ -116,6 +117,8 @@ Every provider works from the same DHP package structure, so the document set is
 - **Surgical logbook** for surgeons applying for clinical privileges (the last three years, verified by the PSV provider).
 
 You do not need to attest anything first: DHP's guidelines say verification by an approved provider replaces attestation. Anything not in English or Arabic needs an official translation. On the QuadraBay portal every file name must start with a letter, not a number, or the upload is rejected.
+
+Document names and good-standing rules differ by country. The country guides cover them for [India](/qatar/psv/countries/india), [the Philippines](/qatar/psv/countries/philippines), [Pakistan](/qatar/psv/countries/pakistan), [Nepal](/qatar/psv/countries/nepal), [Sri Lanka](/qatar/psv/countries/sri-lanka) and [Bangladesh](/qatar/psv/countries/bangladesh).
 
 ## How long does PSV take?
 
