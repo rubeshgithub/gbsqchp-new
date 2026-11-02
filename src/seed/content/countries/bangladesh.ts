@@ -9,7 +9,7 @@
  * Bangladesh Nursing and Midwifery Council's "Application & Requirements for Good Professional Standing Certificate"
  * (an older form on the "Bangladesh Nursing Council" letterhead: Tk. 4,500 by bank draft or pay order, documents,
  * government nurses through their controlling officer) and its forms list (good standing, verification, registration
- * renewal, English version); the BNMC 2025–26 admission circular as published (3-year Diploma in Nursing Science and
+ * renewal, application for an English version of a certificate); the BNMC 2025–26 admission circular as published (3-year Diploma in Nursing Science and
  * Midwifery after SSC and HSC; 4-year BSc in Nursing) and college programme pages (6-month internship after the diploma);
  * DHP Guidelines for Nurses (RGN rows) and Physicians (six-year degree and internship rule; GP 5 years and exam; specialty
  * table – Bangladesh is not in it, so Category 3 applies); Circular DHP/2025/08; Circular DHP/2025/19. Emigration is only a
@@ -21,7 +21,7 @@ export const bangladeshGuide = {
   path: '/qatar/psv/countries/bangladesh',
   section: 'documents' as const,
   summary:
-    'If you trained or worked in Bangladesh, your Qatar DHP application follows the same steps as everyone else’s – Primary Source Verification, DHP evaluation, then licensing – and a few Bangladeshi details decide how it goes. Doctors and dentists get a Certificate of Good Standing from the Bangladesh Medical and Dental Council (BMDC) for BDT 3,000, with a document list that includes your e-TIN and latest tax return; nurses and midwives apply to the Bangladesh Nursing and Midwifery Council (BNMC) for a certificate of good professional standing. The three-year Diploma in Nursing Science and Midwifery starts after HSC, which matches DHP’s diploma rule. Bangladeshi specialist degrees such as FCPS are not on DHP’s approved specialty list, so they are assessed under DHP’s Category 3. Below: the package that fits each qualification, where each certificate comes from, which documents to upload, and the usual problems.',
+    'If you trained or worked in Bangladesh, your Qatar DHP application follows the same steps as everyone else’s – Primary Source Verification, DHP evaluation, then licensing – and a few Bangladeshi details decide how it goes. Doctors and dentists get a Certificate of Good Standing from the Bangladesh Medical and Dental Council (BMDC) for BDT 3,000, with a document list that includes your e-TIN and latest tax return; nurses and midwives apply to the Bangladesh Nursing and Midwifery Council (BNMC) for a certificate of good professional standing. Current intakes for the three-year Diploma in Nursing Science and Midwifery start after HSC, which matches DHP’s diploma rule. Bangladeshi specialist degrees such as FCPS are not on DHP’s approved specialty list, so they are assessed under DHP’s Category 3. Below: the package that fits each qualification, where each certificate comes from, which documents to upload, and the usual problems.',
   meta: {
     title: 'Qatar PSV for Bangladeshi Doctors & Nurses: BMDC, BNMC 2026',
     description:
@@ -52,6 +52,10 @@ export const bangladeshGuide = {
       url: 'https://admissionnotice.com/en/nursing-admission-circular-2024/',
     },
     {
+      label: 'NENC – Diploma in Nursing Science & Midwifery programme page (6-month internship)',
+      url: 'https://nenc.edu.bd/diploma-in-nursing-science-midwifery/',
+    },
+    {
       label: 'DHP – Guidelines for Nurses',
       url: 'https://dhp.moph.gov.qa/en/Documents/Guidelines%20for%20Nurses.pdf',
     },
@@ -66,25 +70,25 @@ export const bangladeshGuide = {
     },
     {
       label: 'Bureau of Manpower, Employment and Training (BMET)',
-      url: 'http://www.bmet.gov.bd/',
+      url: 'https://bmet.gov.bd/',
     },
   ],
   changeLog: [
     {
       date: '2026-11-01',
-      note: 'First published. BMDC good-standing documents and fee from its own pages; BNMC requirements from its published form; qualification rules from DHP’s Guidelines for Nurses and Physicians.',
+      note: 'First published. BMDC good-standing documents and fee from its own pages; BNMC requirements from its published form; qualification rules from DHP’s Guidelines for Nurses and Physicians. Independent fact-check applied (12 findings).',
     },
   ],
   faqs: [
     {
       question: 'How do I get a BMDC good standing certificate for Qatar?',
       answer:
-        'BMDC’s Certificate of Good Standing page lists the documents: an application stating the reason, your bio-data with places and dates of work, a character certificate from a registered physician or a first-class gazetted officer, a copy of your valid full registration certificate, two attested photographs, a performance certificate from your last employer (in Bangladesh or abroad), the signed declaration, your MBBS or BDS original with a copy, your e-TIN certificate, the latest tax-return acknowledgement and your NID. Bangladeshi doctors pay online; BMDC’s fee structure lists BDT 3,000. If you work for the government, apply through your controlling officer. Since 1 August 2025 DHP accepts good standing only through PSV (Circular DHP/2025/08), so ask your PSV provider how it should be delivered before you apply.',
+        'BMDC’s Certificate of Good Standing page lists the documents: an application stating the reason, your bio-data with places and duration of work, a character certificate from a registered physician or a first-class gazetted officer, a copy of your valid full registration certificate, two attested photographs, a performance certificate from your last employer (in Bangladesh or abroad), the signed declaration, your MBBS or BDS original with a copy, your e-TIN certificate, the latest tax-return acknowledgement and your NID. Bangladeshi doctors pay online; BMDC’s fee structure lists BDT 3,000. If you work for the government, apply through your controlling officer. Since 1 August 2025 DHP accepts good standing only through PSV (Circular DHP/2025/08), so ask your PSV provider how it should be delivered before you apply.',
     },
     {
       question: 'Is the Diploma in Nursing Science and Midwifery accepted for a Qatar Registered Nurse licence?',
       answer:
-        'It is the kind of diploma DHP’s rule describes, but DHP decides at evaluation. DHP’s Guidelines for Nurses accept a “Diploma in nursing (duration: 3 years after graduation from 12 years of high school)”, and the BNMC admission circular, as published, describes a three-year Diploma in Nursing Science and Midwifery for applicants who have passed SSC and HSC. Keep your internship completion record with the diploma and transcript.',
+        'It is the kind of diploma DHP’s rule describes, but DHP decides at evaluation. DHP’s Guidelines for Nurses accept a “Diploma in nursing (duration: 3 years after graduation from 12 years of high school)”, and the 2025–26 BNMC admission circular, as reported by Admission Notice, describes a three-year Diploma in Nursing Science and Midwifery for applicants who have passed SSC and HSC. If you qualified some years ago, check that your transcript shows entry after 12 years of schooling, and keep your internship completion record with the diploma.',
     },
     {
       question: 'Is FCPS from Bangladesh accepted for a specialist licence in Qatar?',
@@ -104,7 +108,7 @@ DHP's approved providers – DataFlow, QuadraBay and AVS – sell packages by pr
 
 | Your qualification | DHP category | Package | What to watch |
 | --- | --- | --- | --- |
-| Diploma in Nursing Science and Midwifery (3 years) | Registered General Nurse | E – nurses, midwives, pharmacists | Starts after HSC; DHP wants 2 years' experience after registration, and the Prometric exam |
+| Diploma in Nursing Science and Midwifery (3 years) | Registered General Nurse | E – nurses, midwives, pharmacists | Current intakes start after HSC; DHP wants 2 years' experience after registration, and the Prometric exam |
 | BSc in Nursing (4 years) | Registered General Nurse | E | DHP wants 2 years' experience after registration, and the Prometric exam |
 | Diploma + post-basic BSc in Nursing | Registered General Nurse | E | Two qualifications: included at AVS, an add-on at DataFlow and QuadraBay |
 | MBBS (with internship) | General Practitioner | A – physicians and dentists | DHP asks overseas GPs for 5 years' clinical experience and the qualifying exam |
@@ -117,11 +121,11 @@ Packages A and B at all three providers, and AVS's nurse package, cover the last
 
 ## What DHP's rules mean for Bangladeshi qualifications
 
-**Nurses.** DHP's Guidelines for Nurses accept, for a Registered General Nurse, a "Bachelor's Degree in nursing (duration: 4 years)" or a "Diploma in nursing (duration: 3 years after graduation from 12 years of high school)" – or an associate degree with RGN licensure in the country of origin or graduation – followed by two years of clinical experience after registration and licensing, and the Prometric exam. The BNMC admission circular for 2025–26, as published, offers a four-year BSc in Nursing and a three-year Diploma in Nursing Science and Midwifery to applicants who have passed SSC and HSC, and college programme pages add a six-month internship after the diploma. Both match DHP's rows. DHP, not the PSV provider, decides equivalence at evaluation.
+**Nurses.** DHP's Guidelines for Nurses accept, for a Registered General Nurse, a "Bachelor's Degree in nursing (duration: 4 years)" or a "Diploma in nursing (duration: 3 years after graduation from 12 years of high school)" – or an associate degree with RGN licensure in the country of origin or graduation – followed by two years of clinical experience after registration and licensing, and the Prometric exam. The 2025–26 BNMC admission circular, as reported by Admission Notice, offers a four-year BSc in Nursing and a three-year Diploma in Nursing Science and Midwifery to applicants who have passed SSC and HSC, and college programme pages add a six-month internship after the diploma. Both match DHP's rows; if you qualified some years ago, check that your transcript shows entry after 12 years of schooling. DHP, not the PSV provider, decides equivalence at evaluation.
 
 **Doctors.** DHP's Guidelines for Physicians ask general practitioners for a degree from a university in the IMED/FAIMER directory and a minimum six-year undergraduate medical degree (MBBS or equivalent), and say "The internship program can be considered for completion of the required undergraduate study years" when the programme is shorter. BMDC asks for your internship training certificate for full registration, so keep it with your MBBS degree. Overseas GPs need five years of experience and must pass the DHP qualifying exam; an exempting exam such as PLAB Part 1 or USMLE Step 2, verified through PSV under Circular DHP/2025/19, replaces the exam but not the experience. The [Prometric exam guide](/qatar/exam/prometric) lists the exempting exams.
 
-**Specialists.** Bangladesh is not in DHP's approved specialty qualification table, so FCPS and Bangladeshi MD and MS degrees are assessed under **Category 3**: completion of structured postgraduate training of at least three years with a passed exit or board exam, three years of clinical experience after the postgraduate degree in a governmental or semi-governmental hospital or a hospital that runs postgraduate training, and a pass in the DHP qualifying exam. A UK Royal College membership or fellowship moves you to Category 1 only with a UK certificate of completion of specialist training (CCST/CCT), or to Category 2 if it was awarded before 1996; otherwise it is assessed under Category 3 too.
+**Specialists.** Bangladesh is not in DHP's approved specialty qualification table, so FCPS and Bangladeshi MD and MS degrees are assessed under **Category 3**: completion of structured postgraduate training of at least three years with a passed exit or board exam, three years of clinical experience after the postgraduate degree in a governmental or semi-governmental hospital or a hospital that runs postgraduate training, and a pass in the DHP qualifying exam. The three years need not be the most recent, provided there is no break in practice. A UK Royal College membership or fellowship moves you to Category 1 only with a UK certificate of completion of specialist training (CCST/CCT), or to Category 2 if it was awarded before 1996; otherwise it is assessed under Category 3 too.
 
 ## Where does your certificate of good standing come from?
 
@@ -139,18 +143,19 @@ Since 1 August 2025 DHP accepts a certificate of good standing only as a PSV rep
 - your twelve-digit e-TIN certificate (with the QR code) and the acknowledgement of your latest tax return;
 - your NID.
 
-Bangladeshi doctors pay online, and BMDC's fee structure lists the Good Standing Certificate at **BDT 3,000** (it also lists a BDT 2,000 "Urgent Issuance Fee" without saying which services it applies to). If you are in government service, apply through your controlling officer. The page says you must bring the documents on the day the certificate is delivered. Make sure your full registration is current first – BMDC's fee structure lists renewal at BDT 2,000.
+BMDC asks for every photocopy to be attested by a registered physician or first-class gazetted officer. Bangladeshi doctors pay online, and BMDC's fee structure lists the Good Standing Certificate at **BDT 3,000** (it also lists a BDT 2,000 "Urgent Issuance Fee" without saying which services it applies to). If you are in government service, apply through your controlling officer. The page says you must bring the documents on the day the certificate is delivered. Make sure your full registration is current first – BMDC's fee structure lists renewal at BDT 2,000.
 
-**Nurses and midwives – BNMC.** BNMC publishes "Application & Requirements for Good Professional Standing Certificate" in its forms list. That document, on the older Bangladesh Nursing Council letterhead, asks for:
+**Nurses and midwives – BNMC.** BNMC publishes "Application & Requirements for Good Professional Standing Certificate" in its forms list (the copy linked here is on BNMC's old portal; if it does not open, use the forms list on [bnmc.gov.bd](https://bnmc.gov.bd/)). That document, on the Bangladesh Nursing Council letterhead, asks for:
 
 - an application stating the reason, with documentary evidence, and your bio-data with places and duration of work;
 - a character certificate from a registered nurse, giving the certifying nurse's registration number;
 - a copy of your valid full registration certificate;
-- two passport photographs attested on the back by the nursing superintendent or hospital authority;
+- two passport photographs attested on the back by the nursing superintendent, the hospital authority or a registered nurse (who quotes their registration number);
+- the signed declaration printed on the back of the form;
 - a performance certificate from your last employer, in Bangladesh or abroad;
 - a fee of **Tk. 4,500** by bank draft or pay order payable to the Council.
 
-Nurses in government service apply through their controlling officer. Because the document predates the Council's current name, confirm the current fee and form with BNMC (info@bnmc.gov.bd) before you pay, and ask your PSV provider how the certificate should reach it. BNMC's forms list also includes a verification form, a registration renewal form and an English-version application.
+Nurses in government service apply through their controlling officer. Because the document carries the Council's former name, confirm the current fee and form with BNMC (info@bnmc.gov.bd) before you pay, and ask your PSV provider how the certificate should reach it. BNMC's forms list also includes a verification form, a registration renewal form and an application for an English version of a certificate.
 
 **Pharmacists.** Ask the Pharmacy Council of Bangladesh for its good-standing or verification process. **Allied health:** ask the body that registered you, and tell your PSV provider if any years of your work were not covered by a registration.
 
@@ -167,7 +172,7 @@ You do not need attestation for these: DHP's guidelines say PSV replaces attesta
 
 ## Names and spellings
 
-Common name problems in Bangladeshi files:
+Name differences to check for in Bangladeshi files:
 
 - **Different transliterations** of the same name between SSC, HSC, university, council and passport records – for example Mohammad, Md., Muhammad.
 - **"Md." or other abbreviations** on certificates and the full form in the passport.
@@ -181,7 +186,7 @@ The provider writes to your university or nursing institute, the council and you
 
 ## Before you travel
 
-Emigration clearance is a separate process from DHP licensing. Check what applies to you with the [Bureau of Manpower, Employment and Training](http://www.bmet.gov.bd/) and with your employer, and deal only with licensed recruiting agencies.
+Emigration clearance is a separate process from DHP licensing. Check what applies to you with the [Bureau of Manpower, Employment and Training](https://bmet.gov.bd/) and with your employer, and deal only with licensed recruiting agencies.
 
 ## Checklist for Bangladeshi applicants
 
