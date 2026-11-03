@@ -66,6 +66,7 @@ export const indiaGuide = {
     },
     { date: '2026-10-27', note: 'Linked the new certificate of good standing guide. No facts changed.' },
     { date: '2026-10-27', note: 'Added a short section on taking the Prometric exam in India, linking the exam guide.' },
+    { date: '2026-11-03', note: 'Linked the new guide for Indian nurses. No facts changed.' },
   ],
   faqs: [
     {
@@ -123,7 +124,7 @@ Since 1 August 2025 DHP accepts a certificate of good standing only as a PSV rep
 
 Because DHP no longer takes certificates directly, ask your PSV provider which delivery it needs before you pay the NMC.
 
-**Nurses and midwives:** usually your **State Nursing Council** – the council you are registered with – issues good-standing and verification certificates. The Kerala Nurses and Midwives Council, for example, publishes guidelines for obtaining a good-standing certificate and a verification certificate, and a fee notice, on [knmc.org](https://knmc.org/). If you were registered in more than one state during the years DHP counts, ask your PSV provider whether it needs a certificate from each council.
+**Nurses and midwives:** usually your **State Nursing Council** – the council you are registered with – issues good-standing and verification certificates. The Kerala Nurses and Midwives Council, for example, publishes guidelines for obtaining a good-standing certificate and a verification certificate, and a fee notice, on [knmc.org](https://knmc.org/). If you were registered in more than one state during the years DHP counts, ask your PSV provider whether it needs a certificate from each council. The [guide for Indian nurses](/qatar/psv/countries/india/nurses) sets out each State Nursing Council's process and fee, the NUID and reciprocal registration.
 
 **Dentists and pharmacists:** ask the State Dental Council or State Pharmacy Council you are registered with for its good-standing process.
 

@@ -267,6 +267,20 @@ test.describe('Indonesia country guide', () => {
   })
 })
 
+test.describe('Indian nurses guide', () => {
+  test('renders the council table and TNNMC facts, linked from the India guide, good standing and the footer', async ({ page }) => {
+    await page.goto('http://localhost:3000/qatar/psv/countries/india/nurses')
+    await expect(page.locator('h1')).toContainText('Qatar DHP licence for Indian nurses')
+    await expect(page.locator('.article-body table').first()).toContainText('Tamil Nadu (TNNMC)')
+    await expect(page.locator('.article-body')).toContainText('NUID')
+    await expect(page.locator('.site-footer a[href="/qatar/psv/countries/india/nurses"]')).toBeVisible()
+    await page.goto('http://localhost:3000/qatar/psv/countries/india')
+    await expect(page.locator('.article-body a[href="/qatar/psv/countries/india/nurses"]').first()).toBeVisible()
+    await page.goto('http://localhost:3000/qatar/psv/problems/good-standing-certificate')
+    await expect(page.locator('.article-body a[href="/qatar/psv/countries/india/nurses"]').first()).toBeVisible()
+  })
+})
+
 test.describe('Report-transfer guide', () => {
   test('renders the fee table and worked example and is linked from the provider guides and the footer', async ({ page }) => {
     await page.goto('http://localhost:3000/qatar/psv/report-transfer')

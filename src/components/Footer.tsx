@@ -61,6 +61,9 @@ export function Footer({ settings }: { settings: SiteSetting }) {
                 <Link href="/qatar/psv/countries/india">PSV for Indian applicants</Link>
               </li>
               <li>
+                <Link href="/qatar/psv/countries/india/nurses">PSV for Indian nurses</Link>
+              </li>
+              <li>
                 <Link href="/qatar/psv/countries/philippines">PSV for Filipino applicants</Link>
               </li>
               <li>
