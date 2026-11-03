@@ -25,11 +25,11 @@ export const indiaNursesGuide = {
   path: '/qatar/psv/countries/india/nurses',
   section: 'documents' as const,
   summary:
-    'If you are an Indian nurse applying for a Qatar DHP licence, your certificate of good standing comes from your State Nursing Council – not from the Indian Nursing Council, which says it does not license nurses. Each council has its own name for it, its own form and its own fee: for example ₹2,000 for a Tamil Nadu Good Standing Letter e-mailed to you, ₹4,000 plus GST for Delhi’s overseas verification e-mailed to the foreign council, and ₹6,000 for West Bengal’s abroad verification, applied for on paper. Your GNM diploma or B.Sc Nursing fits DHP’s Registered General Nurse rules, and if you were registered in more than one state you may need a certificate from each. Below: the process council by council, the NUID, registrations in two states, and how it all reaches DHP through PSV.',
+    'If you are an Indian nurse applying for a Qatar DHP licence, your certificate of good standing comes from your State Nursing Council – not from the Indian Nursing Council, which says it does not license nurses. Each council has its own name for it, its own form and its own fee: for example ₹2,000 for a Tamil Nadu Good Standing Letter e-mailed to you, ₹4,000 plus GST for Delhi’s overseas verification e-mailed to the foreign council, and ₹6,000 in West Bengal’s revised fee table for abroad verification (its procedure page still says ₹5,000), applied for on paper. Your GNM diploma or B.Sc Nursing matches the wording of DHP’s Registered General Nurse rules, and if you were registered in more than one state you may need a certificate from each. Below: the process council by council, the NUID, registrations in two states, and how it all reaches DHP through PSV.',
   meta: {
     title: 'Qatar PSV for Indian Nurses: Good Standing by State (2026)',
     description:
-      'Indian nurses applying to Qatar DHP: good standing from Kerala, Tamil Nadu, Karnataka, Delhi, Punjab, West Bengal and other councils – fees, forms, NUID, GNM vs B.Sc, PSV.',
+      'Indian nurses applying to Qatar DHP: good standing from Kerala, Tamil Nadu, Delhi, West Bengal and other State Nursing Councils – fees, NUID, GNM vs B.Sc, PSV.',
   },
   showVendorTable: false,
   showCalculator: false,
@@ -50,6 +50,10 @@ export const indiaNursesGuide = {
     {
       label: 'Indian Nursing Council – notification of 26 Nov 2020 withdrawing the GNM phase-out',
       url: 'https://www.indiannursingcouncil.org/uploads/pdf/17217175071902658197669f5303086de.pdf',
+    },
+    {
+      label: 'Indian Nursing Council – NRTS portal (renewal and CNE, NOC to work abroad, fees)',
+      url: 'https://nrts.indiannursingcouncil.gov.in/login.nic',
     },
     {
       label: 'Tamil Nadu Nurses and Midwives Council – fee structure and FAQ',
@@ -112,7 +116,7 @@ export const indiaNursesGuide = {
   changeLog: [
     {
       date: '2026-11-03',
-      note: 'First published. Council processes and fees from each State Nursing Council’s own pages and notices; NUID, reciprocal registration and programme lengths from the Indian Nursing Council; qualification rules from DHP’s Guidelines for Nurses.',
+      note: 'First published. Council processes and fees from each State Nursing Council’s own pages and notices; NUID, reciprocal registration and programme lengths from the Indian Nursing Council; qualification rules from DHP’s Guidelines for Nurses. Independent fact-check applied (17 findings).',
     },
   ],
   faqs: [
@@ -139,13 +143,13 @@ export const indiaNursesGuide = {
     {
       question: 'Which PSV provider is cheapest for an Indian nurse registered in two states?',
       answer:
-        'On published prices, QuadraBay: about QAR 1,100 for one qualification and two registrations, against QAR 1,150 at AVS and QAR 1,690 at DataFlow. With one registration and two qualifications (GNM and Post Basic B.Sc), AVS is cheapest at QAR 900. The [PSV fees guide](/qatar/psv/fees) has every price side by side.',
+        'On published prices, QuadraBay: about QAR 1,050 for one qualification and two registrations, against QAR 1,150 at AVS and QAR 1,290 at DataFlow. With GNM and Post Basic B.Sc as well, it is about QAR 1,100 at QuadraBay, QAR 1,150 at AVS and QAR 1,690 at DataFlow. With one registration and two qualifications, AVS is cheapest at QAR 900. Good-standing certificates are verified separately, as Package I or an add-on. The [PSV fees guide](/qatar/psv/fees) has every price side by side.',
     },
   ],
   markdown: `
 ## Which council issues your good standing certificate?
 
-Your **State Nursing Council**. The Indian Nursing Council (INC) sets education standards and runs the national register, but its NRTS FAQ says "INC does not give license to a nurse to practice. It is responsibility of SNRCs" – the State Nursing Registration Councils – and that "RN/RM number from SNRCs is the legal license to practice." So the certificate DHP needs comes from the council that holds your RN/RM registration, and each council names it differently: good standing letter, foreign verification, overseas verification, abroad verification.
+Your **State Nursing Council**. The Indian Nursing Council (INC) sets education standards and runs the national register, but its NRTS FAQ says "INC does not give license to a nurse to practice. It is responsibility of SNRCs" – the State Nursing Registration Councils – and that the RN/RM number from your State council is your legal licence to practise. So the certificate DHP needs comes from the council that holds your RN/RM registration, and each council names it differently: good standing letter, foreign verification, overseas verification, abroad verification.
 
 Since 1 August 2025 DHP accepts a certificate of good standing only as a PSV report (Circular DHP/2025/08). It is usually needed at the licensing stage and must be no more than six months old then – the [good-standing guide](/qatar/psv/problems/good-standing-certificate) explains the rules. Before you apply to your council, ask your PSV provider two things: whether it needs the certificate sent to you or straight to it, and which e-mail address the council should use.
 
@@ -156,21 +160,21 @@ Fees and processes as each council publishes them on its own website. Several co
 | Council | What to ask for | How you apply | Fee as published | Delivery and time |
 | --- | --- | --- | --- | --- |
 | Tamil Nadu (TNNMC) | Good Standing Letter, or Foreign Verification | Online at noc.onlinetnnmc.org; pay after the council approves | ₹2,000 (letter to you); ₹5,000 (verification to a foreign council) | Letter e-mailed to you, minimum 7 working days after payment; verification sent as hard copy to the council named |
-| Kerala (KNMC) | Good Standing Certificate, or Verification Certificate | By post to the Registrar, Thiruvananthapuram, under KNMC's guidelines | ₹2,000 for abroad in KNMC's undated guidelines, paid by NEFT/RTGS; a newer fee notice exists – confirm | Not stated; the verification certificate needs the full postal and e-mail address of the body it goes to |
+| Kerala (KNMC) | Good Standing Certificate, or Verification Certificate | Offline to the Registrar, Thiruvananthapuram (KNMC lists no online service for these) | ₹2,000 for abroad in KNMC's undated guidelines (Malayalam), paid by NEFT/RTGS – no demand drafts. KNMC also publishes a separate fee notice we could not read, so confirm before paying | Not stated; the verification certificate needs the full postal and e-mail address of the body it goes to |
 | Karnataka (KSNC) | Foreign Registration / Good Standing | Online, from ksnc.karnataka.gov.in | Not readable on the council's site – ask | Sent by courier; KSNC publishes DHL tracking numbers |
-| Andhra Pradesh (APNMC) | Verification / foreign letter | Through NRTS – the council's own site was due to close on 15 March 2026 | Fees revised from 1 January 2024 – ask | Not stated |
-| Telangana (TGNMC) | Foreign verification | Through NRTS, linked from hmis.telangana.gov.in | Fees revised from 1 October 2024 – ask | Not stated |
+| Andhra Pradesh (APNMC) | Verification / foreign letter | Through NRTS – the council's own site was due to close on 15 March 2026, and it suspended online services from 16 March 2026 without a published resumption date; check NRTS or call the council | Fees revised from 1 January 2024 – ask | Not stated |
+| Telangana (TGNMC) | Foreign verification | Through NRTS, linked from hmis.telangana.gov.in | Not published for verification – ask | Not stated |
 | Delhi (DNC) | Overseas verification (good standing) | Online at delhinursingcouncil.in | ₹4,000 plus 18% GST, plus postage if the overseas council asks for it | E-mailed to the overseas licensing council; 15 to 30 days |
-| Punjab (PNRC) | Foreign verification | Online since 10 July 2020 | ₹4,000 (₹2,000 + ₹2,000) from 10 July 2020 | Sent by speed post |
+| Punjab (PNRC) | Foreign verification | Online since 10 July 2020 | ₹4,000 (₹2,000 + ₹2,000) in a notice of July 2020; an earlier notice lists ₹2,000 per course per country, so GNM and Post Basic may cost two fees | Sent by speed post |
 | West Bengal (WBNC) | Abroad verification | On paper only, with originals in person; no fax or e-mail applications | ₹6,000 in the fee table revised from 1 August 2024 (the procedure page still says ₹5,000 plus ₹200 postage) | Not stated |
 | Gujarat (GNC) | Foreign Verification (Good Standing Certificate) | Online; the form asks for the foreign authority's name, address and e-mail | Not published – ask | Not stated |
-| Maharashtra (MNC) | – | No process published on the council's site | Ask the council | – |
+| Maharashtra (MNC) | – | We found no process on the council's site | Ask the council | – |
 
 A few councils add conditions worth knowing early:
 
-- **Tamil Nadu** says "A minimum of one year of work experience is mandatory to apply for a Good Standing Letter or Foreign Verification"; with less, you get only a verification of your registration certificate. It checks your experience certificate with the hospital first. A circular of 23 July 2026 warns that foreign-verification queries may take longer while its software is rebuilt.
+- **Tamil Nadu** says "A minimum of one year of work experience is mandatory to apply for a Good Standing Letter or Foreign Verification"; with less, you get only a verification of your registration certificate. It checks your experience certificate with the hospital first. Only nurses with an active registration can apply, and the portal asks for the foreign authority's letter with its logo and address – ask your PSV provider for one. A circular of 23 July 2026 warns that foreign-verification queries may take longer while its software is rebuilt.
 - **Kerala** has a contact desk for "Good Standing, Verification, Data Flow & Migration Certificate" (registrar.knmc@kerala.gov.in) – the address to use if your PSV provider's request is stuck. KNMC's live site was unavailable when we checked; the details above come from its published PDFs and an archived copy of its home page.
-- **West Bengal** asks for an experience letter saying there are "No Allegations or No Adverse Report", and Gazetted-attested copies.
+- **West Bengal** asks for an experience letter saying there are "No Allegations or No Adverse Report", Gazetted-attested proof of age, and payment in cash or by SBI demand draft.
 - **Delhi** asks for your 10th and 12th certificates, registration certificate, diploma or degree and mark sheets (both sides), an experience and conduct certificate, your Aadhaar and passport, and the overseas council's form if it has one.
 
 ## What do the NUID and NRTS change?
@@ -181,15 +185,15 @@ It still matters for three reasons:
 
 - **Some councils now work through NRTS.** Andhra Pradesh and Telangana have moved foreign verification to NRTS, so you need an NRTS account to apply.
 - **Nurses abroad are asked to enrol.** INC's Notification 9 of 2023 asks "all those Indian nurses who are working outside india to enroll into NRTS with immediate effect." NRTS also lists a "NOC to work abroad" service and a public NUID status check.
-- **Reciprocal registration runs through it.** INC's FAQ says only nurses with an NUID can use NRTS to register with a second state council; the first council issues an NOC online, the fee is ₹1,000, and the whole process "shall take one week" if everyone acts in time.
+- **Reciprocal registration runs through it.** INC's FAQ says only nurses with an NUID can use NRTS to register with a second state council; the first council issues an NOC online, and the whole process "shall take one week" if everyone acts in time. The NRTS fee list puts reciprocal registration at ₹1,000, or ₹5,000 if you are more than three months late.
 
 ## Registered in more than one state?
 
-Many Indian nurses train in one state and work in another. DHP counts licences "accompanying the required years of work experience", and its good-standing policy asks for certificates for the years of experience it counts – so if you held registrations in two states during that period, expect a certificate from each, and a PSV package that covers two registrations. Three practical points:
+Many Indian nurses train in one state and work in another. DHP counts licences "accompanying the required years of work experience", and its Guidelines for Nurses ask for good standing from "the registration authority (or authorities) of the most recent required years of work experience" – so if you held registrations in two states during that period, expect a certificate from each, and a PSV package that covers two registrations. The [good-standing guide](/qatar/psv/problems/good-standing-certificate) explains how the certificates are verified. Three practical points:
 
 1. **Show a registration for every job.** If you worked in a state without registering with its council, tell your PSV provider before you pay – DHP asks for licences for the years it counts. If you are about to move, use reciprocal registration through NRTS first.
-2. **Keep every registration current.** INC's FAQ says renewal is once in five years with 150 hours of continuing nursing education, and Tamil Nadu, Andhra Pradesh and Telangana say the same. Kerala links its services to renewal: certificates issued from 2013 carry a validity date and must be renewed when it expires.
-3. **Pay for the right package.** On published prices, one qualification with two registrations costs about QAR 1,100 at QuadraBay, QAR 1,150 at AVS and QAR 1,690 at DataFlow – the [PSV fees guide](/qatar/psv/fees) has the add-ons.
+2. **Keep every registration current.** INC's NRTS portal links renewal, once every five years, to 150 hours of continuing nursing education, and Tamil Nadu says the same. Andhra Pradesh and Telangana say registrations are renewed once in five years. Kerala gives services to nurses registered 1990–2012 only if they have renewed, and certificates issued from 2013 carry a validity date and must be renewed when it expires.
+3. **Pay for the right package.** On published prices, one qualification with two registrations costs about QAR 1,050 at QuadraBay, QAR 1,150 at AVS and QAR 1,290 at DataFlow; with GNM and Post Basic as well, about QAR 1,100, QAR 1,150 and QAR 1,690. Good-standing certificates are verified separately (Package I or an add-on). The [PSV fees guide](/qatar/psv/fees) has every add-on.
 
 ## Do GNM, B.Sc and Post Basic B.Sc meet DHP's rules?
 
@@ -200,7 +204,7 @@ DHP's Guidelines for Nurses accept, for a Registered General Nurse, a "Bachelor'
 | B.Sc Nursing | 4 years, after 10+2 | Registered General Nurse – bachelor's row |
 | GNM | "3 and 1/2 years", 3 years from 2015–2016; after 10+2 | Registered General Nurse – diploma row |
 | GNM + Post Basic B.Sc | Post Basic: 2 years regular, 3 years distance, after GNM and RN/RM registration | Registered General Nurse; two qualifications for PSV |
-| ANM | 2 years | Does not match the RGN rows; DHP's Assistant Nurse row asks for a three-year diploma after nine years of education – ask DHP |
+| ANM | 2 years | Does not match the RGN rows. DHP's Assistant Nurse / Assistant Midwife row accepts, among other routes, a nursing diploma of 18 months to 2 years after 12 years of school, with 2 years' experience after registration as a nurse or midwife assistant – ask DHP whether your ANM fits |
 
 The GNM programme continues: the INC proposed phasing it out by 2020–21, then withdrew that in a notification of 26 November 2020. DHP, not the PSV provider, decides equivalence at evaluation. The [India guide](/qatar/psv/countries/india) covers documents, mark sheets and name problems for all Indian applicants.
 
