@@ -11,8 +11,8 @@
  * KKI Chair's Decision HK.01.02/KKI/2476/2026 of 11 Aug 2026 as reported by PERSI Jatim (CoG in English, no copy to the
  * applicant; registration verification on a foreign regulator's form in 3 working days); Law 17/2023 art. 260(4) lifetime
  * STR and 5-yearly SIP as reported by Kompas (Kemenkes spokesperson); nursing programme lengths from college pages
- * (D3 Keperawatan 3 years, S1 Keperawatan 4 years, Profesi Ners 2–3 semesters; entry after SMA/MA or SMK); medical stages
- * (S.Ked, clinical stage, UKMPPD, 1-year internship) from medical-education explainers – reported; passport name rules
+ * (D3 Keperawatan 3 years, S1 Keperawatan 4 years, Profesi Ners 2–3 semesters – Unhas: 2; entry after SMA/MA or SMK); medical
+ * stages (S.Ked, clinical stage, UKMPPD, 1-year internship) from Halodoc – reported; DHP Midwife row (bachelor's) checked; passport name rules
  * (Ditjen Imigrasi via detik: no titles, 34 characters, endorsement page) and name additions (Dukcapil via Kompas: court
  * decision, Permendagri 73/2022 two-word rule for new records); DHP Guidelines for Nurses (RGN rows) and Physicians
  * (six-year degree and internship rule; GP 5 years and exam; specialty table – Indonesia is not in it, so Category 3);
@@ -25,7 +25,7 @@ export const indonesiaGuide = {
   path: '/qatar/psv/countries/indonesia',
   section: 'documents' as const,
   summary:
-    'If you trained or worked in Indonesia, your Qatar DHP application follows the same steps as everyone else’s – Primary Source Verification, DHP evaluation, then licensing – and a few Indonesian details decide how it goes. One body now covers every profession: Konsil Kesehatan Indonesia (KKI) issues the STR, which is valid for life, and the Certificate of Good Standing (Sertifikat Kelaikan Praktik). KKI’s FAQ lists the certificate at Rp 800,000 for doctors and dentists and Rp 500,000 for nurses and other health workers for the Middle East, issued in 10 working days and valid for only three months – so time it for the licensing stage. A D3 Keperawatan diploma after SMA matches DHP’s nursing-diploma rule, and Indonesian specialist qualifications are assessed under DHP’s Category 3. Below: the package that fits each qualification, the good-standing process, which documents to upload, and single-name passports.',
+    'If you trained or worked in Indonesia, your Qatar DHP application follows the same steps as everyone else’s – Primary Source Verification, DHP evaluation, then licensing – and a few Indonesian details decide how it goes. One body now covers every profession: Konsil Kesehatan Indonesia (KKI) issues the STR, which is valid for life, and the Certificate of Good Standing (Sertifikat Kelaikan Praktik). KKI’s FAQ lists the certificate at Rp 800,000 for doctors and dentists and Rp 500,000 for nurses and other health workers for the Middle East, issued in 10 working days and valid for only three months – so time it for the licensing stage. A D3 Keperawatan diploma after SMA fits the wording of DHP’s nursing-diploma rule (DHP decides at evaluation), and Indonesian specialist qualifications are assessed under DHP’s Category 3. Below: the package that fits each qualification, the good-standing process, which documents to upload, and single-name passports.',
   meta: {
     title: 'Qatar PSV for Indonesian Doctors & Nurses: STR, KKI CoG 2026',
     description:
@@ -48,8 +48,16 @@ export const indonesiaGuide = {
       url: 'https://www.kompas.com/tren/read/2023/07/12/171500065/uu-kesehatan-baru-atur-str-nakes-berlaku-seumur-hidup-bagaimana-yang?page=all',
     },
     {
+      label: 'Universitas Hasanuddin – S1 Keperawatan (4 years) and Profesi Ners (2 semesters)',
+      url: 'https://nursing.unhas.ac.id/s1-keperawatan-dan-ners/',
+    },
+    {
       label: 'STIKes Istara Nusantara – D3 Keperawatan, S1 Keperawatan and Profesi Ners compared',
       url: 'https://stikes-istara.ac.id/perbedaan-prodi-d3-s1-keperawatan-profesi-ners/',
+    },
+    {
+      label: 'Halodoc – stages of Indonesian medical education (S.Ked, clinical stage, internship) – reported',
+      url: 'https://www.halodoc.com/artikel/kuliah-kedokteran-spesialis-berapa-tahun-sih-ini-infonya',
     },
     {
       label: 'detikNews – passport name rules from the Directorate General of Immigration – reported',
@@ -80,7 +88,7 @@ export const indonesiaGuide = {
   changeLog: [
     {
       date: '2026-11-02',
-      note: 'First published. Certificate of Good Standing requirements, fees, timing and validity from Konsil Kesehatan Indonesia’s FAQ; qualification rules from DHP’s Guidelines for Nurses and Physicians.',
+      note: 'First published. Certificate of Good Standing requirements, fees, timing and validity from Konsil Kesehatan Indonesia’s FAQ; qualification rules from DHP’s Guidelines for Nurses and Physicians. Independent fact-check applied (10 findings).',
     },
   ],
   faqs: [
@@ -120,11 +128,11 @@ DHP's approved providers – DataFlow, QuadraBay and AVS – sell packages by pr
 | D3 Keperawatan (A.Md.Kep, 3 years) | Registered General Nurse | E – nurses, midwives, pharmacists | Entry after SMA, MA or SMK; DHP wants 2 years' experience after registration, and the Prometric exam |
 | S1 Keperawatan (S.Kep) + Profesi Ners (Ns.) | Registered General Nurse | E | Usually two documents: included at AVS, an add-on at DataFlow and QuadraBay |
 | D3 + S1 (alih jenjang) + Ners | Registered General Nurse | E | Three qualifications – ask each provider for a quote |
-| D3 Kebidanan or Bidan profession | Midwife | E | Check DHP's midwife requirements before you pay |
+| S1 Kebidanan + Profesi Bidan | Midwife | E | DHP asks for a bachelor's in midwifery or equivalent, 3 years as a midwife and Prometric; a D3 Kebidanan diploma may not meet the Midwife row – DHP decides at evaluation |
 | Pendidikan Dokter (S.Ked + dr.) with internship | General Practitioner | A – physicians and dentists | DHP asks overseas GPs for 5 years' clinical experience and the qualifying exam |
 | Dokter spesialis (Sp.) | Specialist | A | Indonesian specialty qualifications are assessed under DHP's Category 3 |
 | Dokter gigi (drg.) | Dentist | A | Good standing from KKI, the same as doctors |
-| Apoteker (S.Farm + Apt.) | Pharmacist | E | Degree and profession certificate are usually two documents |
+| Apoteker (S.Farm + Apt.) | Pharmacist | E | Ask your provider whether the degree and the apoteker certificate count as one qualification or two |
 | Allied health (laboratory, radiography, physiotherapy and others) | Allied health | B | One qualification at DataFlow and QuadraBay, two at AVS |
 
 Packages A and B at all three providers, and AVS's nurse package, cover the last five years of employment with up to three employers; DataFlow's and QuadraBay's Package E covers three years. The [documents guide](/qatar/psv/documents) has the full scope table, and the [PSV fees guide](/qatar/psv/fees) every price.
@@ -133,7 +141,7 @@ Packages A and B at all three providers, and AVS's nurse package, cover the last
 
 **Nurses.** DHP's Guidelines for Nurses accept, for a Registered General Nurse, a "Bachelor's Degree in nursing (duration: 4 years)" or a "Diploma in nursing (duration: 3 years after graduation from 12 years of high school)" – or an associate degree with RGN licensure in the country of origin or graduation – followed by two years of clinical experience after registration and licensing, and the Prometric exam. Indonesian nursing colleges describe D3 Keperawatan as a six-semester (three-year) diploma taken after SMA, MA or SMK, S1 Keperawatan as four years, and Profesi Ners as two to three further semesters. D3 matches DHP's diploma row and S1 with Ners its bachelor's row; if your transcript does not show your entry qualification, keep your SMA or SMK certificate ready. DHP, not the PSV provider, decides equivalence at evaluation.
 
-**Doctors.** DHP's Guidelines for Physicians ask general practitioners for a degree from a university in the IMED/FAIMER directory and a minimum six-year undergraduate medical degree (MBBS or equivalent), and say "The internship program can be considered for completion of the required undergraduate study years" when the programme is shorter. Indonesian medical education has an academic stage leading to the S.Ked and a clinical stage leading to the title dr. – reported as about five and a half to six years together – followed by a one-year internship with its own STR and practice permit. Keep your internship completion certificate with your degree, because it may be what brings you to six years. Overseas GPs need five years of experience and must pass the DHP qualifying exam; an exempting exam such as PLAB Part 1 or USMLE Step 2, verified through PSV under Circular DHP/2025/19, replaces the exam but not the experience. The [Prometric exam guide](/qatar/exam/prometric) lists the exempting exams.
+**Doctors.** DHP's Guidelines for Physicians ask general practitioners for a degree from a university in the IMED/FAIMER directory and a minimum six-year undergraduate medical degree (MBBS or equivalent), and say "The internship program can be considered for completion of the required undergraduate study years" when the programme is shorter. Indonesian medical education has an academic stage leading to the S.Ked and a clinical stage leading to the title dr. – reported as about five and a half to six years together – followed by an internship (reported as one year) with its own STR and practice permit. Keep your internship completion certificate with your degree, because it may be what brings you to six years. Overseas GPs need five years of experience and must pass the DHP qualifying exam; an exempting exam such as PLAB Part 1 or USMLE Step 2, verified through PSV under Circular DHP/2025/19, replaces the exam but not the experience. The [Prometric exam guide](/qatar/exam/prometric) lists the exempting exams.
 
 **Specialists.** Indonesia is not in DHP's approved specialty qualification table, so Indonesian specialist qualifications (Sp.) are assessed under **Category 3**: completion of structured postgraduate training of at least three years with a passed exit or board exam, three years of clinical experience after the postgraduate degree in a governmental or semi-governmental hospital or a hospital that runs postgraduate training, and a pass in the DHP qualifying exam. The three years need not be the most recent, provided there is no break in practice. Upload your specialist diploma together with the specialist competency certificate (sertifikat kompetensi), which KKI itself asks for when it registers a specialist; whether that certificate counts as the exit exam is DHP's decision at evaluation.
 
@@ -144,14 +152,14 @@ Since 1 August 2025 DHP accepts a certificate of good standing only as a PSV rep
 In Indonesia one body issues it for every profession. Since the 2023 Health Law (Law 17/2023), **Konsil Kesehatan Indonesia (KKI)** registers doctors, dentists, nurses, midwives, pharmacists and other health workers, and issues the **Certificate of Good Standing** (Sertifikat Kelaikan Praktik). KKI's FAQ sets out the process:
 
 - **Where:** online at [kki.go.id](https://kki.go.id/), logging in with the account you use for STR registration.
-- **What you need:** proof that a health institution in the destination country has asked for the certificate; a valid police certificate (SKCK) from the Indonesian police; your passport and KTP; payment; and, if you have already moved abroad, a signed statement saying since when.
+- **What you need:** proof that a health institution in the destination country has asked for the certificate; a valid police certificate (SKCK) from the Indonesian police; your passport and KTP; payment; and, if you have already moved abroad, a signed statement saying since when. If you live abroad, the KKI decision reported by PERSI Jatim allows a police certificate from your country of residence with a confirming letter from the Indonesian embassy (KBRI) or consulate (KJRI).
 - **Your STR:** it must be an active lifetime STR. KKI's FAQ says an old STR cannot be used, so convert yours first (KKI points to SATUSEHAT SDMK for that).
 - **Fee for the Middle East:** **Rp 800,000** for doctors and dentists (tenaga medis) and **Rp 500,000** for nurses, midwives, pharmacists and other health workers (tenaga kesehatan). You pay with a billing code KKI e-mails after checking your file.
 - **Time:** 10 working days after your payment is confirmed.
 - **Validity:** **three months** from the issue date; it cannot be used after that.
 - **Delivery:** KKI sends the certificate, signed electronically, by e-mail and/or as a hard copy to the regulator, educational institution or health facility in the destination country. A KKI decision of August 2026, as reported by PERSI Jatim, adds that the certificate is written in English and that KKI does not give the applicant a copy.
 
-Two things follow for Qatar. First, the request and the recipient: because KKI sends the certificate to an institution, not to you, ask your PSV provider to issue the request (or name who should) and to confirm the e-mail address KKI should send it to, before you apply. Second, timing: KKI's three-month validity is shorter than DHP's six months, so apply only when your PSV provider and employer say the licensing stage is close. The same reported decision describes a separate registration verification – KKI confirms your STR on a foreign regulator's own form within three working days – which your provider may ask for instead of, or as well as, the certificate.
+Two things follow for Qatar. First, the request and the recipient: because KKI sends the certificate to an institution, not to you, ask your PSV provider to issue the request (or name who should) and to confirm the e-mail address KKI should send it to, before you apply. Second, timing: KKI's three-month validity is shorter than DHP's six months, so apply only when your PSV provider and employer say the licensing stage is close. The same reported decision describes a separate registration verification – KKI confirms your STR on a foreign regulator's own form within three working days – which your provider may also ask for. It needs a valid certificate first, uses a form supplied by the foreign regulator, and you download the result yourself – so it adds to the certificate; it does not replace it.
 
 ## Which Indonesian documents should you upload?
 
@@ -159,7 +167,7 @@ Two things follow for Qatar. First, the request and the recipient: because KKI s
 - **Competency certificate (sertifikat kompetensi)** – from your national competency exam, with the qualification it belongs to.
 - **Internship certificate** – doctors, with the medical degree.
 - **STR** – your current lifetime STR, and the earlier STRs that covered the years DHP will count.
-- **Practice permits (SIP)** – for each workplace in the years you are claiming. DHP asks for licences "accompanying the required years of work experience", and in Indonesia the SIP, renewed every five years, is the permit tied to each workplace.
+- **Practice permits (SIP)** – for each workplace in the years you are claiming. DHP asks for licences "accompanying the required years of work experience", and in Indonesia the SIP – renewed every five years, as the Ministry of Health told Kompas – is the permit tied to each workplace.
 - **Experience certificates (surat keterangan kerja)** – one per employer, on letterhead, with exact start and end dates, your designation and an issue date. The [experience certificate guide](/qatar/psv/problems/experience-letter-format) has a sample.
 - **Passport** – a clear, uncut copy, including the endorsement page if it carries part of your name.
 
@@ -169,8 +177,8 @@ You do not need attestation or legalisation for these: DHP's guidelines say PSV 
 
 Name differences to check for in Indonesian files:
 
-- **A single-word name.** Many Indonesians have one name. Your passport, KTP, ijazah and STR may all show it correctly, while foreign forms ask for a first and a last name. The Directorate General of Immigration, as reported by detikNews, says some destinations require at least two words and that a passport name follows your civil documents. Adding a name is a court process (a district court decision, then Dukcapil, as Dukcapil's director-general told Kompas), and it creates a new mismatch with every certificate you already hold – so do not change your name in the middle of an application. Tell your PSV provider you have a single name and agree how it will be entered.
-- **Academic and professional titles** – dr., drg., Ns., S.Kep, A.Md.Kep, Sp.PD – appear on certificates and in the STR but never in the passport, which carries no titles.
+- **A single-word name.** Many Indonesians have one name. Your passport, KTP, ijazah and STR may all show it correctly, while foreign forms ask for a first and a last name. The Directorate General of Immigration, as reported by detikNews, says a passport name follows your civil documents and that some purposes, such as umrah, need at least two words; Kompas reports that new passports now need a two-word name. Adding a name is a court process (a district court decision, then Dukcapil, as Dukcapil's director-general told Kompas), and it creates a new mismatch with every certificate you already hold – so do not change your name in the middle of an application. Tell your PSV provider you have a single name and agree how it will be entered.
+- **Academic and professional titles** – dr., drg., Ns., S.Kep, A.Md.Kep, Sp.PD – appear on certificates and in the STR but not in the passport, which carries no titles under Immigration's reported rules.
 - **Long names.** Immigration's reported rule is 34 characters including spaces on the data page; a longer name continues on the endorsement page (page 4). Upload that page too.
 - **A married name** in one record and the birth name in another.
 
@@ -192,6 +200,6 @@ Indonesian migrant-worker registration is a separate process from DHP licensing.
 4. Specialists: Category 3 checked – structured training, exit exam, three years in a governmental or training hospital, qualifying exam.
 5. Experience certificates with exact dates, designation and an issue date.
 6. Single name or name variants agreed with your provider, with a document linking them; PDDikti record checked.
-7. KKI Certificate of Good Standing planned for the licensing stage – SKCK ready, the request and the recipient agreed with your PSV provider, and no earlier than three months before DHP will need it.
+7. KKI Certificate of Good Standing planned for the licensing stage – SKCK ready, the request and the recipient agreed with your PSV provider, and timed so the PSV report reaches DHP well inside KKI's three months – the provider's own turnaround counts against them.
 `,
 }
