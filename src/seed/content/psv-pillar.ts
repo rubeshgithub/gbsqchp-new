@@ -118,7 +118,7 @@ Every provider works from the same DHP package structure, so the document set is
 
 You do not need to attest anything first: DHP's guidelines say verification by an approved provider replaces attestation. Anything not in English or Arabic needs an official translation. On the QuadraBay portal every file name must start with a letter, not a number, or the upload is rejected.
 
-Document names and good-standing rules differ by country. The country guides cover them for [India](/qatar/psv/countries/india), [the Philippines](/qatar/psv/countries/philippines), [Pakistan](/qatar/psv/countries/pakistan), [Nepal](/qatar/psv/countries/nepal), [Sri Lanka](/qatar/psv/countries/sri-lanka) and [Bangladesh](/qatar/psv/countries/bangladesh).
+Document names and good-standing rules differ by country. The country guides cover them for [India](/qatar/psv/countries/india), [the Philippines](/qatar/psv/countries/philippines), [Pakistan](/qatar/psv/countries/pakistan), [Nepal](/qatar/psv/countries/nepal), [Sri Lanka](/qatar/psv/countries/sri-lanka), [Bangladesh](/qatar/psv/countries/bangladesh) and [Indonesia](/qatar/psv/countries/indonesia).
 
 ## How long does PSV take?
 

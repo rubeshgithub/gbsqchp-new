@@ -22,6 +22,7 @@ import { pakistanGuide } from './content/countries/pakistan'
 import { nepalGuide } from './content/countries/nepal'
 import { sriLankaGuide } from './content/countries/sri-lanka'
 import { bangladeshGuide } from './content/countries/bangladesh'
+import { indonesiaGuide } from './content/countries/indonesia'
 import { reportTransferGuide } from './content/report-transfer'
 import { unableToVerifyGuide } from './content/unable-to-verify'
 import { discrepancyGuide } from './content/discrepancy'
@@ -202,7 +203,7 @@ async function run() {
   const editorConfig = editorConfigFactory.fromField({ field: contentField })
 
   const pageIds: Record<string, string> = {}
-  const pages: SeedPage[] = [psvPillar, legacyGbs, dataflowGuide, quadrabayGuide, avsGuide, feesGuide, documentsGuide, timelineGuide, nameMismatchGuide, goodStandingArticle, avsApprovedArticle, indiaGuide, philippinesGuide, pakistanGuide, statusGuide, examGuide, licensingGuide, reportTransferGuide, unableToVerifyGuide, discrepancyGuide, universityNotRespondingGuide, experienceLetterGuide, goodStandingGuide, nepalGuide, sriLankaGuide, bangladeshGuide]
+  const pages: SeedPage[] = [psvPillar, legacyGbs, dataflowGuide, quadrabayGuide, avsGuide, feesGuide, documentsGuide, timelineGuide, nameMismatchGuide, goodStandingArticle, avsApprovedArticle, indiaGuide, philippinesGuide, pakistanGuide, statusGuide, examGuide, licensingGuide, reportTransferGuide, unableToVerifyGuide, discrepancyGuide, universityNotRespondingGuide, experienceLetterGuide, goodStandingGuide, nepalGuide, sriLankaGuide, bangladeshGuide, indonesiaGuide]
   for (const page of pages) {
     const { markdown, verifiedAgainst, meta, featuredVendorSlug, ...rest } = page
     const content = convertMarkdownToLexical({ editorConfig, markdown: markdown.trim() })
@@ -249,11 +250,12 @@ async function run() {
     [unableToVerifyGuide.path]: [statusGuide.path, nameMismatchGuide.path, timelineGuide.path, dataflowGuide.path, quadrabayGuide.path],
     [reportTransferGuide.path]: [dataflowGuide.path, quadrabayGuide.path, feesGuide.path, timelineGuide.path, statusGuide.path],
     [bangladeshGuide.path]: [documentsGuide.path, goodStandingGuide.path, nameMismatchGuide.path, feesGuide.path, examGuide.path, pakistanGuide.path],
+    [indonesiaGuide.path]: [documentsGuide.path, goodStandingGuide.path, nameMismatchGuide.path, feesGuide.path, examGuide.path, philippinesGuide.path],
     [sriLankaGuide.path]: [documentsGuide.path, goodStandingGuide.path, nameMismatchGuide.path, feesGuide.path, examGuide.path, indiaGuide.path],
     [nepalGuide.path]: [documentsGuide.path, goodStandingGuide.path, nameMismatchGuide.path, feesGuide.path, examGuide.path, indiaGuide.path],
     [pakistanGuide.path]: [documentsGuide.path, examGuide.path, nameMismatchGuide.path, feesGuide.path, timelineGuide.path, indiaGuide.path],
     [goodStandingArticle.path]: [goodStandingGuide.path, documentsGuide.path, feesGuide.path, timelineGuide.path, psvPillar.path],
-    [goodStandingGuide.path]: [goodStandingArticle.path, documentsGuide.path, feesGuide.path, indiaGuide.path, philippinesGuide.path, pakistanGuide.path, nepalGuide.path, sriLankaGuide.path, bangladeshGuide.path],
+    [goodStandingGuide.path]: [goodStandingArticle.path, documentsGuide.path, feesGuide.path, indiaGuide.path, philippinesGuide.path, pakistanGuide.path, nepalGuide.path, sriLankaGuide.path, bangladeshGuide.path, indonesiaGuide.path],
     [avsApprovedArticle.path]: [avsGuide.path, feesGuide.path, psvPillar.path, dataflowGuide.path, quadrabayGuide.path],
     [legacyGbs.path]: [psvPillar.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
   }
