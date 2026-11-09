@@ -154,7 +154,18 @@ ok "build $(cat "$NEW/.next/BUILD_ID")"
 
 if [[ $SEED == 1 ]]; then
   step "Seeding content"
-  as_app bash -c "cd '$NEW' && NODE_OPTIONS=--no-deprecation node node_modules/payload/bin.js run src/seed/index.ts" | tail -n 15
+  # The seed must print "[seed] seed complete". A run that dies early (it has exited 0 with no output before)
+  # stops the deploy here, before the live site is switched, instead of reporting success.
+  SEED_LOG="$(mktemp)"
+  as_app bash -c "cd '$NEW' && NODE_OPTIONS=--no-deprecation node node_modules/payload/bin.js run src/seed/index.ts" 2>&1 \
+    | tee "$SEED_LOG" | tail -n 15
+  if ! grep -q '\[seed\] seed complete' "$SEED_LOG"; then
+    rm -f "$SEED_LOG"
+    NEW_FAILED="$NEW"; NEW=""
+    rm -rf "$NEW_FAILED"
+    die "the content seed did not finish – the live site was NOT switched; re-run the deploy with --seed"
+  fi
+  rm -f "$SEED_LOG"
 fi
 
 step "Switching the live site to ${SHA}"

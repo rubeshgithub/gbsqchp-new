@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import type { Author, Media, Page, SiteSetting } from '@/payload-types'
 
 import { rel, SITE_URL } from './data'
+import { stripInlineLinks } from './inline-links'
 
 export function absoluteUrl(path: string) {
   return `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`
@@ -95,7 +96,7 @@ export function faqJsonLd(page: Page) {
     mainEntity: page.faqs.map((f) => ({
       '@type': 'Question',
       name: f.question,
-      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      acceptedAnswer: { '@type': 'Answer', text: stripInlineLinks(f.answer) },
     })),
   }
 }
