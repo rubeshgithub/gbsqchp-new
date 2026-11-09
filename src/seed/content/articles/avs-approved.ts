@@ -34,7 +34,7 @@ export const avsApprovedArticle = {
   ],
   changeLog: [
     { date: '2026-10-17', note: 'Published.' },
-    { date: '2026-11-09', note: 'Removed a reference to a former provider. No facts changed.' },
+    { date: '2026-11-09', note: 'Removed an outdated sentence. No facts changed.' },
   ],
   faqs: [
     {

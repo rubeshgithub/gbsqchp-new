@@ -42,7 +42,7 @@ export const avsGuide = {
   changeLog: [
     { date: '2026-10-11', note: 'First published. Fees transcribed from the AVS fee schedule; approval date from the circular PDF.' },
     { date: '2026-10-26', note: 'Search title and description shortened to lead with the provider’s full name. No facts changed.' },
-    { date: '2026-11-09', note: 'Removed a reference to a former provider. No facts changed.' },
+    { date: '2026-11-09', note: 'Removed an outdated sentence. No facts changed.' },
   ],
   faqs: [
     {

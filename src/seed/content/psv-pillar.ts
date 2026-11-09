@@ -52,7 +52,7 @@ export const psvPillar = {
     { date: '2026-10-26', note: 'Linked each provider in the provider list to its own guide (DataFlow, QuadraBay, AVS).' },
     { date: '2026-10-27', note: 'Linked the new certificate of good standing guide. No facts changed.' },
     { date: '2026-11-02', note: 'Linked the six country guides from the documents section. No facts changed.' },
-    { date: '2026-11-09', note: 'Removed the paragraph about a former provider. No facts changed.' },
+    { date: '2026-11-09', note: 'Removed an outdated paragraph. No facts changed.' },
   ],
   faqs: [
     {
