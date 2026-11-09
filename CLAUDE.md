@@ -4,11 +4,10 @@
 
 **Primary Source Verification Guide** (domain gbsqchp.com), published by **MRP Corporate Services**.
 Independent information portal for healthcare professionals getting licensed in the GCC, Qatar first.
-Branding rules: the site never names Instead Global, 2682736 Alberta Inc. or gulfbridgeservices.com, and never
-presents itself as connected to Gulf Bridge Services. GBS appears only as a historical fact (a former DHP-approved
-provider, 2018–2024) on the legacy page, the circular tracker, the PSV history paragraph and the homepage's one-line
-"used GBS before 2024?" pointer to the legacy page. Never say or imply that GBS operated this domain or that
-the site is its former portal (risk: Google's expired-domain policy; site-wide drop from 30 Oct 2026). The business is
+Branding rules: the site never names Instead Global, 2682736 Alberta Inc., gulfbridgeservices.com, Gulf Bridge
+Services or GBS, and never refers to the former provider or the domain's earlier website in any way – no legacy page,
+no "before 2024" pointers, no GBS circulars or vendor record (all removed 9 Nov 2026 after the site-wide search drop
+from 30 Oct 2026; risk: Google's expired-domain policy). The business is
 100% online: no address, phone or office anywhere. The author byline is **Alex Morgan · MRP Corporate Services**, with no
 LinkedIn or photo; RK's own name and LinkedIn never appear on the site, in schema or in the public API. Enquiries come through the Crisp chat bubble (Site settings →
 Chat & enquiries → Crisp website ID) and the /contact form.
@@ -44,7 +43,9 @@ Payload skill for this repo: `.claude/skills/payload/SKILL.md` (read it before t
    reachable during `next build`.
 5. **Every page component gets its data through `src/lib/data.ts`**; add a helper there rather than calling
    `getPayload` inside components.
-6. **Legacy GBS URLs** redirect in `next.config.ts` → `/gbs-psv-portal`. Keep that page published forever.
+6. **Old-site URLs answer 410 Gone**: `/blog`, `/guide`, `/news` route handlers and the legacy portal prefixes
+   rewritten to `/removed` in `next.config.ts` (all use `src/lib/gone.ts`). `/gbs-psv-portal` (removed page) 308s to
+   `/qatar/psv`. The seed deletes the records listed in `REMOVED` (`src/seed/data.ts`); never re-add them.
 7. Newsletter sign-ups go through the custom endpoint `POST /api/subscribers/subscribe` (validation + honeypot);
    direct creates on `subscribers` are admin-only.
 8. Contact form: `POST /api/contact-messages/submit` (validation, honeypot, 5 per IP per 10 min). Every message is
@@ -76,8 +77,7 @@ Payload skill for this repo: `.claude/skills/payload/SKILL.md` (read it before t
 ## Content plan
 
 The 25 Phase-1 page briefs (slug, title tag, meta, outline, facts with sources, FAQs, internal links) are in the
-project doc `GBSQCHP-phase1-content-plan-and-briefs.md`. Published so far: `/qatar/psv` (pillar), `/gbs-psv-portal`
-(legacy), `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs` (provider guides), `/qatar/psv/fees`, `/qatar/psv/documents`,
+project doc `GBSQCHP-phase1-content-plan-and-briefs.md`. Published so far: `/qatar/psv` (pillar), `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs` (provider guides), `/qatar/psv/fees`, `/qatar/psv/documents`,
 `/qatar/psv/timeline`, `/qatar/psv/problems/name-mismatch`, `/qatar/psv/status`, `/qatar/exam/prometric`, `/qatar/licensing` (hub,
 in the header), country guides `/qatar/psv/countries/{india,india/nurses,philippines,pakistan,nepal,sri-lanka,bangladesh,indonesia}`, `/qatar/psv/report-transfer`,
 `/qatar/psv/problems/{unable-to-verify,discrepancy,university-not-responding,experience-letter-format,good-standing-certificate}`.
@@ -137,14 +137,13 @@ become unreadable, new ones work. Actions log and artifact downloads are blocked
   Pakistan is NOT in DHP's specialty qualification table → FCPS/MS/MD are Category 3; MCPS is 2 years. pnmc.gov.pk,
   pcsindh.com and beoe.gov.pk are blocked from the shell proxy – use WebFetch/Nimble.
 - Still to open: DHP/2024/22 (preliminary evaluation without employer – the guidelines' process map requires the
-  employer representative), DHP/2024/09. Set `verified: true` on each record after reading.
+  employer representative). Set `verified: true` on each record after reading.
 - WebFetch now needs user approval for URLs not already in the conversation; for official PDFs use Nimble extract
   (base64 PDF in the saved result → decode → pdftotext, or pdftoppm + tesseract for scans).
 - DHP publishes no current evaluation/licence fee schedule; the fees page uses the last published table (QCHP FAQ,
   Nov 2014: evaluation QAR 100; licence QAR 600 nurses/pharmacists/AHP, 1,000 general physicians/dentists, 1,200
   specialists) and says so. Replace with an official source when one appears.
-- Official circular numbers use the form DHP/YYYY/NN (the GBS-end circular is DHP/2024/09, not DHP/09/2024; the seed
-  renames old records via `RENAMED_CIRCULARS`).
+- Official circular numbers use the form DHP/YYYY/NN (the seed can rename old records via `RENAMED_CIRCULARS`).
 - DataFlow prices are from its DHP price list PDF (URL path says 2024/09, file dated 28 Jul 2025), re-read in full on
   16 Oct 2026; re-check quarterly.
 - No email adapter configured (Payload warns at start); add one before enabling password resets or newsletters.

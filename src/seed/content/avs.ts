@@ -42,6 +42,7 @@ export const avsGuide = {
   changeLog: [
     { date: '2026-10-11', note: 'First published. Fees transcribed from the AVS fee schedule; approval date from the circular PDF.' },
     { date: '2026-10-26', note: 'Search title and description shortened to lead with the provider’s full name. No facts changed.' },
+    { date: '2026-11-09', note: 'Removed a reference to a former provider. No facts changed.' },
   ],
   faqs: [
     {
@@ -75,7 +76,7 @@ export const avsGuide = {
 
 Approved Verification Services describes itself as a Qatar-based verification company dedicated to Primary Source Verification, with its office at Abdul Jaleel Business Center on Airport Street in Doha. On 3 September 2026 the Department of Healthcare Professions issued Circular DHP/2026/36, "Approval of a Third Provider of Primary Source Verification (PSV) Services: Approved Verification Services (AVS)", addressed to every practitioner and facility in the state. The circular announces "a partnership agreement signed with Approved Verification Services (AVS)", under which AVS "becomes the third approved provider of primary source verification services", and says practitioners "may submit verification requests through Approved Verification Services from the date of issuance of this Circular, as well as through the other verification companies approved by the Department" ([Circular DHP/2026/36](https://dhp.moph.gov.qa/en/QCHPCirculars/DHP%2036%202026%20E.pdf)).
 
-That makes AVS the third name on DHP's Primary Source Verification page, after DataFlow (partner since 2009) and QuadraBay (approved 2 December 2025), and the first provider based in Qatar since Gulf Bridge Services' contract ended in February 2024. The DHP page lists the office, the hours (Sunday to Thursday, 8 am to 4 pm), the helpdesk address dhp.helpdesk@avsqatar.com and the phone number +974 4464 4490, and links the two PDFs this guide is built on ([DHP, Primary Source Verification](https://dhp.moph.gov.qa/en/Pages/PrimarysourceVerification.aspx)).
+That makes AVS the third name on DHP's Primary Source Verification page, after DataFlow (partner since 2009) and QuadraBay (approved 2 December 2025), and the only one of the three based in Qatar. The DHP page lists the office, the hours (Sunday to Thursday, 8 am to 4 pm), the helpdesk address dhp.helpdesk@avsqatar.com and the phone number +974 4464 4490, and links the two PDFs this guide is built on ([DHP, Primary Source Verification](https://dhp.moph.gov.qa/en/Pages/PrimarysourceVerification.aspx)).
 
 AVS's own site describes a wider menu – education, employment, identity, criminal-background, licence and reference checks – but the DHP programme uses only the components DHP requires: qualifications, licence, employment and, where asked, good standing and logbooks. The [PSV overview](/qatar/psv) explains how those components work with any provider.
 

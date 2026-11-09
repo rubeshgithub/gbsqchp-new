@@ -32,7 +32,10 @@ export const avsApprovedArticle = {
       url: 'https://avsqatar.com/files/DHP%20Reference%20Program%20Guide.pdf',
     },
   ],
-  changeLog: [{ date: '2026-10-17', note: 'Published.' }],
+  changeLog: [
+    { date: '2026-10-17', note: 'Published.' },
+    { date: '2026-11-09', note: 'Removed a reference to a former provider. No facts changed.' },
+  ],
   faqs: [
     {
       question: 'Do I have to switch to AVS?',
@@ -56,7 +59,7 @@ DHP's Primary Source Verification page now lists all three providers. For AVS it
 
 - **A cheaper option for physicians and dentists.** AVS's schedule lists QAR 1,050, against QAR 1,100 at QuadraBay and QAR 1,210 at DataFlow.
 - **More covered for nurses, pharmacists and allied health.** At QAR 900, AVS verifies up to two qualifications and five years of employment. DataFlow's and QuadraBay's nurse and pharmacist package covers one qualification and three years; their allied health package already covers five years, so for allied health the difference is the second qualification.
-- **A local office.** AVS is the only provider based in Qatar, the first since Gulf Bridge Services' contract ended in February 2024.
+- **A local office.** AVS is the only one of the three providers based in Qatar.
 
 ## What is still unknown?
 

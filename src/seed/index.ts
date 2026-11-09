@@ -33,10 +33,9 @@ import { statusGuide } from './content/status'
 import { examGuide } from './content/exam'
 import { licensingGuide } from './content/licensing'
 import { goodStandingGuide } from './content/good-standing'
-import { legacyGbs } from './content/legacy-gbs'
 import { psvPillar } from './content/psv-pillar'
 import { quadrabayGuide } from './content/quadrabay'
-import { PREVIOUS_AUTHOR_SLUGS, RENAMED_CIRCULARS, author, circulars, countries, fees, professions, vendors } from './data'
+import { PREVIOUS_AUTHOR_SLUGS, REMOVED, RENAMED_CIRCULARS, author, circulars, countries, fees, professions, vendors } from './data'
 
 type AnyData = Record<string, unknown>
 
@@ -90,6 +89,22 @@ async function run() {
     professionIds[p.slug] = doc.id
   }
   log(`professions: ${Object.keys(professionIds).length}`)
+
+  // ---------- removed records ----------
+  // Delete pages, vendors and circulars that were taken off the site on purpose (see REMOVED in data.ts).
+  for (const [collection, field, values] of [
+    ['pages', 'path', REMOVED.pagePaths],
+    ['vendors', 'slug', REMOVED.vendorSlugs],
+    ['circulars', 'number', REMOVED.circularNumbers],
+  ] as const) {
+    for (const value of values) {
+      const found = await payload.find({ collection, where: { [field]: { equals: value } }, limit: 10, depth: 0, draft: true })
+      for (const doc of found.docs) {
+        await payload.delete({ collection, id: doc.id })
+        log(`removed ${collection}: ${value}`)
+      }
+    }
+  }
 
   // ---------- circulars ----------
   // Rename records whose number was corrected after an earlier seed, so re-running never leaves duplicates.
@@ -204,7 +219,7 @@ async function run() {
   const editorConfig = editorConfigFactory.fromField({ field: contentField })
 
   const pageIds: Record<string, string> = {}
-  const pages: SeedPage[] = [psvPillar, legacyGbs, dataflowGuide, quadrabayGuide, avsGuide, feesGuide, documentsGuide, timelineGuide, nameMismatchGuide, goodStandingArticle, avsApprovedArticle, indiaGuide, philippinesGuide, pakistanGuide, statusGuide, examGuide, licensingGuide, reportTransferGuide, unableToVerifyGuide, discrepancyGuide, universityNotRespondingGuide, experienceLetterGuide, goodStandingGuide, nepalGuide, sriLankaGuide, bangladeshGuide, indonesiaGuide, indiaNursesGuide]
+  const pages: SeedPage[] = [psvPillar, dataflowGuide, quadrabayGuide, avsGuide, feesGuide, documentsGuide, timelineGuide, nameMismatchGuide, goodStandingArticle, avsApprovedArticle, indiaGuide, philippinesGuide, pakistanGuide, statusGuide, examGuide, licensingGuide, reportTransferGuide, unableToVerifyGuide, discrepancyGuide, universityNotRespondingGuide, experienceLetterGuide, goodStandingGuide, nepalGuide, sriLankaGuide, bangladeshGuide, indonesiaGuide, indiaNursesGuide]
   for (const page of pages) {
     const { markdown, verifiedAgainst, meta, featuredVendorSlug, ...rest } = page
     const content = convertMarkdownToLexical({ editorConfig, markdown: markdown.trim() })
@@ -232,7 +247,7 @@ async function run() {
 
   // cross-link the pages and attach guide pages to vendors / circulars
   const related: Record<string, string[]> = {
-    [psvPillar.path]: [feesGuide.path, documentsGuide.path, timelineGuide.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path, legacyGbs.path],
+    [psvPillar.path]: [feesGuide.path, documentsGuide.path, timelineGuide.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
     [dataflowGuide.path]: [psvPillar.path, feesGuide.path, documentsGuide.path, timelineGuide.path, quadrabayGuide.path, avsGuide.path],
     [quadrabayGuide.path]: [psvPillar.path, feesGuide.path, documentsGuide.path, timelineGuide.path, dataflowGuide.path, avsGuide.path],
     [avsGuide.path]: [psvPillar.path, feesGuide.path, documentsGuide.path, timelineGuide.path, dataflowGuide.path, quadrabayGuide.path],
@@ -259,13 +274,11 @@ async function run() {
     [goodStandingArticle.path]: [goodStandingGuide.path, documentsGuide.path, feesGuide.path, timelineGuide.path, psvPillar.path],
     [goodStandingGuide.path]: [goodStandingArticle.path, documentsGuide.path, feesGuide.path, indiaGuide.path, philippinesGuide.path, pakistanGuide.path, nepalGuide.path, sriLankaGuide.path, bangladeshGuide.path, indonesiaGuide.path, indiaNursesGuide.path],
     [avsApprovedArticle.path]: [avsGuide.path, feesGuide.path, psvPillar.path, dataflowGuide.path, quadrabayGuide.path],
-    [legacyGbs.path]: [psvPillar.path, dataflowGuide.path, quadrabayGuide.path, avsGuide.path],
   }
   for (const [path, targets] of Object.entries(related)) {
     await payload.update({ collection: 'pages', id: pageIds[path], data: { relatedPages: targets.map((t) => pageIds[t]) } })
   }
   const vendorPages: Record<string, string> = {
-    gbs: legacyGbs.path,
     dataflow: dataflowGuide.path,
     quadrabay: quadrabayGuide.path,
     avs: avsGuide.path,
@@ -274,12 +287,10 @@ async function run() {
     await payload.update({ collection: 'vendors', id: vendorIds[slug], data: { page: pageIds[path] } })
   }
   const circularExplainers: Record<string, string> = {
-    '15/2018': legacyGbs.path,
     'DHP/2024/10': feesGuide.path,
     'DHP/2025/08': goodStandingGuide.path,
     'DHP/2024/16': timelineGuide.path,
     'DHP/2025/19': examGuide.path,
-    'DHP/2024/09': legacyGbs.path,
     'DHP/2025/20': quadrabayGuide.path,
     'DHP/2026/36': avsGuide.path,
   }

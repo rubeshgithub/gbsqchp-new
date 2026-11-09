@@ -18,10 +18,14 @@ test.describe('Frontend', () => {
     expect(schema.join(' ')).toContain('FAQPage')
   })
 
-  test('legacy GBS portal URLs redirect to the explainer page', async ({ page }) => {
-    const response = await page.goto('http://localhost:3000/Home/Login')
-    expect(response?.url()).toContain('/gbs-psv-portal')
-    await expect(page.locator('h1').first()).toContainText('GBS')
+  test('URLs from an earlier website on this domain answer 410 Gone', async ({ request }) => {
+    const response = await request.get('http://localhost:3000/Home/Login', { maxRedirects: 0 })
+    expect(response.status()).toBe(410)
+  })
+
+  test('the removed legacy page redirects to the PSV guide', async ({ page }) => {
+    const response = await page.goto('http://localhost:3000/gbs-psv-portal')
+    expect(response?.url()).toContain('/qatar/psv')
   })
 
   test('fee calculator updates totals when the profession changes', async ({ page }) => {

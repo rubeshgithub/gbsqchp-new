@@ -7,8 +7,8 @@ const __filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(__filename)
 
 /**
- * Legacy URLs from the former PSV portal on this domain (2018–2024) still receive traffic and are still
- * linked from PDFs on dhp.moph.gov.qa. Send all of them to the explainer page.
+ * URL families left over from an earlier website on this domain. They answer 410 Gone (src/lib/gone.ts) through
+ * the /removed route, like /blog, /guide and /news, so search engines drop them for good.
  */
 const LEGACY_PREFIXES = ['Home', 'home', 'AppPDFFiles', 'apppdffiles', 'Account', 'account', 'Applicant', 'applicant', 'Employer', 'employer']
 
@@ -37,12 +37,16 @@ const nextConfig: NextConfig = {
         destination: 'https://gbsqchp.com/:path*',
         permanent: true,
       },
-      ...LEGACY_PREFIXES.map((prefix) => ({
-        source: `/${prefix}/:path*`,
-        destination: '/gbs-psv-portal',
-        permanent: true,
-      })),
+      // The former legacy explainer page was removed on 9 Nov 2026.
+      { source: '/gbs-psv-portal', destination: '/qatar/psv', permanent: true },
     ]
+  },
+  async rewrites() {
+    return {
+      beforeFiles: LEGACY_PREFIXES.map((prefix) => ({ source: `/${prefix}/:path*`, destination: '/removed' })),
+      afterFiles: [],
+      fallback: [],
+    }
   },
   async headers() {
     return [

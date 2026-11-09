@@ -11,7 +11,7 @@ export const quadrabayGuide = {
   section: 'psv' as const,
   featuredVendorSlug: 'quadrabay',
   summary:
-    "QuadraBay became Qatar's second approved Primary Source Verification provider on 2 December 2025 under Circular DHP/2025/20, ending the period since February 2024 in which DataFlow had been the only route. Its Standard packages cost QAR 900 for nurses, pharmacists and allied health professionals and QAR 1,100 for physicians and dentists, with a 20-business-day target; the Prestige tier (QAR 1,200 and 1,400) targets 14. DHP accepts QuadraBay reports for every licensing category and every application type. This guide covers the packages, the dhp.quadrabay.com portal, the 30-day rule that turns a slow file into an 'Unable to Check' result, and how QuadraBay compares with DataFlow and AVS.",
+    "QuadraBay became Qatar's second approved Primary Source Verification provider on 2 December 2025 under Circular DHP/2025/20, alongside DataFlow. Its Standard packages cost QAR 900 for nurses, pharmacists and allied health professionals and QAR 1,100 for physicians and dentists, with a 20-business-day target; the Prestige tier (QAR 1,200 and 1,400) targets 14. DHP accepts QuadraBay reports for every licensing category and every application type. This guide covers the packages, the dhp.quadrabay.com portal, the 30-day rule that turns a slow file into an 'Unable to Check' result, and how QuadraBay compares with DataFlow and AVS.",
   meta: {
     title: 'QuadraBay Qatar: DHP PSV Packages, Fees & Steps (2026)',
     description:
@@ -35,7 +35,10 @@ export const quadrabayGuide = {
       url: 'https://quadrabay.com/',
     },
   ],
-  changeLog: [{ date: '2026-10-11', note: 'First published. Packages and fees as published in Circular DHP/2025/20.' }],
+  changeLog: [
+    { date: '2026-10-11', note: 'First published. Packages and fees as published in Circular DHP/2025/20.' },
+    { date: '2026-11-09', note: 'Shortened the opening sentence. No facts changed.' },
+  ],
   faqs: [
     {
       question: 'Is QuadraBay accepted by DHP for all professions?',

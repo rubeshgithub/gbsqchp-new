@@ -10,8 +10,16 @@ const VERIFIED_ON = '2026-10-11'
  * Circular numbers that were corrected after the first seed. The seed renames existing records in place so a
  * re-run does not leave duplicates behind. Key = old number, value = current number.
  */
-export const RENAMED_CIRCULARS: Record<string, string> = {
-  'DHP/09/2024': 'DHP/2024/09',
+export const RENAMED_CIRCULARS: Record<string, string> = {}
+
+/**
+ * Records removed from the site on purpose (9 Nov 2026: no references to a former provider anywhere on the site).
+ * The seed deletes them if an earlier run created them.
+ */
+export const REMOVED = {
+  pagePaths: ['/gbs-psv-portal'],
+  vendorSlugs: ['gbs'],
+  circularNumbers: ['15/2018', 'DHP/2024/09', 'DHP/09/2024'],
 }
 
 export const countries = [
@@ -114,28 +122,6 @@ export const professions = [
 ]
 
 export const circulars = [
-  {
-    number: '15/2018',
-    authority: 'QCHP' as const,
-    status: 'historical' as const,
-    title: 'Contract with Gulf Bridge Services (GBS) as a second primary source verification provider',
-    issuedOn: null,
-    topics: ['vendors', 'psv'],
-    summary: 'QCHP announced a contract with Gulf Bridge Services to conduct primary source verification for registration and licensing alongside DataFlow. Announced to the press on 21 July 2018.',
-    officialUrl: 'https://dhp.moph.gov.qa/en/QCHPCirculars/Circular%20(15-2018)%20-%20Eng.pdf',
-    verified: true,
-  },
-  {
-    number: 'DHP/2024/09',
-    authority: 'DHP' as const,
-    status: 'historical' as const,
-    title: 'End of the contract with Gulf Bridge Services (GBS) as one of the approved companies for Primary Source Verification (PSV)',
-    issuedOn: '2024-02-07',
-    topics: ['vendors', 'psv'],
-    summary: 'DHP announced the end of the contractual agreement with GBS, one of the two companies approved to verify practitioners’ certificates from the primary source. DataFlow remained the sole provider until December 2025.',
-    officialUrl: 'https://dhp.moph.gov.qa/en/QCHPCirculars/DHP-2024-09-E.pdf',
-    verified: false,
-  },
   {
     number: 'DHP/2024/10',
     authority: 'DHP' as const,
@@ -289,27 +275,6 @@ export const vendors = [
     whatsapp: '+974 5054 4490',
     officeAddress: 'Abdul Jaleel Business Center, 5th Floor, Office 504, Airport Street, Doha',
     officeHours: 'Sunday to Thursday, 8 am – 4 pm',
-  },
-  {
-    name: 'Gulf Bridge Services (GBS)',
-    shortName: 'GBS',
-    slug: 'gbs',
-    status: 'former' as const,
-    sortOrder: 9,
-    countryCodes: ['QA'],
-    approvedOn: '2018-07-21',
-    endedOn: '2024-02-07',
-    approvedUnderNumbers: ['15/2018', 'DHP/2024/09'],
-    tagline: 'QCHP’s second approved provider, July 2018 – February 2024',
-    website: null,
-    applyUrl: null,
-    trackUrl: null,
-    supportUrl: null,
-    supportEmail: null,
-    phone: null,
-    whatsapp: null,
-    officeAddress: null,
-    officeHours: null,
   },
 ]
 
