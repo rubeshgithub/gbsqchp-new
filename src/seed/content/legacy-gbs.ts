@@ -1,17 +1,17 @@
 /**
- * Seed content: legacy page for traffic arriving from old Gulf Bridge Services PSV portal links.
+ * Seed content: legacy page for people looking for the former provider Gulf Bridge Services (GBS).
  */
 
 export const legacyGbs = {
-  title: 'Looking for the GBS QCHP PSV portal? The service ended in February 2024 – here is what to do now',
+  title: 'GBS verification for Qatar ended in February 2024 – where to apply for PSV now',
   path: '/gbs-psv-portal',
   section: 'legacy' as const,
   summary:
-    "Gulf Bridge Services (GBS) operated gbsqchp.com as the Qatar Council for Healthcare Practitioners' second approved Primary Source Verification channel from July 2018 until the Department of Healthcare Professions ended the contract on 7 February 2024 (Circular DHP/2024/09). GBS no longer accepts or processes PSV applications. If you need verification for a DHP licence today, apply through DataFlow, QuadraBay or AVS – the three providers DHP currently approves.",
+    "Gulf Bridge Services (GBS) was the Qatar Council for Healthcare Practitioners' second approved Primary Source Verification provider from July 2018 until the Department of Healthcare Professions ended the contract on 7 February 2024 (Circular DHP/2024/09). GBS no longer accepts or processes PSV applications. If you need verification for a DHP licence today, apply through DataFlow, QuadraBay or AVS – the three providers DHP currently approves.",
   meta: {
-    title: 'Gulf Bridge Services (GBS) QCHP Portal: Service Ended',
+    title: 'Qatar PSV After GBS (2024): Where to Apply Now',
     description:
-      "Gulf Bridge Services' DHP primary source verification contract ended on 7 Feb 2024 (Circular DHP/2024/09). Where to apply for PSV in Qatar now.",
+      "DHP ended Gulf Bridge Services' PSV contract on 7 Feb 2024 (Circular DHP/2024/09). The three providers DHP approves now and how to apply.",
   },
   showVendorTable: false,
   showCalculator: false,
@@ -37,12 +37,13 @@ export const legacyGbs = {
     { date: '2026-10-12', note: 'Updated the publisher details: the site is now the Primary Source Verification Guide by MRP Corporate Services.' },
     { date: '2026-10-26', note: 'Search title now spells out Gulf Bridge Services so people looking for the former provider land on this page. No facts changed.' },
     { date: '2026-11-02', note: 'Added an FAQ on where to log in now (DHP’s licensing system and the three provider portals, as named elsewhere on the site). No facts changed.' },
+    { date: '2026-11-09', note: 'Reworded the page so it describes GBS only as a former DHP provider and makes clear this guide has no connection with it. No facts changed.' },
   ],
   faqs: [
     {
-      question: 'Where do I log in now that the GBS QCHP portal has closed?',
+      question: 'Where do I apply now that GBS no longer verifies for DHP?',
       answer:
-        'There is no GBS login any more. Your licence application – evaluation, licensing and renewal – goes through DHP’s online Registration and Licensing System at dhpportal.moph.gov.qa (see the [licensing guide](/qatar/licensing)). Verification happens on the portal of the provider you choose: DataFlow at dhp.dataflowgroup.com, QuadraBay at dhp.quadrabay.com or Approved Verification Services (AVS) at avsqatar.com.',
+        'GBS no longer takes applications. Your licence application – evaluation, licensing and renewal – goes through DHP’s online Registration and Licensing System at dhpportal.moph.gov.qa (see the [licensing guide](/qatar/licensing)). Verification happens on the portal of the provider you choose: DataFlow at dhp.dataflowgroup.com, QuadraBay at dhp.quadrabay.com or Approved Verification Services (AVS) at avsqatar.com.',
     },
     {
       question: 'Is my old GBS PSV report still valid?',
@@ -55,17 +56,17 @@ export const legacyGbs = {
         'The DHP Registration and Licensing section, through the contact details on dhp.moph.gov.qa. This website has no access to GBS case records and cannot trace an application or a payment.',
     },
     {
-      question: 'Is this website the old GBS portal?',
+      question: 'Is this website connected to GBS?',
       answer:
-        'No. This is the Primary Source Verification Guide, an independent information service published by MRP Corporate Services. It is not a PSV provider, it does not take applications or payments, and it has no connection with the Ministry of Public Health or the DHP.',
+        'No. This is the Primary Source Verification Guide, an independent information service published by MRP Corporate Services. It is not a PSV provider, it does not take applications or payments, and it has no connection with Gulf Bridge Services, the Ministry of Public Health or the DHP.',
     },
   ],
   markdown: `
-## What happened to the GBS QCHP PSV portal?
+## What happened to GBS verification for Qatar?
 
 - **July 2018** – the Qatar Council for Healthcare Practitioners (QCHP, since renamed the Department of Healthcare Professions) signed a contract with Gulf Bridge Services to run primary source verification alongside DataFlow. The announcement was Circular 15/2018 and was reported by Gulf Times, The Peninsula and Qatar Tribune on 21 July 2018.
-- **2018 to 2024** – applicants and employers submitted PSV applications through gbsqchp.com. The applicant and employer user manuals for that portal are still hosted on dhp.moph.gov.qa, which is why older guides and search results still point here.
-- **7 February 2024** – DHP announced the end of the contractual agreement with GBS in Circular DHP/2024/09. The portal's login, status-check and document pages were taken down; any old link to them now lands on this page.
+- **2018 to 2024** – applicants and employers could choose GBS or DataFlow for verification. GBS's user manuals are still hosted on dhp.moph.gov.qa, so older guides and search results still mention it.
+- **7 February 2024** – DHP announced the end of the contractual agreement with GBS in Circular DHP/2024/09. GBS no longer accepts or processes PSV applications for DHP.
 
 ## I have an old GBS application or report – what now?
 
@@ -85,6 +86,6 @@ Start with the [Primary Source Verification guide for Qatar](/qatar/psv), which 
 
 ## About this website
 
-The domain kept its name because thousands of applicants, employers and official documents still refer to it. The site is now the Primary Source Verification Guide, an independent information service published by MRP Corporate Services: it explains the rules, quotes fees and dates from official sources with the date they were last checked, and links you to the provider and the regulator. It does not verify documents, take applications or accept payments.
+This is the Primary Source Verification Guide, an independent information service published by MRP Corporate Services, with no connection to Gulf Bridge Services. It explains the rules, quotes fees and dates from official sources with the date they were last checked, and links you to the provider and the regulator. It does not verify documents, take applications or accept payments.
 `,
 }

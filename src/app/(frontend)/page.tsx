@@ -80,8 +80,8 @@ export default async function HomePage() {
           </p>
         )}
         <p className="callout callout-info">
-          Looking for the old GBS QCHP PSV portal? Gulf Bridge Services stopped verifying for DHP in February 2024.{' '}
-          <Link href="/gbs-psv-portal">What happened and where to apply now →</Link>
+          Used GBS before 2024? Gulf Bridge Services stopped verifying for DHP in February 2024.{' '}
+          <Link href="/gbs-psv-portal">Where to apply now →</Link>
         </p>
       </section>
 

@@ -93,7 +93,7 @@ The order matters. You apply for PSV **first**, then attach the completed report
 - **QuadraBay** – approved on 2 December 2025 under Circular DHP/2025/20 as a second provider. Applications go through [dhp.quadrabay.com](https://dhp.quadrabay.com/); support is dhp.support@quadrabay.com. QuadraBay already verifies for Bahrain's NHRA (since December 2021) and for Kuwait's Ministry of Health private sector. See the [QuadraBay guide](/qatar/psv/quadrabay).
 - **Approved Verification Services (AVS)** – approved on 3 September 2026 under Circular DHP/2026/36 as a third provider, and the only one based in Qatar. Applications go through [avsqatar.com](https://www.avsqatar.com/avs/apply); the Doha office is at Abdul Jaleel Business Center, Airport Street, and the helpdesk is dhp.helpdesk@avsqatar.com or +974 4464 4490. Its fee schedule lists QAR 1,050 for physicians and dentists and QAR 900 for nurses, pharmacists and allied health, each covering up to two qualifications and five years of employment. See the [Approved Verification Services (AVS) guide](/qatar/psv/avs).
 
-Gulf Bridge Services (GBS) was the second approved provider from July 2018 until DHP ended the contract on 7 February 2024 (Circular DHP/2024/09). If you arrived here looking for the GBS portal, read [what to do now](/gbs-psv-portal).
+Gulf Bridge Services (GBS) was the second approved provider from July 2018 until DHP ended the contract on 7 February 2024 (Circular DHP/2024/09). If you applied through GBS before 2024, read [what to do now](/gbs-psv-portal).
 
 ## Which provider should you choose?
 

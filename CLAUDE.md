@@ -7,7 +7,8 @@ Independent information portal for healthcare professionals getting licensed in 
 Branding rules: the site never names Instead Global, 2682736 Alberta Inc. or gulfbridgeservices.com, and never
 presents itself as connected to Gulf Bridge Services. GBS appears only as a historical fact (a former DHP-approved
 provider, 2018–2024) on the legacy page, the circular tracker, the PSV history paragraph and the homepage's one-line
-"looking for the old GBS portal?" pointer to the legacy page. The business is
+"used GBS before 2024?" pointer to the legacy page. Never say or imply that GBS operated this domain or that
+the site is its former portal (risk: Google's expired-domain policy; site-wide drop from 30 Oct 2026). The business is
 100% online: no address, phone or office anywhere. The author byline is **Alex Morgan · MRP Corporate Services**, with no
 LinkedIn or photo; RK's own name and LinkedIn never appear on the site, in schema or in the public API. Enquiries come through the Crisp chat bubble (Site settings →
 Chat & enquiries → Crisp website ID) and the /contact form.
