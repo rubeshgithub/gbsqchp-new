@@ -1,0 +1,38 @@
+# Temporary diagnostic (delete with the diag-crawl branch): how gbsqchp.com answers different user agents.
+name: Crawl diagnostic
+on:
+  push:
+    branches: [diag-crawl]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch as browser, Googlebot, Bingbot
+        run: |
+          set +e
+          declare -A UA=(
+            [browser]="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
+            [googlebot]="Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+            [googlebot-smartphone]="Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+            [bingbot]="Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)"
+          )
+          for path in /robots.txt /sitemap.xml / /qatar/psv /qatar/licensing /qatar/psv/avs; do
+            for k in browser googlebot googlebot-smartphone bingbot; do
+              hdr=$(curl -s -o /tmp/body -D - -A "${UA[$k]}" --max-time 20 "https://gbsqchp.com${path}")
+              code=$(echo "$hdr" | head -1 | awk '{print $2}')
+              xr=$(echo "$hdr" | grep -i '^x-robots-tag' | tr -d '\r')
+              mit=$(echo "$hdr" | grep -i '^cf-mitigated' | tr -d '\r')
+              cache=$(echo "$hdr" | grep -i '^cf-cache-status' | tr -d '\r')
+              size=$(wc -c </tmp/body)
+              title=$(grep -o '<title>[^<]*' /tmp/body | head -1)
+              noindex=$(grep -oi '<meta[^>]*name="robots"[^>]*>' /tmp/body | head -2 | tr '\n' ' ')
+              canon=$(grep -o '<link rel="canonical"[^>]*>' /tmp/body | head -1)
+              headpos=$(grep -bo '</head>' /tmp/body | head -1 | cut -d: -f1); titlepos=$(grep -bo '<title>' /tmp/body | head -1 | cut -d: -f1)
+              challenge=$(grep -qi 'challenge-platform\|cf-chl\|Just a moment' /tmp/body && echo CHALLENGE)
+              echo "$path | $k | $code | ${size}B | $xr $mit $cache | $title | robots: $noindex | $canon | </head>@$headpos <title>@$titlepos $challenge"
+            done
+          done
+          echo "--- robots.txt as Googlebot"; curl -s -A "${UA[googlebot]}" https://gbsqchp.com/robots.txt
+          echo; echo "--- full headers / as Googlebot"; curl -s -o /dev/null -D - -A "${UA[googlebot]}" https://gbsqchp.com/
