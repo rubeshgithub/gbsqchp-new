@@ -26,6 +26,10 @@ export const licensingGuide = {
   verifiedOn: '2026-10-23',
   verifiedAgainst: [
     {
+      label: 'DHP – Search Practitioners (find a registered healthcare practitioner)',
+      url: 'https://dhp.moph.gov.qa/en/Pages/SearchPractitionersPage.aspx',
+    },
+    {
       label: 'DHP – Guidelines for Nurses',
       url: 'https://dhp.moph.gov.qa/en/Documents/Guidelines%20for%20Nurses.pdf',
     },
@@ -62,17 +66,18 @@ export const licensingGuide = {
     },
     { date: '2026-10-26', note: 'Added an FAQ on what DHP stands for, from the “Who licenses” section, and reworded the search description. No facts changed.' },
     { date: '2026-11-23', note: 'Search description now opens with what DHP means; linked the new Prometric fee page from the cost FAQ. No facts changed.' },
+    { date: '2026-11-24', note: 'Added a section and FAQ on DHP’s Search Practitioners page (search fields read on DHP’s site on 24 Nov 2026). Dropped the QCHP FAQ to keep five; the “Who licenses” section still explains QCHP.' },
   ],
   faqs: [
+    {
+      question: 'How do I search for a licensed practitioner on the DHP website?',
+      answer:
+        'Open DHP’s Search Practitioners page (dhp.moph.gov.qa → Services → Find a Registered Healthcare Practitioner). Choose the profession – allied health, complementary medicine, dentist, nurse, pharmacist or physician – and search by name, licence number, place of work or scope of practice; a tick box narrows it to visiting doctors. DHP says it is not responsible for practitioner data published on other websites, so check on DHP’s own page.',
+    },
     {
       question: 'What does DHP stand for in Qatar?',
       answer:
         'DHP is the Department of Healthcare Professions at Qatar’s Ministry of Public Health. It evaluates, licenses and renews the licences of physicians, dentists, nurses, pharmacists and allied healthcare practitioners, through its online Registration and Licensing System at dhpportal.moph.gov.qa. It took over this work from the Qatar Council for Healthcare Practitioners (QCHP).',
-    },
-    {
-      question: 'Is QCHP the same as DHP?',
-      answer:
-        'Yes, in practice. Healthcare practitioners in Qatar were registered by the Qatar Council for Healthcare Practitioners (QCHP); that work is now done by the Department of Healthcare Professions (DHP) at the Ministry of Public Health, and some DHP policies still carry the QCHP name. When people search for a “QCHP licence”, they mean the DHP licence.',
     },
     {
       question: 'Can I apply for a Qatar licence without a job offer?',
@@ -160,5 +165,17 @@ Dentists and pharmacists have their own DHP guidelines. Country-specific notes f
 - **A document the issuer will not confirm.** It becomes an Unable to Verify or Discrepancy result and, at evaluation, an interview. The [Unable to Verify guide](/qatar/psv/problems/unable-to-verify) explains how to resolve it first; the [name-mismatch guide](/qatar/psv/problems/name-mismatch) prevents the commonest one.
 - **Experience DHP will not count.** The physician guidelines say experience certificates not listed in your CV or submitted with your first evaluation will not be considered in later applications.
 - **An expired document.** Preliminary evaluations, temporary licences, medical reports and good-standing certificates all have six-month limits; plan the order so nothing lapses while you wait for the next step.
+
+## How do you check whether a practitioner is licensed in Qatar?
+
+Use DHP's own **Search Practitioners** page (dhp.moph.gov.qa → Services → "Find a Registered Healthcare Practitioner"). You can search by:
+
+- **Profession** – allied health practitioner, complementary medicine, dentist, nurse, pharmacist or physician;
+- **First, middle and family name**;
+- **Licence number**;
+- **Place of work** and **scope of practice**;
+- **Visiting doctor** (a tick box).
+
+Employers and patients use it to confirm a licence; you can use it to check how your own name and scope appear once your licence is issued. DHP's page notes that it "is not responsible for any practitioner data published on other websites", so rely on the DHP search itself, not a copy elsewhere.
 `,
 }

@@ -13,6 +13,10 @@ const dirname = path.dirname(__filename)
 const LEGACY_PREFIXES = ['Home', 'home', 'AppPDFFiles', 'apppdffiles', 'Account', 'account', 'Applicant', 'applicant', 'Employer', 'employer']
 
 const nextConfig: NextConfig = {
+  // Render <title>, the canonical link and the other metadata in <head> for every visitor, crawlers included.
+  // With streaming metadata (the default), Googlebot got them appended to <body>, and URL Inspection showed no
+  // user-declared canonical on several pages. Costs a little TTFB on pages whose metadata needs a DB read.
+  htmlLimitedBots: /.*/,
   images: {
     localPatterns: [
       {
