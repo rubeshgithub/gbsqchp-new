@@ -43,6 +43,9 @@ Payload skill for this repo: `.claude/skills/payload/SKILL.md` (read it before t
    reachable during `next build`.
 5. **Every page component gets its data through `src/lib/data.ts`**; add a helper there rather than calling
    `getPayload` inside components.
+   Sitemap `lastmod`, `og:modified_time` and JSON-LD `dateModified` come from `contentModifiedAt()` (latest change-log
+   date, `verifiedOn` or `publishedAt`), never `updatedAt` – every seeded deploy re-saves every page. So a real content
+   change needs a `changeLog` entry, or the page's `lastmod` will not move.
 6. **Old-site URLs answer 410 Gone**: `/blog`, `/guide`, `/news` route handlers and the legacy portal prefixes
    rewritten to `/removed` in `next.config.ts` (all use `src/lib/gone.ts`). `/gbs-psv-portal` (removed page) 308s to
    `/qatar/psv`. The seed deletes the records listed in `REMOVED` (`src/seed/data.ts`); never re-add them.
@@ -78,7 +81,7 @@ Payload skill for this repo: `.claude/skills/payload/SKILL.md` (read it before t
 
 The 25 Phase-1 page briefs (slug, title tag, meta, outline, facts with sources, FAQs, internal links) are in the
 project doc `GBSQCHP-phase1-content-plan-and-briefs.md`. Published so far: `/qatar/psv` (pillar), `/qatar/psv/dataflow`, `/qatar/psv/quadrabay`, `/qatar/psv/avs` (provider guides), `/qatar/psv/fees`, `/qatar/psv/documents`,
-`/qatar/psv/timeline`, `/qatar/psv/problems/name-mismatch`, `/qatar/psv/status`, `/qatar/exam/prometric`, `/qatar/licensing` (hub,
+`/qatar/psv/timeline`, `/qatar/psv/problems/name-mismatch`, `/qatar/psv/status`, `/qatar/exam/prometric`, `/qatar/exam/prometric/fees`, `/qatar/licensing` (hub,
 in the header), country guides `/qatar/psv/countries/{india,india/nurses,philippines,pakistan,nepal,sri-lanka,bangladesh,indonesia}`, `/qatar/psv/report-transfer`,
 `/qatar/psv/problems/{unable-to-verify,discrepancy,university-not-responding,experience-letter-format,good-standing-certificate}`.
 Next in order: the other problem pages under `/qatar/psv/problems/…`, the circular explainers under `/qatar/circulars/…`, and more

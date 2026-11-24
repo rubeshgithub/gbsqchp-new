@@ -73,7 +73,22 @@ export async function getArticles(limit = 100) {
   return result.docs
 }
 
-export type PageSummary = Pick<Page, 'id' | 'title' | 'path' | 'section' | 'summary' | 'country' | 'updatedAt' | 'verifiedOn'>
+export type PageSummary = Pick<Page, 'id' | 'title' | 'path' | 'section' | 'summary' | 'country' | 'updatedAt' | 'verifiedOn' | 'changeLog' | 'publishedAt'>
+
+/**
+ * When the page's content last changed, for the sitemap `lastmod` and `dateModified`.
+ * Taken from the editorial dates (latest change-log entry, verifiedOn, publishedAt), not `updatedAt`:
+ * every seeded deploy re-saves every page, so `updatedAt` moves even when nothing on the page changed.
+ * Falls back to `updatedAt` only for a page with none of those dates.
+ */
+export function contentModifiedAt(page: Pick<Page, 'updatedAt' | 'verifiedOn' | 'changeLog' | 'publishedAt'>): string {
+  const dates = [page.verifiedOn, page.publishedAt, ...(page.changeLog ?? []).map((c) => c.date)]
+    .filter((d): d is string => Boolean(d))
+    .map((d) => new Date(d))
+    .filter((d) => !Number.isNaN(d.getTime()))
+  if (!dates.length) return page.updatedAt
+  return new Date(Math.max(...dates.map((d) => d.getTime()))).toISOString()
+}
 
 export async function getPublishedPages(where?: Where): Promise<PageSummary[]> {
   const payload = await getPayloadClient()
@@ -91,6 +106,8 @@ export async function getPublishedPages(where?: Where): Promise<PageSummary[]> {
       country: true,
       updatedAt: true,
       verifiedOn: true,
+      changeLog: true,
+      publishedAt: true,
     },
   })
   return result.docs as PageSummary[]

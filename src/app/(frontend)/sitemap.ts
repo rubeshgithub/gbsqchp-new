@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-import { getPublishedPages, SITE_URL } from '@/lib/data'
+import { contentModifiedAt, getPublishedPages, SITE_URL } from '@/lib/data'
 
 export const dynamic = 'force-dynamic'
 
@@ -20,7 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const docs = await getPublishedPages()
     pages = docs.map((p) => ({
       url: `${SITE_URL}${p.path}`,
-      lastModified: p.updatedAt,
+      lastModified: contentModifiedAt(p),
       changeFrequency: 'monthly',
       priority: p.section === 'psv' || p.section === 'licensing' || p.section === 'documents' || p.section === 'exam' ? 0.9 : 0.6,
     }))

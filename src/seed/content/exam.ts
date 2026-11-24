@@ -19,9 +19,9 @@ export const examGuide = {
   summary:
     'The DHP qualifying exam is a computer-based Prometric test – 150 multiple-choice questions in three hours for most professions – that general practitioners, general dentists, pharmacists, registered nurses, midwives, Category 3 specialists and several allied health scopes must pass for a Qatar licence. It costs US$244 for anyone registering from 1 January 2026, the pass mark is 50% for nurses and most allied health, 60% for GPs, general dentists and pharmacists and 65% for most specialists, and you have five attempts. Certain foreign licensing exams – USMLE Step 2, PLAB 1, NCLEX-RN and others listed in Circular DHP/2025/19 – exempt you, but since 1 January 2026 only if the exam itself has been primary-source verified. Below: format, pass marks, fees, attempts, validity, exemptions and booking.',
   meta: {
-    title: 'Qatar Prometric Exam 2026: US$244 Fee, Validity, Pass Marks',
+    title: 'Qatar Prometric Exam 2026 (DHP): Pass Marks, Booking, Fee',
     description:
-      'Qatar Prometric test for the DHP licence: US$244 fee from 1 Jan 2026, 150 MCQs, pass marks by profession, five attempts, 3-year validity and exemptions.',
+      'Qatar Prometric exam for a DHP licence: 150 MCQs in 3 hours, pass marks by profession, five attempts, 3-year validity, exemptions, booking and US$244 fee.',
   },
   showVendorTable: false,
   showCalculator: false,
@@ -64,6 +64,7 @@ export const examGuide = {
     { date: '2026-10-27', note: 'Added a section and FAQ on taking the exam in India, from Prometric’s DHP programme page (test-centre delivery, Locate tool, India helpline, remote dietitian exam); Indian test-centre cities marked as reported by consultancies.' },
     { date: '2026-10-26', note: 'Added an FAQ on the 2026 exam fee (Circular DHP/2024/10, as in the fee section) and reworded the search title and description. No facts changed.' },
     { date: '2026-11-02', note: 'Fee FAQ now says the US$244 fee is the same for every profession, as the circular sets one fee. No facts changed.' },
+    { date: '2026-11-23', note: 'Linked the new Prometric fee page; added sections on sitting the exam in the Philippines and Pakistan from Prometric’s DHP programme page (re-read 23 Nov 2026: test-centre delivery, Locate tool, contact table); reworded the search title and description. No fees or rules changed.' },
   ],
   faqs: [
     {
@@ -74,7 +75,7 @@ export const examGuide = {
     {
       question: 'How much is the Qatar Prometric exam fee in 2026?',
       answer:
-        'US$244 for anyone registering for the exam from 1 January 2026, under Circular DHP/2024/10 (it was US$238 for registrations from 19 January 2024). It is one fee for everyone who sits the exam – nurses, pharmacists, general practitioners, dentists and allied health alike. Cancelling or rescheduling costs US$25 if you do it 30 or more days before the exam and US$40 between 5 and 29 days before. The [PSV fees guide](/qatar/psv/fees) puts the exam fee alongside PSV and DHP’s own fees.',
+        'US$244 for anyone registering for the exam from 1 January 2026, under Circular DHP/2024/10 (it was US$238 for registrations from 19 January 2024). It is one fee for everyone who sits the exam – nurses, pharmacists, general practitioners, dentists and allied health alike. Cancelling or rescheduling costs US$25 if you do it 30 or more days before the exam and US$40 between 5 and 29 days before. The [Prometric fee page](/qatar/exam/prometric/fees) sets out every charge and the total cost of a licence.',
     },
     {
       question: 'Can I take the Prometric exam before my DataFlow report is ready?',
@@ -129,7 +130,7 @@ Circular DHP/2024/10 sets the fee by the date you register for the exam:
 | 1 January 2025 | US$238 |
 | 1 January 2026 | US$244 |
 
-Cancelling or rescheduling costs US$25 if you do it 30 or more days before the exam and US$40 between 5 and 29 days before. Inside 5 days, if you do not turn up, or if you arrive more than 30 minutes late and are refused entry, you lose the full fee. The [PSV fees guide](/qatar/psv/fees) puts the exam fee alongside PSV and DHP's own fees.
+Cancelling or rescheduling costs US$25 if you do it 30 or more days before the exam and US$40 between 5 and 29 days before. Inside 5 days, if you do not turn up, or if you arrive more than 30 minutes late and are refused entry, you lose the full fee. The [Prometric fee page](/qatar/exam/prometric/fees) has the riyal equivalents and what the exam adds to the total cost of a licence, and the [PSV fees guide](/qatar/psv/fees) covers the verification packages.
 
 ## How many attempts do you get, and how long does a pass last?
 
@@ -174,5 +175,21 @@ A few points for applicants in India:
 - **Prometric's India helpline** is +91-124-4147700, Monday to Friday, 9 am to 5:30 pm IST, according to its DHP programme page. The DHP programme team itself works Sunday to Thursday on Qatar time.
 - **Dietitians can test remotely.** Prometric's DHP page mentions remote testing only for the dietitian exam; plan on a test centre for every other exam.
 - **Do PSV first.** DHP's policy places the exam at the evaluation stage, so start your DataFlow, QuadraBay or AVS application before you book. The [India guide](/qatar/psv/countries/india) covers the documents Indian applicants need.
+
+## Can you take the Qatar Prometric exam in the Philippines?
+
+Yes, at a Prometric test centre – use the scheduler's **Locate** option for the DHP programme and choose the Philippines to see which centres have seats for your exam. Prometric's DHP programme page lists the Philippines under one regional helpline with Australia, Indonesia, Malaysia, New Zealand, Singapore, Taiwan and Thailand: +603-76283333, Monday to Friday, 8 am to 6 pm Malaysia time.
+
+- **The fee is the same US$244.** Circular DHP/2024/10 sets one fee in US dollars; the [Prometric fee page](/qatar/exam/prometric/fees) covers rescheduling charges and conversions.
+- **NCLEX-RN can replace the exam for nurses.** Circular DHP/2025/19 lists NCLEX-RN as the exempting exam for nurses, if the result is valid and verified through PSV.
+- **Do PSV first.** The [Philippines guide](/qatar/psv/countries/philippines) covers the PRC good-standing certificate and the documents Filipino applicants need.
+
+## Can you take the Qatar Prometric exam in Pakistan?
+
+Check with the Locate option. Prometric's DHP programme page does not list Pakistan in its contact table, so choose Pakistan in the scheduler's **Locate** option to see whether a centre near you has seats for your exam, and contact the DHP programme team (Pnl-mena@prometric.com; Sunday to Thursday, 8 am to 5 pm Qatar time) if it does not show one.
+
+- **The fee is the same US$244**, set in US dollars by Circular DHP/2024/10.
+- **PLAB Part 1 or USMLE Step 2 can replace the exam for general practitioners**, if valid and verified through PSV (Circular DHP/2025/19). Pakistani specialists assessed under DHP's Category 3 still need the qualifying exam.
+- **Do PSV first.** The [Pakistan guide](/qatar/psv/countries/pakistan) covers PM&DC and PNMC good-standing certificates and the documents Pakistani applicants need.
 `,
 }

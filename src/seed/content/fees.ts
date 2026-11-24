@@ -47,7 +47,10 @@ export const feesGuide = {
       url: 'https://www.hamad.qa/EN/Join-Us/Recruitment/Documents/QCHP-English-FAQs.PDF',
     },
   ],
-  changeLog: [{ date: '2026-10-16', note: 'First published. All provider prices re-checked against the three providers’ current lists; exam fee from Circular DHP/2024/10.' }],
+  changeLog: [
+    { date: '2026-10-16', note: 'First published. All provider prices re-checked against the three providers’ current lists; exam fee from Circular DHP/2024/10.' },
+    { date: '2026-11-23', note: 'Linked the new Prometric fee page. No facts changed.' },
+  ],
   faqs: [
     {
       question: 'Which PSV provider is cheapest for nurses in Qatar?',
@@ -137,7 +140,7 @@ PSV is one of four costs. The other three are DHP's and Prometric's, not the pro
 | DHP licence | QAR 600 | QAR 1,000 | QAR 1,200 |
 | **Approximate total** | **QAR 2,488–2,578** | **QAR 3,038–3,198** | **QAR 3,238–3,398** |
 
-The exam fee is official: Circular DHP/2024/10 set it at US$244 for exam bookings made from 1 January 2026, with US$25 to reschedule 30 or more days ahead and US$40 at 5–29 days. Holders of certain certificates are exempt from the exam altogether; the list is in Circular DHP/2025/19, and the [Prometric exam guide](/qatar/exam/prometric) sets it out with the pass marks and attempt rules.
+The exam fee is official: Circular DHP/2024/10 set it at US$244 for exam bookings made from 1 January 2026, with US$25 to reschedule 30 or more days ahead and US$40 at 5–29 days. Holders of certain certificates are exempt from the exam altogether; the list is in Circular DHP/2025/19, and the [Prometric exam guide](/qatar/exam/prometric) sets it out with the pass marks and attempt rules. The [Prometric fee page](/qatar/exam/prometric/fees) covers every exam charge on its own.
 
 The evaluation and licence fees are less certain. DHP does not publish a current fee schedule on its website; the figures above are from the last table its predecessor, the Qatar Council for Healthcare Practitioners, published (November 2014). The portal shows the exact fee at payment – confirm it there. The same FAQ lists licence renewal at the same price as the licence.
 

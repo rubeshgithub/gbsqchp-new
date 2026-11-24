@@ -19,7 +19,7 @@ export const licensingGuide = {
   meta: {
     title: 'How to Get a DHP (QCHP) Licence in Qatar: 2026 Guide',
     description:
-      'DHP (Department of Healthcare Professions) licensing in Qatar step by step: PSV, evaluation, Prometric exam, temporary and full licence, renewal and CPD.',
+      'DHP means the Department of Healthcare Professions (formerly QCHP). Get a DHP licence step by step: PSV, evaluation, Prometric exam, licence and renewal.',
   },
   showVendorTable: false,
   showCalculator: false,
@@ -61,6 +61,7 @@ export const licensingGuide = {
       note: 'First published. Process, temporary licence, licensing and renewal rules from DHP’s guidelines and policies; processing times from Circular DHP/2024/16.',
     },
     { date: '2026-10-26', note: 'Added an FAQ on what DHP stands for, from the “Who licenses” section, and reworded the search description. No facts changed.' },
+    { date: '2026-11-23', note: 'Search description now opens with what DHP means; linked the new Prometric fee page from the cost FAQ. No facts changed.' },
   ],
   faqs: [
     {
@@ -86,7 +87,7 @@ export const licensingGuide = {
     {
       question: 'How much does the whole licensing process cost?',
       answer:
-        'The fixed costs are PSV (QAR 900 to 1,210 for a practising clinician’s standard package, depending on profession and provider), the Prometric exam (US$244 if it applies to you) and DHP’s own evaluation and licence fees. The [PSV fees guide](/qatar/psv/fees) adds them up by profession.',
+        'The fixed costs are PSV (QAR 900 to 1,210 for a practising clinician’s standard package, depending on profession and provider), the Prometric exam (US$244 if it applies to you – see the [Prometric fee page](/qatar/exam/prometric/fees)) and DHP’s own evaluation and licence fees. The [PSV fees guide](/qatar/psv/fees) adds them up by profession.',
     },
   ],
   markdown: `

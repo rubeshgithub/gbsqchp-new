@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import type { Author, Media, Page, SiteSetting } from '@/payload-types'
 
-import { rel, SITE_URL } from './data'
+import { contentModifiedAt, rel, SITE_URL } from './data'
 import { stripInlineLinks } from './inline-links'
 
 export function absoluteUrl(path: string) {
@@ -31,7 +31,7 @@ export function buildPageMetadata(page: Page, settings: SiteSetting): Metadata {
       siteName: settings.siteName,
       type: 'article',
       images: ogImage ? [{ url: ogImage }] : undefined,
-      modifiedTime: page.updatedAt,
+      modifiedTime: contentModifiedAt(page),
       publishedTime: page.publishedAt || undefined,
     },
     twitter: {
@@ -74,7 +74,7 @@ export function articleJsonLd(page: Page, settings: SiteSetting) {
     description: page.meta?.description || page.summary,
     mainEntityOfPage: absoluteUrl(page.path),
     datePublished: page.publishedAt || page.createdAt,
-    dateModified: page.updatedAt,
+    dateModified: contentModifiedAt(page),
     author: author
       ? {
           '@type': 'Person',
